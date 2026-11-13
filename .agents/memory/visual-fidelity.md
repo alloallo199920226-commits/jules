@@ -158,3 +158,9 @@ Le caractère premium demandé doit rester sobre et discret ; le badge doré doi
 **Why:** l’utilisateur a rejeté les pages forum et messagerie pour leur manque de « peaufinage », de « sobriété » et de « discrétion », et le badge comme « flou décalé et cassé ».
 
 **How to apply:** comparer les écrans complets aux références, y compris l’échelle des images, les boutons, le pied de page et les espaces ; ne pas compenser des écarts par davantage de halos ou de bordures.
+
+Mesurer les dimensions réelles d’une image de référence avant de découper ses illustrations ; sa taille affichée dans la conversation peut être réduite.
+
+**Why:** un découpage basé sur les dimensions affichées a inclus des fragments de formulaire et de navigateur à la place des seules illustrations industrielles.
+
+**How to apply:** normaliser explicitement l’échelle de la référence avant les mesures et les découpes. Exclure les barres du navigateur et vérifier visuellement chaque illustration avant son intégration.

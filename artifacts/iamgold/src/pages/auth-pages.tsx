@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, useLocation } from 'wouter';
-import { ArrowLeft, Eye, EyeOff, Headset, IndustrialIcon, RegisterIcon as SharedRegisterIcon, type RegisterIconName } from '@/components/industrial-icons';
+import { IndustrialIcon, RegisterIcon as SharedRegisterIcon, type RegisterIconName } from '@/components/industrial-icons';
+import { IamgoldSecurityIcon } from '@/components/iamgold-security-icons';
 import {
   issueInternalCode, loginAccount, registerAccount, setupTransactionPassword,
   logoutAccount, type InternalCodeInput, type TransactionPasswordInput,
@@ -11,6 +12,7 @@ import './login.css';
 import { dialingCountries, invitationFromSearch, isPhoneValid, registrationRules } from '@/lib/registration';
 import { useSession } from '@/session';
 import './registration.css';
+import './transaction-password.css';
 
 function RegisterIcon({ name, size = 20 }: { name: RegisterIconName; size?: number }) {
   return <SharedRegisterIcon name={name} size={size}/>;
@@ -358,7 +360,7 @@ export function TransactionPasswordPage() {
       setOtp(result.code);
       setDeadline(Date.now() + result.expiresIn * 1000);
       setSecondsLeft(result.expiresIn);
-      showNotice('SMS envoyé');
+      showNotice('Code interne généré dans ce formulaire. La vérification sera effectuée par le serveur.');
     } catch (error) {
       if (!controller.signal.aborted) showNotice(apiMessage(error), 'error');
     } finally {
@@ -398,24 +400,75 @@ export function TransactionPasswordPage() {
 
   const handleLogout = () => logoutAndGo(setUser, setLocation, (message) => showNotice(message, 'error'), setLogoutBusy);
 
-  return <div className="ig-page">
-    <div className="ig-topbar">
-      <button className="ig-back" type="button" aria-label="Retour" onClick={() => setLocation('/register')} data-testid="button-back"><ArrowLeft size={22} /></button>
-      <h1>Définir le mot de passe de<br /> transaction</h1>
-    </div>
-    <form className="ig-form ig-transaction-form" onSubmit={submit} noValidate>
-      <label htmlFor="tx-phone">Numéro de mobile</label>
-      <div className="ig-field"><input id="tx-phone" value={user?.phone ?? ''} readOnly disabled className="ig-readonly" data-testid="text-transaction-phone" /></div>
-      <label htmlFor="tx-password">Mot de passe de transaction</label>
-      <div className="ig-field"><input id="tx-password" type={visible ? 'text' : 'password'} autoComplete="new-password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Veuillez entrer un nouveau mot de passe" data-testid="input-transaction-password" />
-        <button type="button" className="ig-ic" onClick={() => setVisible((value) => !value)} aria-label={visible ? 'Masquer le mot de passe' : 'Afficher le mot de passe'} data-testid="button-toggle-transaction-password">{visible ? <Eye size={24} /> : <EyeOff size={24} />}</button></div>
-      <label htmlFor="tx-otp">Code de vérification (OTP)</label>
-      <div className="ig-field"><input id="tx-otp" inputMode="numeric" autoComplete="one-time-code" maxLength={6} value={otp} onChange={(event) => setOtp(event.target.value.replace(/\D/g, ''))} placeholder="Code de vérification" data-testid="input-transaction-otp" />
-        {secondsLeft > 0 ? <span className="ig-otp" data-testid="transaction-otp-countdown">{secondsLeft}s</span> : <button type="button" className="ig-send" disabled={sending || submitting} onClick={sendCode} data-testid="button-send-transaction-otp">{sending ? 'ENVOI…' : 'ENVOYER'}</button>}
+  const challengeActive = Boolean(challengeId && deadline && Date.now() < deadline && secondsLeft > 0 && /^\d{6}$/.test(otp));
+  const passwordValid = password.length >= 6 && password.length <= 128;
+  const canSubmit = passwordValid && challengeActive && !submitting && !sending;
+
+  return <main className="ig-page ig-transaction-page">
+    <header className="igt-banner" aria-label="IAMGOLD — Fabrication et raffinage d’or">
+      <img src={`${import.meta.env.BASE_URL}iamgold-transaction-banner.webp`} alt="IAMGOLD, fabrication et raffinage d’or" />
+    </header>
+    <div className="igt-heading">
+      <button className="igt-back" type="button" aria-label="Retour à la connexion" disabled={logoutBusy} onClick={handleLogout} data-testid="button-back">
+        <IamgoldSecurityIcon name="back" size={34}/>
+      </button>
+      <div className="igt-heading-plate">
+        <IamgoldSecurityIcon name="ornament" size={34}/>
+        <IamgoldSecurityIcon name="shieldLock" size={43}/>
+        <h1>Définir le mot de passe<br/>de transaction</h1>
+        <IamgoldSecurityIcon name="ornament" size={34}/>
       </div>
-      <button type="submit" className="ig-btn ig-pri" disabled={submitting || sending} data-testid="button-confirm-transaction">{submitting ? 'Enregistrement…' : 'Confirmer'}</button>
-      <button type="button" className="ig-route-link" disabled={logoutBusy} onClick={handleLogout} data-testid="button-logout-transaction">{logoutBusy ? 'Déconnexion…' : 'Se déconnecter'}</button>
+    </div>
+    <form className="igt-panel" onSubmit={submit} aria-busy={submitting} noValidate>
+      <div className="igt-panel-art" style={{ backgroundImage: `url("${import.meta.env.BASE_URL}iamgold-transaction-footer.webp")` }} aria-hidden="true"/>
+      <div className="igt-content">
+        <div className="igt-field-row">
+          <span className="igt-field-icon"><IamgoldSecurityIcon name="phone" size={38}/></span>
+          <div className="igt-field-body">
+            <label htmlFor="tx-phone">Numéro de mobile</label>
+            <div className="igt-input-wrap igt-phone-input">
+              <input id="tx-phone" autoComplete="tel-national" value={user?.phone ?? ''} readOnly disabled data-testid="text-transaction-phone" />
+            </div>
+          </div>
+        </div>
+        <div className="igt-field-row">
+          <span className="igt-field-icon"><IamgoldSecurityIcon name="lock" size={38}/></span>
+          <div className="igt-field-body">
+            <label htmlFor="tx-password">Mot de passe de transaction</label>
+            <div className="igt-input-wrap">
+              <input id="tx-password" type={visible ? 'text' : 'password'} autoComplete="new-password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Veuillez entrer un nouveau mot de passe" data-testid="input-transaction-password" aria-describedby="tx-password-hint" />
+              <button type="button" className="igt-reveal" onClick={() => setVisible((value) => !value)} aria-label={visible ? 'Masquer le mot de passe' : 'Afficher le mot de passe'} data-testid="button-toggle-transaction-password">
+                <IamgoldSecurityIcon name={visible ? 'eye' : 'eyeOff'} size={29}/>
+              </button>
+            </div>
+            <span id="tx-password-hint" className="igt-sr-only">6 à 128 caractères</span>
+          </div>
+        </div>
+        <div className="igt-field-row igt-otp-row">
+          <span className="igt-field-icon"><IamgoldSecurityIcon name="shield" size={41}/></span>
+          <div className="igt-field-body">
+            <label htmlFor="tx-otp">Code de vérification (OTP)</label>
+            <div className="igt-input-wrap igt-otp-input">
+              <input id="tx-otp" inputMode="numeric" autoComplete="one-time-code" maxLength={6} value={otp} onChange={(event) => setOtp(event.target.value.replace(/\D/g, ''))} placeholder="Code de vérification" data-testid="input-transaction-otp" />
+              {secondsLeft > 0
+                ? <span className="igt-countdown" data-testid="transaction-otp-countdown">{secondsLeft}s</span>
+                : <button type="button" className="igt-send" disabled={sending || submitting || !user} onClick={sendCode} data-testid="button-send-transaction-otp"><IamgoldSecurityIcon name="send" size={24}/><span>{sending ? 'ENVOI…' : 'ENVOYER'}</span></button>}
+            </div>
+          </div>
+        </div>
+        <button type="submit" className="igt-confirm" disabled={!canSubmit} data-testid="button-confirm-transaction">
+          <IamgoldSecurityIcon name="shield" size={37}/>
+          <span>{submitting ? 'Enregistrement…' : 'Confirmer'}</span>
+        </button>
+        <div className="igt-logout-rule">
+          <span/>
+          <button type="button" disabled={logoutBusy} onClick={handleLogout} data-testid="button-logout-transaction"><IamgoldSecurityIcon name="power" size={33}/><span>{logoutBusy ? 'Déconnexion…' : 'Se déconnecter'}</span></button>
+          <span/>
+        </div>
+      </div>
     </form>
-    <button type="button" className="ig-transaction-support" aria-label="Support" onClick={() => showNotice('Support indisponible.', 'error')} data-testid="button-support"><Headset size={44} /></button>
-  </div>;
+    <button type="button" className="igt-support" aria-label="Assistance" onClick={() => showNotice('Le support en ligne n’est pas disponible pour le moment.', 'error')} data-testid="button-support">
+      <IamgoldSecurityIcon name="headset" size={44}/><span>Assistance</span>
+    </button>
+  </main>;
 }
