@@ -33,6 +33,7 @@ test("historiques : types séparés, ensemble complet paginé et isolation entre
     const recharges = await listMemberTransactions(accounts[0], "recharges");
     assert.deepEqual(recharges.transactions.map(row => row.type), ["recharge"]);
     assert.equal(recharges.transactions[0].amount, 1000);
+    assert.deepEqual(recharges.summary, { total: 1, succeeded: 1, pending: 0, failed: 0, totalAmount: 1000 });
     const withdrawals = await listMemberTransactions(accounts[0], "withdrawals");
     assert.deepEqual(withdrawals.transactions.map(row => row.type), ["withdrawal"]);
     assert.equal(withdrawals.transactions[0].amount, -500);
@@ -42,6 +43,7 @@ test("historiques : types séparés, ensemble complet paginé et isolation entre
     do {
       const page = await listMemberTransactions(accounts[0], "all", cursor);
       assert.ok(page.transactions.length <= 50);
+      assert.equal(page.summary.total, 209, "Les compteurs incluent toutes les pages");
       seen.push(...page.transactions.map(row => row.id));
       cursor = page.nextCursor ?? undefined;
     } while (cursor);
@@ -51,7 +53,25 @@ test("historiques : types séparés, ensemble complet paginé et isolation entre
     assert.ok(!seen.includes(other.id));
     await assert.rejects(listMemberTransactions(accounts[0], "all", other.id),
       error => error instanceof DomainError && error.status === 400);
-    assert.deepEqual(await listMemberTransactions(accounts[2], "all"), { transactions: [], nextCursor: null });
+    assert.deepEqual(await listMemberTransactions(accounts[2], "all"), { transactions: [], nextCursor: null,
+      summary: { total: 0, succeeded: 0, pending: 0, failed: 0, totalAmount: 0 } });
+    const referenceSearch = await listMemberTransactions(accounts[0], "all", undefined, { search: stored[0].id });
+    assert.deepEqual(referenceSearch.transactions.map(row => row.id), [stored[0].id]);
+    assert.equal(referenceSearch.summary.total, 1);
+    const typeSearch = await listMemberTransactions(accounts[0], "all", undefined, { search: "ADMIN_CREDIT" });
+    assert.equal(typeSearch.summary.total, 205);
+    assert.equal(typeSearch.summary.totalAmount, 205);
+    const foreignSearch = await listMemberTransactions(accounts[0], "all", undefined, { search: other.id });
+    assert.equal(foreignSearch.summary.total, 0);
+    for (const status of ["pending", "failed"] as const) {
+      const filtered = await listMemberTransactions(accounts[0], "all", undefined, { status });
+      assert.equal(filtered.transactions.length, 0, "Aucun statut fictif");
+      assert.equal(filtered.summary.total, 0);
+    }
+    const recent = await listMemberTransactions(accounts[0], "all", undefined, { period: "7d" });
+    assert.equal(recent.summary.total, 0, "Les opérations anciennes sont exclues par le filtre période");
+    const literalSearch = await listMemberTransactions(accounts[0], "all", undefined, { search: "%" });
+    assert.equal(literalSearch.summary.total, 0, "La recherche ne traite pas les caractères comme des jokers SQL");
   } finally {
     for (const id of accounts) await db.delete(accountsTable).where(eq(accountsTable.id, id));
   }

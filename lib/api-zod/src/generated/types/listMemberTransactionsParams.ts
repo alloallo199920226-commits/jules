@@ -6,8 +6,16 @@
  * OpenAPI spec version: 0.1.0
  */
 import type { ListMemberTransactionsKind } from './listMemberTransactionsKind';
+import type { ListMemberTransactionsPeriod } from './listMemberTransactionsPeriod';
+import type { ListMemberTransactionsStatus } from './listMemberTransactionsStatus';
 
 export type ListMemberTransactionsParams = {
 kind?: ListMemberTransactionsKind;
 cursor?: string;
+/**
+ * @maxLength 120
+ */
+search?: string;
+period?: ListMemberTransactionsPeriod;
+status?: ListMemberTransactionsStatus;
 };

@@ -1,194 +1,601 @@
-.financial-history-page {
+.ayala-frame:has(.financial-history-page) {
+  --fh-night: #03172b;
+  --fh-blue: #082b46;
+  --fh-blue-mid: #0b3756;
+  --fh-gold: #d9a52d;
+  --fh-glint: #ffe6a0;
+  --fh-paper: #f7f5ef;
+  background: var(--fh-night);
+  color: #f8f3e8;
+  font-family: 'DM Sans', sans-serif;
+}
+.ayala-frame:has(.financial-history-page) .ayala-canvas { background: var(--fh-night); }
+.ayala-frame:has(.financial-history-page) .financial-history-page {
+  --history-status-color: #b7bec7;
+  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #f6f6f6;
-  color: #30343a;
+  overflow: hidden;
+  color: #f8f4e9;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgb(20 63 89 / 24%), transparent 57%),
+    linear-gradient(180deg, #03172b 0%, #061e34 72%, #03172b 100%);
 }
-
-.financial-history-tabs {
+.ayala-frame:has(.financial-history-page) .financial-history-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .12;
+  background-image: repeating-linear-gradient(0deg, transparent 0 3px, #9fc3cf 3.5px, transparent 4px);
+  mask-image: linear-gradient(180deg, #000, transparent 45%);
+}
+.ayala-frame:has(.financial-history-page) .financial-history-page > * { position: relative; z-index: 1; }
+.ayala-frame:has(.financial-history-page) .ayala-header {
+  z-index: 3;
+  flex: 0 0 148px;
+  height: 148px;
+  min-height: 148px;
+  position: relative;
   display: flex;
-  gap: 8px;
-  padding: 14px;
-  background: #061c2c;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 48px 10px;
+  color: #fff8df;
+  font: 700 19px/1 'Barlow Condensed', sans-serif;
+  letter-spacing: .025em;
+  text-shadow: 0 1px 4px #000;
+  background:
+    linear-gradient(180deg, transparent 0 58%, #03172b 100%),
+    var(--history-header-art) center top / 100% auto no-repeat,
+    linear-gradient(180deg, #092641, #03172b);
+  border-bottom: 1px solid #d7a532;
+  box-shadow: 0 4px 14px #0008;
 }
-.financial-history-tabs button,
-.financial-history-more {
-  border: 1px solid #b99543;
-  border-radius: 8px;
-  background: #0c2b40;
-  color: #fff2c0;
-  padding: 11px 12px;
-  font: inherit;
-  cursor: pointer;
+.ayala-frame:has(.financial-history-page) .ayala-header::before {
+  content: none;
 }
-.financial-history-tabs button { flex: 1; min-width: 0; }
-.financial-history-tabs button[aria-current="page"] {
-  background: linear-gradient(120deg, #fff2ab, #d4a43a);
-  color: #10202d;
-  font-weight: 700;
+.ayala-frame:has(.financial-history-page) .ayala-header::after {
+  content: none;
 }
-.financial-history-more { display: block; margin: 16px auto; max-width: calc(100% - 28px); }
-.financial-history-more:disabled { opacity: .6; cursor: wait; }
-
-.financial-history-page .ayala-header {
-  z-index: 1;
-  flex: 0 0 66px;
-  height: 66px;
-  justify-content: flex-start;
-  padding-left: 68px;
-  background: linear-gradient(110deg, #5c80c2, #4e6fae);
-  box-shadow: 0 2px 5px #4c66831a;
-  font-size: 20px;
-  font-weight: 600;
+.ayala-frame:has(.financial-history-page) .ayala-header-title {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  padding: 10px 12px 9px;
+  border: 1px solid #ffe38a;
+  outline: 1px solid #9c6714;
+  outline-offset: 2px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #174564, #071d33 70%);
+  box-shadow: inset 0 1px 3px #fff7, 0 0 8px #e6ae38ad, 0 4px 9px #000b;
 }
-
-.financial-history-page .ayala-head-btn {
-  left: 15px;
-  top: 13px;
-  width: 40px;
-  height: 40px;
-  background: transparent;
+.ayala-frame:has(.financial-history-page) .ayala-head-btn {
+  left: 12px;
+  top: 102px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #f7cf61;
+  border-radius: 50%;
+  color: #ffe293;
+  background: linear-gradient(150deg, #185176, #061a2e 72%);
+  box-shadow: inset 0 1px 3px #fff5, 0 2px 5px #000a;
 }
-
-.financial-history-scroll {
+.ayala-frame:has(.financial-history-page) .financial-history-scroll {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 0 0 96px;
-  background: #f6f6f6;
+  padding: 0 0 calc(102px + env(safe-area-inset-bottom));
   scrollbar-width: none;
+  background: transparent;
+  overscroll-behavior: contain;
 }
-
-.financial-history-scroll::-webkit-scrollbar {
-  display: none;
+.ayala-frame:has(.financial-history-page) .financial-history-scroll::-webkit-scrollbar { display: none; }
+.ayala-frame:has(.financial-history-page) .financial-history-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  padding: 12px 11px 10px;
+  background: linear-gradient(180deg, #061a2e, transparent);
 }
-
-.financial-history-summary {
-  height: 103px;
-  padding: 18px 23px 17px;
+.ayala-frame:has(.financial-history-page) .financial-history-tabs button {
+  min-width: 0;
+  height: 47px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #9e7c34;
+  border-radius: 12px;
+  color: #f2e4ba;
+  background: linear-gradient(180deg, #124363, #061b30 67%, #041426);
+  box-shadow: inset 0 1px 2px #ffffff27, 0 2px 4px #0008, 0 1px #030e19;
+  font: 600 14px/1 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: transform .18s ease;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-tabs button svg { width: 20px; height: 20px; flex: 0 0 auto; }
+.ayala-frame:has(.financial-history-page) .financial-history-tabs button[aria-current="page"] {
+  color: #201705;
+  border-color: #fff0aa;
+  background: linear-gradient(180deg, #fff0a2 0%, #f4c746 36%, #c38a1a 83%, #edbd40 100%);
+  box-shadow: inset 0 1px 2px #fff, inset 0 -2px 1px #9b6818, 0 2px 7px #efb8327a, 0 0 0 1px #79530e;
+  text-shadow: 0 1px #fff9;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-stats {
+  margin: 0 11px 10px;
+  min-height: 62px;
+  padding: 7px 4px;
+  display: grid;
+  grid-template-columns: .82fr .86fr .83fr 1.34fr;
+  align-items: center;
+  border: 1px solid #f5ca5a;
+  border-radius: 15px;
+  outline: 1px solid #795315;
+  outline-offset: 2px;
+  background: linear-gradient(180deg, #123e5b, #041a2e 62%, #07213a);
+  box-shadow: inset 0 1px 5px #fff2, 0 2px 9px #0008, 0 0 8px #ca921e4d;
+}
+.ayala-frame:has(.financial-history-page) .history-stat {
+  position: relative;
+  min-width: 0;
+  min-height: 43px;
+  display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  background: #fff;
-}
-
-.financial-history-summary-amount {
-  margin: 0;
-  color: #34383d;
-  font-size: 28px;
-  line-height: 1.12;
-  font-weight: 600;
-  letter-spacing: -0.35px;
-  font-variant-numeric: tabular-nums;
-}
-
-.financial-history-summary-bonus {
-  margin-top: 8px;
-  color: #92979e;
-  font-size: 15px;
-  line-height: 1.3;
-}
-
-.financial-history-records {
-  padding: 18px;
-}
-
-.financial-history-card {
-  overflow: hidden;
-  margin: 0 0 17px;
-  border: 3px solid var(--history-status-color, #9ca3aa);
-  border-radius: 13px;
-  background: #fff;
-  box-shadow: 0 2px 5px #2835460b;
-}
-
-.financial-history-card:last-child {
-  margin-bottom: 0;
-}
-
-.financial-history-card-status {
-  height: 55px;
-  margin: 0 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  border-bottom: 1px solid #eceef0;
-  color: #818181;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.financial-history-card-status strong {
-  color: var(--history-status-color, #747a82);
-  font-weight: 600;
-}
-
-.financial-history-card--succeeded {
-  --history-status-color: #58a45c;
-}
-
-.financial-history-card--pending {
-  --history-status-color: #e6a021;
-}
-
-.financial-history-card--failed {
-  --history-status-color: #d65e5e;
-}
-
-.financial-history-card--unknown {
-  --history-status-color: #858b94;
-}
-
-.financial-history-card-fields {
-  margin: 0;
-  padding: 18px 22px;
-}
-
-.financial-history-field {
-  min-height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  color: #777d85;
-  font-size: 14px;
-  line-height: 1.25;
-}
-
-.financial-history-field-label {
-  min-width: 0;
-}
-
-.financial-history-field-value {
-  margin: 0;
-  flex: 0 0 auto;
-  max-width: 58%;
-  color: #3e434a;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-  overflow-wrap: anywhere;
-}
-
-.financial-history-empty {
-  min-height: 165px;
-  padding: 30px 18px;
-  display: grid;
-  place-items: center;
-  color: #9ca1a8;
-  font-size: 16px;
+  gap: 1px;
   text-align: center;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .financial-history-page *,
-  .financial-history-page *::before,
-  .financial-history-page *::after {
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
+.ayala-frame:has(.financial-history-page) .history-stat + .history-stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: linear-gradient(transparent, #e8bb43, transparent);
 }
+.ayala-frame:has(.financial-history-page) .history-stat svg { width: 24px; height: 24px; }
+.ayala-frame:has(.financial-history-page) .history-stat span {
+  color: #f4ead2;
+  font: 500 11px/1.15 'DM Sans', sans-serif;
+  white-space: nowrap;
+}
+.ayala-frame:has(.financial-history-page) .history-stat strong {
+  color: #ffdc65;
+  font: 800 19px/1.1 'Barlow Condensed', sans-serif;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.ayala-frame:has(.financial-history-page) .history-stat--amount { flex-direction: row; flex-wrap: wrap; gap: 0 4px; }
+.ayala-frame:has(.financial-history-page) .history-stat--amount svg { flex: 0 0 20px; }
+.ayala-frame:has(.financial-history-page) .history-stat--amount span { width: calc(100% - 28px); text-align: left; }
+.ayala-frame:has(.financial-history-page) .history-stat--amount strong { width: 100%; font-size: 15px; }
+.ayala-frame:has(.financial-history-page) .financial-history-balance-panel {
+  position: relative;
+  min-height: 111px;
+  margin: 8px 11px 13px;
+  padding: 14px 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+  border: 1px solid #f1c44c;
+  border-radius: 20px;
+  background:
+    linear-gradient(100deg, #102f48ed, #061b2eee 68%, #08203aee),
+    var(--history-ore-art) right bottom / 138px auto no-repeat;
+  box-shadow: inset 0 1px 5px #fff3, 0 4px 10px #0009, 0 0 8px #d39c2a55;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-balance-icon {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  filter: drop-shadow(0 2px 4px #000b);
+}
+.ayala-frame:has(.financial-history-page) .financial-history-balance-copy { z-index: 1; min-width: 0; }
+.ayala-frame:has(.financial-history-page) .financial-history-eyebrow {
+  display: block;
+  color: #f4d881;
+  font: 600 9px/1.25 'DM Sans', sans-serif;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-balance-copy strong {
+  display: block;
+  margin-top: 2px;
+  color: #ffdf77;
+  font: 800 clamp(35px, 10vw, 42px)/1.03 'Barlow Condensed', sans-serif;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 5px #000b;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-balance-copy p {
+  max-width: 230px;
+  margin: 4px 0 0;
+  color: #eee7d5;
+  font: 500 11px/1.35 'DM Sans', sans-serif;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-available {
+  display: block;
+  margin-top: 4px;
+  color: #f2cf71;
+  font: 600 9px/1.25 'DM Sans', sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-ore { position: absolute; right: 0; bottom: 0; width: 45%; height: 100%; opacity: .24; pointer-events: none; }
+.ayala-frame:has(.financial-history-page) .financial-history-inline-retry { position: absolute; right: 10px; top: 8px; border: 1px solid #d7b759; border-radius: 9px; padding: 4px 7px; color: #ffe5a4; background: #071b2c; font-size: 9px; }
+.ayala-frame:has(.financial-history-page) .financial-history-tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 78px 76px 39px;
+  gap: 6px;
+  padding: 2px 12px 11px;
+}
+.ayala-frame:has(.financial-history-page) .history-search,
+.ayala-frame:has(.financial-history-page) .history-select,
+.ayala-frame:has(.financial-history-page) .history-export {
+  height: 38px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #d6ae4d;
+  border-radius: 22px;
+  color: #ffe7a6;
+  background: linear-gradient(180deg, #123f5c, #061b30);
+  box-shadow: inset 0 1px 2px #fff2, 0 2px 4px #0009;
+}
+.ayala-frame:has(.financial-history-page) .history-search { padding: 0 10px; }
+.ayala-frame:has(.financial-history-page) .history-search svg,
+.ayala-frame:has(.financial-history-page) .history-select svg { width: 17px; height: 17px; flex: 0 0 auto; }
+.ayala-frame:has(.financial-history-page) .history-search input {
+  min-width: 0;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: #fff6dc;
+  background: transparent;
+  font: 500 11px/1 'DM Sans', sans-serif;
+}
+.ayala-frame:has(.financial-history-page) .history-search input::placeholder { color: #d0d5d8; opacity: .92; }
+.ayala-frame:has(.financial-history-page) .history-select { position: relative; padding: 0 7px; }
+.ayala-frame:has(.financial-history-page) .history-select select {
+  min-width: 0;
+  width: 100%;
+  appearance: none;
+  padding: 0 8px 0 0;
+  border: 0;
+  outline: 0;
+  color: #fff5da;
+  background: transparent;
+  font: 500 10px/1 'DM Sans', sans-serif;
+}
+.ayala-frame:has(.financial-history-page) .history-select select option { color: #102a3b; background: #f5f0df; }
+.ayala-frame:has(.financial-history-page) .history-select::after {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid #ffe4a0;
+  border-bottom: 1.5px solid #ffe4a0;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.ayala-frame:has(.financial-history-page) .history-export { justify-content: center; border-radius: 15px; cursor: pointer; }
+.ayala-frame:has(.financial-history-page) .history-export svg { width: 21px; height: 21px; }
+.ayala-frame:has(.financial-history-page) .financial-history-records { flex: 1 0 auto; padding: 2px 12px 14px; }
+.ayala-frame:has(.financial-history-page--balance) .financial-history-records { flex: 0 0 auto; }
+.ayala-frame:has(.financial-history-page) .financial-history-card {
+  --history-status-color: #c7a343;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 12px;
+  padding: 1px;
+  border: 1px solid var(--history-status-color);
+  border-radius: 19px;
+  background:
+    linear-gradient(160deg, #103853, #04172b 75%) padding-box,
+    linear-gradient(135deg, #ffe29a, #b7811d 20%, #092a42 39%, #d6a83b 62%, #08213a 79%, #ffe597) border-box;
+  box-shadow: 0 3px 7px #000b, 0 0 5px color-mix(in srgb, var(--history-status-color) 52%, transparent);
+  animation: history-card-in .34s ease both;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-card:last-child { margin-bottom: 0; }
+.ayala-frame:has(.financial-history-page) .financial-history-card::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1px solid color-mix(in srgb, var(--history-status-color) 68%, #071a2c);
+  border-radius: 16px;
+  pointer-events: none;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-card--succeeded { --history-status-color: #20d365; }
+.ayala-frame:has(.financial-history-page) .financial-history-card--pending { --history-status-color: #e9bb43; }
+.ayala-frame:has(.financial-history-page) .financial-history-card--failed { --history-status-color: #ef4841; }
+.ayala-frame:has(.financial-history-page) .financial-history-card--unknown { --history-status-color: #a5b4bf; }
+.ayala-frame:has(.financial-history-page) .financial-history-card > * { position: relative; z-index: 1; }
+.ayala-frame:has(.financial-history-page) .financial-history-card-heading {
+  min-height: 50px;
+  margin: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #b68d3c;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-card-emblem { width: 37px; height: 39px; flex: 0 0 37px; display: grid; place-items: center; }
+.ayala-frame:has(.financial-history-page) .financial-history-card-emblem svg { width: 35px; height: 35px; filter: drop-shadow(0 2px 2px #000c); }
+.ayala-frame:has(.financial-history-page) .financial-history-card-coin-mark { width: 34px; height: 34px; flex: 0 0 34px; filter: drop-shadow(0 2px 2px #000b); }
+.ayala-frame:has(.financial-history-page) .financial-history-card-title-wrap { flex: 1; min-width: 0; }
+.ayala-frame:has(.financial-history-page) .financial-history-card-title {
+  display: block;
+  overflow: hidden;
+  color: #fff4ce;
+  font: 700 18px/1.1 'Barlow Condensed', sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-card-title-wrap > span { display: block; margin-top: 2px; color: #c6d2d8; font-size: 10px; }
+.ayala-frame:has(.financial-history-page) .financial-history-card-heading > strong[data-testid="status-financial-history"] {
+  max-width: 105px;
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border: 1px solid color-mix(in srgb, var(--history-status-color) 88%, white);
+  border-radius: 18px;
+  color: #fff;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--history-status-color) 80%, white), color-mix(in srgb, var(--history-status-color) 83%, #03172b));
+  box-shadow: inset 0 1px 2px #fff8, 0 1px 4px #0008;
+  font: 700 12px/1 'DM Sans', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-card--pending .financial-history-card-heading > strong { animation: history-pending-pulse 2.8s ease-in-out infinite; }
+.ayala-frame:has(.financial-history-page) .financial-history-card-body { min-height: 100px; margin: 0 10px 8px; display: flex; gap: 8px; }
+.ayala-frame:has(.financial-history-page) .financial-history-card-art {
+  width: 112px;
+  min-height: 100px;
+  flex: 0 0 112px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at 50% 78%, #123b4d, #061a2d 72%);
+}
+
+/* Keep the dock in its own row, independent of legacy member-shell offsets. */
+#root .ayala-frame:has(.financial-history-page) {
+  width: min(100%, 480px);
+  max-width: 480px;
+  height: 100dvh;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#root .ayala-frame:has(.financial-history-page) .ayala-canvas {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  transform: none;
+}
+#root .ayala-frame .financial-history-page {
+  display: grid;
+  grid-template-rows: 148px minmax(0, 1fr) calc(84px + env(safe-area-inset-bottom, 0px));
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+}
+#root .ayala-frame .financial-history-page > .financial-history-scroll {
+  min-width: 0;
+  min-height: 0;
+  padding-bottom: 12px;
+  overflow-y: auto;
+  scroll-padding-block: 12px;
+}
+#root .ayala-frame .financial-history-scroll > * { flex-shrink: 0; }
+#root .ayala-frame .financial-history-page > .ayala-bottom {
+  position: relative;
+  inset: auto;
+  width: calc(100% - 18px);
+  max-width: none;
+  height: 74px;
+  min-height: 74px;
+  margin: 5px 9px;
+  padding: 5px 4px;
+  transform: none;
+  backdrop-filter: none;
+}
+#root .ayala-frame .financial-history-field--reference {
+  display: block;
+  min-height: 42px;
+  padding: 4px 0;
+}
+#root .ayala-frame .financial-history-field--reference dd {
+  width: 100%;
+  max-width: none;
+  margin: 3px 0 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  text-align: left;
+  font: 10.5px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+  color: #f4e9c8;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-card-art img { display: block; width: 100%; height: 100%; min-height: 100px; object-fit: cover; }
+.ayala-frame:has(.financial-history-page) .financial-history-card-art svg { width: 42px; height: 42px; filter: drop-shadow(0 4px 3px #000a); }
+.ayala-frame:has(.financial-history-page) .financial-history-card-fields { min-width: 0; flex: 1; margin: 0; padding: 1px 0 0; }
+.ayala-frame:has(.financial-history-page) .financial-history-field {
+  min-height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #d9e0e3;
+  font: 500 12px/1.2 'DM Sans', sans-serif;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-field + .financial-history-field { border-top: 1px solid #ffffff14; }
+.ayala-frame:has(.financial-history-page) .financial-history-field-label { min-width: 0; color: #e3e7e5; }
+.ayala-frame:has(.financial-history-page) .financial-history-field-value {
+  margin: 0;
+  min-width: 0;
+  max-width: 72%;
+  color: #fff;
+  font: 500 11px/1.2 'DM Sans', sans-serif;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-field-value--amount {
+  padding: 3px 8px;
+  border: 1px solid #ffe38c;
+  border-radius: 14px;
+  color: #13243a;
+  background: linear-gradient(180deg, #fff0a1, #d69c20);
+  font-weight: 800;
+  white-space: nowrap;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-empty,
+.ayala-frame:has(.financial-history-page) .financial-history-error {
+  margin: 0 12px 15px;
+  min-height: 145px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #bd9236;
+  border-radius: 18px;
+  color: #cbd5d9;
+  background: linear-gradient(160deg, #103853, #061c31);
+  box-shadow: inset 0 1px 3px #fff2, 0 3px 8px #0007;
+  text-align: center;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-empty svg { width: 35px; height: 35px; color: #e9bd4c; }
+.ayala-frame:has(.financial-history-page) .financial-history-empty strong,
+.ayala-frame:has(.financial-history-page) .financial-history-error strong { color: #fff1be; font: 700 15px 'Barlow Condensed', sans-serif; }
+.ayala-frame:has(.financial-history-page) .financial-history-empty span,
+.ayala-frame:has(.financial-history-page) .financial-history-error span { font-size: 11px; }
+.ayala-frame:has(.financial-history-page) .financial-history-export-error { margin: -5px 15px 10px; color: #ffc7a8; font: 500 10px 'DM Sans', sans-serif; }
+.ayala-frame:has(.financial-history-page) .financial-history-error { min-height: 130px; border-color: #c55d48; }
+.ayala-frame:has(.financial-history-page) .financial-history-error button {
+  margin-top: 4px;
+  padding: 7px 14px;
+  border: 1px solid #e9c45c;
+  border-radius: 15px;
+  color: #fff2c6;
+  background: #08253c;
+  font: 600 11px 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-more {
+  display: block;
+  margin: 6px auto 15px;
+  max-width: calc(100% - 28px);
+  padding: 11px 18px;
+  border: 1px solid #f1cf75;
+  border-radius: 22px;
+  color: #fff0be;
+  background: linear-gradient(#124260, #061b2e);
+  box-shadow: inset 0 1px 2px #fff4, 0 2px 4px #0009;
+  font: 600 11px 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-more:disabled { opacity: .65; cursor: wait; }
+.ayala-frame:has(.financial-history-page) .financial-history-refinery {
+  height: 126px;
+  min-height: 126px;
+  margin: auto 0 4px;
+  overflow: hidden;
+  opacity: .92;
+  mask-image: linear-gradient(180deg, transparent, #000 10%, #000 94%, transparent);
+}
+.ayala-frame:has(.financial-history-page--balance) .financial-history-refinery { margin: 12px 0 4px; }
+.ayala-frame:has(.financial-history-page--balance) .financial-history-refinery { height: 270px; min-height: 270px; }
+.ayala-frame:has(.financial-history-page) .financial-history-refinery img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+.ayala-frame:has(.financial-history-page) .history-skeleton {
+  min-height: 140px;
+  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid #90712e;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #0a2a43, #133951, #0a2a43);
+  animation: history-skeleton-pulse 1.7s ease-in-out infinite;
+}
+.ayala-frame:has(.financial-history-page) .history-skeleton i { display: block; height: 9px; width: 64%; margin: 9px 0; border-radius: 6px; background: #e9d28b33; }
+.ayala-frame:has(.financial-history-page) .history-skeleton i:first-child { width: 42%; height: 15px; }
+.ayala-frame:has(.financial-history-page) .ayala-bottom {
+  left: 9px;
+  right: 9px;
+  bottom: max(4px, env(safe-area-inset-bottom));
+  height: 73px;
+  padding: 5px 4px;
+  justify-content: space-around;
+  border: 1px solid #f0c34e;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #123d59, #041a2f 72%, #061e34);
+  box-shadow: inset 0 1px 4px #fff3, 0 3px 8px #000b, 0 0 8px #d69f32a8;
+}
+.ayala-frame:has(.financial-history-page) .ayala-bottom::before { content: ""; position: absolute; inset: 3px; border: 1px solid #c1932e; border-radius: 14px; pointer-events: none; }
+.ayala-frame:has(.financial-history-page) .ayala-nav-item {
+  position: relative;
+  z-index: 1;
+  width: 20%;
+  height: 57px;
+  gap: 1px;
+  color: #ecddb4;
+  font: 500 12px/1 'DM Sans', sans-serif;
+  background: transparent;
+}
+.ayala-frame:has(.financial-history-page) .ayala-nav-icon { height: 28px; color: #ffd15c; filter: drop-shadow(0 1px 2px #000); }
+.ayala-frame:has(.financial-history-page) .ayala-nav-icon svg { width: 27px; height: 27px; }
+.ayala-frame:has(.financial-history-page) .ayala-nav-item.active {
+  height: 59px;
+  color: #1a1d1c;
+  border: 1px solid #fff0a0;
+  border-radius: 13px;
+  background: linear-gradient(150deg, #fff0a1, #eeb72f 52%, #b67610);
+  box-shadow: inset 0 1px 3px #fff, inset 0 -2px 2px #9b6510, 0 1px 5px #ffc73a69;
+  font-weight: 700;
+}
+.ayala-frame:has(.financial-history-page) .ayala-nav-item.active .ayala-nav-icon { color: #17314a; background: transparent; border-radius: 0; filter: none; }
+.ayala-frame:has(.financial-history-page) .ayala-nav-item.active .ayala-nav-icon svg { background: none; }
+.ayala-frame:has(.financial-history-page) .ayala-gift { position: static; transform: none; width: 28px; height: 27px; border: 0; border-radius: 0; background: none; color: #ffd15c; box-shadow: none; }
+.ayala-frame:has(.financial-history-page) .ayala-gift svg { width: 26px; height: 26px; }
+.ayala-frame:has(.financial-history-page) button:focus-visible,
+.ayala-frame:has(.financial-history-page) input:focus-visible,
+.ayala-frame:has(.financial-history-page) select:focus-visible {
+  outline: 2px solid #fff0a2;
+  outline-offset: 2px;
+}
+.ayala-frame:has(.financial-history-page) .financial-history-page button:active { transform: translateY(1px); }
+@keyframes history-card-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes history-skeleton-pulse { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
+@keyframes history-pending-pulse { 0%, 100% { opacity: .82; } 50% { opacity: 1; } }
+@media (max-width: 390px) {
+  .ayala-frame:has(.financial-history-page) .financial-history-tools { grid-template-columns: minmax(0, 1fr) 72px 69px 36px; gap: 5px; padding-right: 10px; padding-left: 10px; }
+  .ayala-frame:has(.financial-history-page) .history-search { padding: 0 8px; }
+  .ayala-frame:has(.financial-history-page) .history-search input { font-size: 9px; }
+  .ayala-frame:has(.financial-history-page) .history-select { padding: 0 5px; gap: 3px; }
+  .ayala-frame:has(.financial-history-page) .history-select select { font-size: 8px; }
+}
+@media (min-width: 430px) {
+  .ayala-frame:has(.financial-history-page) .financial-history-tools { grid-template-columns: minmax(0, 1fr) 89px 84px 42px; }
+  .ayala-frame:has(.financial-history-page) .financial-history-card-heading { min-height: 60px; }
+  .ayala-frame:has(.financial-history-page) .financial-history-field { min-height: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ayala-frame:has(.financial-history-page) *,
+  .ayala-frame:has(.financial-history-page) *::before,
+  .ayala-frame:has(.financial-history-page) *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+.ayala-frame:has(.financial-history-page) .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }

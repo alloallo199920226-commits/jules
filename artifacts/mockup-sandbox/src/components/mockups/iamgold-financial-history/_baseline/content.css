@@ -1,0 +1,144 @@
+/* Account and home surfaces */
+.ayala-profile-banner { position: relative; height: auto; padding: 25px 25px 20px; background: linear-gradient(112deg,#ece7d9,#f3f2e9 56%,#e1ebe3); }
+.ayala-profile-row { display: flex; align-items: center; gap: 14px; }
+.ayala-avatar { display: grid; width: 58px; height: 58px; place-items: center; border-radius: 18px; background: var(--ig-forest); color: #fff; font: 700 28px 'Manrope', sans-serif; }
+.ayala-member { color: var(--ig-ink); font-size: 17px; font-weight: 750; }
+.ayala-subline { margin-top: 3px; color: #5d6e66; font-size: 13px; line-height: 1.5; }
+.ayala-profile-icon { display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border: 1px solid #d9d7ca; border-radius: 14px; background: #fffdf7; color: var(--ig-forest); cursor: pointer; }
+.member-locked { margin: 14px 0 0 72px; color: #68756f; font-size: 12px; }
+.ayala-diamond { height: auto; min-height: 116px; margin-top: 17px; padding: 20px 22px; border: 1px solid rgb(255 255 255 / 18%); border-radius: 18px; background: linear-gradient(115deg,#263f37,#47634e); color: #fffdf5; box-shadow: 0 12px 24px rgb(30 54 43 / 14%); }
+.ayala-diamond-title { display: flex; align-items: center; gap: 9px; font: 700 17px 'Manrope', sans-serif; }
+.member-vip-description { margin-top: 10px; color: #e3dece; font-size: 13px; }
+.ayala-progress { height: 5px; margin-top: 15px; border-radius: 99px; background: rgb(255 255 255 / 25%); }
+.ayala-shortcuts { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px 6px; padding: 18px 12px; text-align: center; }
+.ayala-shortcut-icon { display: grid; width: 48px; height: 48px; place-items: center; margin: 0 auto 8px; border: 1px solid rgb(24 58 50 / 7%); border-radius: 16px; background: #e9eee8 !important; color: var(--ig-forest); }
+.member-shortcut { min-width: 0; }
+.ayala-shortcut-label {
+  display: block;
+  min-height: 2.7em;
+  white-space: normal;
+  color: #52625b;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.member-account-main { max-width: 1120px; margin: 0 auto; padding: 18px 24px 28px; }
+.member-income { height: auto; min-height: 145px; margin-top: 16px; padding: 20px 22px; }
+.member-income > strong { color: var(--ig-ink); font: 700 18px 'Manrope', sans-serif; }
+.member-muted { color: #75827b; font-size: 12px; }
+.member-income .member-muted { margin-top: 12px; }
+.member-balances { margin-top: 4px; color: var(--ig-forest); font-size: 25px; font-weight: 750; font-variant-numeric: tabular-nums; }
+.member-income-links { display: flex; justify-content: space-between; gap: 14px; margin-top: 16px; }
+.member-income-links button { padding: 0; border: 0; background: none; text-align: left; cursor: pointer; }
+.member-income-links button:last-child { text-align: right; }
+.member-income-links span { display: block; color: #738078; font-size: 12px; }
+.member-income-links b { display: block; margin-top: 4px; color: var(--ig-forest); font: 700 22px 'Manrope', sans-serif; }
+.member-promo-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 14px; }
+.member-promo { position: relative; min-height: 108px; padding: 16px 66px 15px 17px; border: 1px solid #e8e0ce; border-radius: 17px; background: #efe8d8; color: var(--ig-ink); text-align: left; cursor: pointer; }
+.member-promo small { display: block; margin-top: 6px; color: #6f7b74; font-size: 12px; line-height: 1.45; }
+.member-promo > span { position: absolute; top: 50%; right: 14px; display: grid; width: 42px; height: 42px; place-items: center; transform: translateY(-50%); border-radius: 14px; background: var(--ig-forest); color: #f8f1df; }
+.promo-0 { background: #f0e8d7; }
+.promo-1 { background: #e5ebe4; }
+.promo-1 > span { background: #496d5b; }
+.member-brand { display: flex; align-items: center; height: 70px; padding: 0 25px; background: var(--ig-surface); }
+.member-brand .ayala-logo { width: 145px; }
+.member-brand-banner { display: grid; height: clamp(190px, 28vw, 300px); place-items: center; margin-bottom: 16px; overflow: hidden; border: 1px solid #d9d6ca; border-radius: 18px; background: #172d28; }
+.member-brand-banner > div { display: flex; align-items: center; color: white; font: 800 31px 'Manrope', sans-serif; letter-spacing: -.06em; }
+.member-brand-banner span { color: var(--ig-gold); }
+.member-brand-banner small { margin-left: 10px; padding-left: 10px; border-left: 1px solid #8a9387; font-size: 12px; letter-spacing: 0; }
+.member-brand-banner img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.member-home-shortcuts { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; padding: 17px 8px; text-align: center; }
+.member-home-shortcuts button { min-width: 0; border: 0; background: none; color: #53645c; font-size: 12px; font-weight: 600; cursor: pointer; }
+.member-home-shortcuts span { display: grid; width: 48px; height: 48px; place-items: center; margin: 0 auto 7px; border: 1px solid #e4e3d9; border-radius: 15px; background: #f1efe7; color: var(--ig-forest); }
+.member-home-section { margin-top: 14px; padding: 20px 22px; }
+.member-home-section > b { color: var(--ig-ink); font: 700 17px 'Manrope', sans-serif; }
+.member-invite-row { display: flex; align-items: center; gap: 11px; min-height: 72px; margin-top: 15px; padding: 12px; border: 1px solid #e8e1d1; border-radius: 14px; background: #f7f3e9; color: var(--ig-forest); }
+.member-invite-row > div { min-width: 0; flex: 1; color: #77837c; font-size: 12px; overflow-wrap: anywhere; }
+.member-invite-row > div > span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ig-ink); font-size: 13px; }
+.member-invite-row button, .member-activity button { min-height: 40px; padding: 0 15px; border: 0; border-radius: 11px; background: var(--ig-forest); color: #fffdf6; font-weight: 650; cursor: pointer; }
+.member-activity { display: flex; align-items: center; gap: 13px; padding: 17px 0 7px; }
+.member-activity > div { min-width: 0; flex: 1; }
+.member-activity small { display: block; margin-top: 3px; color: #748078; font-size: 12px; }
+.member-activity button { font-size: 12px; }
+.member-activity-icon { display: grid; width: 46px; height: 46px; place-items: center; border-radius: 15px; background: #eee7d8; color: var(--ig-forest); }
+.member-services { min-height: 65px; margin-top: 15px; padding: 19px 22px; }
+.member-services h2 { margin: 0; padding-left: 12px; border-left: 3px solid var(--ig-gold); font: 700 17px 'Manrope', sans-serif; }
+.member-service-links { display: flex; flex-direction: column; gap: 2px; margin-top: 14px; }
+.member-service-links button { padding: 11px 0; border: 0; border-bottom: 1px solid #eeece4; background: none; color: #52635b; text-align: left; cursor: pointer; }
+
+/* Content pages: consistent type, readable width and quiet interaction states. */
+.member-invest-layout { display: flex; height: calc(100% - 150px); min-height: 0; }
+.member-invest-layout > aside { width: 142px; flex: 0 0 142px; padding-top: 17px; border-right: 1px solid var(--ig-line); background: #f0eee6; }
+.member-invest-layout > aside button { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; width: 100%; min-height: 84px; border: 0; border-left: 3px solid transparent; background: transparent; color: #718078; font-size: 13px; font-weight: 600; cursor: pointer; }
+.member-invest-layout > aside .selected { border-left-color: var(--ig-gold); background: #e9e5d8; color: var(--ig-forest); }
+/* Keep cards in natural document flow: constrained grid rows can clip their
+   contents because these rounded cards use overflow:hidden. */
+.member-invest-list { display: block; padding: 22px clamp(16px,3vw,34px) 40px; }
+.ayala-frame .member-invest-list { max-height: 100%; }
+.member-invest-card { min-width: 0; height: auto; margin: 0 0 16px; overflow: hidden; border-radius: 18px; }
+.member-invest-image { height: clamp(140px,18vw,220px); background: linear-gradient(135deg,#d6d1bc,#7c927a 55%,#324d40); }
+.member-invest-card section { padding: 17px; }
+.member-invest-card section > b { display: block; min-height: 44px; color: var(--ig-ink); font: 700 17px/1.35 'Manrope', sans-serif; }
+.member-invest-value { display: flex; justify-content: space-between; gap: 8px; margin-top: 9px; font-size: 13px; }
+.member-invest-value > span:first-child { color: #738078; }
+.member-invest-value > span:last-child { color: var(--ig-ink); font-weight: 650; text-align: right; }
+.member-invest-card .ayala-soft-button { width: 100%; margin-top: 17px; }
+.member-empty { grid-column: 1/-1; padding: 38px 12px; color: #738078; text-align: center; }
+.member-notice { display: flex; align-items: center; gap: 15px; width: 100%; min-height: 92px; margin: 0 0 12px; padding: 16px; border: 1px solid var(--ig-line); border-radius: 17px; background: var(--ig-surface); text-align: left; cursor: pointer; }
+.member-notice b { font: 700 15px 'Manrope', sans-serif; }
+.member-notice small { display: block; margin-top: 5px; color: #78837c; font-size: 12px; }
+.member-mission-banner { position: relative; height: 230px; overflow: hidden; background: linear-gradient(120deg,#183a32,#45634e); color: #fffdf5; }
+.member-mission-banner > p { margin: 0; padding: 17px 24px 0; color: #d9dfd4; font-size: 14px; }
+.member-mission-banner > strong { display: block; padding: 13px 24px; font-size: 15px; }
+.member-mission-banner > strong > b { font: 700 38px 'Manrope', sans-serif; }
+.member-mission-banner > img { position: absolute; right: 16px; bottom: 22px; width: min(35%, 220px); height: 135px; object-fit: contain; }
+.member-mission-link { position: relative; display: flex; align-items: center; gap: 14px; min-height: 88px; margin: -34px 20px 16px; padding: 16px; }
+.member-mission-link > svg { flex: 0 0 30px; color: var(--ig-gold); }
+.member-mission-link > div { min-width: 0; flex: 1; color: #52645b; font-size: 13px; font-weight: 600; overflow-wrap: anywhere; }
+.member-mission-link > div > span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #758078; font-size: 12px; font-weight: 400; }
+.member-missions { margin: 0 20px 24px; padding: 20px; }
+.member-missions > b { display: block; margin-bottom: 8px; font: 700 20px 'Manrope', sans-serif; }
+.member-mission-description { margin: 0 0 20px; color: #76827b; font-size: 13px; line-height: 1.5; }
+.member-mission-row { position: relative; display: flex; gap: 13px; margin-bottom: 15px; }
+.member-mission-row > svg { flex: 0 0 32px; padding: 5px; border: 1px solid #dfe6dd; border-radius: 50%; color: #547764; }
+.member-mission-row:not(:last-child)::before { position: absolute; top: 38px; bottom: -10px; left: 15px; width: 1px; background: #dfe4da; content: ""; }
+.member-mission-row article { min-width: 0; flex: 1; padding: 15px; border: 1px solid #ebe9e0; border-radius: 15px; background: #fbfaf5; }
+.member-mission-row article > b { font-size: 14px; }
+.member-mission-row article > div { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; margin-top: 11px; font-size: 15px; text-align: center; }
+.member-mission-row small { display: block; color: #79847e; font-size: 11px; font-weight: 400; }
+.member-mission-row article > div > span:last-child { color: #547764; }
+.member-forum-banner { padding: 0 0 17px; background: var(--ig-forest); color: #fffdf5; }
+.member-forum-banner > .member-row { justify-content: flex-start; padding: 12px 20px; }
+.member-forum-banner small { display: block; font-size: 12px; opacity: .8; }
+.member-forum-banner .ayala-soft-button { margin-left: auto; border-color: #ffffff42; background: #ffffff12; }
+.member-forum-rules { width: 100%; padding: 17px; border: 1px solid #e4d9bd; border-radius: 16px; background: #f5efdf; color: var(--ig-ink); text-align: left; cursor: pointer; }
+.member-forum-rules > b { color: #846b3e; }
+.member-forum-rules strong { display: block; margin-top: 8px; }
+.member-forum-rules p { margin: 5px 0 0; color: #68746d; line-height: 1.6; }
+.member-post { margin-top: 13px; overflow: hidden; }
+.member-post header { display: flex; align-items: center; gap: 10px; padding: 16px 17px 5px; }
+.member-post header small { display: block; color: #78837c; font-size: 12px; }
+.member-post > p { padding: 8px 17px 14px; font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.member-post > img { display: block; max-width: calc(100% - 34px); max-height: 500px; margin: 0 auto 15px; border-radius: 12px; object-fit: contain; }
+.member-post footer { padding: 12px 17px; border-top: 1px solid #eeece5; color: #7b867f; font-size: 12px; }
+.member-publish { min-height: 0; padding: 22px; }
+.member-publish > label:first-child, .member-publish > b { color: var(--ig-ink); font-weight: 700; }
+.member-publish textarea { display: block; width: 100%; min-height: 178px; margin-top: 10px; padding: 15px; resize: vertical; border: 1px solid #dddcd2; border-radius: 13px; background: #fbfaf6; color: var(--ig-ink); font: 15px/1.55 'DM Sans', sans-serif; }
+.member-publish > b { display: block; margin-top: 22px; }
+.member-image-picker { display: grid; width: 104px; height: 104px; place-items: center; margin: 12px 0; overflow: hidden; border: 1px dashed #bdb8a7; border-radius: 15px; background: #f7f5ee; color: #68766e; cursor: pointer; }
+.member-image-picker img { width: 100%; height: 100%; object-fit: cover; }
+.member-publish input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.member-publish-button { width: 100%; min-height: 50px; margin-top: 16px; }
+.member-consent { display: flex; align-items: center; justify-content: center; gap: 7px; margin: 0 0 14px; color: #738078; font-size: 12px; }
+.member-welcome-dialog, .member-publish-dialog { padding: 20px; }
+.member-welcome-dialog .ayala-modal, .member-publish-dialog .ayala-modal { padding: 34px 26px 26px; }
+.member-telegram { display: grid; width: 68px; height: 68px; place-items: center; margin: 0 auto 18px; overflow: hidden; border-radius: 20px; background: #e7e5d8; }
+.member-telegram img { width: 100%; height: 100%; object-fit: contain; }
+.member-welcome-dialog h2 { font-size: 22px; }
+.member-welcome-dialog p, .member-publish-dialog p { font-size: 15px; }
+.member-welcome-dialog .ayala-soft-button { min-height: 49px; background: var(--ig-forest); }
+.member-publish-dialog .ayala-modal-symbol { width: 66px; height: 66px; margin-bottom: 18px; background: #eee5d2; }
+.member-publish-dialog h2 { font-size: 21px; }
+.member-publish-privacy { margin: 15px 0 10px; color: #76827b; font-size: 12px; line-height: 1.55; }
+.ayala-modal .ayala-soft-button { width: 100%; }
+

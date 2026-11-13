@@ -118,10 +118,27 @@ export interface MemberTransaction {
   createdAt: string;
 }
 
+/**
+ * Totaux de toutes les écritures correspondant aux filtres, indépendamment de la pagination.
+ */
+export interface MemberTransactionSummary {
+  /** @minimum 0 */
+  total: number;
+  /** @minimum 0 */
+  succeeded: number;
+  /** @minimum 0 */
+  pending: number;
+  /** @minimum 0 */
+  failed: number;
+  /** @minimum 0 */
+  totalAmount: number;
+}
+
 export interface MemberTransactionPage {
   transactions: MemberTransaction[];
   /** @nullable */
   nextCursor: string | null;
+  summary: MemberTransactionSummary;
 }
 
 export interface MemberWallet {
@@ -515,6 +532,12 @@ export const ListModerationPostsStatus = {
 export type ListMemberTransactionsParams = {
 kind?: ListMemberTransactionsKind;
 cursor?: string;
+/**
+ * @maxLength 120
+ */
+search?: string;
+period?: ListMemberTransactionsPeriod;
+status?: ListMemberTransactionsStatus;
 };
 
 export type ListMemberTransactionsKind = typeof ListMemberTransactionsKind[keyof typeof ListMemberTransactionsKind];
@@ -524,6 +547,26 @@ export const ListMemberTransactionsKind = {
   all: 'all',
   recharges: 'recharges',
   withdrawals: 'withdrawals',
+} as const;
+
+export type ListMemberTransactionsPeriod = typeof ListMemberTransactionsPeriod[keyof typeof ListMemberTransactionsPeriod];
+
+
+export const ListMemberTransactionsPeriod = {
+  all: 'all',
+  '7d': '7d',
+  '30d': '30d',
+  '90d': '90d',
+} as const;
+
+export type ListMemberTransactionsStatus = typeof ListMemberTransactionsStatus[keyof typeof ListMemberTransactionsStatus];
+
+
+export const ListMemberTransactionsStatus = {
+  all: 'all',
+  succeeded: 'succeeded',
+  pending: 'pending',
+  failed: 'failed',
 } as const;
 
 export type GetMemberTeamParams = {

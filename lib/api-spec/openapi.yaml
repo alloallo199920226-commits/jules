@@ -162,6 +162,9 @@ paths:
       parameters:
         - {name: kind, in: query, schema: {type: string, enum: [all, recharges, withdrawals], default: all}}
         - {name: cursor, in: query, schema: {type: string, format: uuid}}
+        - {name: search, in: query, schema: {type: string, maxLength: 120}}
+        - {name: period, in: query, schema: {type: string, enum: [all, 7d, 30d, 90d], default: all}}
+        - {name: status, in: query, schema: {type: string, enum: [all, succeeded, pending, failed], default: all}}
       responses:
         "200":
           description: Opérations du membre, les plus récentes en premier, par pages de cinquante.
@@ -694,10 +697,21 @@ components:
         createdAt: {type: string, format: date-time}
     MemberTransactionPage:
       type: object
-      required: [transactions, nextCursor]
+      required: [transactions, nextCursor, summary]
       properties:
         transactions: {type: array, items: {$ref: "#/components/schemas/MemberTransaction"}}
         nextCursor: {type: ["string", "null"], format: uuid}
+        summary: {$ref: "#/components/schemas/MemberTransactionSummary"}
+    MemberTransactionSummary:
+      type: object
+      description: Totaux de toutes les écritures correspondant aux filtres, indépendamment de la pagination.
+      required: [total, succeeded, pending, failed, totalAmount]
+      properties:
+        total: {type: integer, minimum: 0}
+        succeeded: {type: integer, minimum: 0}
+        pending: {type: integer, minimum: 0}
+        failed: {type: integer, minimum: 0}
+        totalAmount: {type: integer, minimum: 0}
     MemberWallet:
       type: object
       required: [balance, credits, transactions]

@@ -6,9 +6,11 @@
  * OpenAPI spec version: 0.1.0
  */
 import type { MemberTransaction } from './memberTransaction';
+import type { MemberTransactionSummary } from './memberTransactionSummary';
 
 export interface MemberTransactionPage {
   transactions: MemberTransaction[];
   /** @nullable */
   nextCursor: string | null;
+  summary: MemberTransactionSummary;
 }

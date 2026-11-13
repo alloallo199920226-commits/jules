@@ -14,5 +14,10 @@ export const modules: ModuleMap = {
   "./components/mockups/ayala-auth/Register.tsx": () => import("../components/mockups/ayala-auth/Register.tsx"),
   "./components/mockups/ayala-auth/TransactionPassword.tsx": () => import("../components/mockups/ayala-auth/TransactionPassword.tsx"),
   "./components/mockups/iamgold-before-premium/Current.tsx": () => import("../components/mockups/iamgold-before-premium/Current.tsx"),
-  "./components/mockups/iamgold-before-premium/Premium.tsx": () => import("../components/mockups/iamgold-before-premium/Premium.tsx")
+  "./components/mockups/iamgold-before-premium/Premium.tsx": () => import("../components/mockups/iamgold-before-premium/Premium.tsx"),
+  "./components/mockups/iamgold-financial-history/Balance.tsx": () => import("../components/mockups/iamgold-financial-history/Balance.tsx"),
+  "./components/mockups/iamgold-financial-history/Current.tsx": () => import("../components/mockups/iamgold-financial-history/Current.tsx"),
+  "./components/mockups/iamgold-financial-history/HistoryPreview.tsx": () => import("../components/mockups/iamgold-financial-history/HistoryPreview.tsx"),
+  "./components/mockups/iamgold-financial-history/Recharges.tsx": () => import("../components/mockups/iamgold-financial-history/Recharges.tsx"),
+  "./components/mockups/iamgold-financial-history/Withdrawals.tsx": () => import("../components/mockups/iamgold-financial-history/Withdrawals.tsx")
 };

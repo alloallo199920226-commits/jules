@@ -149,7 +149,7 @@ La référence « Niveau VIP » définit cinq paliers officiels : VIP 0 = 0 FCFA
 
 Une refonte visuelle doit être comparée dans la page authentifiée complète, après chargement de toutes les feuilles de style.
 
-**Why:** les anciens styles globaux ont déjà rétabli des fonds pâles et des contraintes de mise en page malgré une nouvelle feuille locale correcte ; la compilation et les composants isolés ne révélaient pas ces écarts.
+**Why:** les anciens styles globaux ont déjà rétabli des fonds pâles et des contraintes de mise en page malgré une nouvelle feuille locale correcte ; la compilation et les composants isolés ne révélaient pas ces écarts. Un aperçu isolé correct ne garantit pas non plus la hauteur utile ni la position de la navigation dans l’application complète.
 
 **How to apply:** vérifier les couleurs réellement calculées, les proportions et la visibilité des illustrations dans le contexte final ; isoler les nouveaux styles à la page concernée sans modifier les autres parcours.
 

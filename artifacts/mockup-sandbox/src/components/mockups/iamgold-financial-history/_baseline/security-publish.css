@@ -1,0 +1,582 @@
+/* Phone-first security and publishing surfaces. Isolated from all other AYALA routes. */
+body:has(.security-publish-supreme),
+#root:has(.security-publish-supreme) {
+  min-height: 100dvh;
+  background: #040e1d;
+}
+.ayala-frame:has(.security-publish-supreme) {
+  width: min(100%, 500px);
+  max-width: 500px;
+  height: 100dvh;
+  min-height: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  color: #eef1f4;
+  background: #06152b;
+  box-shadow: 0 18px 70px #0009;
+}
+.ayala-frame:has(.security-publish-supreme) .ayala-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: none;
+  background: #06152b;
+}
+.ayala-frame:has(.security-publish-supreme) .ayala-canvas::after { display: none; }
+.security-publish-supreme,
+.security-publish-supreme * { box-sizing: border-box; }
+.security-publish-supreme {
+  --security-night: #06152b;
+  --security-panel: #0a2039;
+  --security-gold: #d9a52e;
+  --security-champagne: #f5d47a;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  color: #eef1f4;
+  background:
+    radial-gradient(ellipse at 51% 39%, #153553 0%, transparent 52%),
+    linear-gradient(180deg, #07182d 0%, #06152b 62%, #040e1d 100%);
+  font: 500 14px/1.42 'DM Sans', sans-serif;
+}
+.security-publish-supreme::before {
+  position: fixed;
+  z-index: 4;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+  opacity: .045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
+}
+.ayala-frame:has(.security-publish-supreme) .supreme-masthead { flex: 0 0 149px; }
+.ayala-frame:has(.security-publish-supreme) .supreme-title-rail { flex: 0 0 auto; min-height: 64px; }
+.ayala-frame .publish-page .supreme-title-rail { grid-template-columns: 46px min-content minmax(0,1fr) 44px; }
+.ayala-frame .supreme-publish-help {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid #edce75;
+  color: #ffe39a;
+  background: linear-gradient(145deg, #284966, #091b2d 70%, #1e3b55);
+  box-shadow: inset 0 1px 0 #fff4, 0 2px 4px #0008;
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  cursor: pointer;
+}
+.ayala-frame .security-publish-scroll {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 12px 12px calc(17px + env(safe-area-inset-bottom));
+  scrollbar-width: none;
+}
+.ayala-frame .security-publish-scroll::-webkit-scrollbar { display: none; }
+.ayala-frame .security-form-panel,
+.ayala-frame .publish-form-panel { margin-bottom: 10px; padding: 12px 14px 15px; }
+.ayala-frame .security-form-panel .supreme-panel-content,
+.ayala-frame .publish-form-panel .supreme-panel-content { min-width: 0; }
+.ayala-frame .security-credential-art {
+  position: relative;
+  display: flex;
+  min-height: 132px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: -1px 0 9px;
+  border-bottom: 1px solid #d9a52e73;
+  background:
+    radial-gradient(ellipse at 50% 81%, #d9a52e32, transparent 54%),
+    linear-gradient(180deg, #07192c00, #06172c98);
+}
+.ayala-frame .security-credential-art::before,
+.ayala-frame .security-credential-art::after {
+  position: absolute;
+  right: 6%;
+  bottom: 8px;
+  left: 6%;
+  height: 22px;
+  border: 1px solid #f0cf6c;
+  border-radius: 50%;
+  content: '';
+  box-shadow: 0 5px 12px #0009, inset 0 1px 0 #fff8;
+  background: linear-gradient(180deg, #d9a52e88, #07192c);
+}
+.ayala-frame .security-credential-art::after {
+  right: 15%;
+  bottom: 14px;
+  left: 15%;
+  height: 13px;
+  opacity: .78;
+}
+.ayala-frame .security-credential-art img {
+  position: relative;
+  z-index: 1;
+  width: min(78%, 270px);
+  height: 134px;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 7px #0009);
+}
+.ayala-frame .security-credential-art span {
+  position: absolute;
+  z-index: 2;
+  bottom: 6px;
+  left: 50%;
+  padding: 2px 8px;
+  color: #f6dfa0;
+  background: #06172dd9;
+  font: 700 9px/1.2 'Barlow Condensed', sans-serif;
+  letter-spacing: .15em;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.ayala-frame .security-password-form { position: relative; z-index: 1; display: grid; gap: 8px; }
+.ayala-frame .security-field { display: grid; min-width: 0; gap: 5px; margin: 0; }
+.ayala-frame .security-field-label {
+  display: flex;
+  min-height: 25px;
+  align-items: center;
+  gap: 8px;
+  color: #fff2cc;
+  font: 600 14px/1.3 'DM Sans', sans-serif;
+}
+.ayala-frame .security-field-label svg { flex: 0 0 auto; color: #f2d174; filter: drop-shadow(0 1px 2px #000); }
+.ayala-frame .security-input-shell,
+.ayala-frame .security-otp-input {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  align-items: center;
+  border: 1px solid #e3bd60;
+  color: #192d40;
+  background: linear-gradient(180deg, #edf0f1, #cdd4d9);
+  box-shadow: inset 0 2px 4px #0003, 0 0 0 2px #c18d2a45, 0 2px 4px #0006;
+  clip-path: polygon(0 12px, 10px 0, calc(100% - 10px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 12px));
+}
+.ayala-frame .security-input {
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 0 13px;
+  border: 0;
+  outline: 0;
+  color: #192d40;
+  background: transparent;
+  font: 500 16px/1.25 'DM Sans', sans-serif;
+}
+.ayala-frame .security-input::placeholder { color: #53616d; opacity: .92; }
+.ayala-frame .security-input:focus-visible { outline: 2px solid #f6d779; outline-offset: -3px; }
+.ayala-frame .security-phone-shell { border-color: #efcf70; }
+.ayala-frame .security-input[readonly] { color: #172c40; opacity: 1; -webkit-text-fill-color: #172c40; }
+.ayala-frame .security-eye {
+  display: grid;
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 0;
+  color: #20374a;
+  background: transparent;
+  cursor: pointer;
+}
+.ayala-frame .security-eye:focus-visible,
+.ayala-frame .security-send-code:focus-visible,
+.ayala-frame .publish-file-action:focus-visible,
+.ayala-frame .publish-consent:focus-within { outline: 2px solid #ffe18a; outline-offset: 2px; }
+.ayala-frame .security-field-hint,
+.ayala-frame .security-code-status { color: #c5d0d9; font: 500 11px/1.4 'DM Sans', sans-serif; }
+.ayala-frame .security-code-status { color: #d8d9cf; }
+.ayala-frame .security-code-status.is-expired { color: #ffd19e; }
+.ayala-frame .security-code-row { display: grid; min-width: 0; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.ayala-frame .security-otp-input { height: 48px; padding: 0 12px; outline: 0; font: 500 16px/1.2 'DM Sans', sans-serif; }
+.ayala-frame .security-send-code {
+  display: inline-flex;
+  min-width: 106px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 1px solid #fff0ac;
+  color: #1b2836;
+  background: linear-gradient(180deg, #fff0a9, #e5b93e 48%, #ae7418);
+  box-shadow: inset 0 1px 0 #fff9d8, inset 0 -2px 0 #71480e, 0 2px 5px #0008;
+  clip-path: polygon(0 50%, 10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%);
+  font: 700 13px 'Barlow Condensed', sans-serif;
+  cursor: pointer;
+}
+.ayala-frame .security-send-code:disabled { opacity: .62; cursor: not-allowed; }
+.ayala-frame .security-feedback,
+.ayala-frame .publish-feedback {
+  margin: 3px 0 1px;
+  padding: 9px 11px;
+  border-left: 3px solid #dfad39;
+  color: #f2dfab;
+  background: #c38e1d18;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.ayala-frame .security-feedback.is-error,
+.ayala-frame .publish-feedback.is-error { border-color: #e39377; color: #ffd7c7; background: #7c322223; }
+.ayala-frame .security-feedback.is-success,
+.ayala-frame .publish-feedback.is-success { border-color: #aac4ae; color: #d8e7d7; background: #94b79a18; }
+.ayala-frame .security-feedback.is-info,
+.ayala-frame .publish-feedback.is-info { border-color: #7fb5c4; color: #d7e9ee; background: #39748824; }
+.ayala-frame .security-vault-scene {
+  position: relative;
+  display: grid;
+  min-height: 131px;
+  place-items: center;
+  overflow: hidden;
+  margin: 3px 0 0;
+  border-top: 1px solid #d6ad4d57;
+  background: radial-gradient(ellipse at 50% 90%, #c18b2b35, transparent 66%);
+}
+.ayala-frame .security-vault-scene img { width: min(92%, 350px); height: 164px; object-fit: contain; filter: drop-shadow(0 6px 6px #0009); }
+.ayala-frame .security-vault-scene span { position: absolute; bottom: 4px; color: #f3d984; font: 700 9px 'Barlow Condensed', sans-serif; letter-spacing: .14em; text-shadow: 0 2px 4px #000; }
+.ayala-frame .security-publish-supreme .supreme-support-rail { flex: 0 0 auto; margin: 6px 0 max(6px, env(safe-area-inset-bottom)); }
+
+/* Publish composition */
+.ayala-frame .publish-form { display: grid; gap: 12px; }
+.ayala-frame .publish-section-heading {
+  display: flex;
+  min-height: 39px;
+  align-items: center;
+  gap: 9px;
+  padding: 3px 10px;
+  border: 1px solid #d9a52e;
+  color: #fff0bd;
+  background: linear-gradient(100deg, #b47d20, #f2d477 3%, #102b46 8%, #08192d 87%, #dbb750 96%, #795519);
+  box-shadow: inset 0 1px 0 #fff6, 0 3px 6px #0007;
+  clip-path: polygon(0 50%, 13px 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 13px 100%);
+}
+.ayala-frame .publish-heading-mark { display: grid; width: 31px; height: 31px; flex: 0 0 31px; place-items: center; color: #f4d376; }
+.ayala-frame .publish-section-heading h2 { margin: 0; color: #fff3d1; font: 700 17px 'Barlow Condensed', sans-serif; }
+.ayala-frame .publish-heading-rule { height: 1px; flex: 1; background: linear-gradient(90deg, #d7b452, transparent); }
+.ayala-frame .publish-editor-wrap { position: relative; min-height: 135px; border: 2px solid #d9a52e; background: linear-gradient(145deg, #071b30, #0b2944 68%, #09213a); box-shadow: inset 0 0 0 2px #0a1729, inset 0 1px 10px #0009; }
+.ayala-frame .publish-editor-wrap::after { position: absolute; inset: 4px; border: 1px solid #d9a52e4d; pointer-events: none; content: ''; }
+.ayala-frame .publish-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }
+.ayala-frame .publish-editor {
+  display: block;
+  width: 100%;
+  min-height: 131px;
+  padding: 14px 82px 28px 15px;
+  border: 0;
+  outline: 0;
+  resize: vertical;
+  color: #f0f2f3;
+  background: transparent;
+  font: 500 16px/1.5 'DM Sans', sans-serif;
+}
+.ayala-frame .publish-editor::placeholder { color: #c6d0d8; font-style: italic; }
+.ayala-frame .publish-editor:focus-visible { box-shadow: inset 0 0 0 2px #f4d477; }
+.ayala-frame .publish-counter { position: absolute; z-index: 1; right: 10px; bottom: 7px; color: #cdd4da; font: 600 10px 'DM Sans', sans-serif; }
+.ayala-frame .publish-editor-art { position: absolute; top: 8px; right: 8px; display: grid; width: 65px; height: 83px; place-items: center; border: 1px solid #d8aa42; color: #efcb69; background: linear-gradient(150deg, #163854, #07182b); box-shadow: inset 0 1px #fff4, 0 4px 7px #0008; transform: rotate(3deg); pointer-events: none; }
+.ayala-frame .publish-editor-art svg { width: 40px; height: 40px; }
+.ayala-frame .publish-editor-art span { color: #e8cf8d; font: 700 8px/1.1 'Barlow Condensed', sans-serif; text-align: center; letter-spacing: .11em; }
+.ayala-frame .publish-proof-title {
+  display: grid;
+  min-height: 53px;
+  grid-template-columns: 31px minmax(0,1fr) 23px;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid #e3bc5d;
+  color: #fff3cf;
+  background: linear-gradient(100deg, #a9781e, #f1d276 3%, #112c48 8%, #08192d 87%, #e1bd59 96%, #8c631b);
+  box-shadow: inset 0 1px 0 #fff5, 0 3px 7px #0008;
+  clip-path: polygon(0 50%, 14px 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 14px 100%);
+  font: 700 13px/1.25 'DM Sans', sans-serif;
+}
+.ayala-frame .publish-proof-title > svg:first-child { color: #f3d478; }
+.ayala-frame .publish-proof-title > svg:last-child { justify-self: end; color: #f3d478; }
+.ayala-frame .publish-proof-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: stretch; gap: 9px; }
+.ayala-frame .publish-uploader {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 156px;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid #ddae40;
+  background: linear-gradient(145deg, #07182b, #102a42);
+  box-shadow: inset 0 0 0 2px #07172a, inset 0 1px 8px #0009;
+}
+.ayala-frame .publish-uploader::before { position: absolute; inset: 4px; border: 1px solid #e5c76b72; pointer-events: none; content: ''; }
+.ayala-frame .publish-uploader.has-preview { justify-content: flex-start; }
+.ayala-frame .publish-preview { width: 100%; height: 111px; object-fit: contain; background: #061426; }
+.ayala-frame .publish-upload-empty { display: flex; min-height: 101px; align-items: center; flex-direction: column; justify-content: center; gap: 2px; color: #f4d477; }
+.ayala-frame .publish-upload-empty > svg:nth-child(2) { position: absolute; top: 15px; right: 18px; width: 23px; height: 23px; padding: 3px; border: 1px solid #f2d476; background: #0a2138; }
+.ayala-frame .publish-upload-empty strong { color: #f7f0df; font-size: 13px; }
+.ayala-frame .publish-upload-empty span { color: #c8d1d9; font-size: 10px; text-align: center; }
+.ayala-frame .publish-file-input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); clip-path: inset(50%); white-space: nowrap; }
+.ayala-frame .publish-file-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; padding: 5px 6px 7px; }
+.ayala-frame .publish-file-action {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 9px;
+  border: 1px solid #d9bd66;
+  color: #f7e7ba;
+  background: linear-gradient(145deg, #173753, #08192d);
+  font: 600 11px/1.2 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+.ayala-frame .publish-file-action:disabled { opacity: .6; cursor: not-allowed; }
+.ayala-frame .publish-file-clear { color: #e4c5b2; border-color: #b88e73; }
+.ayala-frame .publish-file-meta { position: relative; z-index: 1; overflow: hidden; margin: 0; padding: 0 8px 7px; color: #cad2d8; font-size: 10px; text-align: center; text-overflow: ellipsis; white-space: nowrap; }
+.ayala-frame .publish-proof-art { display: grid; min-width: 0; min-height: 156px; place-items: center; overflow: hidden; background: radial-gradient(ellipse at 48% 90%, #bf8d2e31, transparent 70%); }
+.ayala-frame .publish-proof-art img { width: 120%; height: 174px; object-fit: contain; filter: drop-shadow(0 4px 6px #0008); }
+.ayala-frame .publish-privacy { display: grid; grid-template-columns: 29px minmax(0,1fr); align-items: center; gap: 8px; margin: 0; padding: 9px 10px; border: 1px solid #d2aa4c; color: #f0f0e9; background: linear-gradient(145deg, #102d48, #07192c); box-shadow: inset 0 1px 0 #fff3; font: 500 12px/1.4 'DM Sans', sans-serif; }
+.ayala-frame .publish-privacy svg { color: #f1d075; }
+.ayala-frame .publish-consent { display: flex; min-height: 48px; align-items: center; justify-content: center; gap: 10px; color: #f5e9c8; font: 600 15px 'DM Sans', sans-serif; cursor: pointer; }
+.ayala-frame .publish-consent input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.ayala-frame .publish-checkmark { display: grid; width: 27px; height: 27px; place-items: center; border: 2px solid #e2bf5d; color: transparent; background: linear-gradient(145deg,#07172a,#102b45); box-shadow: inset 0 1px 3px #0008; }
+.ayala-frame .publish-consent input:checked + .publish-checkmark { color: #13243a; background: linear-gradient(145deg, #fff0a5, #d7a42f); }
+.ayala-frame .publish-consent input:focus-visible + .publish-checkmark { outline: 2px solid #ffe18a; outline-offset: 3px; }
+.ayala-frame .publish-form-panel .supreme-submit { width: min(100%, 390px); margin-top: 0; }
+.ayala-frame .publish-visibility-note { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 2px 0 0; color: #c4cdd5; font-size: 10px; text-align: center; }
+.ayala-frame .publish-visibility-note svg { flex: 0 0 auto; color: #eccb6d; }
+.ayala-frame .publish-bottom-art { position: relative; display: flex; min-height: 125px; align-items: center; justify-content: center; overflow: hidden; border-top: 1px solid #d9a52e50; background: radial-gradient(ellipse at 50% 80%, #ca902638, transparent 63%); }
+.ayala-frame .publish-bottom-art > img { width: min(70%, 260px); height: 142px; object-fit: contain; opacity: .82; }
+.ayala-frame .publish-bottom-art > div { position: absolute; right: 4%; bottom: 12px; color: #f3e0ae; text-align: right; text-shadow: 0 2px 5px #000; }
+.ayala-frame .publish-bottom-art span { display: block; color: #f2d47b; font: 700 9px 'Barlow Condensed',sans-serif; letter-spacing: .14em; }
+.ayala-frame .publish-bottom-art strong { font: 700 13px/1.2 'Barlow Condensed',sans-serif; }
+
+/* One dialog component serves both the publish flow and Forum help action. */
+.ayala-frame .security-publish-modal {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+  background: #020812d9;
+  backdrop-filter: blur(5px);
+}
+.ayala-frame .security-publish-modal .ayala-modal {
+  position: relative;
+  width: min(100%, 430px);
+  max-height: calc(100dvh - max(24px, env(safe-area-inset-top)) - max(24px, env(safe-area-inset-bottom)));
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px 20px max(17px, env(safe-area-inset-bottom));
+  border: 0;
+  color: #eef1f4;
+  background:
+    linear-gradient(145deg, #f0d37b, #9c691b 4%, #122f4a 9%, #07192d 52%, #153653 95%, #d9b34c 98%);
+  box-shadow: inset 0 1px 0 #fff5, 0 20px 55px #000d;
+  clip-path: none;
+}
+.ayala-frame .security-publish-modal .ayala-modal::before {
+  position: absolute;
+  z-index: 0;
+  inset: 5px;
+  border: 1px solid #e8c95d;
+  background: linear-gradient(155deg, #0e2943, #06172b 56%, #0e2943);
+  box-shadow: inset 0 0 0 2px #d9a52e22, inset 0 1px 0 #fff3;
+  content: '';
+  pointer-events: none;
+  clip-path: polygon(0 20px, 20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px));
+}
+.ayala-frame .security-publish-modal .ayala-modal > * { position: relative; z-index: 1; }
+.ayala-frame .security-publish-modal .ayala-modal-close { z-index: 3; top: 10px; right: 10px; display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid #f0d47c; color: #ffe9a6; background: #06182bd9; font-size: 27px; cursor: pointer; }
+.ayala-frame .publish-dialog-art { display: grid; height: clamp(92px, 20dvh, 144px); place-items: center; overflow: hidden; margin: -3px 27px 2px; border-bottom: 1px solid #d9a52e61; background: radial-gradient(ellipse at 50% 92%, #d4a03b39, transparent 69%); }
+.ayala-frame .publish-dialog-art img { width: min(100%, 260px); height: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px #0009); }
+.ayala-frame .publish-dialog-eyebrow { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 10px 0 6px; color: #e9ca70; font: 700 10px 'Barlow Condensed',sans-serif; letter-spacing: .16em; }
+.ayala-frame .security-publish-modal h2 { margin: 0 27px 8px; color: #fff1c7; font: 700 clamp(22px, 6vw, 27px)/1.08 'Barlow Condensed',sans-serif; text-align: center; text-shadow: 0 2px 4px #0008; }
+.ayala-frame .publish-dialog-copy { margin: 0 auto 12px; color: #e0e6ea; font-size: 13px; line-height: 1.45; text-align: center; }
+.ayala-frame .publish-reference-amount { display: grid; gap: 2px; justify-items: center; margin: 0 auto 9px; padding: 9px 10px; border: 1px solid #d9a52e; color: #172335; background: linear-gradient(180deg, #ffed9d, #d9a52e 60%, #a96e13); box-shadow: inset 0 1px 0 #fff9, inset 0 -2px #8c5b17, 0 3px 8px #0009; clip-path: polygon(0 50%, 14px 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 14px 100%); }
+.ayala-frame .publish-reference-amount span { color: #483a20; font: 700 9px 'Barlow Condensed',sans-serif; letter-spacing: .15em; }
+.ayala-frame .publish-reference-amount strong { font: 800 clamp(20px, 6vw, 26px)/1.1 'Barlow Condensed',sans-serif; white-space: nowrap; }
+.ayala-frame .publish-reference-amount small { color: #463a25; font-size: 10px; }
+.ayala-frame .publish-dialog-caveat { margin: 0 auto 12px; max-width: 355px; color: #d5dce2; font-size: 11px; line-height: 1.4; text-align: center; }
+.ayala-frame .publish-dialog-understood {
+  display: flex;
+  width: min(100%, 340px);
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin: 0 auto;
+  border: 1px solid #fff2b2;
+  color: #162438;
+  background: linear-gradient(180deg, #fff0a6, #e7bb48 49%, #ad7118 100%);
+  box-shadow: inset 0 1px 0 #fff9, inset 0 -3px #754b10, 0 4px 8px #0009;
+  clip-path: polygon(0 50%, 9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%);
+  font: 700 18px 'Barlow Condensed',sans-serif;
+  cursor: pointer;
+}
+.ayala-frame .publish-dialog-understood svg:first-child { color: #18314a; }
+.ayala-frame .publish-dialog-understood svg:last-child { color: #fff4c2; }
+.ayala-frame .security-publish-supreme button:focus-visible,
+.ayala-frame .security-publish-supreme input:focus-visible,
+.ayala-frame .security-publish-supreme textarea:focus-visible { outline-color: #ffe18a; outline-offset: 2px; }
+.ayala-frame .security-publish-supreme button:disabled { opacity: .62; cursor: not-allowed; }
+@media (max-width: 375px) {
+  .ayala-frame .security-publish-scroll { padding-right: 8px; padding-left: 8px; }
+  .ayala-frame .security-form-panel,
+  .ayala-frame .publish-form-panel { padding-right: 11px; padding-left: 11px; }
+  .ayala-frame .publish-proof-layout { grid-template-columns: minmax(0, 1fr); }
+  .ayala-frame .publish-proof-art { min-height: 94px; }
+  .ayala-frame .publish-proof-art img { height: 117px; }
+  .ayala-frame .publish-editor { padding-right: 74px; }
+  .ayala-frame .security-code-row { grid-template-columns: minmax(0,1fr) auto; gap: 5px; }
+  .ayala-frame .security-send-code { min-width: 95px; padding: 0 7px; font-size: 12px; }
+}
+@media (max-width: 360px) {
+  .ayala-frame .security-field-label { font-size: 13px; }
+  .ayala-frame .security-send-code { min-width: 86px; gap: 3px; padding: 0 5px; font-size: 11px; }
+  .ayala-frame .security-code-row { grid-template-columns: minmax(0, 1fr) 88px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .security-publish-supreme *,
+  .security-publish-supreme *::before,
+  .security-publish-supreme *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* Reference-faithful gold relief and readable navy instrument fields. */
+.ayala-frame .security-form-panel::before,
+.ayala-frame .publish-form-panel::before {
+  background:
+    linear-gradient(135deg, #fff3b5 0%, #bd8120 7%, #fff0a0 12%, #8a5c17 18%, #dcaa38 34%, #fff0a4 49%, #a56e1a 64%, #f3d879 82%, #845515 100%);
+  box-shadow: inset 0 1px 0 #fffbd9, inset 0 -2px 0 #754b12, 0 4px 8px #0009;
+}
+.ayala-frame .security-form-panel::after,
+.ayala-frame .publish-form-panel::after {
+  border-color: #ffeaa0b8;
+  background: linear-gradient(145deg, #153651 0%, #081a2e 43%, #0b2239 81%, #193a55 100%);
+  box-shadow:
+    inset 0 1px 0 #fff6,
+    inset 0 0 0 1px #f7dc873a,
+    inset 0 0 0 4px #09182b,
+    inset 0 0 0 5px #d5a32e69,
+    inset 0 0 0 7px #0a1a2d;
+}
+.ayala-frame .security-input-shell,
+.ayala-frame .security-otp-input {
+  border: 1px solid #edcf79;
+  color: #f1f2f2;
+  background:
+    linear-gradient(180deg, #1b3a55 0%, #102a43 44%, #081a2e 100%);
+  box-shadow:
+    inset 0 1px 0 #fff3,
+    inset 0 0 0 2px #07182b,
+    inset 0 0 0 3px #b9842770,
+    0 2px 5px #0008;
+}
+.ayala-frame .security-input {
+  color: #f1f2f2;
+  -webkit-text-fill-color: #f1f2f2;
+  caret-color: #f4d67d;
+}
+.ayala-frame .security-input::placeholder { color: #c8d4df; opacity: 1; }
+.ayala-frame .security-input[readonly] {
+  color: #f1f2f2;
+  -webkit-text-fill-color: #f1f2f2;
+  opacity: 1;
+}
+.ayala-frame .security-otp-input {
+  color: #f1f2f2;
+  -webkit-text-fill-color: #f1f2f2;
+}
+.ayala-frame .security-eye {
+  color: #f2d47d;
+  background: linear-gradient(90deg, transparent, #071a2d4f);
+}
+.ayala-frame .security-eye svg { filter: drop-shadow(0 1px 2px #000b); }
+.ayala-frame .security-credential-art {
+  min-height: 147px;
+  border-bottom-color: #d5a32e8c;
+  background:
+    radial-gradient(ellipse at 50% 90%, #d9a52e2b, transparent 62%),
+    linear-gradient(180deg, #07192c00, #06172c6b);
+}
+.ayala-frame .security-credential-art img {
+  width: min(100%, 460px);
+  height: 144px;
+  object-fit: contain;
+  mask-image: radial-gradient(ellipse at center, #000 72%, transparent 100%);
+}
+.ayala-frame .security-credential-art::before,
+.ayala-frame .security-credential-art::after { display: none; }
+.ayala-frame .security-vault-scene img {
+  width: min(100%, 460px);
+  height: 177px;
+  mask-image: radial-gradient(ellipse at center, #000 73%, transparent 100%);
+}
+.ayala-frame .supreme-submit {
+  min-height: 60px;
+  border: 2px solid #fff0a2;
+  background:
+    linear-gradient(180deg, #fff8cf 0%, #fff0a5 5%, transparent 15%, transparent 81%, #80500f 100%),
+    linear-gradient(112deg, transparent 0%, #fff2a64f 7%, transparent 9%, transparent 89%, #fff3a747 93%, transparent 96%),
+    linear-gradient(90deg, #875618 0%, #ffe58b 7%, #b97b18 13%, #f1cc59 24%, #ad7118 39%, #fff0a4 50%, #bf8522 64%, #f6d878 78%, #9c6516 91%, #ffe994 96%, #724710 100%);
+  box-shadow:
+    inset 0 2px 0 #fffbd9,
+    inset 0 0 0 2px #8b5c16,
+    inset 0 0 0 4px #ffe995,
+    inset 0 -4px 0 #70460d,
+    0 5px 11px #000a;
+}
+.ayala-frame .supreme-submit svg { color: #132a42; }
+.ayala-frame .supreme-submit-arrow { color: #fff4c0; text-shadow: 0 1px 2px #6e480d; }
+.ayala-frame .publish-dialog-art {
+  position: relative;
+  height: clamp(148px, 22dvh, 174px);
+  margin: -3px 0 2px;
+  border-bottom-color: #d9a52e7a;
+  background:
+    linear-gradient(180deg, #06152b3d 0%, #07192c50 58%, #06152ba8 100%),
+    url('/iamgold-industrial-art/money-reference-mine.webp') left center / 55% 100% no-repeat,
+    url('/iamgold-industrial-art/money-reference-refinery.webp') right center / 55% 100% no-repeat;
+  isolation: isolate;
+}
+.ayala-frame .publish-dialog-art::before {
+  position: absolute;
+  z-index: 2;
+  top: 4px;
+  left: 50%;
+  width: min(42%, 148px);
+  height: 45px;
+  background: url('/iamgold-industrial-art/editorial-brand.webp') center / contain no-repeat;
+  content: '';
+  filter: drop-shadow(0 2px 4px #000c);
+  transform: translateX(-50%);
+}
+.ayala-frame .publish-dialog-art img {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  width: min(78%, 268px);
+  height: 126px;
+  object-fit: contain;
+  object-position: center bottom;
+  mask-image: radial-gradient(ellipse at center, #000 70%, transparent 100%);
+  transform: translateX(-50%);
+}
+.ayala-frame .security-publish-modal .ayala-modal-close {
+  position: sticky;
+  top: 8px;
+  right: auto;
+  float: right;
+  margin: -4px -10px -44px 0;
+}
+.ayala-frame .publish-bottom-art > img {
+  mask-image: radial-gradient(ellipse at center, #000 67%, transparent 100%);
+}

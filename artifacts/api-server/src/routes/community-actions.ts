@@ -49,7 +49,7 @@ router.get("/member/transactions", async (req, res) => {
   const account = await requireMember(req);
   const parsed = ListMemberTransactionsQueryParams.safeParse(req.query);
   if (!parsed.success) fail(400, "Filtre ou curseur invalide.");
-  const page = await listMemberTransactions(account.id, parsed.data.kind ?? "all", parsed.data.cursor);
+  const page = await listMemberTransactions(account.id, parsed.data.kind ?? "all", parsed.data.cursor, parsed.data);
   res.json(ListMemberTransactionsResponse.parse(page));
 });
 router.get("/member/wallet/events", async (req, res) => {

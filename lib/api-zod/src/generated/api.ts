@@ -261,11 +261,30 @@ export const ListMemberProductsResponse = zod.object({
 
 
 export const listMemberTransactionsQueryKindDefault = `all`;
+export const listMemberTransactionsQuerySearchMax = 120;
+
+export const listMemberTransactionsQueryPeriodDefault = `all`;
+export const listMemberTransactionsQueryStatusDefault = `all`;
 
 export const ListMemberTransactionsQueryParams = zod.object({
   "kind": zod.enum(['all', 'recharges', 'withdrawals']).default(listMemberTransactionsQueryKindDefault),
-  "cursor": zod.coerce.string().uuid().optional()
+  "cursor": zod.coerce.string().uuid().optional(),
+  "search": zod.coerce.string().max(listMemberTransactionsQuerySearchMax).optional(),
+  "period": zod.enum(['all', '7d', '30d', '90d']).default(listMemberTransactionsQueryPeriodDefault),
+  "status": zod.enum(['all', 'succeeded', 'pending', 'failed']).default(listMemberTransactionsQueryStatusDefault)
 })
+
+export const listMemberTransactionsResponseSummaryTotalMin = 0;
+
+export const listMemberTransactionsResponseSummarySucceededMin = 0;
+
+export const listMemberTransactionsResponseSummaryPendingMin = 0;
+
+export const listMemberTransactionsResponseSummaryFailedMin = 0;
+
+export const listMemberTransactionsResponseSummaryTotalAmountMin = 0;
+
+
 
 export const ListMemberTransactionsResponse = zod.object({
   "transactions": zod.array(zod.object({
@@ -275,7 +294,14 @@ export const ListMemberTransactionsResponse = zod.object({
   "status": zod.enum(['succeeded', 'pending', 'failed']),
   "createdAt": zod.coerce.date()
 })),
-  "nextCursor": zod.string().uuid().nullable()
+  "nextCursor": zod.string().uuid().nullable(),
+  "summary": zod.object({
+  "total": zod.number().int().min(listMemberTransactionsResponseSummaryTotalMin),
+  "succeeded": zod.number().int().min(listMemberTransactionsResponseSummarySucceededMin),
+  "pending": zod.number().int().min(listMemberTransactionsResponseSummaryPendingMin),
+  "failed": zod.number().int().min(listMemberTransactionsResponseSummaryFailedMin),
+  "totalAmount": zod.number().int().min(listMemberTransactionsResponseSummaryTotalAmountMin)
+}).describe('Totaux de toutes les écritures correspondant aux filtres, indépendamment de la pagination.')
 })
 
 
