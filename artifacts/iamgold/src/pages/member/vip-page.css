@@ -1,0 +1,603 @@
+html:has(.vip-page),
+body:has(.vip-page),
+#root:has(.vip-page) {
+  min-height: 100dvh;
+  background: #031326;
+  color: #f8fafc;
+  color-scheme: dark;
+}
+
+#root .ayala-frame:has(.vip-page) {
+  --page: #031326;
+  --ink: #f8fafc;
+  --muted: #bbc6d0;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #031326;
+  color: #f8fafc;
+  box-shadow: none;
+}
+
+#root .ayala-frame:has(.vip-page) .ayala-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  background: #031326;
+}
+
+#root .ayala-frame:has(.vip-page) .ayala-canvas::after {
+  display: none;
+  content: none;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: radial-gradient(ellipse at 50% 0, #123750 0, #07192d 48%, #031326 100%);
+  color: #f8fafc;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-page .royal-masthead {
+  box-sizing: border-box;
+  flex: 0 0 152px;
+  width: 100%;
+  height: 152px;
+  min-height: 152px;
+  padding: 0;
+  border-bottom: 2px solid #d5a12d;
+  background-color: #031326;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-page .royal-masthead-panorama {
+  object-fit: cover;
+  object-position: center;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-toolbar-wrap {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 52px;
+  height: 52px;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-page .royal-toolbar {
+  box-sizing: border-box;
+  flex: 0 0 52px;
+  width: calc(100% - 16px);
+  max-width: calc(100% - 16px);
+  min-height: 52px;
+  height: 52px;
+  grid-template-columns: 49px minmax(0, 1fr) 49px;
+  gap: 4px;
+  margin-inline: 8px;
+  padding: 1px 9px;
+  border-bottom: 2px solid #d5a12d;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-page .royal-toolbar h1 {
+  color: #fff8e6;
+  font-size: 22px;
+  letter-spacing: .025em;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-toolbar-crown {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: calc(50% - 112px);
+  display: grid;
+  width: 36px;
+  height: 31px;
+  place-items: center;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-page .vip-scroll {
+  display: flex;
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  flex-direction: column;
+  gap: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 14px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+  background: linear-gradient(180deg, #071a2d, #031326 54%, #04172a);
+  color: #f8fafc;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-page .vip-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-list {
+  display: grid;
+  flex: 0 0 auto;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: clamp(96px, 22vw, 112px) minmax(0, 1fr) clamp(90px, 22vw, 112px);
+  align-items: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  height: 101px;
+  min-height: 101px;
+  max-height: 101px;
+  flex: 0 0 101px;
+  gap: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 2px;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #082b45 0%, #061a2e 58%, #031326 100%) padding-box,
+    linear-gradient(115deg, #fff0b1 0%, #b78021 12%, #f3d47a 31%, #536b7f 50%, #d8ad4b 67%, #755016 85%, #f7e3a0 100%) border-box;
+  box-shadow: inset 0 1px 0 #fff8, inset 0 -2px 0 #684714, inset 0 0 0 2px #d8ae4a45, 0 5px 13px #0008;
+  animation: vip-card-arrive .46s cubic-bezier(.2, .75, .2, 1) both;
+  animation-delay: var(--vip-delay, 0ms);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-card::before {
+  position: absolute;
+  z-index: -1;
+  inset: 1px;
+  pointer-events: none;
+  border-radius: 12px;
+  background: linear-gradient(105deg, #fff4c21c 0%, transparent 22%, transparent 72%, #eac65a0c 100%),
+    radial-gradient(ellipse at 50% 0, #28709a26, transparent 65%);
+  content: "";
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-card::after {
+  position: absolute;
+  z-index: 5;
+  inset: 0 auto 0 -38%;
+  width: 22%;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent, #fff6cf2c, transparent);
+  content: "";
+  transform: skewX(-18deg);
+  animation: vip-metal-glint .85s ease-out both;
+  animation-delay: calc(180ms + var(--vip-delay, 0ms));
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-card:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 #fff9, inset 0 -2px 0 #684714, inset 0 0 0 2px #f4d47a55, 0 8px 16px #0009;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-identity {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+  border-right: 1px solid #d5a12d;
+  box-shadow: inset -1px 0 #fff3;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-medallion {
+  display: grid;
+  min-width: 70px;
+  min-height: 19px;
+  place-items: center;
+  padding: 1px 7px;
+  border: 1px solid #f1d489;
+  border-radius: 7px;
+  background: linear-gradient(180deg, #243e54, #07182a 67%, #132f45);
+  box-shadow: inset 0 1px #fff5, inset 0 -2px #0007, 0 2px 4px #0008;
+  color: #f8fafc;
+  font: 800 11px/1 'DM Sans', sans-serif;
+  letter-spacing: .045em;
+  text-shadow: 0 1px 2px #000;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-0 .vip-level-medallion {
+  border-color: #c7d0d8;
+  background: linear-gradient(180deg, #667481, #202b35 70%, #35404b);
+  color: #e3e9ee;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-1 .vip-level-medallion {
+  border-color: #eef6ff;
+  background: linear-gradient(180deg, #9dafc1, #354d63 72%, #647b90);
+  color: #f8fcff;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-2 .vip-level-medallion {
+  border-color: #85ceff;
+  background: linear-gradient(180deg, #287bc4, #082b66 72%, #0c4c9c);
+  color: #e8f8ff;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-3 .vip-level-medallion {
+  border-color: #f6d77c;
+  background: linear-gradient(180deg, #1d5aa5, #091c57 72%, #133d84);
+  color: #fff1b9;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-4 .vip-level-medallion {
+  border-color: #f6d77c;
+  background: linear-gradient(180deg, #238653, #063921 72%, #135a35);
+  color: #fff0a8;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-details {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2px 8px;
+  border-right: 1px solid #d5a12d66;
+  color: #f7f8fa;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-details p {
+  margin: 0;
+  color: #f7f8fa;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(13px, 3.1vw, 15.4px);
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -.012em;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-amount {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  align-items: baseline;
+  gap: 3px;
+  margin-top: 2px;
+  padding: 2px 7px;
+  border: 1px solid #fff0a6;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffe9a1 0%, #d5a12d 52%, #99600f 100%);
+  box-shadow: inset 0 1px #fff, inset 0 -2px #78500f, 0 2px 5px #0009;
+  color: #13263a;
+  white-space: nowrap;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-amount span {
+  flex: 0 0 auto;
+  color: #13263a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(12px, 2.6vw, 13px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .04em;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-amount strong {
+  flex: 0 0 auto;
+  color: #102238;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(16px, 3.4vw, 18px);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.015em;
+  white-space: nowrap;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-art {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-width: 0;
+  place-items: center;
+  overflow: hidden;
+  padding: 4px;
+  background: radial-gradient(ellipse at 50% 88%, #dfab3c22, transparent 70%);
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 88px;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 3px 4px #0009);
+  transition: transform .25s ease;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-card:hover .vip-level-art img {
+  transform: scale(1.035);
+}
+
+#root .ayala-frame:has(.vip-page) .vip-level-card:nth-child(2) { --vip-delay: 65ms; }
+#root .ayala-frame:has(.vip-page) .vip-level-card:nth-child(3) { --vip-delay: 130ms; }
+#root .ayala-frame:has(.vip-page) .vip-level-card:nth-child(4) { --vip-delay: 195ms; }
+#root .ayala-frame:has(.vip-page) .vip-level-card:nth-child(5) { --vip-delay: 260ms; }
+
+#root .ayala-frame:has(.vip-page) .vip-industrial-panorama {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 111px;
+  height: 111px;
+  overflow: hidden;
+  margin-top: 0;
+  border: 1px solid #d5a12d;
+  border-radius: 12px;
+  background: #06182b;
+  box-shadow: inset 0 1px #fff5, inset 0 0 0 2px #76521877, 0 4px 12px #0008;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-industrial-panorama::after {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, #03132622, #03132600 40%, #03132614), linear-gradient(0deg, #03132677, transparent 45%, #fff2);
+  content: "";
+}
+
+#root .ayala-frame:has(.vip-page) .vip-industrial-panorama img {
+  position: absolute;
+  top: 0;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-panorama-mine {
+  left: 0;
+  width: 67%;
+  object-position: center 55%;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-panorama-refinery {
+  right: 0;
+  width: 57%;
+  object-position: 65% 58%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 24%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 24%);
+}
+
+#root .ayala-frame:has(.vip-page) .vip-support-panel {
+  display: flex;
+  flex: 0 0 64px;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 7px;
+  padding: 5px 12px;
+  border: 1px solid #d5a12d;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #0a2b45, #031326 72%);
+  box-shadow: inset 0 1px #fff5, inset 0 0 0 2px #8e641b55, 0 4px 10px #0008;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-support-copy {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  color: #f7f2df;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-support-copy strong {
+  color: #f7f2df;
+  font: 700 13px/1.1 'DM Sans', sans-serif;
+  white-space: nowrap;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-support-emblem {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  border: 1px solid #f4d47a;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 25%, #2d5570, #081a2c 70%);
+  box-shadow: inset 0 1px #fff5, 0 2px 5px #0008;
+  color: #f5d77b;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-page .ayala-support.ayala-support-inline {
+  display: flex;
+  width: min(160px, 45%);
+  min-width: 126px;
+  min-height: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0;
+  padding: 0 9px;
+  border: 1px solid #ffe9a2;
+  border-radius: 0;
+  background: linear-gradient(180deg, #ffe9a1 0%, #d5a12d 52%, #9e681a 100%);
+  box-shadow: inset 0 1px #fff, inset 0 -2px #855b14, 0 3px 7px #0009;
+  clip-path: polygon(8% 0, 92% 0, 100% 23%, 100% 77%, 92% 100%, 8% 100%, 0 77%, 0 23%);
+  color: #12253b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-page .ayala-support.ayala-support-inline svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  color: #132940;
+}
+
+#root .ayala-frame:has(.vip-page) .vip-page .royal-support-status {
+  display: none;
+}
+
+@keyframes vip-card-arrive {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vip-metal-glint {
+  0% { opacity: 0; transform: translateX(0) skewX(-18deg); }
+  20% { opacity: .8; }
+  100% { opacity: 0; transform: translateX(620%) skewX(-18deg); }
+}
+
+@media (max-width: 420px) {
+  #root .ayala-frame:has(.vip-page) .vip-page .royal-masthead {
+    background-image: url("/iamgold-industrial-art/reference-crops/royal-panorama.webp");
+    background-position: center;
+    background-size: cover;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-page .royal-masthead-panorama {
+    object-fit: contain;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-card {
+    grid-template-columns: 90px minmax(0, 1fr) 82px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-details {
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-support-panel {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-support-copy {
+    gap: 6px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-support-copy strong {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  #root .ayala-frame:has(.vip-page) {
+    width: min(calc(100% - 48px), 1000px);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  #root .ayala-frame:has(.vip-page) > .ayala-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    transform-origin: top left;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-page .royal-masthead {
+    flex-basis: 158px;
+    height: 158px;
+    min-height: 158px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-page .royal-masthead-panorama {
+    object-position: center 58%;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-page .vip-scroll {
+    padding: 14px 18px calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-card {
+    height: 122px;
+    min-height: 122px;
+    max-height: 122px;
+    flex-basis: 122px;
+    grid-template-columns: 112px minmax(0, 1fr) 124px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-details {
+    padding: 7px 12px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-details p {
+    line-height: 18px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-amount {
+    margin-top: 3px;
+    padding: 2px 8px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-art {
+    padding: 6px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-art img {
+    max-height: 108px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-industrial-panorama {
+    flex-basis: 111px;
+    height: 111px;
+    margin-top: 10px;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-support-panel {
+    flex-basis: 64px;
+    min-height: 64px;
+    margin-top: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .ayala-frame:has(.vip-page) .vip-level-card,
+  #root .ayala-frame:has(.vip-page) .vip-level-card::after,
+  #root .ayala-frame:has(.vip-page) .vip-level-card * {
+    animation: none;
+    transition: none;
+  }
+
+  #root .ayala-frame:has(.vip-page) .vip-level-card:hover,
+  #root .ayala-frame:has(.vip-page) .vip-level-card:hover .vip-crown,
+  #root .ayala-frame:has(.vip-page) .vip-level-card:hover .vip-level-art img {
+    transform: none;
+  }
+}

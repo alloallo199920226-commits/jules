@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="64" viewBox="0 0 280 64" role="img" aria-label="AERONOVA">
+  <g aria-hidden="true">
+    <path fill="#1238ed" d="M30 4 4 55h15l11-23 10 23h15L30 4zm0 17 5 12H25z"/>
+    <path fill="#00b87d" d="m30 4 25 51H40L30 32l-5 11-12 7z"/>
+  </g>
+  <text x="68" y="35" fill="#0d183b" font-family="Arial,sans-serif" font-size="27" font-weight="800" letter-spacing="-.8">AERONOVA</text>
+  <text x="69" y="50" fill="#31517b" font-family="Arial,sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.15">DRONES FOR A HIGHER WORLD</text>
+</svg>

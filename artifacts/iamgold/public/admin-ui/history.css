@@ -1,0 +1,12 @@
+.admin-history-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.admin-history-filters label,.admin-purge-dialog label{display:flex;flex-direction:column;gap:7px;font-size:14px}
+.admin-history-filters label:last-child{grid-column:1/-1}
+.admin-history-filters input,.admin-history-filters select,.admin-purge-dialog input{width:100%;min-width:0;font-size:16px;padding:12px;border:1px solid #c6d7d1;border-radius:12px;color:#113e30;background:#fff;box-sizing:border-box}
+.admin-history-pages{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-top:16px}
+.admin-history-pages button{padding:12px 18px;border:1px solid #b6cec5;border-radius:12px;color:#123b2e;background:#fff;cursor:pointer;font-size:16px}
+.admin-history-pages button:disabled{opacity:.55;cursor:default}
+.admin-purge-dialog{box-sizing:border-box;width:min(94vw,620px);max-height:90dvh;border:1px solid #c4d9d0;border-radius:22px;padding:24px;color:#123e30;background:#f4fbf7;overflow-y:auto}
+.admin-purge-dialog::backdrop{background:#062f24a8}
+.admin-purge-dialog form{display:grid;gap:16px}
+.admin-purge-dialog [data-purge-error]{color:#9b2525}
+@media(max-width:480px){.admin-history-filters{grid-template-columns:minmax(0,1fr)}.admin-purge-dialog{padding:18px}}

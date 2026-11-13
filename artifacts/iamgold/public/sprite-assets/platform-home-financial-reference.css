@@ -1,0 +1,664 @@
+/* Andship financial home — bright alpine editorial, scoped to this page only. */
+@media(min-width:900px) {
+  html[data-platform-theme="silver"] body.andship-home #home-financial-reference .balances {
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  }
+}
+html body.andship-home #home-financial-reference {
+  --fh-blue: #1106e9;
+  --fh-ink: #111936;
+  --fh-muted: #63708d;
+  --fh-line: #dce5f5;
+  --fh-pale: #f2f6ff;
+  width: min(100%, 1180px) !important;
+  max-width: 1180px !important;
+  min-height: 100dvh;
+  margin: 0 auto !important;
+  padding: 0 clamp(14px, 3.1vw, 36px) calc(88px + env(safe-area-inset-bottom)) !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  color: var(--fh-ink) !important;
+  font-family: "Trebuchet MS", "Avenir Next", sans-serif !important;
+}
+html[data-platform-theme="silver"] body.andship-home {
+  --fh-blue:#1106e9;
+  display: block !important;
+  min-height: 100dvh;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff !important;
+  color: #111936 !important;
+  font-family: "Trebuchet MS", "Avenir Next", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+html body.andship-home #home-financial-reference .hero {
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 calc(-1 * clamp(14px, 3.1vw, 36px)) !important;
+  padding: 0 clamp(14px, 3.1vw, 36px) 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  color: var(--fh-ink) !important;
+  isolation: auto !important;
+}
+html body.andship-home #home-financial-reference .hero::before,
+html body.andship-home #home-financial-reference .hero::after,
+html body.andship-home #home-financial-reference .hero-in::before,
+html body.andship-home #home-financial-reference .hero-in::after,
+html body.andship-home #home-financial-reference .bal::before,
+html body.andship-home #home-financial-reference .bal::after,
+html body.andship-home #home-financial-reference .feature-panel::before,
+html body.andship-home #home-financial-reference .feature-panel::after {
+  content: none !important;
+  display: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  border: 0 !important;
+  border-color: transparent !important;
+  background: transparent !important;
+}
+html body.andship-home #home-financial-reference .home-topbar {
+  position: relative !important;
+  z-index: 12 !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 66px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #edf1f8;
+}
+html body.andship-home #home-financial-reference .brand {
+  gap: 9px;
+  color: var(--fh-ink) !important;
+  font: 800 20px/1 "Trebuchet MS", sans-serif !important;
+  letter-spacing: -.055em;
+}
+html body.andship-home #home-financial-reference .brand small {
+  color: #61708f !important;
+  font-size: 8px !important;
+}
+html body.andship-home #home-financial-reference .brand-mark {
+  width: 36px;
+  height: 36px;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html body.andship-home #home-financial-reference .brand-mark svg {
+  width: 31px;
+  fill: none !important;
+  stroke: var(--fh-blue) !important;
+  stroke-width: 2.7 !important;
+}
+html body.andship-home #home-financial-reference :is(.notice-trigger,.profile-shortcut) {
+  width: 39px;
+  height: 39px;
+  border: 1px solid #e3eafa !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  color: var(--fh-ink) !important;
+  box-shadow: 0 3px 12px #17347510 !important;
+}
+html body.andship-home #home-financial-reference :is(.notice-trigger,.profile-shortcut) svg {
+  fill: none !important;
+  stroke: currentColor !important;
+}
+html body.andship-home #home-financial-reference .home-search-wrap {
+  position: relative;
+  z-index: 14;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 38px;
+  margin: 12px 0 15px;
+  padding: 0 13px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: #f0f4fc;
+  color: #5d6c8c;
+}
+html body.andship-home #home-financial-reference .home-search-icon {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  margin-right: 10px;
+  fill: none;
+  stroke: #7381a0;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+html body.andship-home #home-financial-reference #home-financial-search {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--fh-ink);
+  font: 500 16px/1.2 "Trebuchet MS", sans-serif;
+}
+html body.andship-home #home-financial-reference #home-financial-search::placeholder {
+  color: #7f8ba7;
+  opacity: 1;
+  font-size: 13px;
+}
+html body.andship-home #home-financial-reference .home-search-wrap:focus-within {
+  border-color: #bbb8ff;
+  box-shadow: 0 0 0 3px #1106e913;
+}
+html body.andship-home #home-financial-reference .home-search-results[hidden] {
+  display: none !important;
+}
+html body.andship-home #home-financial-reference .home-search-results {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 0;
+  right: 0;
+  display: grid;
+  gap: 2px;
+  max-height: min(330px, 55vh);
+  overflow: auto;
+  padding: 6px;
+  border: 1px solid #e1e7f2;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 12px 30px #12214a1c;
+}
+html body.andship-home #home-financial-reference .home-search-result {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--fh-ink);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+html body.andship-home #home-financial-reference .home-search-result small {
+  display: block;
+  margin-top: 3px;
+  color: var(--fh-muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+html body.andship-home #home-financial-reference .home-search-result:hover,
+html body.andship-home #home-financial-reference .home-search-result:focus-visible {
+  background: #f1f4ff;
+}
+html body.andship-home #home-financial-reference .home-search-empty {
+  padding: 11px 12px;
+  color: var(--fh-muted);
+  font-size: 13px;
+}
+html body.andship-home #home-financial-reference .hero-in {
+  position: relative !important;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100% !important;
+  min-height: 185px;
+  margin: 0 !important;
+  padding: 16px 18px !important;
+  overflow: visible !important;
+  border: 1px solid #e5ecf8;
+  border-radius: 15px;
+  background-color: #edf5ff !important;
+  background-image:
+    linear-gradient(90deg,#ffffff 0%,#ffffffed 38%,#ffffffa8 54%,#ffffff00 76%),
+    url("/sprite-assets/home-financial-hero.webp") !important;
+  background-size: cover, auto 100% !important;
+  background-position: center, right 52% !important;
+  background-repeat: no-repeat !important;
+  box-shadow: 0 5px 16px #173c7910 !important;
+}
+html body.andship-home #home-financial-reference .hero-kicker,
+html body.andship-home #home-financial-reference .section-kicker {
+  color: var(--fh-blue) !important;
+  font: 800 9px/1.2 "Trebuchet MS", sans-serif !important;
+  letter-spacing: .15em;
+}
+html body.andship-home #home-financial-reference .hero-kicker span {
+  width: 8px;
+  height: 8px;
+  background: var(--fh-blue) !important;
+}
+html body.andship-home #home-financial-reference .hero h1 {
+  width: min(340px, 68%) !important;
+  max-width: 68% !important;
+  margin: 13px 0 8px !important;
+  color: var(--fh-ink) !important;
+  font: 800 clamp(26px, 4.1vw, 38px)/1.03 "Trebuchet MS", sans-serif !important;
+  letter-spacing: -.045em !important;
+  text-shadow: none !important;
+}
+html body.andship-home #home-financial-reference .hero h1 em {
+  color: var(--fh-blue) !important;
+  font-style: normal !important;
+}
+html body.andship-home #home-financial-reference .hero p {
+  width: min(310px, 62%) !important;
+  margin: 0 0 12px !important;
+  color: #405071 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1.38 !important;
+}
+html body.andship-home #home-financial-reference .cta {
+  align-self: flex-start;
+  min-height: 39px;
+  padding: 0 15px !important;
+  border: 1px solid var(--fh-blue) !important;
+  border-radius: 999px !important;
+  background: var(--fh-blue) !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+}
+html body.andship-home #home-financial-reference .cta svg { stroke: currentColor; }
+html body.andship-home #home-financial-reference .cta span { color: inherit !important; }
+html body.andship-home #home-financial-reference .flight-meta { display:none !important; }
+html body.andship-home #home-financial-reference .main {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 14px auto 0 !important;
+  padding: 0 !important;
+}
+html body.andship-home #home-financial-reference .balances {
+  display: grid !important;
+  grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  gap: 11px !important;
+  margin: 0 !important;
+}
+html body.andship-home #home-financial-reference .bal {
+  position: relative;
+  display: grid !important;
+  grid-template-columns: 34px minmax(0,1fr) 10px !important;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 96px !important;
+  height: auto !important;
+  padding: 10px 11px !important;
+  border: 1px solid #e1e8f5 !important;
+  border-radius: 13px !important;
+  color: var(--fh-ink) !important;
+  text-decoration: none;
+  background-color: #fff !important;
+  background-repeat: no-repeat !important;
+  background-size: cover, auto 123% !important;
+  background-position: center, right center !important;
+  box-shadow: 0 4px 13px #1a3e7910 !important;
+  isolation: isolate;
+}
+html body.andship-home #home-financial-reference .bal.red {
+  background-image: linear-gradient(90deg,#fff 0%,#fffffff2 43%,#ffffffa8 66%,#ffffff12 100%),url("/sprite-assets/home-financial-balance.webp") !important;
+}
+html body.andship-home #home-financial-reference .bal.light {
+  background-image: linear-gradient(90deg,#fff 0%,#fffffff2 43%,#ffffffa8 66%,#ffffff12 100%),url("/sprite-assets/home-financial-income.webp") !important;
+}
+html body.andship-home #home-financial-reference .bal.product-slot {
+  background-image: linear-gradient(90deg,#fff 0%,#fffffff2 43%,#ffffffa8 66%,#ffffff12 100%),url("/sprite-assets/home-financial-catalogue.webp") !important;
+}
+html body.andship-home #home-financial-reference .bal.help-slot {
+  background-image: linear-gradient(90deg,#fff 0%,#fffffff2 43%,#ffffffa8 66%,#ffffff12 100%),url("/sprite-assets/home-financial-support.webp") !important;
+}
+html body.andship-home #home-financial-reference .bal .round {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d9e2f4;
+  border-radius: 50%;
+  background: #ffffffd9 !important;
+  color: var(--fh-blue) !important;
+}
+html body.andship-home #home-financial-reference .bal .round svg {
+  width: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+html body.andship-home #home-financial-reference .bal-copy { min-width: 0; }
+html body.andship-home #home-financial-reference .bal small {
+  display: block;
+  color: #66738d !important;
+  font-size: 10px !important;
+  line-height: 1.2;
+}
+html body.andship-home #home-financial-reference .bal strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--fh-ink) !important;
+  font: 800 14px/1.14 "Trebuchet MS", sans-serif !important;
+  letter-spacing: -.02em;
+  overflow-wrap: anywhere;
+}
+html body.andship-home #home-financial-reference .bal.product-slot strong,
+html body.andship-home #home-financial-reference .bal.help-slot strong { font-size: 12px !important; }
+html body.andship-home #home-financial-reference .bal-arrow {
+  color: var(--fh-blue) !important;
+  font-size: 17px;
+}
+html body.andship-home #home-financial-reference .bal:hover,
+html body.andship-home #home-financial-reference .cta:hover,
+html body.andship-home #home-financial-reference .feature-copy a:hover { filter:brightness(.985); }
+html body.andship-home #home-financial-reference .feature-panel {
+  position: relative!important;
+  display: block!important;
+  min-height: 144px!important;
+  margin: 14px 0 22px!important;
+  padding:0!important;
+  border: 1px solid #e1e8f5!important;
+  border-radius: 14px!important;
+  background: #fff!important;
+  box-shadow: 0 4px 13px #1a3e790d!important;
+  isolation: isolate;
+}
+html body.andship-home #home-financial-reference .feature-image {
+  position: absolute!important;
+  z-index: 0;
+  inset: 0 auto 0 0!important;
+  width: 54%!important;
+  height:100%!important;
+  min-height: 0!important;
+  clip-path: polygon(0 0,100% 0,83% 100%,0 100%)!important;
+  background: url("/sprite-assets/home-financial-feature.webp") 44% 50%/cover no-repeat!important;
+}
+html body.andship-home #home-financial-reference .feature-panel::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 0 48%;
+  background: linear-gradient(112deg,#fff0 0 20%,#fff 21% 86%,var(--fh-blue) 86% 100%) !important;
+}
+html body.andship-home #home-financial-reference .feature-copy {
+  position: relative!important;
+  z-index: 1;
+  grid-column: 1!important;
+  width: 52%!important;
+  margin:0 0 0 48%!important;
+  align-self: center;
+  padding: 13px 37px 13px 4px!important;
+}
+html body.andship-home #home-financial-reference .feature-copy .section-kicker { font-size: 8px !important; }
+html body.andship-home #home-financial-reference .feature-copy h2 {
+  margin: 6px 0 5px!important;
+  color: var(--fh-ink)!important;
+  font: 800 clamp(15px,2.3vw,21px)/1.07 "Trebuchet MS",sans-serif!important;
+  letter-spacing: -.03em;
+}
+html body.andship-home #home-financial-reference .feature-copy p {
+  margin: 0 0 8px!important;
+  color: #51607c!important;
+  font-size: 9px!important;
+  line-height: 1.35!important;
+}
+html body.andship-home #home-financial-reference .feature-copy a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--fh-blue);
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+}
+html body.andship-home #home-financial-reference .feature-coordinate { display:none !important; }
+html body.andship-home #home-financial-reference .activity-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 2px 6px !important;
+}
+html body.andship-home #home-financial-reference .activity-heading h2 {
+  margin: 0;
+  color: var(--fh-ink);
+  font: 800 15px/1.2 "Trebuchet MS",sans-serif !important;
+  letter-spacing: -.025em;
+}
+html body.andship-home #home-financial-reference .activity-heading a {
+  padding: 5px 0;
+  color: var(--fh-blue);
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
+html body.andship-home #home-financial-reference .ticker.site-activity {
+  height: 49px !important;
+  min-height: 49px !important;
+  margin: 0 0 16px !important;
+  padding: 0 11px !important;
+  border: 1px solid #e0e7f3 !important;
+  border-radius: 13px !important;
+  background: #fff !important;
+  box-shadow: 0 3px 11px #1439790c !important;
+  color: #34405e !important;
+  font-size: 10px !important;
+}
+html body.andship-home #home-financial-reference .ticker.site-activity > b { color: var(--fh-blue) !important; }
+html body.andship-home #home-financial-reference .ticker-arrow { color: var(--fh-blue) !important; }
+html body.andship-home #home-financial-reference .home-more-access {
+  margin: 12px 0 24px;
+  border-top: 1px solid #e8edf6;
+}
+html body.andship-home #home-financial-reference .home-more-access > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  color: #53617e;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+html body.andship-home #home-financial-reference .home-more-access > summary::-webkit-details-marker { display:none; }
+html body.andship-home #home-financial-reference .home-more-access[open] > summary span { transform: rotate(45deg); }
+html body.andship-home #home-financial-reference .actions {
+  display: grid !important;
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  gap: 8px !important;
+  margin: 0 0 15px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html body.andship-home #home-financial-reference .act {
+  display: flex !important;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 8px !important;
+  border: 1px solid #e1e8f5 !important;
+  border-radius: 11px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  color: #34405e !important;
+  font-size: 10px !important;
+  text-decoration: none;
+}
+html body.andship-home #home-financial-reference .actions.home-primary-access {
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  margin:14px 0 0!important;
+}
+html body.andship-home #home-financial-reference .act svg { width:18px; flex:none; color:var(--fh-blue); }
+html body.andship-home #home-financial-reference .act small { color:var(--fh-muted); font-size:8px !important; }
+html body.andship-home #home-financial-reference .recent { margin:0 0 12px; }
+html body.andship-home #home-financial-reference .recent-heading { display:flex; align-items:end; justify-content:space-between; margin:0 2px 8px; }
+html body.andship-home #home-financial-reference .recent-heading h2 { margin:4px 0 0; color:var(--fh-ink); font:800 17px/1.1 "Trebuchet MS",sans-serif; }
+html body.andship-home #home-financial-reference .recent-heading a { color:var(--fh-blue); font-size:10px; text-decoration:none; }
+html body.andship-home #home-financial-reference .journey-list { border:1px solid #e1e8f5; border-radius:13px; background:#fff; }
+html body.andship-home #home-financial-reference .journey { color:var(--fh-ink); border-color:#e9edf4; }
+html body.andship-home #home-financial-reference .journey-icon { border-color:#e1e8f5; color:var(--fh-blue) !important; background:#fff !important; }
+html body.andship-home #home-financial-reference .journey small { color:var(--fh-muted); }
+html body.andship-home #home-financial-reference :is(a,button,summary):focus-visible { outline:2px solid var(--fh-blue) !important; outline-offset:3px; }
+html body.andship-home #home-financial-reference a,
+html body.andship-home #home-financial-reference button { -webkit-tap-highlight-color: transparent; }
+
+/* The shared, server-rendered customer bar is restyled only on this home page. */
+html[data-platform-theme="silver"] body.andship-home .sprite-global-nav {
+  --sprite-nav-height: 68px;
+  --sprite-nav-width: min(calc(100vw - 20px), 760px);
+  width: var(--sprite-nav-width) !important;
+  height: 66px !important;
+  bottom: max(7px,env(safe-area-inset-bottom)) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+  gap: 2px;
+  padding: 5px 8px !important;
+  overflow: visible !important;
+  border: 1px solid #e3eafa !important;
+  border-radius: 21px !important;
+  background: #fffffffa !important;
+  box-shadow: 0 6px 26px #172d581c !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+}
+html body.andship-home #home-financial-reference .financial-feature-more {
+  position:absolute!important;z-index:3;right:7px!important;top:50%!important;
+  transform:translateY(-50%)!important;width:28px!important;height:28px!important;
+  display:grid!important;place-items:center;padding:0!important;border:1px solid #fff!important;
+  border-radius:50%!important;color:#fff!important;background:#1106e9!important;
+}
+html body.andship-home #home-financial-reference .financial-feature-more svg {
+  width:18px!important;height:18px!important;fill:none!important;stroke:currentColor!important;stroke-width:2;
+}
+html body.andship-home .sprite-global-nav::before,
+html body.andship-home .sprite-global-nav__silhouette,
+html body.andship-home .sprite-global-nav__reflection,
+html body.andship-home .sprite-global-nav__dock,
+html body.andship-home .sprite-global-nav__rim,
+html body.andship-home .sprite-global-nav__well,
+html body.andship-home .sprite-global-nav__bottle { display:none !important; content:none !important; }
+html[data-platform-theme="silver"] body.andship-home .sprite-global-nav .sprite-global-nav__item {
+  position: relative;
+  display:flex !important;
+  flex:1 1 0;
+  align-self:stretch !important;
+  justify-content:center !important;
+  min-width:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  gap:3px !important;
+  padding:3px 2px !important;
+  border:1px solid transparent !important;
+  border-radius:13px !important;
+  color:#71809e !important;
+  font:600 10px/1 "Trebuchet MS",sans-serif !important;
+  letter-spacing:0 !important;
+  transition:color .16s ease,background-color .16s ease !important;
+}
+html[data-platform-theme="silver"] body.andship-home .sprite-global-nav .sprite-global-nav__item svg {
+  width:19px !important;
+  height:19px !important;
+  color:inherit !important;
+  filter:none !important;
+}
+html[data-platform-theme="silver"] body.andship-home .sprite-global-nav .sprite-global-nav__item.is-active {
+  border-color:transparent !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  color:var(--fh-blue) !important;
+}
+html[data-platform-theme="silver"] body.andship-home .sprite-global-nav .sprite-global-nav__item.is-active::after {
+  content:"" !important;
+  position:absolute;
+  bottom:0;
+  width:25px;
+  height:3px;
+  border-radius:4px;
+  background:var(--fh-blue) !important;
+  box-shadow:none !important;
+}
+html body.andship-home .sprite-global-nav__item:hover svg,
+html body.andship-home .sprite-global-nav__item.is-active svg { transform:none !important; filter:none !important; }
+html body.andship-home .sprite-global-nav__item:active { transform:scale(.98); }
+
+@media (max-width: 767px) {
+  html body.andship-home #home-financial-reference {
+    width: min(100%, 466px) !important;
+    padding-inline: 14px !important;
+  }
+  html body.andship-home #home-financial-reference .hero {
+    margin-inline: -14px !important;
+    padding-inline: 14px !important;
+  }
+  html body.andship-home #home-financial-reference .hero-in { min-height: 210px; }
+  html body.andship-home #home-financial-reference .hero h1 { max-width: 70% !important; }
+  html body.andship-home #home-financial-reference .balances { gap: 10px !important; }
+  html body.andship-home #home-financial-reference .bal {
+    grid-template-columns: 30px minmax(0,1fr) 8px !important;
+    gap: 7px;
+    min-height: 92px !important;
+    padding: 9px !important;
+  }
+  html body.andship-home #home-financial-reference .bal .round { width:29px; height:29px; }
+  html body.andship-home #home-financial-reference .bal strong { font-size:13px !important; }
+  html body.andship-home #home-financial-reference .bal.product-slot strong,
+  html body.andship-home #home-financial-reference .bal.help-slot strong { font-size:11px !important; }
+  html body.andship-home #home-financial-reference .feature-panel { min-height:136px; }
+  html body.andship-home #home-financial-reference .feature-copy { padding-right:12px; }
+  html body.andship-home .sprite-global-nav { width:min(calc(100vw - 20px),466px) !important; }
+}
+@media (max-width: 360px) {
+  html body.andship-home #home-financial-reference { padding-inline:11px !important; }
+  html body.andship-home #home-financial-reference .hero { margin-inline:-11px !important; padding-inline:11px !important; }
+  html body.andship-home #home-financial-reference .home-topbar { height:62px !important; }
+  html body.andship-home #home-financial-reference .hero-in { min-height:212px; padding-inline:14px !important; }
+  html body.andship-home #home-financial-reference .hero h1 { width:72% !important; max-width:72% !important; font-size:25px !important; }
+  html body.andship-home #home-financial-reference .hero p { width:65% !important; font-size:10px !important; }
+  html body.andship-home #home-financial-reference .bal { grid-template-columns:25px minmax(0,1fr) 7px !important; gap:5px; padding:8px 6px !important; }
+  html body.andship-home #home-financial-reference .bal .round { width:25px; height:25px; }
+  html body.andship-home #home-financial-reference .bal small { font-size:9px !important; }
+  html body.andship-home #home-financial-reference .bal strong { font-size:12px !important; }
+  html body.andship-home #home-financial-reference .bal.product-slot strong,
+  html body.andship-home #home-financial-reference .bal.help-slot strong { font-size:10px !important; }
+  html body.andship-home #home-financial-reference .feature-panel { min-height:138px; }
+  html body.andship-home #home-financial-reference .feature-copy { padding:10px 8px 10px 2px; }
+  html body.andship-home #home-financial-reference .feature-copy h2 { font-size:15px; }
+  html body.andship-home #home-financial-reference .feature-copy p { font-size:8px; }
+  html body.andship-home #home-financial-reference .actions { grid-template-columns:1fr 1fr !important; }
+}
+@media (min-width: 1000px) {
+  html body.andship-home #home-financial-reference .hero-in { min-height:300px; padding:34px 40px !important; }
+  html body.andship-home #home-financial-reference .hero h1 { width: min(490px,55%) !important; max-width:55% !important; font-size: clamp(42px,4.4vw,58px) !important; }
+  html body.andship-home #home-financial-reference .hero p { width:min(420px,48%) !important; font-size:14px !important; }
+  html body.andship-home #home-financial-reference .hero-kicker { font-size:11px !important; }
+  html body.andship-home #home-financial-reference .main { margin-top:20px !important; }
+  html body.andship-home #home-financial-reference .balances { gap:16px !important; }
+  html body.andship-home #home-financial-reference .bal { min-height:130px !important; padding:18px !important; grid-template-columns:42px minmax(0,1fr) 16px !important; }
+  html body.andship-home #home-financial-reference .bal .round { width:40px; height:40px; }
+  html body.andship-home #home-financial-reference .bal strong { font-size:18px !important; }
+  html body.andship-home #home-financial-reference .bal.product-slot strong,
+  html body.andship-home #home-financial-reference .bal.help-slot strong { font-size:15px !important; }
+  html body.andship-home #home-financial-reference .feature-panel { min-height:220px; margin:20px 0 28px; }
+  html body.andship-home #home-financial-reference .feature-copy { padding:24px 28px 24px 12px; }
+  html body.andship-home #home-financial-reference .feature-copy h2 { font-size:30px; }
+  html body.andship-home #home-financial-reference .feature-copy p { max-width:370px; font-size:13px; }
+  html body.andship-home #home-financial-reference .feature-copy a { font-size:13px; }
+  html body.andship-home #home-financial-reference .activity-heading h2 { font-size:19px !important; }
+  html body.andship-home #home-financial-reference .ticker.site-activity { min-height:58px !important; height:58px !important; font-size:12px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body.andship-home #home-financial-reference *,
+  html body.andship-home #home-financial-reference *::before,
+  html body.andship-home #home-financial-reference *::after,
+  html body.andship-home .sprite-global-nav * {
+    scroll-behavior:auto !important;
+    animation:none !important;
+    transition:none !important;
+  }
+}

@@ -1,0 +1,634 @@
+/* Member profile — replace only the campaign layer; preserve account data and actions. */
+html[data-platform-theme="silver"] body .profile-app {
+  overflow: visible !important;
+  padding-bottom: calc(102px + env(safe-area-inset-bottom)) !important;
+  background: #f2f3f3 !important;
+}
+html[data-platform-theme="silver"] body .profile-app .hero {
+  height: 220px !important;
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2 0%,#f2f3f3df 46%,#f2f3f380 78%,#eef0f020 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 50% !important;
+  background-size: cover !important;
+}
+html[data-platform-theme="silver"] body .profile-app .hero::before,
+html[data-platform-theme="silver"] body .profile-app .hero::after,
+html[data-platform-theme="silver"] body .profile-app .hero-scene,
+html[data-platform-theme="silver"] body .profile-app .sprite-stage-bottle,
+html[data-platform-theme="silver"] body .profile-app .nav-bottle,
+html[data-platform-theme="silver"] body .profile-app .magic {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app :is(.hero-top,.hero-copy,.hero-profile,.hero-account,.vip-badge) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .logo {
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .hero-account,
+html[data-platform-theme="silver"] body .profile-app .vip-badge {
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 12px !important;
+  color: #414b4f !important;
+  background: #f8f9f8ed !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app :is(.circle,.copy-account-icon) {
+  color: #485256 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 12px !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .actions {
+  height: auto !important;
+  min-height: 66px !important;
+  padding: 6px !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 14px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 4px 14px #29323612 !important;
+}
+html[data-platform-theme="silver"] body .profile-app .action {
+  min-width: 0 !important;
+  color: #414b4f !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .action.active {
+  color: #fff !important;
+  border-color: #596367 !important;
+  border-radius: 10px !important;
+  background: #485256 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .balances {
+  gap: 10px !important;
+}
+html[data-platform-theme="silver"] body .profile-app .balance {
+  min-height: 124px !important;
+  height: auto !important;
+  padding: 16px !important;
+  color: #30373a !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 16px !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f4f5f5f6 0%,#f2f3f3e9 47%,#f2f3f397 78%,#eef0f020 100%),
+    url("/sprite-assets/andship-silver-camera-reference.webp") !important;
+  background-position: center,84% 49% !important;
+  background-size: cover,auto 190% !important;
+  box-shadow: 0 5px 16px #29323615 !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .balance::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .balance :is(strong,span) {
+  color: #30373a !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .balance-icon {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 12px !important;
+  background: #f7f8f7 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .menu-item {
+  min-height: 58px !important;
+  color: #414b4f !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 12px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 3px 10px #2932360b !important;
+  clip-path: none !important;
+  mask-image: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .menu-item::before {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .menu-item :is(.menu-icon,.chevron) {
+  color: #596367 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .menu-item :is(.menu-text strong,.menu-text span) {
+  color: #414b4f !important;
+}
+html[data-platform-theme="silver"] body .profile-app .promo {
+  color: #30373a !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 14px !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f3f4f4ed,#f1f2f2bf 62%,#eef0f02a),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .promo::before {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body .profile-app .bottom::before,
+html[data-platform-theme="silver"] body .profile-app .bottom::after,
+html[data-platform-theme="silver"] body .profile-app .bottom .nav::after,
+html[data-platform-theme="silver"] body .profile-app .bottom .nav.product::before,
+html[data-platform-theme="silver"] body .profile-app .balance::before {
+  display: none !important;
+}
+
+/* VIP inventory — preserve the product photography and purchase workflow. */
+html[data-platform-theme="silver"] body .app:has(.products) .hero {
+  height: 220px !important;
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2,#f2f3f3d9 46%,#f2f3f384 76%,#eef0f020),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 50% !important;
+  background-size: cover !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .hero::before,
+html[data-platform-theme="silver"] body .app:has(.products) .hero::after,
+html[data-platform-theme="silver"] body .app:has(.products) .hero-copy::before,
+html[data-platform-theme="silver"] body .app:has(.products) .sprite-stage-bottle {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) :is(.hero-copy,.heading,.heading-copy,.line,.slogan) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .slogan {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .line {
+  background: #cbd1d3 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .values .value {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .values .value svg {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 10px !important;
+  background: #f4f5f5 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .summary {
+  min-height: 96px !important;
+  color: #30373a !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 14px !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f3f4f4f4,#f1f2f2df 48%,#f1f2f29a 78%,#eef0f020),
+    url("/sprite-assets/andship-silver-camera-reference.webp") !important;
+  background-position: center,84% 48% !important;
+  background-size: cover,auto 190% !important;
+  box-shadow: 0 4px 13px #29323612 !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  filter: none !important;
+  clip-path: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .summary :is(strong,b,small,span) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .summary-icon {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 10px !important;
+  background: #f5f6f6 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .summary-go {
+  min-width: 32px !important;
+  min-height: 32px !important;
+  padding: 0 9px !important;
+  color: #485256 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 8px !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .heading {
+  min-height: 48px !important;
+  color: #414b4f !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 12px !important;
+  background: #e5e7e8 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .heading :is(h1,p) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .plan {
+  color: #485256 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 9px !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .product {
+  color: #30373a !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 14px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 5px 16px #29323612 !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .product::before,
+html[data-platform-theme="silver"] body .app:has(.products) .product::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .product-body :is(h2,.desc,.details,.value,.badge,.product-label) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .buy {
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  border-radius: 10px !important;
+  background: #485256 !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+}
+html[data-platform-theme="silver"] body .app:has(.products) .products-state:not(.error) {
+  color: #596367 !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 10px !important;
+  background: #f3f4f4 !important;
+}
+
+/* Daily check-in — replace the generated green poster, not the reward logic. */
+html[data-platform-theme="silver"] body:has(#checkin-button) .page {
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(180deg,#f2f3f3b8 0%,#f1f2f2d4 46%,#eff0f0e8 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,66% 49% !important;
+  background-size: cover !important;
+  box-shadow: 0 8px 30px #29323616 !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .page::after,
+html[data-platform-theme="silver"] body:has(#checkin-button) :is(.magic,.edge-art,.campaign-art,.poster-art,.campaign-copy),
+html[data-platform-theme="silver"] body:has(#checkin-button) .reward-label::before,
+html[data-platform-theme="silver"] body:has(#checkin-button) .reward-label::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .header {
+  color: #30373a !important;
+  border-bottom: 1px solid #d3d8da !important;
+  background: #f6f7f6 !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .header :is(h1,.back,.rules-link,.divider) {
+  color: #414b4f !important;
+  border-color: #cbd1d3 !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .header .rules-link {
+  border-radius: 9px !important;
+  background: #e5e7e8 !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .scene {
+  color: #30373a !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .scene :is(.campaign-copy,.footer-copy,.subtitle,.quote,.week-head,.streak,.day) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .scene .title-accent {
+  color: #485256 !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .campaign-copy::after,
+html[data-platform-theme="silver"] body:has(#checkin-button) .footer-copy::after {
+  background: #cbd1d3 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .calendar {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 16px !important;
+  background: #f4f5f5 !important;
+  box-shadow: 0 4px 14px #29323614 !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .calendar svg {
+  color: #596367 !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .reward-card {
+  color: #30373a !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 16px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 6px 18px #29323618 !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .reward-label {
+  top: 10px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 28px !important;
+  padding: 0 13px !important;
+  color: #485256 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 8px !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+  letter-spacing: .04em !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .coin {
+  filter: grayscale(.82) saturate(.28) !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .reward {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .reward small {
+  color: #626d71 !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .checkin-button {
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  border-radius: 11px !important;
+  background: #485256 !important;
+  box-shadow: 0 4px 12px #29323620 !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) :is(.status-card,.week-card,.info,.balance) {
+  color: #30373a !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 13px !important;
+  background: #f3f4f4 !important;
+  box-shadow: 0 4px 14px #29323610 !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) :is(.status-card span,.status-card strong,.week-card,.day,.info p,.balance) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .day i {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  background: #e5e7e8 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .day.done i {
+  color: #fff !important;
+  border-color: #34724d !important;
+  background: #34724d !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) :is(.result.success,.result.error,.result.info) {
+  border: 1px solid currentColor !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) .result.success { color: #17623d !important; background: #e7f2ea !important; }
+html[data-platform-theme="silver"] body:has(#checkin-button) .result.error { color: #9b302b !important; background: #f8e9e7 !important; }
+html[data-platform-theme="silver"] body:has(#checkin-button) .result.info { color: #805a17 !important; background: #f7f0df !important; }
+
+/* Social compose and feed — upload previews remain real unfiltered member images. */
+html[data-platform-theme="silver"] body .social-app {
+  color: #30373a !important;
+  background: #f2f3f3 !important;
+}
+html[data-platform-theme="silver"] body .social-app .intro {
+  color: #30373a !important;
+  border-radius: 0 0 18px 18px !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2,#f2f3f3d9 45%,#f2f3f382 78%,#eef0f020),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 49% !important;
+  background-size: cover !important;
+}
+html[data-platform-theme="silver"] body .social-app :is(.hero-atmosphere,.hero-art,.hero-bubble,.intro-stamp),
+html[data-platform-theme="silver"] body .social-app .intro::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body .social-app :is(.document-mark,.intro .eyebrow span) {
+  color: #596367 !important;
+  border-color: #cbd1d3 !important;
+  border-radius: 10px !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .social-app .upload-stack,
+html[data-platform-theme="silver"] body .social-app .post-card::before {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body .social-app :is(.intro h1,.intro h1 em,.intro-note,.eyebrow,.community-heading h2,.community-heading .eyebrow) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .social-app :is(.back-home,.help-trigger,.back-mark) {
+  color: #414b4f !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 10px !important;
+  background: #f8f9f8ed !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body .social-app :is(.privacy-note,.upload-zone,.preview-item,.empty-state,.post-card,.post-menu-info) {
+  color: #30373a !important;
+  border-color: #d3d8da !important;
+  border-radius: 12px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 4px 14px #29323610 !important;
+}
+html[data-platform-theme="silver"] body .social-app .privacy-note :is(p,strong) {
+  color: #596367 !important;
+}
+html[data-platform-theme="silver"] body .social-app :is(.privacy-icon,.privacy-guide,.step-chip,.image-counter,.image-counter svg) {
+  color: #596367 !important;
+  border-color: #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .social-app .image-counter > span {
+  color: #596367 !important;
+}
+html[data-platform-theme="silver"] body .social-app .upload-zone {
+  border: 1px dashed #aeb8bb !important;
+}
+html[data-platform-theme="silver"] body .social-app .upload-zone:hover,
+html[data-platform-theme="silver"] body .social-app .upload-zone.is-dragging {
+  border-color: #899397 !important;
+  background: #f0f1f1 !important;
+}
+html[data-platform-theme="silver"] body .social-app .upload-zone:focus-within {
+  outline: 2px solid #596367 !important;
+  outline-offset: 3px !important;
+}
+html[data-platform-theme="silver"] body .social-app .upload-zone :is(.upload-title,.upload-copy,.upload-subcopy,.upload-symbol) {
+  color: #596367 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body .social-app .upload-zone :is(svg,path) {
+  stroke: currentColor !important;
+}
+html[data-platform-theme="silver"] body .social-app .publish-button {
+  min-height: 48px !important;
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  border-radius: 12px !important;
+  background: #485256 !important;
+  box-shadow: 0 4px 12px #2932361c !important;
+  text-shadow: none !important;
+  clip-path: none !important;
+}
+html[data-platform-theme="silver"] body .social-app .publish-button:disabled {
+  color: #697378 !important;
+  border-color: #d3d8da !important;
+  background: #e5e7e8 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+html[data-platform-theme="silver"] body .social-app .preview-remove {
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  background: #596367 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body .social-app :is(.post-author,.post-phone,.post-caption,.post-ref,.post-time,.feed-status,.empty-state strong,.empty-state p) {
+  color: #414b4f !important;
+}
+html[data-platform-theme="silver"] body .social-app :is(.form-message.success,.post-status.success) {
+  color: #17623d !important;
+  border-color: #c3ddca !important;
+  background: #e7f2ea !important;
+}
+html[data-platform-theme="silver"] body .social-app :is(.form-message:not(.success),.post-status.error) {
+  color: #9b302b !important;
+  border-color: #e9c7c3 !important;
+  background: #f8e9e7 !important;
+}
+
+/* Transaction histories — strip their liquid pseudo-art, preserve status meaning. */
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .app {
+  color: #30373a !important;
+  background: #f2f3f3 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .app::before,
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .app::after,
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .filters-wrap::before,
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .filters-wrap::after,
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .bottom::before,
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .bottom::after,
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .bottom .nav.active::after,
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .withdrawal::before {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .hero {
+  height: 205px !important;
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f5 0%,#f2f3f3da 45%,#f2f3f385 77%,#eef0f020),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 48% !important;
+  background-size: cover !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .hero :is(.hero-title h1,.hero-title h1 span,.hero-title p,.back) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .hero .slogan {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .filters-wrap {
+  padding: 12px !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 14px !important;
+  background: #f3f4f4 !important;
+  box-shadow: 0 4px 14px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .filter {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 10px !important;
+  background: #f8f9f8 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  clip-path: none !important;
+  animation: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .filter::before,
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .filter::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .filter-symbol {
+  color: #596367 !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 8px !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .filter.active {
+  color: #fff !important;
+  border-color: #596367 !important;
+  border-radius: 10px !important;
+  background: #485256 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .filter:is(.success,.pending,.failed).active {
+  color: #485256 !important;
+  border-color: #cbd1d3 !important;
+  background: #eceeee !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .filter.active .filter-symbol {
+  color: #fff !important;
+  border-color: #718084 !important;
+  border-radius: 8px !important;
+  background: #596367 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) :is(.withdrawal,.empty) {
+  color: #30373a !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 14px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 5px 16px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .withdrawal :is(.card-head,.rows,.row,.card-intro h2,.card-intro>span,.label,.value,.amount) {
+  color: #414b4f !important;
+  border-color: #dfe3e4 !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .withdrawal :is(.wallet,.row-icon) {
+  color: #596367 !important;
+  border-color: #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .withdrawal .badge.success {
+  color: #17623d !important;
+  border-color: #c3ddca !important;
+  background: #e7f2ea !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .withdrawal .badge.pending {
+  color: #805a17 !important;
+  border-color: #e8d9b5 !important;
+  background: #f7f0df !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home):has(.filters-wrap) .withdrawal .badge.failed {
+  color: #9b302b !important;
+  border-color: #e9c7c3 !important;
+  background: #f8e9e7 !important;
+  box-shadow: none !important;
+}

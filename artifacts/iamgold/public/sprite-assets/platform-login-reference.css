@@ -1,0 +1,867 @@
+/* Alpine-cloud login: scoped only to the andship sign-in surface. */
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference {
+  --login-blue: #1106e9;
+  --login-ink: #111a32;
+  --login-muted: #64718a;
+  position: relative !important;
+  display: grid !important;
+  place-items: start center !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100dvh !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: max(12px, env(safe-area-inset-top)) 18px max(15px, env(safe-area-inset-bottom)) !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: var(--login-ink) !important;
+  background: #f5f8ff !important;
+  box-shadow: none !important;
+  font-family: "Manrope", "Avenir Next", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference::before {
+  position: absolute !important;
+  z-index: -2 !important;
+  inset: 0 !important;
+  content: "" !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+  background-color: #f5f8ff !important;
+  background-image:
+    linear-gradient(180deg, #f5f8ff 0%, rgba(245,248,255,.14) 27%, rgba(247,250,255,.05) 55%, #f7f9ff 96%),
+    linear-gradient(128deg, transparent 0 64%, #6655ff 64% 69%, #1106e9 69% 85%, transparent 85%),
+    url("../sprite-assets/login-reference-mountains.webp"),
+    radial-gradient(ellipse at 52% 14%, #fff 0%, #e6eeff 54%, #f7f9ff 100%) !important;
+  background-position: center, right top, left bottom, center !important;
+  background-size: 100% 100%, min(90vw,780px) min(95vh,850px), clamp(130px,23vw,260px) auto, cover !important;
+  background-repeat: no-repeat !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference::after {
+  display:none!important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: clamp(99px, 15vh, 151px) !important;
+  left: 50% !important;
+  width: min(100%, 984px) !important;
+  height: clamp(82px, 13vw, 132px) !important;
+  content: "" !important;
+  pointer-events: none !important;
+  opacity: .97 !important;
+  background: url("../sprite-assets/login-reference-flight.webp") center center / auto 100% no-repeat !important;
+  transform: translateX(-50%) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .login-flight {
+  position:relative!important;display:block!important;flex:none!important;
+  width:min(100vw,580px)!important;height:104px!important;
+  margin:0 0 7px!important;padding:0!important;pointer-events:none;
+}
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .login-flight img {
+  display:block!important;width:100%!important;height:100%!important;
+  object-fit:contain!important;object-position:center!important;transform:none!important;
+  mask-image:linear-gradient(180deg,transparent,#000 9%,#000 97%,transparent);
+}
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .secure-note>span.service-item {
+  display:flex!important;flex-direction:column!important;align-items:center!important;
+  justify-content:center!important;gap:4px!important;min-width:0!important;
+  padding:4px 6px!important;text-align:center!important;font-size:10px!important;
+  color:#111a32!important;background:transparent!important;border:0!important;
+  border-radius:0!important;box-shadow:none!important;filter:none!important;
+}
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .secure-note>span.service-item+span.service-item {
+  border-left:1px solid #dce3f2!important;
+}
+@media(max-width:350px),(max-height:740px) {
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .login-flight {
+    height:72px!important;margin-bottom:4px!important;
+  }
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference > :is(.scene-detail, .scene-coordinate) {
+  display: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .login-content {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: min(100%, 440px) !important;
+  max-width: 440px !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-block {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 0 13px !important;
+  text-align: center !important;
+  animation: ref-rise .5s ease-out both !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-compat-logo {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-lockup {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  color: var(--login-ink) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-mark {
+  display: block !important;
+  width: 29px !important;
+  height: 29px !important;
+  color: var(--login-blue) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-wordmark {
+  color: var(--login-ink) !important;
+  font: 800 22px/1 "Manrope", "Avenir Next", sans-serif !important;
+  letter-spacing: -.055em !important;
+  text-shadow: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-period {
+  color: var(--login-blue) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-rule {
+  width: 126px !important;
+  height: auto !important;
+  margin: 5px 0 0 !important;
+  color: var(--login-blue) !important;
+  background: none !important;
+  font: 700 9px/1.3 "Manrope", sans-serif !important;
+  letter-spacing: .32em !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-rule::after {
+  content: "ESPACE CLIENT" !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-rule span {
+  display: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .mission-title {
+  margin: 9px 0 0 !important;
+  color: var(--login-ink) !important;
+  font: 800 clamp(23px, 5.3vw, 31px)/1.12 "Manrope", "Avenir Next", sans-serif !important;
+  letter-spacing: -.045em !important;
+  text-shadow: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .mission-title span {
+  color: var(--login-blue) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .mission-subtitle {
+  margin: 4px 0 0 !important;
+  color: #26344f !important;
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+  text-shadow: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .login-panel {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 18px 25px 13px !important;
+  overflow: visible !important;
+  border: 1px solid #e8ebf3 !important;
+  border-radius: 22px !important;
+  background: #fff !important;
+  box-shadow: 0 18px 55px rgba(35, 57, 105, .13), 0 2px 7px rgba(35, 57, 105, .05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: ref-rise .55s .06s ease-out both !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .login-panel::before,
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .panel-corner {
+  display: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .panel-header {
+  margin: 0 0 14px !important;
+  text-align: center !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .panel-overline {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  margin: 0 0 7px !important;
+  padding: 5px 10px !important;
+  border: 1px solid #d8e0ff !important;
+  border-radius: 999px !important;
+  color: var(--login-blue) !important;
+  background: #f7f8ff !important;
+  font: 700 10px/1 "Manrope", sans-serif !important;
+  letter-spacing: .08em !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .panel-overline i {
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: var(--login-blue) !important;
+  box-shadow: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .panel-header h2 {
+  margin: 0 !important;
+  color: var(--login-ink) !important;
+  font: 800 23px/1.17 "Manrope", "Avenir Next", sans-serif !important;
+  letter-spacing: -.04em !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .panel-description {
+  margin: 4px 0 0 !important;
+  color: var(--login-muted) !important;
+  font: 500 12px/1.4 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .title-trace {
+  display: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference #login-form {
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference :is(.country-group, .field-group) {
+  min-width: 0 !important;
+  margin: 0 0 9px !important;
+  animation: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field-label {
+  display: block !important;
+  margin: 0 0 4px 2px !important;
+  color: #25314a !important;
+  font: 700 12px/1.3 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 44px !important;
+  height: 44px !important;
+  overflow: hidden !important;
+  border: 1px solid #dce1eb !important;
+  border-radius: 10px !important;
+  background: #fbfcff !important;
+  box-shadow: none !important;
+  transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field:focus-within {
+  border-color: #4263f2 !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 3px rgba(18, 61, 229, .11) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field-icon {
+  display: grid !important;
+  flex: 0 0 37px !important;
+  place-items: center !important;
+  height: 100% !important;
+  color: #34415c !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field-icon svg {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .country-select-button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: 0 12px 0 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: #1c2942 !important;
+  background: transparent !important;
+  text-align: left !important;
+  font: 600 16px/1.2 "Manrope", sans-serif !important;
+  cursor: pointer !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .country-select-button > span:nth-child(2) {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .country-chevron {
+  flex: 0 0 16px !important;
+  width: 16px !important;
+  height: 16px !important;
+  color: #283651 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .flag {
+  box-shadow: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .dial-code {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex: 0 0 auto !important;
+  height: 24px !important;
+  padding: 0 8px 0 0 !important;
+  border-right: 1px solid #d8deea !important;
+  color: #26344e !important;
+  font: 600 16px/1 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .dial-code .flag {
+  width: 17px !important;
+  height: 12px !important;
+  flex-basis: 17px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field input[type="tel"],
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field input[type="password"],
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field input[type="text"] {
+  flex: 1 1 0% !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: 0 9px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  color: #1d2941 !important;
+  background: transparent !important;
+  font: 500 16px/1.2 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field input::placeholder {
+  color: #858fa1 !important;
+  opacity: 1 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field input:is(:-webkit-autofill, :autofill) {
+  -webkit-text-fill-color: #1d2941 !important;
+  -webkit-box-shadow: 0 0 0 1000px #fbfcff inset !important;
+  box-shadow: 0 0 0 1000px #fbfcff inset !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .password-field input {
+  padding-right: 4px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .icon-button {
+  display: grid !important;
+  flex: 0 0 42px !important;
+  place-items: center !important;
+  width: 42px !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  height: 100% !important;
+  border: 0 !important;
+  color: #36435c !important;
+  background: transparent !important;
+  font: 500 16px/1 "Manrope", sans-serif !important;
+  cursor: pointer !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .icon-button svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .country-error {
+  display: none !important;
+  margin: 5px 2px 0 !important;
+  color: #b42336 !important;
+  font: 500 12px/1.35 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .country-error.show {
+  display: block !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .options {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+  min-height: 35px !important;
+  margin: 0 0 8px !important;
+  color: #3c4961 !important;
+  font: 500 12px/1.3 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .remember {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  min-width: 0 !important;
+  min-height: 35px !important;
+  color: #34415b !important;
+  font: 500 12px/1.3 "Manrope", sans-serif !important;
+  cursor: pointer !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .remember input {
+  position: absolute !important;
+  width: 22px !important;
+  height: 22px !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .checkmark {
+  display: grid !important;
+  flex: 0 0 16px !important;
+  place-items: center !important;
+  width: 16px !important;
+  height: 16px !important;
+  border: 1px solid #9aa6ba !important;
+  border-radius: 4px !important;
+  background: #fff !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .checkmark::after {
+  border-color: #fff !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .remember input:checked + .checkmark {
+  border-color: var(--login-blue) !important;
+  background: var(--login-blue) !important;
+  box-shadow: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .remember input:focus-visible + .checkmark {
+  outline: 2px solid var(--login-blue) !important;
+  outline-offset: 3px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .forgot {
+  flex: 0 0 auto !important;
+  min-height: 35px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: var(--login-blue) !important;
+  background: transparent !important;
+  font: 700 12px/1.3 "Manrope", sans-serif !important;
+  text-align: right !important;
+  cursor: pointer !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .primary-button {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 46px !important;
+  padding: 0 44px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  color: #fff !important;
+  background: var(--login-blue) !important;
+  box-shadow: none !important;
+  font: 700 16px/1 "Manrope", sans-serif !important;
+  cursor: pointer !important;
+  transition: transform .18s ease, background-color .18s ease !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .primary-button::after {
+  position: absolute !important;
+  top: 50% !important;
+  right: 17px !important;
+  width: 18px !important;
+  height: 18px !important;
+  content: "" !important;
+  background: currentColor !important;
+  transform: translateY(-50%) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .primary-button:hover {
+  background: #0b31ca !important;
+  filter: none !important;
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .primary-button:active {
+  transform: translateY(0) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .primary-button:disabled {
+  color: transparent !important;
+  background: #4565df !important;
+  cursor: wait !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .primary-button:disabled::before {
+  position: absolute !important;
+  left: calc(50% - 9px) !important;
+  width: 17px !important;
+  height: 17px !important;
+  border: 2px solid rgba(255,255,255,.45) !important;
+  border-top-color: #fff !important;
+  border-radius: 50% !important;
+  content: "" !important;
+  animation: login-spin .75s linear infinite !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .primary-button:disabled::after {
+  opacity: 0 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .signup-line {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px 6px !important;
+  margin: 8px 0 0 !important;
+  color: #64718a !important;
+  font: 500 12px/1.3 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .signup {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  min-height: 30px !important;
+  padding: 0 2px !important;
+  color: var(--login-blue) !important;
+  text-decoration: none !important;
+  font: 700 12px/1.3 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .signup svg {
+  width: 14px !important;
+  height: 14px !important;
+  color: var(--login-blue) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .secure-note {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  gap: 0 !important;
+  margin: 10px 0 0 !important;
+  color: #34415c !important;
+  font: 500 10px/1.25 "Manrope", sans-serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .secure-note > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  min-height: 28px !important;
+  padding: 0 5px !important;
+  border-right: 1px solid #dfe4ef !important;
+  color: #33415e !important;
+  background: transparent !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .secure-note > span:last-child {
+  border-right: 0 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .service-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  white-space: nowrap !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference .service-item svg {
+  flex: 0 0 17px !important;
+  width: 17px !important;
+  height: 17px !important;
+  color: var(--login-blue) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login #login-financial-reference :is(button, a, input):focus-visible {
+  outline: 2px solid #153de5 !important;
+  outline-offset: 3px !important;
+}
+
+/* The country picker is a sibling of main, so its veil and sheet need their own scoped reset. */
+html[data-platform-theme='silver'] body.andship-login .country-modal {
+  position: fixed !important;
+  z-index: 11000 !important;
+  inset: 0 !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 18px !important;
+  overflow-y: auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: rgba(18, 32, 62, .37) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-modal.open {
+  display: flex !important;
+  animation: ref-veil .16s ease-out both !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-sheet {
+  width: min(100%, 430px) !important;
+  max-width: 100% !important;
+  max-height: min(82dvh, 620px) !important;
+  overflow-y: auto !important;
+  padding: 22px !important;
+  border: 1px solid #e2e7f0 !important;
+  border-radius: 19px !important;
+  color: var(--login-ink, #111a32) !important;
+  background: #fff !important;
+  box-shadow: 0 22px 65px rgba(24, 41, 82, .2) !important;
+  outline: 0 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-sheet-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  margin-bottom: 16px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .modal-eyebrow {
+  color: #536486 !important;
+  font: 700 10px/1 "Manrope", sans-serif !important;
+  letter-spacing: .1em !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-sheet h2 {
+  margin: 7px 0 0 !important;
+  color: #111a32 !important;
+  font: 800 20px/1.2 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-close {
+  display: grid !important;
+  flex: 0 0 44px !important;
+  place-items: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  border: 1px solid #e0e5ef !important;
+  border-radius: 12px !important;
+  color: #26344e !important;
+  background: #f7f8fc !important;
+  font: 500 16px/1 "Manrope", sans-serif !important;
+  cursor: pointer !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-close svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-options {
+  display: grid !important;
+  gap: 8px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-option {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 48px !important;
+  padding: 0 13px !important;
+  border: 1px solid #e0e5ef !important;
+  border-radius: 11px !important;
+  color: #1d2941 !important;
+  background: #fff !important;
+  text-align: left !important;
+  font: 500 16px/1.2 "Manrope", sans-serif !important;
+  cursor: pointer !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-option:hover,
+html[data-platform-theme='silver'] body.andship-login .country-option:focus-visible {
+  border-color: #899df2 !important;
+  background: #f5f7ff !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-option-name {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  min-width: 0 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-option-code {
+  color: #4b5f9f !important;
+  font: 600 16px/1 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .country-modal :is(button):focus-visible {
+  outline: 2px solid #153de5 !important;
+  outline-offset: 2px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-login .app-toast {
+  color: #fff !important;
+  background: #263c7b !important;
+}
+
+@keyframes ref-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ref-veil {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (min-width: 700px) {
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference {
+    padding-top: max(15px, env(safe-area-inset-top)) !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-block {
+    margin-bottom: 15px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .login-panel {
+    padding: 20px 29px 15px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference {
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .login-panel {
+    padding: 16px 17px 12px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .field-icon {
+    flex-basis: 33px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .dial-code {
+    gap: 4px !important;
+    padding-right: 6px !important;
+    font-size: 16px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .options {
+    gap: 4px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .remember {
+    gap: 5px !important;
+    font-size: 11px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .forgot {
+    font-size: 11px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .secure-note {
+    font-size: 9px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .secure-note > span {
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-height: 37px !important;
+    text-align: center !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .service-item {
+    gap: 3px !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-height: 740px) {
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference {
+    padding-top: max(7px, env(safe-area-inset-top)) !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-block {
+    margin-bottom: 9px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .mission-title {
+    margin-top: 6px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .mission-subtitle {
+    margin-top: 2px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .login-panel {
+    padding-top: 15px !important;
+    padding-bottom: 10px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .panel-header {
+    margin-bottom: 10px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference :is(.country-group, .field-group) {
+    margin-bottom: 7px !important;
+  }
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .secure-note {
+    margin-top: 6px !important;
+  }
+}
+
+@media (max-width: 600px) and (max-height: 740px) {
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-block .mission-title,
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference .brand-block .mission-subtitle {
+    display: block !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference *,
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference *::before,
+  html[data-platform-theme='silver'] body.andship-login #login-financial-reference *::after,
+  html[data-platform-theme='silver'] body.andship-login .country-modal,
+  html[data-platform-theme='silver'] body.andship-login .country-modal * {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 48" role="img" aria-label="AERONOVA">
+  <g transform="translate(2 2) scale(1)" aria-hidden="true">
+    <path fill="#1238ed" d="M22 1 1 42h13l8-16 7 16h13L22 1zm0 13 4 10h-9z"/>
+    <path fill="#00b87d" d="m22 1 21 41H30l-8-16-5 10-9 5z"/>
+  </g>
+  <text x="52" y="31" fill="#0d183b" font-family="Arial,sans-serif" font-size="25" font-weight="800" letter-spacing="-1">AERONOVA</text>
+</svg>

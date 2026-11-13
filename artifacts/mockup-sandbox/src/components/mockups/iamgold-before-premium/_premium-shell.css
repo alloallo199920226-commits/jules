@@ -1,0 +1,260 @@
+/* Member shell and navigation. Real fluid canvas replaces the legacy zoomed frame. */
+.ayala-frame {
+  --header-space: 72px;
+  --bottom-stack: 0px;
+  --support-space: 0px;
+  --dock-safe-area: env(safe-area-inset-bottom, 0px);
+  --blue: var(--ig-forest);
+  --action: var(--ig-forest);
+  --ink: var(--ig-ink);
+  --muted: var(--ig-muted);
+  --page: var(--ig-paper);
+  --gold: var(--ig-gold);
+  --green: #477c65;
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 1440px);
+  max-width: 1440px;
+  height: 100dvh;
+  min-height: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--ig-paper);
+  color: var(--ig-ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 0 70px rgb(36 48 39 / 7%);
+}
+.ayala-frame * { box-sizing: border-box; }
+.ayala-canvas { position: relative; inset: auto; width: 100%; height: 100%; transform: none; transform-origin: top left; background: var(--ig-paper); }
+.ayala-scroll { height: 100%; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #d2c9b3 transparent; }
+.ayala-frame:has(.ayala-bottom) {
+  --bottom-stack: calc(78px + env(safe-area-inset-bottom, 0px));
+  --dock-safe-area: 0px;
+}
+.ayala-frame:has(.finance-fixed-action) {
+  --bottom-stack: calc(68px + max(18px, env(safe-area-inset-bottom, 0px)));
+  --dock-safe-area: 0px;
+}
+.ayala-frame:has(.ayala-support) { --support-space: calc(64px + var(--dock-safe-area)); }
+.ayala-frame .ayala-scroll {
+  max-height: calc(100% - var(--support-space) - var(--bottom-stack));
+  padding-bottom: 24px;
+}
+.ayala-canvas:has(> .ayala-header) > .ayala-scroll,
+.ayala-frame .finance-scroll {
+  max-height: calc(100% - var(--header-space) - var(--support-space) - var(--bottom-stack));
+  padding-bottom: 24px;
+}
+.ayala-frame .member-invest-layout {
+  max-height: calc(100% - var(--header-space) - var(--support-space) - var(--bottom-stack));
+}
+.ayala-frame .lottery-scroll { bottom: calc(var(--support-space) + var(--bottom-stack)); }
+.ayala-frame .financial-history-page { padding-bottom: calc(var(--support-space) + var(--bottom-stack)); }
+.ayala-canvas:has(.ayala-support)::after {
+  content: "Besoin d’aide ?";
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: var(--bottom-stack);
+  left: 0;
+  display: flex;
+  align-items: center;
+  height: var(--support-space);
+  padding: 0 max(22px, calc((100% - 1080px)/2)) var(--dock-safe-area);
+  border-top: 1px solid var(--ig-line);
+  background: var(--ig-paper);
+  color: var(--ig-muted);
+  font-size: 12px;
+  pointer-events: none;
+}
+.ayala-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  height: 72px;
+  padding: 0 68px;
+  background: var(--ig-forest);
+  color: #fffdf6;
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -.015em;
+}
+.ayala-header-title { max-width: min(100%, 660px); text-align: center; line-height: 1.25; }
+.ayala-head-btn, .ayala-head-help {
+  position: absolute;
+  top: 14px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 21%);
+  border-radius: 14px;
+  background: rgb(255 255 255 / 9%);
+  color: #fffdf6;
+  cursor: pointer;
+}
+.ayala-head-btn { left: 16px; }
+.ayala-head-help { right: 16px; font-size: 20px; font-weight: 700; }
+.ayala-main { width: min(100%, 1120px); margin: 0 auto; padding: 22px 24px 34px; }
+.ayala-card {
+  border: 1px solid rgb(226 223 213 / 90%);
+  border-radius: 18px;
+  background: var(--ig-surface);
+  box-shadow: 0 7px 24px rgb(36 48 39 / 4%);
+}
+.ayala-soft-button {
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid var(--ig-forest);
+  border-radius: 12px;
+  background: var(--ig-forest);
+  color: #fffdf6;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .18s ease, background-color .18s ease;
+}
+.ayala-soft-button:hover { background: var(--ig-forest-deep); }
+.ayala-soft-button:active { transform: translateY(1px); }
+.ayala-preview { top: 8px; right: 8px; padding: 4px 8px; border: 1px solid var(--ig-line); border-radius: 9px; background: var(--ig-surface); color: var(--ig-muted); font-size: 10px; }
+.ayala-bottom {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(78px + env(safe-area-inset-bottom));
+  padding: 0 max(8px, calc((100% - 900px)/2)) env(safe-area-inset-bottom);
+  border-top: 1px solid var(--ig-line);
+  background: rgb(255 254 250 / 96%);
+  backdrop-filter: blur(16px);
+}
+.ayala-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 3px;
+  width: min(20%, 130px);
+  height: 64px;
+  border: 0;
+  background: none;
+  color: #738078;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ayala-nav-item.active { color: var(--ig-forest); }
+.ayala-nav-icon { display: grid; height: 27px; place-items: center; }
+.ayala-nav-item.active .ayala-nav-icon { width: 38px; height: 32px; border-radius: 12px; background: #e9e2d2; color: var(--ig-forest); }
+.ayala-gift {
+  position: static;
+  display: grid;
+  width: 39px;
+  height: 32px;
+  place-items: center;
+  transform: none;
+  border: 1px solid #dfcfad;
+  border-radius: 11px;
+  background: #f2ead8;
+  color: var(--ig-forest);
+  box-shadow: none;
+}
+.ayala-support {
+  position: absolute;
+  z-index: 6;
+  right: max(18px, calc((100% - 1080px)/2));
+  bottom: calc(var(--bottom-stack) + var(--dock-safe-area) + 10px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: 44px;
+  padding: 0 13px;
+  place-items: center;
+  border: 1px solid #e4d9bf;
+  border-radius: 12px;
+  background: var(--ig-forest);
+  color: #fff8e8;
+  box-shadow: 0 8px 20px rgb(24 58 50 / 19%);
+  cursor: pointer;
+}
+.ayala-support svg { width: 22px; height: 22px; }
+.ayala-support::after { content: "Assistance"; font-size: 12px; font-weight: 600; }
+.ayala-logo { display: block; width: 112px; height: auto; object-fit: contain; }
+.ayala-logo-word { color: var(--ig-forest); font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 800; letter-spacing: -.06em; }
+.ayala-logo-word i { color: var(--ig-gold); font-style: normal; }
+.ayala-modal-scrim {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom));
+  overflow-y: auto;
+  background: rgb(16 35 30 / 60%);
+  backdrop-filter: blur(5px);
+}
+.ayala-modal {
+  position: relative;
+  width: min(100%, 520px);
+  max-height: 100%;
+  padding: 30px;
+  overflow: auto;
+  border: 1px solid rgb(255 255 255 / 75%);
+  border-radius: 23px;
+  background: var(--ig-surface);
+  text-align: center;
+  box-shadow: 0 24px 70px rgb(7 22 18 / 28%);
+}
+.ayala-modal-close {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid var(--ig-line);
+  border-radius: 13px;
+  background: #f5f2e9;
+  color: var(--ig-forest);
+  font-size: 22px;
+  cursor: pointer;
+}
+.ayala-modal-symbol { display: grid; width: 64px; height: 64px; place-items: center; margin: 0 auto 18px; border-radius: 20px; background: #eee5d2; color: var(--ig-forest); }
+.ayala-modal h2 { margin: 0 0 12px; color: var(--ig-ink); font: 750 23px/1.28 'Manrope', sans-serif; }
+.ayala-modal p { margin: 0 0 22px; color: #64726b; font-size: 15px; line-height: 1.65; }
+.ayala-toast {
+  position: absolute;
+  z-index: 10;
+  bottom: calc(92px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 32px);
+  padding: 12px 17px;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 13px;
+  background: var(--ig-forest-deep);
+  color: #fffdf6;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-shadow: 0 9px 25px rgb(16 43 38 / 20%);
+}
+.ayala-link { color: inherit; text-decoration: none; }
+

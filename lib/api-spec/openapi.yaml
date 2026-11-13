@@ -1,0 +1,1087 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+paths:
+  /console/{entry}:
+    parameters:
+      - {name: entry, in: path, required: true, schema: {type: string, pattern: "^[a-zA-Z0-9@_-]{16,100}$"}}
+    get:
+      operationId: openPrivateConsole
+      responses:
+        "200": {description: Connexion opérateur, content: {text/html: {schema: {type: string}}}}
+        "404": {description: Page introuvable}
+  /member/orders:
+    get:
+      operationId: listMemberOrders
+      responses:
+        "200": {description: Attributions et commandes enregistrées, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+  /member/announcements:
+    get:
+      operationId: listMemberAnnouncements
+      responses:
+        "200": {description: Annonces publiées, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+  /social/images/{id}:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+    get:
+      operationId: getForumImage
+      responses:
+        "200": {description: Image autorisée, content: {image/png: {schema: {type: string, format: binary}}}}
+  /admin/login:
+    post:
+      operationId: loginConsole
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleCredentials"}}}}
+      responses:
+        "200": {description: Session ouverte, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+  /admin/{resource}:
+    parameters:
+      - {name: resource, in: path, required: true, schema: {type: string}}
+    get:
+      operationId: getConsoleResource
+      responses:
+        "200": {description: Ressource administrative, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+    post:
+      operationId: createConsoleResource
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResourceInput"}}}}
+      responses:
+        "200": {description: Enregistré, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+        "201": {description: Créé, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+    patch:
+      operationId: changeConsoleResource
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResourceInput"}}}}
+      responses:
+        "200": {description: Modifié, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+  /admin/{resource}/{id}:
+    parameters:
+      - {name: resource, in: path, required: true, schema: {type: string}}
+      - {name: id, in: path, required: true, schema: {type: string}}
+    get:
+      operationId: getConsoleDetail
+      responses:
+        "200": {description: Détail administratif, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+    patch:
+      operationId: updateConsoleDetail
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResourceInput"}}}}
+      responses:
+        "200": {description: Modifié, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+    delete:
+      operationId: deleteConsoleDetail
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/EmptyAction"}}}}
+      responses:
+        "200": {description: Supprimé ou désactivé, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+  /admin/{resource}/{id}/{action}:
+    parameters:
+      - {name: resource, in: path, required: true, schema: {type: string}}
+      - {name: id, in: path, required: true, schema: {type: string}}
+      - {name: action, in: path, required: true, schema: {type: string}}
+    post:
+      operationId: performConsoleAction
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResourceInput"}}}}
+      responses:
+        "200": {description: Action effectuée, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+    patch:
+      operationId: patchConsoleAction
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResourceInput"}}}}
+      responses:
+        "200": {description: Modifié, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+    delete:
+      operationId: deleteConsoleAction
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/EmptyAction"}}}}
+      responses:
+        "200": {description: Supprimé, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+  /admin/social/posts:
+    get:
+      operationId: listModerationPosts
+      parameters:
+        - {name: status, in: query, schema: {type: string, enum: [pending, approved, rejected]}}
+        - {name: cursor, in: query, schema: {type: integer, minimum: 0}}
+      responses:
+        "200": {description: Publications à modérer, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+  /admin/social/posts/{id}/{action}:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+      - {name: action, in: path, required: true, schema: {type: string, enum: [approve, reject, bonus]}}
+    post:
+      operationId: moderateForumPost
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ModerationInput"}}}}
+      responses:
+        "200": {description: Décision enregistrée, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+  /admin/social/posts/{id}:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+    delete:
+      operationId: eraseForumPost
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/EmptyAction"}}}}
+      responses:
+        "200": {description: Publication et image supprimées, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleResult"}}}}
+  /forum/posts/{id}/view:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+    post:
+      operationId: recordForumView
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/EmptyAction"}}}}
+      responses:
+        "200": {description: Vues uniques, content: {application/json: {schema: {$ref: "#/components/schemas/ForumCounters"}}}}
+  /forum/posts/{id}/like:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+    post:
+      operationId: reactForumPost
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ReactionInput"}}}}
+      responses:
+        "200": {description: Réaction enregistrée, content: {application/json: {schema: {$ref: "#/components/schemas/ForumCounters"}}}}
+  /forum/posts/{id}/comments:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+    get:
+      operationId: listForumComments
+      responses:
+        "200": {description: Commentaires, content: {application/json: {schema: {$ref: "#/components/schemas/ForumComments"}}}}
+    post:
+      operationId: addForumComment
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/CommentInput"}}}}
+      responses:
+        "201": {description: Commentaire créé, content: {application/json: {schema: {$ref: "#/components/schemas/ForumComment"}}}}
+  /member/products:
+    get:
+      operationId: listMemberProducts
+      responses:
+        "200": {description: Catalogue actif, content: {application/json: {schema: {$ref: "#/components/schemas/ProductCatalog"}}}}
+  /member/transactions:
+    get:
+      operationId: listMemberTransactions
+      parameters:
+        - {name: kind, in: query, schema: {type: string, enum: [all, recharges, withdrawals], default: all}}
+        - {name: cursor, in: query, schema: {type: string, format: uuid}}
+      responses:
+        "200":
+          description: Opérations du membre, les plus récentes en premier, par pages de cinquante.
+          content: {application/json: {schema: {$ref: "#/components/schemas/MemberTransactionPage"}}}
+        "400": {description: Filtre ou curseur invalide}
+        "401": {description: Session membre requise}
+  /member/wallet/events:
+    get:
+      operationId: streamMemberWalletChanges
+      summary: Notifications privées des changements confirmés du portefeuille
+      responses:
+        "200":
+          description: Flux SSE ; wallet-changed déclenche une relecture du portefeuille, sans transmettre de montant.
+          content:
+            text/event-stream:
+              schema: {type: string}
+        "401": {description: Session membre requise}
+        "403": {description: Configuration du compte requise}
+        "503": {description: Notifications temporairement indisponibles}
+  /member/wallet:
+    get:
+      operationId: getMemberWallet
+      responses:
+        "200": {description: Solde et mouvements enregistrés, content: {application/json: {schema: {$ref: "#/components/schemas/MemberWallet"}}}}
+  /support/presence:
+    get:
+      operationId: getSupportPresence
+      responses:
+        "200": {description: Présence réelle du service client, content: {application/json: {schema: {$ref: "#/components/schemas/SupportPresenceState"}}}}
+    post:
+      operationId: updateSupportPresence
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/SupportActivityInput"}}}}
+      responses:
+        "200": {description: Activité et ouvertures confirmées, content: {application/json: {schema: {$ref: "#/components/schemas/SupportPresenceState"}}}}
+  /admin/support/conversations/{id}/presence:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+    get:
+      operationId: getConsoleSupportPresence
+      responses:
+        "200": {description: Présence réelle du membre, content: {application/json: {schema: {$ref: "#/components/schemas/SupportPresenceState"}}}}
+    post:
+      operationId: updateConsoleSupportPresence
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/SupportActivityInput"}}}}
+      responses:
+        "200": {description: Activité opérateur et ouvertures confirmées, content: {application/json: {schema: {$ref: "#/components/schemas/SupportPresenceState"}}}}
+  /support/messages:
+    get:
+      operationId: listSupportMessages
+      responses:
+        "200": {description: Conversation privée, content: {application/json: {schema: {$ref: "#/components/schemas/SupportThread"}}}}
+    post:
+      operationId: sendSupportMessage
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/SupportMessageInput"}}}}
+      responses:
+        "201": {description: Message enregistré, content: {application/json: {schema: {$ref: "#/components/schemas/SupportMessage"}}}}
+  /support/messages/{id}/like:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+    post:
+      operationId: reactSupportMessage
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ReactionInput"}}}}
+      responses:
+        "200": {description: Réaction enregistrée, content: {application/json: {schema: {$ref: "#/components/schemas/ForumCounters"}}}}
+  /admin/support/conversations:
+    get:
+      operationId: listSupportConversations
+      responses:
+        "200": {description: Conversations et utilisateurs, content: {application/json: {schema: {$ref: "#/components/schemas/SupportConversationList"}}}}
+  /admin/support/conversations/{id}/status:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+    patch:
+      operationId: updateSupportConversationStatus
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ConversationStatusInput"}}}}
+      responses:
+        "200": {description: État de traitement enregistré, content: {application/json: {schema: {$ref: "#/components/schemas/ConversationStatusInput"}}}}
+  /admin/support/conversations/{id}/messages:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+    get:
+      operationId: listConsoleMessages
+      responses:
+        "200": {description: Conversation privée, content: {application/json: {schema: {$ref: "#/components/schemas/SupportThread"}}}}
+    post:
+      operationId: sendConsoleMessage
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/SupportMessageInput"}}}}
+      responses:
+        "201": {description: Message enregistré, content: {application/json: {schema: {$ref: "#/components/schemas/SupportMessage"}}}}
+  /admin/support/messages/{id}/like:
+    parameters:
+      - {name: id, in: path, required: true, schema: {type: string, format: uuid}}
+    post:
+      operationId: reactConsoleMessage
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ReactionInput"}}}}
+      responses:
+        "200": {description: Réaction enregistrée, content: {application/json: {schema: {$ref: "#/components/schemas/ForumCounters"}}}}
+  /admin/support/uploads/request-url:
+    post:
+      operationId: requestConsoleUpload
+      requestBody: {required: true, content: {application/json: {schema: {$ref: "#/components/schemas/ConsoleUploadInput"}}}}
+      responses:
+        "200": {description: Transfert privé, content: {application/json: {schema: {$ref: "#/components/schemas/UploadTicket"}}}}
+  /member/profile:
+    put:
+      operationId: updateMemberProfile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MemberProfileInput"
+      responses:
+        "200":
+          description: Profil enregistré
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountSession"
+  /member/password:
+    post:
+      operationId: changeLoginPassword
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PasswordChangeInput"
+      responses:
+        "200":
+          description: Mot de passe modifié, session courante renouvelée et autres sessions révoquées
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountSession"
+  /member/transaction-password:
+    post:
+      operationId: changeTransactionPassword
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TransactionPasswordChangeInput"
+      responses:
+        "200":
+          description: Mot de passe de transaction modifié
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountSession"
+  /storage/objects/{objectPath}:
+    get:
+      operationId: getMemberImage
+      parameters:
+        - in: path
+          name: objectPath
+          required: true
+          description: Chemin relatif sous objects, réservé au propriétaire ou à une publication visible des membres
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Image privée ou publiée par un membre
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+            image/webp:
+              schema:
+                type: string
+                format: binary
+  /storage/public-objects/{filePath}:
+    get:
+      operationId: getPublicStorageObject
+      parameters:
+        - in: path
+          name: filePath
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Fichier dans un répertoire public configuré
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+  /member/overview:
+    get:
+      operationId: getMemberOverview
+      responses:
+        "200":
+          description: Données du compte connecté, sans solde ni gain fictif
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MemberOverview"
+  /member/team:
+    get:
+      operationId: getMemberTeam
+      parameters:
+        - in: query
+          name: level
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 3
+            default: 1
+        - in: query
+          name: page
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100000
+            default: 1
+      responses:
+        "200":
+          description: Équipe du compte connecté, sur trois générations. Activation financière inconnue en l’absence de service financier.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MemberTeam"
+        "400":
+          description: Niveau ou page invalide
+        "401":
+          description: Connexion requise
+        "403":
+          description: Configuration du compte requise
+  /forum/posts:
+    get:
+      operationId: listForumPosts
+      responses:
+        "200":
+          description: Publications enregistrées
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ForumPost"
+    post:
+      operationId: createForumPost
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ForumPostInput"
+      responses:
+        "201":
+          description: Publication enregistrée sans attribution automatique de récompense
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForumPost"
+  /storage/uploads/request-url:
+    post:
+      operationId: requestUploadUrl
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UploadMetadata"
+      responses:
+        "200":
+          description: URL temporaire réservée à une image du membre connecté
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UploadTicket"
+  /auth/register:
+    post:
+      operationId: registerAccount
+      summary: Créer un compte et sa session, avec étape de transaction obligatoire
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegistrationInput"
+      responses:
+        "201":
+          description: Compte enregistré, configuration du mot de passe de transaction requise
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountSession"
+        "400":
+          description: Informations ou code incorrects
+        "409":
+          description: Numéro déjà inscrit
+        "410":
+          description: Code expiré ou déjà utilisé
+        "429":
+          description: Trop de tentatives
+  /auth/login:
+    post:
+      operationId: loginAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginInput"
+      responses:
+        "200":
+          description: Session ouverte
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountSession"
+        "401":
+          description: Identifiants incorrects
+        "429":
+          description: Trop de tentatives
+  /auth/me:
+    get:
+      operationId: getCurrentSession
+      responses:
+        "200":
+          description: Session actuelle ou absence de session
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SessionState"
+  /auth/logout:
+    post:
+      operationId: logoutAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LogoutInput"
+      responses:
+        "204":
+          description: Session fermée
+  /onboarding/transaction-password:
+    post:
+      operationId: setupTransactionPassword
+      summary: Enregistrer le mot de passe de transaction avant d’autoriser le tableau de bord
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TransactionPasswordInput"
+      responses:
+        "200":
+          description: Configuration terminée
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountSession"
+        "400":
+          description: Informations ou code incorrects
+        "401":
+          description: Session requise
+        "409":
+          description: Mot de passe de transaction déjà défini
+        "410":
+          description: Code expiré ou déjà utilisé
+  /dashboard:
+    get:
+      operationId: getAccountDashboard
+      responses:
+        "200":
+          description: Profil réel du compte, aucune donnée financière inventée
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountSession"
+        "401":
+          description: Connexion requise
+        "403":
+          description: Configuration du mot de passe de transaction obligatoire
+  /internal-codes:
+    post:
+      operationId: issueInternalCode
+      summary: Générer un code affiché uniquement dans le site, sans vérifier un numéro de téléphone
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InternalCodeInput"
+      responses:
+        "200":
+          description: Code interne sans SMS, 120 secondes pour l’inscription ou 60 secondes pour la transaction
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalCode"
+        "400":
+          description: Numéro ou pays invalide
+        "429":
+          description: Trop de demandes
+  /internal-codes/verify:
+    post:
+      operationId: verifyInternalCode
+      summary: Valider et consommer un code interne, sans créer de compte
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InternalCodeVerification"
+      responses:
+        "200":
+          description: Code utilisé avec succès
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalCodeResult"
+        "400":
+          description: Code incorrect ou demande invalide
+        "410":
+          description: Code expiré ou déjà utilisé
+        "429":
+          description: Trop de tentatives
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+components:
+  schemas:
+    EmptyAction:
+      type: object
+      additionalProperties: false
+    ConsoleCredentials:
+      type: object
+      required: [password]
+      properties:
+        password: {type: string, minLength: 1, maxLength: 512}
+        path: {type: string}
+    ConsoleResourceInput:
+      type: object
+      additionalProperties: true
+    ConsoleResult:
+      type: object
+      additionalProperties: true
+    ModerationInput:
+      type: object
+      properties:
+        bonus: {type: integer, minimum: 0, maximum: 9007199254740991}
+        amount: {type: integer, minimum: 1, maximum: 9007199254740991}
+        reason: {type: string, minLength: 1, maxLength: 1000}
+        requestId: {type: string, format: uuid}
+    ReactionInput:
+      type: object
+      required: [liked]
+      properties:
+        liked: {type: boolean}
+    ForumCounters:
+      type: object
+      properties:
+        views: {type: integer}
+        likes: {type: integer}
+        liked: {type: boolean}
+    CommentInput:
+      type: object
+      required: [body]
+      properties:
+        body: {type: string, minLength: 1, maxLength: 2000}
+    ForumComment:
+      type: object
+      required: [id, body, authorName, createdAt]
+      properties:
+        id: {type: string}
+        body: {type: string}
+        authorName: {type: string}
+        createdAt: {type: string, format: date-time}
+    ForumComments:
+      type: object
+      required: [comments]
+      properties:
+        comments: {type: array, items: {$ref: "#/components/schemas/ForumComment"}}
+    CatalogProduct:
+      type: object
+      required: [id, name, category, price, dailyIncome, totalIncome, durationDays, active, code]
+      properties:
+        id: {type: integer}
+        name: {type: string}
+        category: {type: string, enum: [stable, wellbeing, activity]}
+        price: {type: integer}
+        dailyIncome: {type: integer}
+        totalIncome: {type: integer}
+        durationDays: {type: integer}
+        active: {type: boolean}
+        code: {type: string}
+    ProductCatalog:
+      type: object
+      required: [products, configured]
+      properties:
+        products: {type: array, items: {$ref: "#/components/schemas/CatalogProduct"}}
+        configured: {type: boolean}
+    WalletEntry:
+      type: object
+      required: [id, type, amount, createdAt]
+      properties:
+        id: {type: string}
+        type: {type: string}
+        amount: {type: integer}
+        createdAt: {type: string, format: date-time}
+    MemberTransaction:
+      type: object
+      required: [id, type, amount, status, createdAt]
+      properties:
+        id: {type: string, format: uuid}
+        type: {type: string}
+        amount: {type: integer}
+        status: {type: string, enum: [succeeded, pending, failed]}
+        createdAt: {type: string, format: date-time}
+    MemberTransactionPage:
+      type: object
+      required: [transactions, nextCursor]
+      properties:
+        transactions: {type: array, items: {$ref: "#/components/schemas/MemberTransaction"}}
+        nextCursor: {type: ["string", "null"], format: uuid}
+    MemberWallet:
+      type: object
+      required: [balance, credits, transactions]
+      properties:
+        balance: {type: integer}
+        credits: {type: integer}
+        transactions: {type: array, items: {$ref: "#/components/schemas/WalletEntry"}}
+    SupportActivityInput:
+      type: object
+      required: [clientId, active, messageIds]
+      properties:
+        clientId: {type: string, format: uuid}
+        active: {type: boolean}
+        messageIds:
+          type: array
+          maxItems: 100
+          items: {type: string, format: uuid}
+    SupportPresence:
+      type: object
+      required: [online, firstSeenAt, lastSeenAt, onlineUntil]
+      properties:
+        online: {type: boolean}
+        firstSeenAt: {type: [string, "null"], format: date-time}
+        lastSeenAt: {type: [string, "null"], format: date-time}
+        onlineUntil: {type: [string, "null"], format: date-time}
+    SupportPresenceState:
+      type: object
+      required: [presence, serverNow]
+      properties:
+        presence: {$ref: "#/components/schemas/SupportPresence"}
+        serverNow: {type: string, format: date-time}
+    SupportMessageInput:
+      type: object
+      required: [body, clientId]
+      properties:
+        body: {type: string, maxLength: 4000}
+        imagePath: {type: string, pattern: '^/objects/uploads/[a-f0-9-]{36}$'}
+        clientId: {type: string, format: uuid}
+    SupportMessage:
+      type: object
+      required: [id, body, imagePath, sender, createdAt, liked, likes]
+      properties:
+        clientId: {type: string, format: uuid}
+        id: {type: string}
+        body: {type: string}
+        imagePath: {type: [string, "null"]}
+        sender: {type: string, enum: [member, admin]}
+        createdAt: {type: string, format: date-time}
+        seenAt: {type: [string, "null"], format: date-time}
+        liked: {type: boolean}
+        likes: {type: integer}
+    ConversationStatusInput:
+      type: object
+      required: [status]
+      properties:
+        status: {type: string, enum: [in_progress, resolved]}
+    SupportConversationList:
+      type: object
+      required: [conversations]
+      properties:
+        serverNow: {type: string, format: date-time}
+        conversations: {type: array, items: {$ref: "#/components/schemas/SupportConversation"}}
+    SupportConversation:
+      type: object
+      required: [id, accountId, nickname, phone, country, lastMessage, lastMessageAt, lastSender, lastImagePath, status, unread, createdAt]
+      properties:
+        id: {type: string, format: uuid}
+        accountId: {type: string, format: uuid}
+        nickname: {type: string}
+        phone: {type: string}
+        country: {type: string}
+        email: {type: [string, "null"]}
+        avatarPath: {type: [string, "null"]}
+        createdAt: {type: string, format: date-time}
+        lastMessage: {type: string}
+        lastMessageAt: {type: [string, "null"], format: date-time}
+        lastSender: {type: string, enum: [member, admin]}
+        lastImagePath: {type: [string, "null"]}
+        status: {type: string, enum: [in_progress, resolved]}
+        unread: {type: integer, minimum: 0}
+        presence: {$ref: "#/components/schemas/SupportPresence"}
+    SupportThread:
+      type: object
+      required: [messages, user]
+      properties:
+        messages: {type: array, items: {$ref: "#/components/schemas/SupportMessage"}}
+        user: {$ref: "#/components/schemas/ConsoleResult"}
+    ConsoleUploadInput:
+      allOf:
+        - {$ref: "#/components/schemas/UploadMetadata"}
+        - type: object
+          required: [accountId]
+          properties:
+            accountId: {type: string, format: uuid}
+    MemberProfileInput:
+      type: object
+      required: [nickname]
+      properties:
+        nickname:
+          type: string
+          minLength: 1
+          maxLength: 60
+        email:
+          type: [string, "null"]
+          format: email
+          maxLength: 254
+        avatarPath:
+          type: [string, "null"]
+          pattern: '^/objects/uploads/[a-f0-9-]{36}$'
+    PasswordChangeInput:
+      type: object
+      required: [oldPassword, newPassword]
+      properties:
+        oldPassword:
+          type: string
+          minLength: 6
+          maxLength: 128
+        newPassword:
+          type: string
+          minLength: 6
+          maxLength: 128
+    TransactionPasswordChangeInput:
+      allOf:
+        - $ref: "#/components/schemas/PasswordChangeInput"
+        - type: object
+          required: [challengeId, code]
+          properties:
+            challengeId:
+              type: string
+              pattern: '^[a-f0-9]{48}$'
+            code:
+              type: string
+              pattern: '^\d{6}$'
+    TeamLevel:
+      type: object
+      required: [level, total, activated]
+      properties:
+        level:
+          type: integer
+        total:
+          type: integer
+        activated:
+          type: [integer, "null"]
+    TeamMember:
+      type: object
+      required: [id, nickname, avatarPath, joinedAt, activated]
+      properties:
+        id:
+          type: string
+        nickname:
+          type: string
+        avatarPath:
+          type: [string, "null"]
+        joinedAt:
+          type: string
+          format: date-time
+        activated:
+          type: [boolean, "null"]
+    MemberTeam:
+      type: object
+      required: [levels, members, level, page, hasMore]
+      properties:
+        levels:
+          type: array
+          items:
+            $ref: "#/components/schemas/TeamLevel"
+        members:
+          type: array
+          items:
+            $ref: "#/components/schemas/TeamMember"
+        level:
+          type: integer
+        page:
+          type: integer
+        hasMore:
+          type: boolean
+    MemberOverview:
+      type: object
+      required: [user, invitationCode, referrals, financialServicesAvailable, lotteryChances]
+      properties:
+        user:
+          $ref: "#/components/schemas/AccountUser"
+        invitationCode:
+          type: string
+        referrals:
+          type: integer
+        financialServicesAvailable:
+          type: boolean
+        lotteryChances:
+          type: integer
+    ForumPostInput:
+      type: object
+      required: [content, imagePath, consent]
+      properties:
+        content:
+          type: string
+          minLength: 1
+          maxLength: 2000
+        imagePath:
+          type: string
+          pattern: '^/objects/uploads/[a-f0-9-]{36}$'
+        consent:
+          type: boolean
+          enum: [true]
+    ForumPost:
+      type: object
+      required: [id, authorName, authorPhoneMasked, content, imagePath, createdAt, mine, status, bonus, views, likes, liked, commentCount, reviewNote]
+      properties:
+        status: {type: string, enum: [pending, approved, rejected]}
+        bonus: {type: integer}
+        views: {type: integer}
+        likes: {type: integer}
+        liked: {type: boolean}
+        commentCount: {type: integer}
+        reviewNote: {type: [string, "null"]}
+        id:
+          type: string
+        authorName:
+          type: string
+        authorPhoneMasked:
+          type: string
+        content:
+          type: string
+        imagePath:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        mine:
+          type: boolean
+    UploadMetadata:
+      type: object
+      required: [name, size, contentType]
+      properties:
+        name:
+          type: string
+          maxLength: 180
+        size:
+          type: integer
+          minimum: 1
+          maximum: 5242880
+        contentType:
+          type: string
+          enum: [image/jpeg, image/png, image/webp]
+    UploadTicket:
+      type: object
+      required: [uploadURL, objectPath]
+      properties:
+        uploadURL:
+          type: string
+        objectPath:
+          type: string
+    RegistrationInput:
+      allOf:
+        - $ref: "#/components/schemas/InternalCodeVerification"
+        - type: object
+          required: [nickname, password]
+          properties:
+            nickname:
+              type: string
+              minLength: 1
+              maxLength: 60
+            password:
+              type: string
+              minLength: 6
+              maxLength: 128
+            invitation:
+              type: string
+              maxLength: 60
+    LoginInput:
+      allOf:
+        - $ref: "#/components/schemas/InternalCodeInput"
+        - type: object
+          required: [password]
+          properties:
+            password:
+              type: string
+              minLength: 1
+              maxLength: 128
+    LogoutInput:
+      type: object
+      additionalProperties: false
+    TransactionPasswordInput:
+      type: object
+      required: [password, challengeId, code]
+      properties:
+        password:
+          type: string
+          minLength: 6
+          maxLength: 128
+        challengeId:
+          type: string
+          pattern: '^[a-f0-9]{48}$'
+        code:
+          type: string
+          pattern: '^\d{6}$'
+    AccountUser:
+      type: object
+      required: [id, country, phone, nickname, createdAt, transactionPasswordSet, phoneVerified]
+      properties:
+        id:
+          type: string
+        country:
+          type: string
+        phone:
+          type: string
+        nickname:
+          type: string
+        email:
+          type: [string, "null"]
+        avatarPath:
+          type: [string, "null"]
+        createdAt:
+          type: string
+          format: date-time
+        transactionPasswordSet:
+          type: boolean
+        phoneVerified:
+          type: boolean
+    AccountSession:
+      type: object
+      required: [user]
+      properties:
+        user:
+          $ref: "#/components/schemas/AccountUser"
+    SessionState:
+      type: object
+      required: [user]
+      properties:
+        user:
+          anyOf:
+            - $ref: "#/components/schemas/AccountUser"
+            - type: "null"
+    InternalCodeInput:
+      type: object
+      required: [country, phone]
+      properties:
+        country:
+          type: string
+          enum: [BJ, BF, CM, CI, FR, GN, ML, NE, SN, TG]
+        phone:
+          type: string
+          pattern: '^\d{6,14}$'
+        purpose:
+          type: string
+          enum: [registration, transaction, transaction-change]
+          default: registration
+    InternalCodeVerification:
+      allOf:
+        - $ref: "#/components/schemas/InternalCodeInput"
+        - type: object
+          required: [challengeId, code]
+          properties:
+            challengeId:
+              type: string
+              pattern: '^[a-f0-9]{48}$'
+            code:
+              type: string
+              pattern: '^\d{6}$'
+    InternalCode:
+      type: object
+      required: [challengeId, code, expiresAt, expiresIn]
+      properties:
+        challengeId:
+          type: string
+        code:
+          type: string
+        expiresAt:
+          type: number
+        expiresIn:
+          type: integer
+    InternalCodeResult:
+      type: object
+      required: [verified, accountCreated]
+      properties:
+        verified:
+          type: boolean
+        accountCreated:
+          type: boolean
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+

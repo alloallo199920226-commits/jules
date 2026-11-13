@@ -1,0 +1,1550 @@
+/* The same white-blue customer dock, with the team-green exception left intact. */
+html#secondary-theme body#secondary-reference.secondary-page .sprite-global-nav,
+html#team-secondary-theme body#team-secondary-reference.secondary-page .sprite-global-nav {
+  width: min(calc(100vw - 24px),480px) !important;
+  height: 68px !important;
+  min-height: 68px !important;
+  bottom: max(6px,env(safe-area-inset-bottom)) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border: 1px solid #e1e7f5 !important;
+  border-radius: 20px !important;
+  background: #fff !important;
+  background-image: none !important;
+  clip-path: none !important;
+  box-shadow: 0 5px 20px #183c7a12 !important;
+  padding: 6px !important;
+}
+html#secondary-theme body#secondary-reference.secondary-page .sprite-global-nav :is(.sprite-global-nav__silhouette,.sprite-global-nav__reflection,.sprite-global-nav__dock,.sprite-global-nav__bottle),
+html#team-secondary-theme body#team-secondary-reference.secondary-page .sprite-global-nav :is(.sprite-global-nav__silhouette,.sprite-global-nav__reflection,.sprite-global-nav__dock,.sprite-global-nav__bottle) {
+  display: none !important;
+}
+html#secondary-theme body#secondary-reference.secondary-page .sprite-global-nav__item,
+html#team-secondary-theme body#team-secondary-reference.secondary-page .sprite-global-nav__item {
+  position: relative !important;
+  min-height: 50px !important;
+  padding: 5px 2px !important;
+  color: #7587a5 !important;
+  border: 0 !important;
+  border-radius: 13px !important;
+  background: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+html#secondary-theme body#secondary-reference.secondary-page .sprite-global-nav__item.is-active,
+html#team-secondary-theme body#team-secondary-reference.secondary-page .sprite-global-nav__item.is-active {
+  color: #1238ed !important;
+  background: none !important;
+}
+html#secondary-theme body#secondary-reference.secondary-page .sprite-global-nav__item.is-active::after,
+html#team-secondary-theme body#team-secondary-reference.secondary-page .sprite-global-nav__item.is-active::after {
+  content: "" !important;
+  position: absolute !important;
+  display: block !important;
+  bottom: 0 !important;
+  left: 22% !important;
+  width: 56% !important;
+  height: 3px !important;
+  border-radius: 4px !important;
+  background: #1238ed !important;
+}
+html#secondary-theme body#secondary-reference.secondary-page .sprite-global-nav__item svg,
+html#team-secondary-theme body#team-secondary-reference.secondary-page .sprite-global-nav__item svg {
+  width: 22px !important;
+  height: 22px !important;
+  color: inherit !important;
+  fill: currentColor !important;
+}
+html#team-secondary-theme body#team-secondary-reference.secondary-page .sprite-global-nav__item.is-active {
+  color: #068849 !important;
+}
+html#team-secondary-theme body#team-secondary-reference.secondary-page .sprite-global-nav__item.is-active::after {
+  background: #068849 !important;
+}
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+/* Scoped Andship customer secondary screens. The two route IDs are deliberate:
+   these rules restyle legacy decoration while leaving each page's DOM and JS intact. */
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page {
+  --secondary-ink: #182746;
+  --secondary-muted: #64738f;
+  --secondary-blue: #2857d9;
+  --secondary-pale: #f2f6ff;
+  --secondary-line: #dfe7f5;
+  --secondary-shadow: 0 8px 24px #203b6912;
+  margin: 0 !important;
+  min-height: 100dvh !important;
+  color: var(--secondary-ink) !important;
+  background: #edf2fb !important;
+  font: 400 14px/1.5 "DM Sans", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+/* Strip legacy Sprite chrome before applying the route-specific Andship skin.
+   Real <img> photographs and operator artwork remain untouched. */
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page * {
+  background-image: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page *::before,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page *::after {
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+  animation: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page *,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page *::before,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page *::after {
+  box-sizing: border-box;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(button,input,select,textarea) {
+  font: inherit !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(input,select,textarea) {
+  min-height: 44px !important;
+  max-width: 100% !important;
+  font-size: 16px !important;
+  color: var(--secondary-ink) !important;
+  background-color: #fff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(button,a,[role="button"],summary) {
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.filter,.tab,.rules-link) {
+  font-size: 13px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(a,button,input,select,textarea,[tabindex]):focus-visible {
+  outline: 3px solid #2857d9 !important;
+  outline-offset: 3px !important;
+  filter: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(h1,h2,h3,p,li,label,small,strong,span) {
+  overflow-wrap: anywhere;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.app,.page,.about-page,.social-app,.container,.shell) {
+  width: min(calc(100% - 28px), 1040px) !important;
+  min-height: 100dvh !important;
+  margin: 0 auto !important;
+  padding-bottom: max(96px, calc(92px + env(safe-area-inset-bottom))) !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  color: var(--secondary-ink) !important;
+  background: #f7f9fe !important;
+  box-shadow: 0 12px 42px #18397412 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(header.hero,.hero,.about-header,.social-header,.header) {
+  position: relative !important;
+  isolation: isolate !important;
+  min-height: 190px !important;
+  height: auto !important;
+  margin: 0 -1px 15px !important;
+  padding: 62px 24px 22px !important;
+  overflow: hidden !important;
+  color: var(--secondary-ink) !important;
+  background: #f0f5ff url("/sprite-assets/andship-silver-drone-studio.webp") 82% 53%/auto 175% no-repeat !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .header:not(.hero):not(.about-header):not(.social-header) {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  min-height: 66px !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 9px 18px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #e2e9f5 !important;
+  color: #182746 !important;
+  background: #fff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(header.hero,.hero,.about-header,.social-header,.header)::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  inset: 0 !important;
+  display: block !important;
+  opacity: 1 !important;
+  background: linear-gradient(90deg,#f7f9fe 0%,#f7f9fef2 42%,#f7f9fe88 67%,#f7f9fe16 100%) !important;
+  filter: none !important;
+  transform: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.hero h1,.about-header h1,.social-header h1,.header h1) {
+  color: var(--secondary-ink) !important;
+  font: 700 clamp(24px,5vw,36px)/1.1 "Space Grotesk",sans-serif !important;
+  letter-spacing: -.04em !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.hero p,.about-header p,.social-header p,.header p) {
+  max-width: 42rem;
+  color: #455674 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(main,.content,.scene,.main,.page-content) {
+  min-width: 0 !important;
+  padding-inline: clamp(14px,3vw,26px) !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.card,.panel,.reward-card,.info,.rules-card,.account,.withdrawal,.transaction,.history-card,.product-card,.mission-card,.contacts,.form-card,.story-card,.platform-card,.commitment-card,.social-card) {
+  min-width: 0 !important;
+  color: var(--secondary-ink) !important;
+  background-color: #fff !important;
+  border: 1px solid var(--secondary-line) !important;
+  border-radius: 17px !important;
+  box-shadow: var(--secondary-shadow) !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.title,.section-title,.reward-card h2,.rules-card h2,.account h3,.panel h2) {
+  color: var(--secondary-ink) !important;
+  font: 700 20px/1.2 "Space Grotesk",sans-serif !important;
+  letter-spacing: -.025em !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.muted,.subtitle,.description,.account p,.card p,small) {
+  color: var(--secondary-muted);
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.btn,.button,.primary,.confirm,.submit,.cta,button[type="submit"]) {
+  min-height: 46px !important;
+  padding: 10px 17px !important;
+  border: 1px solid #2857d9 !important;
+  border-radius: 11px !important;
+  color: #fff !important;
+  background: #2857d9 !important;
+  box-shadow: 0 5px 14px #2857d923 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.step,.rule,.status-card,.transaction-row,.account-row,.product-row,.history-row) {
+  min-width: 0;
+  color: #2e405f !important;
+  background: #f3f6fc !important;
+  border-color: #e2e9f5 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.logo,.brand-logo,.hero-logo,.hero-bottle,.hero-decor,.hero-photo,.hero-waves,.hero-bubbles,.campaign-bottle,.fruit-art,.slogan,.history-decor) {
+  display: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .header > img.brand {
+  display: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.app,.page,.about-page,.social-app)::before,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.app,.page,.about-page,.social-app)::after,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.card,.panel,.reward-card,.rules-card,.account,.transaction,.history-card,.product-card,.mission-card)::before,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.card,.panel,.reward-card,.rules-card,.account,.transaction,.history-card,.product-card,.mission-card)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  animation: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.tx,.deposit,.withdrawal,.filters-wrap,.filters,.rules-card,.rule,.important,.status-card,.history-card,.stat,.member,.form-card,.account,.intro,.confirm-card,.empty,.transaction,.product-card,.mission-card,.contacts,.social-card) {
+  color: #263a5e !important;
+  background-color: #fff !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 7px 22px #203b6910 !important;
+  filter: none !important;
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.filter.active,.tab.active,.nav.active,[aria-pressed="true"]) {
+  color: #fff !important;
+  background: #2857d9 !important;
+  border-color: #2857d9 !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.filters,.filters-wrap) {
+  padding: 8px !important;
+  background: #fff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .filter {
+  min-height: 44px !important;
+  height: auto !important;
+  color: #455674 !important;
+  background: #f2f6ff !important;
+  border: 1px solid #e2e9f5 !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.filter.active,.filter[aria-pressed="true"]) {
+  color: #fff !important;
+  background: #2857d9 !important;
+  border-color: #2857d9 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.bottom) {
+  color: #fff !important;
+  background: #18356f !important;
+  box-shadow: 0 -8px 22px #18397420 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .bottom .nav.active {
+  color: #fff !important;
+  background: #2857d9 !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.gift,.wallet,.icon,.empty-icon,.step-index,.info-icon) {
+  color: #2857d9 !important;
+  border-color: #dfe7f5 !important;
+  background: #edf3ff !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page {
+  width: min(100%,520px) !important;
+  min-height: 100dvh !important;
+  background: #f2f6ff !important;
+  box-shadow: 0 12px 40px #1d3d7220 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page .hero {
+  min-height: 380px !important;
+  height: auto !important;
+  padding-bottom: 22px !important;
+  color: #182746 !important;
+  background-image: linear-gradient(90deg,#f4f7fff7 0%,#f4f7ffee 52%,#eef4ffb5 100%),url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center, right 36% !important;
+  background-size: cover, auto 100% !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page .hero::before {
+  content: none !important;
+  display: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page :is(.head-copy,.hero h1,.desc,.feature,.eyebrow,.support-badge) {
+  color: #20365e !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page .head-copy {
+  border-left-color: #dce6f7 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page .back {
+  width: 44px !important;
+  height: 44px !important;
+  color: #2857d9 !important;
+  border: 1px solid #dce6f7 !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page .support-badge {
+  border: 1px solid #dce6f7 !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page .feature i {
+  color: #2857d9 !important;
+  border-color: #dce6f7 !important;
+  background: #eaf0ff !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page .form-card,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page .contacts {
+  padding: 20px !important;
+  color: #263a5e !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 20px !important;
+  background: #fff !important;
+  box-shadow: 0 8px 24px #1d3d7212 !important;
+  filter: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page :is(.label,.contact h3,.contact p) {
+  color: #263a5e !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page :is(.control select,.control textarea) {
+  min-height: 44px !important;
+  border: 1px solid #cbd8ec !important;
+  border-radius: 11px !important;
+  color: #263a5e !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .support-page .send {
+  min-height: 48px !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: #2857d9 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(header.hero,.hero,.about-header,.social-header,.header)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.app,.page,.about-page,.social-app) :is(.sprite,.sprite-logo,.bottle,.citrus,.lemon,.lime,.water-art) {
+  display: none !important;
+  background-image: none !important;
+  filter: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.error,.empty,.loading) {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.tag,.right-tag,.slogan) { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .tab.active {
+  color: #fff !important;
+  background: #2857d9 !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .tab { font-size: 12px !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .footer-ad {
+  height: 190px !important;
+  margin-top: 10px !important;
+  border-radius: 18px !important;
+  background: #eff4ff url("/sprite-assets/andship-home-drone-flight.webp") 73% center/cover no-repeat !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .footer-ad::after {
+  background: linear-gradient(90deg,#f7f9fe 0%,#f7f9fedd 45%,#f7f9fe32 77%,transparent) !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .footer-ad p {
+  color: #203b70 !important;
+  text-shadow: none !important;
+}
+@media (min-width: 768px) {
+  html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.app,.page,.about-page,.social-app) {
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+    min-height: calc(100dvh - 36px) !important;
+    border-radius: 24px !important;
+  }
+}
+@media (max-width: 380px) {
+  html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.app,.page,.about-page,.social-app) {
+    width: 100% !important;
+  }
+  html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(header.hero,.hero,.about-header,.social-header,.header) {
+    padding-inline: 16px !important;
+    background-position: 100% 50% !important;
+    background-size: auto 145% !important;
+  }
+}
+
+/* missions.html keeps its original compact head markup; body opt-in still
+   scopes its legacy artwork without touching mission controls or data. */
+html:has(body#secondary-reference.secondary-page[data-theme="silver"]) body#secondary-reference.secondary-page .app {
+  width: min(calc(100% - 28px),1040px) !important;
+  min-height: 100dvh !important;
+  margin: 0 auto !important;
+  padding-bottom: max(96px,calc(92px + env(safe-area-inset-bottom))) !important;
+  overflow: visible !important;
+  color: #182746 !important;
+  background: #f7f9fe !important;
+  box-shadow: 0 12px 42px #18397412 !important;
+}
+html:has(body#secondary-reference.secondary-page[data-theme="silver"]) body#secondary-reference.secondary-page .top {
+  background: #f0f5ff url("/sprite-assets/andship-silver-drone-studio.webp") 82% 53%/auto 175% no-repeat !important;
+}
+html:has(body#secondary-reference.secondary-page[data-theme="silver"]) body#secondary-reference.secondary-page .top::after {
+  background: linear-gradient(90deg,#f7f9fe 0%,#f7f9fef2 42%,#f7f9fe88 67%,#f7f9fe16 100%) !important;
+}
+html:has(body#secondary-reference.secondary-page[data-theme="silver"]) body#secondary-reference.secondary-page :is(.reward,.empty,.mission,.task,.status-card) {
+  color: #182746 !important;
+  background: #fff !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 24px #203b6912 !important;
+}
+
+/* Payment and purchase routes share the new presentation while retaining all
+   operator marks, Stripe branding, translator assets, payment states and controls. */
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: max(12px,env(safe-area-inset-top)) 12px max(104px,env(safe-area-inset-bottom)) !important;
+  background: #edf2fb !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection::before { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection .box {
+  width: min(100%,760px) !important;
+  max-height: none !important;
+  padding: clamp(18px,4vw,32px) !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 22px !important;
+  color: #182746 !important;
+  background: #fff !important;
+  box-shadow: 0 14px 40px #18397417 !important;
+  backdrop-filter: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection :is(.intro,.amount,.label,.details,.details h2,.merchant-card,.paid-card,.warning,.error) {
+  color: #263a5e !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection .logo {
+  display: block !important;
+  filter: none !important;
+  background-image: url("/recharge_paiement_gopay/assets/gopay-reference.png") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection .banner-logo {
+  background-image: url("/paiement_gopay/gopay-logo-transparent.png") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection .channel {
+  min-height: 78px !important;
+  border-color: #dfe7f5 !important;
+  background: #f7f9fe !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection .channel.selected {
+  border: 2px solid #2857d9 !important;
+  background: #f2f6ff !important;
+  box-shadow: 0 0 0 3px #2857d91a !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection :is(.amount b,.merchant-card b,.step-title:before) { color: #2857d9 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection :is(.submit,.pay-link) {
+  width: 100% !important;
+  min-height: 48px !important;
+  height: auto !important;
+  color: #fff !important;
+  background: #2857d9 !important;
+  border-radius: 11px !important;
+  box-shadow: 0 5px 14px #2857d923 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection :is(.merchant-card,.paid-card) {
+  background: #f7f9fe !important;
+  border-color: #e0e8f5 !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection .manual-pay-message {
+  border-color: #dfe7f5 !important;
+  color: #334765 !important;
+  background: #f2f6ff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection .language { filter: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.operator-selection :is(.close,.transaction-close) {
+  min-width: 44px !important;
+  min-height: 44px !important;
+}
+
+/* VIP purchase confirmation remains the same flow, with the product artwork and
+   its success state intact; only the former green liquid wrapper is removed. */
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) {
+  display: grid !important;
+  place-items: center !important;
+  min-height: 100dvh !important;
+  padding: max(16px,env(safe-area-inset-top)) 12px max(20px,env(safe-area-inset-bottom)) !important;
+  color: #182746 !important;
+  background: #edf2fb !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .dialog {
+  width: min(100%,520px) !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  padding: 18px !important;
+  overflow: hidden !important;
+  color: #182746 !important;
+  text-align: left !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 23px !important;
+  background: #fff !important;
+  box-shadow: 0 16px 40px #18397418 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) :is(.hero-art,.liquid-rail,.liquid-rim-bottom) {
+  display: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .product-photo:not([hidden]) {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  height: clamp(170px,44vw,250px) !important;
+  margin: 0 auto 14px !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  border: 1px solid #e4ebf6 !important;
+  border-radius: 17px !important;
+  background: #f4f7fc !important;
+  box-shadow: none !important;
+  filter: none !important;
+  clip-path: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) :is(.product-name,.subtitle,.price,.note,.features,.feature,.actions) {
+  color: #20365e !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .product-name {
+  margin: 8px 0 !important;
+  font: 700 24px/1.2 "Space Grotesk",sans-serif !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .subtitle {
+  margin: 0 0 12px !important;
+  color: #64738f !important;
+  font-size: 14px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .price {
+  margin: 12px 0 16px !important;
+  color: #2857d9 !important;
+  font: 700 clamp(28px,8vw,36px)/1 "Space Grotesk",sans-serif !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .feature {
+  min-height: 44px !important;
+  padding: 11px 13px !important;
+  color: #304361 !important;
+  border: 1px solid #e2e9f5 !important;
+  border-radius: 12px !important;
+  background: #f4f7fc !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .note {
+  margin: 14px 2px 16px !important;
+  color: #64738f !important;
+  font-size: 13px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .actions {
+  gap: 10px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .actions button {
+  min-height: 46px !important;
+  height: auto !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .actions .cancel {
+  color: #40516d !important;
+  background: #f1f4f9 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .actions .confirm {
+  color: #fff !important;
+  background: #2857d9 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(.dialog) .success {
+  color: #182746 !important;
+  background: #f7f9fe !important;
+}
+
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout {
+  padding: 16px !important;
+  color: #182746 !important;
+  background: #edf2fb !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.reference-edge-art,.intro .hero-art,.intro .hero-halo) { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .checkout-shell {
+  width: min(100%,1060px) !important;
+  max-width: 1060px !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 22px !important;
+  color: #182746 !important;
+  background: #f8faff !important;
+  box-shadow: 0 14px 42px #18397414 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .checkout-header {
+  border-color: #e0e8f5 !important;
+  background: #fff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .checkout-header .brand img:first-child { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.checkout-header,.checkout-card,.order-summary,.challenge-panel) {
+  border-color: #dfe7f5 !important;
+  box-shadow: 0 8px 24px #203b6910 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.checkout-header,.checkout-card,.order-summary,.challenge-panel,.privacy-note,.flow-message) {
+  color: #263a5e !important;
+  background-color: #fff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.secure-label,.back-link,.eyebrow,.field-label,.field-help,.order-summary span,.privacy-note,.challenge-panel p,.card-heading p) {
+  color: #64738f !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .intro h1 {
+  color: #182746 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.intro h1 span,.eyebrow,.secure-label svg) {
+  color: #2857d9 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.card-heading h2,.order-summary strong,.field-label,.privacy-note b,.challenge-panel strong) {
+  color: #263a5e !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .step-index {
+  color: #2857d9 !important;
+  background: #edf3ff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.amount-field,.phone-field,.select-wrap,.text-field) {
+  border-color: #cbd8ec !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.amount-field,.phone-field,.select-wrap,.text-field):focus-within,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .text-field:focus {
+  border-color: #2857d9 !important;
+  box-shadow: 0 0 0 3px #2857d91a !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.amount-field input,.phone-field input,.select-wrap select) {
+  color: #182746 !important;
+  background: transparent !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.button-primary,.wave-validation-link) {
+  min-height: 48px !important;
+  color: #fff !important;
+  background: #2857d9 !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .button-secondary {
+  min-height: 48px !important;
+  color: #334765 !important;
+  border-color: #dfe7f5 !important;
+  background: #f3f6fc !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .privacy-note {
+  background: #f2f6ff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .privacy-note svg {
+  stroke: #2857d9 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .order-summary {
+  background: #f7f9fe !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .challenge-panel {
+  background: #f2f6ff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .loading-view :is(.loading-line,.loading-block) {
+  background: #edf2fb !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .intro {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 190px !important;
+  padding: 28px !important;
+  border-radius: 18px !important;
+  background: #eff4ff url("/sprite-assets/andship-silver-drone-studio.webp") 88% 48%/auto 145% no-repeat !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .intro::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(90deg,#f4f7ff 0%,#f4f7fff0 48%,#f4f7ff70 72%,transparent 100%) !important;
+  pointer-events: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .intro > :not(.hero-halo) { position: relative; z-index: 1; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.checkout-card,.confirmation-card,.success-card) {
+  color: #182746 !important;
+  background: #fff !important;
+  border-color: #dfe7f5 !important;
+  box-shadow: 0 7px 22px #203b6910 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout :is(.button-primary,.button-secondary,.text-button) {
+  min-height: 44px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .button-primary {
+  color: #fff !important;
+  background: #2857d9 !important;
+  border-color: #2857d9 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .button-secondary {
+  color: #2d4165 !important;
+  background: #fff !important;
+  border-color: #d9e2f1 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .text-button {
+  color: #2857d9 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.sprite-checkout .secure-label { color: #344967 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .dialog {
+  width: min(100%,560px) !important;
+  padding: clamp(16px,4vw,26px) !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 22px !important;
+  color: #182746 !important;
+  background: #fff !important;
+  box-shadow: 0 14px 40px #18397417 !important;
+  text-align: left !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .dialog::before { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.product-name,.price,.dialog .subtitle,.dialog .note) {
+  color: #182746 !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .dialog .feature {
+  min-height: 44px !important;
+  color: #283b5e !important;
+  background: #f2f6ff !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .dialog .actions :is(.cancel,.confirm) {
+  min-height: 46px !important;
+  color: #fff !important;
+  background: #2857d9 !important;
+  box-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .dialog .actions .cancel {
+  color: #2f4263 !important;
+  background: #f0f3fa !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .success {
+  color: #182746 !important;
+  background: #f7f9fe !important;
+}
+
+/* Deliberate team-green family: no blue conversion of the Andship team exception. */
+html#team-secondary-theme[data-theme="team-green"] body#team-secondary-reference.team-exception {
+  --team-green: #16845e;
+  margin: 0 !important;
+  min-height: 100dvh !important;
+  color: #17382d !important;
+  background: #edf5f0 !important;
+  font-family: "DM Sans",sans-serif !important;
+}
+html#team-secondary-theme[data-theme="team-green"] body#team-secondary-reference.team-exception .app {
+  width: min(calc(100% - 28px),1040px) !important;
+  min-height: 100dvh !important;
+  margin: 0 auto !important;
+  padding-bottom: max(96px,calc(92px + env(safe-area-inset-bottom))) !important;
+  color: #17382d !important;
+  background: #f8fbf9 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 12px 42px #174b3412 !important;
+}
+html#team-secondary-theme[data-theme="team-green"] body#team-secondary-reference.team-exception :is(.panel,.history-card,.stat,.member) {
+  color: #17382d !important;
+  background: #fff !important;
+  border: 1px solid #dcebe3 !important;
+  border-radius: 17px !important;
+  box-shadow: 0 7px 22px #174b3410 !important;
+}
+html#team-secondary-theme[data-theme="team-green"] body#team-secondary-reference.team-exception .hero {
+  position: relative !important;
+  min-height: 190px !important;
+  height: auto !important;
+  padding: 56px 24px 24px !important;
+  overflow: hidden !important;
+  color: #17382d !important;
+  background: #eff7f2 url("/sprite-assets/andship-silver-drone-studio.webp") 85% 50%/auto 170% no-repeat !important;
+}
+html#team-secondary-theme[data-theme="team-green"] body#team-secondary-reference.team-exception .hero::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(90deg,#f8fbf9 0%,#f8fbf9ed 46%,#f8fbf978 70%,transparent 100%) !important;
+  pointer-events: none !important;
+}
+html#team-secondary-theme[data-theme="team-green"] body#team-secondary-reference.team-exception :is(.hero h1,.hero p,.hero-copy) {
+  position: relative !important;
+  z-index: 1 !important;
+  color: #17382d !important;
+  text-shadow: none !important;
+}
+html#team-secondary-theme[data-theme="team-green"] body#team-secondary-reference.team-exception :is(.tab.active,.nav.active) {
+  color: #fff !important;
+  background: var(--team-green) !important;
+  box-shadow: none !important;
+}
+html#team-secondary-theme[data-theme="team-green"] body#team-secondary-reference.team-exception :is(.logo,.hero-bottle,.slogan,.history-decor) { display: none !important; }
+html#team-secondary-theme[data-theme="team-green"] body#team-secondary-reference.team-exception :is(input,select,textarea) {
+  min-height: 44px !important;
+  font-size: 16px !important;
+}
+html#team-secondary-theme[data-theme="team-green"] body#team-secondary-reference.team-exception :is(button,a,[role="button"],summary) { min-height: 44px !important; }
+
+/* Keep the genuine white aircraft visible on the withdrawal hero at every
+   viewport; this is a photo layer, not a decorative bottle or an icon. */
+html#finance-theme[data-platform-theme="silver"] body#finance-reference.andship-withdrawal .hero::before {
+  display: block !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  inset: 40px 0 0 auto !important;
+  width: min(62%, 290px) !important;
+  height: calc(100% - 40px) !important;
+  content: "" !important;
+  background: url("/sprite-assets/finance-reference-drone-withdrawal.webp") right center/contain no-repeat !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+  animation: none !important;
+}
+html#finance-theme[data-platform-theme="silver"] body#finance-reference.andship-withdrawal .hero::after {
+  z-index: 2 !important;
+  inset: 36px 0 0 !important;
+  background: linear-gradient(90deg,#f7f9fe 0%,#f7f9fef2 35%,#f7f9fe66 57%,transparent 78%) !important;
+}
+@media (max-width: 380px) {
+  html#finance-theme[data-platform-theme="silver"] body#finance-reference.andship-withdrawal .hero::before {
+    width: 58% !important;
+    background-position: right center !important;
+  }
+}
+
+/* Pointage: compact native bar, real reward data, clean photo card. */
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) {
+  display: block !important;
+  padding: 0 !important;
+  background: #edf2fb !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .page {
+  width: min(calc(100% - 28px), 1040px) !important;
+  min-height: 100dvh !important;
+  margin: 0 auto !important;
+  padding: 0 0 max(96px, calc(92px + env(safe-area-inset-bottom))) !important;
+  overflow: visible !important;
+  color: #182746 !important;
+  background: #f7f9fe !important;
+  box-shadow: 0 12px 42px #18397412 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .page > .header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  height: 72px !important;
+  min-height: 72px !important;
+  margin: 0 !important;
+  padding: 10px 18px !important;
+  border-bottom: 1px solid #e2e9f5 !important;
+  color: #182746 !important;
+  background: #fff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .page > .header .logo,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .page > .header .divider { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .page > .header .back {
+  display: grid !important;
+  flex: 0 0 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 50% !important;
+  color: #2857d9 !important;
+  background: #f2f6ff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .page > .header h1 {
+  flex: 1 !important;
+  margin: 0 !important;
+  color: #182746 !important;
+  font: 700 21px/1.1 "Space Grotesk", sans-serif !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .rules-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  min-width: 84px !important;
+  height: 44px !important;
+  padding: 0 12px !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 12px !important;
+  color: #2857d9 !important;
+  background: #f7f9fe !important;
+  font-size: 14px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .scene,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .scene.checked-in {
+  display: block !important;
+  position: relative !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 24px clamp(16px,3vw,28px) 30px !important;
+  color: #182746 !important;
+  background: transparent !important;
+  text-align: left !important;
+  isolation: auto !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) :is(.campaign-copy,.magic,.calendar,.footer-brand,.footer-copy,.edge-art) { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .scene::before {
+  content: none !important;
+  display: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .scene h2 {
+  margin: 0 0 6px !important;
+  color: #182746 !important;
+  font: 700 clamp(25px,4vw,34px)/1.08 "Space Grotesk",sans-serif !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .scene h2 .title-accent { color: #2857d9 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .scene > .subtitle {
+  margin: 0 0 20px !important;
+  color: #63718a !important;
+  font-size: 15px !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .reward-card {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 198px !important;
+  height: auto !important;
+  margin: 0 0 14px !important;
+  padding: 22px !important;
+  overflow: hidden !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 20px !important;
+  color: #182746 !important;
+  background-color: #fff !important;
+  background-image: linear-gradient(90deg,#fff 0%,#fffffff2 48%,#ffffffe0 65%,#ffffff35 100%),url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center, right center !important;
+  background-size: cover, auto 125% !important;
+  background-repeat: no-repeat !important;
+  box-shadow: 0 8px 24px #203b6912 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .reward-label {
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  height: 30px !important;
+  margin: 0 0 15px !important;
+  padding: 0 11px !important;
+  transform: none !important;
+  border-radius: 8px !important;
+  color: #2857d9 !important;
+  background: #edf3ff !important;
+  box-shadow: none !important;
+  font-size: 11px !important;
+  letter-spacing: .04em !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .reward-label svg { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .reward-main {
+  display: block !important;
+  max-width: min(64%, 400px) !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .coin { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .reward {
+  color: #182746 !important;
+  font: 700 clamp(27px,5vw,36px)/1.05 "Space Grotesk",sans-serif !important;
+  text-align: left !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .reward small {
+  margin-top: 6px !important;
+  color: #63718a !important;
+  font: 500 13px/1.4 "DM Sans",sans-serif !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .checkin-button {
+  width: min(100%,280px) !important;
+  min-height: 48px !important;
+  height: auto !important;
+  margin-top: 17px !important;
+  padding: 10px 16px !important;
+  border: 0 !important;
+  border-radius: 11px !important;
+  color: #fff !important;
+  background: #2857d9 !important;
+  box-shadow: none !important;
+  font-size: 15px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) :is(.info,.status-card,.week-card) {
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 12px 0 0 !important;
+  padding: 16px !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 16px !important;
+  color: #334765 !important;
+  background: #fff !important;
+  box-shadow: 0 7px 20px #203b690c !important;
+  backdrop-filter: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .scene.checked-in > :is(.status-grid,.week-card) {
+  display: grid !important;
+  position: static !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr)) !important;
+  grid-auto-rows: auto !important;
+  gap: 10px !important;
+  transform: none !important;
+  padding: 0 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .status-card {
+  display: block !important;
+  width: 100% !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .week-card { grid-column: 1 / -1 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .balance {
+  display: flex !important;
+  width: max-content !important;
+  min-height: 46px !important;
+  height: auto !important;
+  margin: 14px 0 0 !important;
+  padding: 10px 16px !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 11px !important;
+  color: #2857d9 !important;
+  background: #f2f6ff !important;
+  box-shadow: none !important;
+}
+
+/* À propos: replace Sprite hero shapes and green neon panels with calm photo-led reading surfaces. */
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-page {
+  width: min(calc(100% - 28px),1040px) !important;
+  padding-bottom: max(96px,calc(92px + env(safe-area-inset-bottom))) !important;
+  background: #f7f9fe !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-header {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 66px !important;
+  height: 66px !important;
+  margin: 0 !important;
+  padding: 10px 20px !important;
+  border-bottom: 1px solid #e2e9f5 !important;
+  color: #182746 !important;
+  background: #fff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-header .brand-logo { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-header .about-back {
+  display: grid !important;
+  place-items: center !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  margin-right: 14px !important;
+  border: 1px solid #dfe7f5 !important;
+  color: #2857d9 !important;
+  background: #f2f6ff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-header h1 {
+  padding: 0 0 0 14px !important;
+  border-left: 1px solid #dfe7f5 !important;
+  color: #182746 !important;
+  font: 700 21px/1.1 "Space Grotesk",sans-serif !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-hero {
+  position: relative !important;
+  height: auto !important;
+  min-height: 335px !important;
+  margin: 16px !important;
+  padding: 26px !important;
+  overflow: hidden !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 22px !important;
+  color: #182746 !important;
+  background: #eef3fb url("/sprite-assets/andship-silver-drone-studio.webp") 88% 54%/auto 150% no-repeat !important;
+  box-shadow: 0 9px 25px #203b6912 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-hero::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(90deg,#f7f9fe 0%,#f7f9fef5 43%,#f7f9fead 70%,#f7f9fe38 100%) !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.hero-photo,.hero-waves,.hero-bubbles,.app-art) { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .hero-content {
+  position: relative !important;
+  z-index: 1 !important;
+  max-width: 780px !important;
+  padding: 0 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-hero .eyebrow {
+  color: #496184 !important;
+  font-size: 11px !important;
+  letter-spacing: .15em !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-hero h2 {
+  max-width: 600px !important;
+  color: #182746 !important;
+  font: 700 clamp(30px,5vw,44px)/1.05 "Space Grotesk",sans-serif !important;
+  white-space: normal !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-hero h2 span { color: #2857d9 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-hero .hero-subtitle {
+  max-width: 430px !important;
+  color: #455674 !important;
+  font-size: 16px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .values {
+  width: min(100%,650px) !important;
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  gap: 10px !important;
+  margin: 22px 0 0 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .value {
+  min-height: 100px !important;
+  padding: 12px !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 14px !important;
+  color: #334765 !important;
+  background: #ffffffd9 !important;
+  font-size: 13px !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .value-icon {
+  width: 38px !important;
+  height: 38px !important;
+  margin-bottom: 7px !important;
+  border: 0 !important;
+  color: #2857d9 !important;
+  background: #edf3ff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-content {
+  display: grid !important;
+  gap: 16px !important;
+  margin: 0 !important;
+  padding: 0 16px 28px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-card {
+  height: auto !important;
+  margin: 0 !important;
+  padding: 22px !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 20px !important;
+  color: #263a5e !important;
+  background: #fff !important;
+  filter: none !important;
+  box-shadow: 0 8px 24px #203b6912 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-heading {
+  height: auto !important;
+  margin: 0 0 18px !important;
+  padding: 0 !important;
+  transform: none !important;
+  color: #182746 !important;
+  font: 700 25px/1.15 "Space Grotesk",sans-serif !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-heading span { color: #2857d9 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-card .card-main {
+  display: block !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-card .description-panel {
+  height: auto !important;
+  overflow: visible !important;
+  padding: 20px !important;
+  border: 1px solid #e4eaf5 !important;
+  border-radius: 16px !important;
+  color: #334765 !important;
+  background: #f7f9fe !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .description-panel h3 {
+  color: #182746 !important;
+  font-size: 20px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .description-panel p { color: #334765 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .description-panel mark {
+  color: #2857d9 !important;
+  background: #eaf0ff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-card .feature-strip {
+  height: auto !important;
+  margin: 14px 0 0 !important;
+  padding: 10px !important;
+  border: 1px solid #e2e9f5 !important;
+  border-radius: 15px !important;
+  background: #f7f9fe !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-card .feature {
+  color: #334765 !important;
+  font-size: 12px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-card .feature-icon {
+  width: 38px !important;
+  height: 38px !important;
+  color: #2857d9 !important;
+  background: #edf3ff !important;
+}
+
+/* Withdrawal accounts: flatten the legacy green glass artwork into real controls. */
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm),
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) {
+  width: min(calc(100% - 28px),1040px) !important;
+  min-height: 100dvh !important;
+  padding: 0 0 max(96px,calc(92px + env(safe-area-inset-bottom))) !important;
+  overflow: visible !important;
+  color: #182746 !important;
+  background: #f7f9fe !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm)::before,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea)::before { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .hero,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .hero {
+  min-height: 190px !important;
+  height: auto !important;
+  padding-bottom: 24px !important;
+  background: #eef3fb url("/sprite-assets/andship-silver-drone-studio.webp") 87% 52%/auto 160% no-repeat !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .hero::before,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .hero::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(90deg,#f7f9fe 0%,#f7f9fef2 43%,#f7f9fe7c 70%,transparent) !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .hero-row,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .hero-row {
+  position: relative !important;
+  z-index: 1 !important;
+  align-items: flex-start !important;
+  padding: max(28px,env(safe-area-inset-top)) 20px 20px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .hero-copy h1,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .hero-copy h1 {
+  max-width: 400px !important;
+  color: #182746 !important;
+  font: 700 25px/1.08 "Space Grotesk",sans-serif !important;
+  white-space: normal !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .hero-copy p,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .hero-copy p {
+  max-width: 440px !important;
+  color: #455674 !important;
+  font-size: 14px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page :is(.app:has(#accountForm),.app:has(#accountArea)) :is(.logo,.slogan) { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .back,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .back {
+  width: 44px !important;
+  height: 44px !important;
+  border: 1px solid #dfe7f5 !important;
+  color: #2857d9 !important;
+  background: #fff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) main,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) main {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 820px !important;
+  margin: 0 auto !important;
+  padding: 0 16px 28px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .form-card {
+  width: 100% !important;
+  height: auto !important;
+  margin: -18px 0 20px !important;
+  padding: 22px !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 20px !important;
+  color: #182746 !important;
+  background: #fff !important;
+  filter: none !important;
+  box-shadow: 0 8px 24px #203b6912 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .field-row {
+  height: auto !important;
+  margin: 0 0 16px !important;
+  padding: 0 !important;
+  grid-template-columns: minmax(0,1fr) !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .field-icon { display: none !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .field label {
+  margin: 0 0 7px !important;
+  color: #334765 !important;
+  font-size: 14px !important;
+  white-space: normal !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) :is(.input,.select-trigger) {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 48px !important;
+  padding: 10px 13px !important;
+  border: 1px solid #d8e1ef !important;
+  border-radius: 10px !important;
+  color: #182746 !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  font-size: 16px !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .security {
+  min-height: 68px !important;
+  height: auto !important;
+  margin: 0 0 14px !important;
+  padding: 14px !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 13px !important;
+  background: #f2f6ff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .security-icon {
+  width: 42px !important;
+  height: 42px !important;
+  color: #2857d9 !important;
+  background: #e6eeff !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .security strong { color: #2857d9 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .security p { color: #455674 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountForm) .confirm {
+  width: 100% !important;
+  min-height: 48px !important;
+  height: auto !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 11px !important;
+  color: #fff !important;
+  background: #2857d9 !important;
+  filter: none !important;
+  font-size: 16px !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .intro,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .account,
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .confirm-card {
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 14px 0 !important;
+  padding: 20px !important;
+  border: 1px solid #dfe7f5 !important;
+  border-radius: 18px !important;
+  color: #182746 !important;
+  background: #fff !important;
+  box-shadow: 0 8px 24px #203b6912 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .add {
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  min-height: 50px !important;
+  height: auto !important;
+  padding: 12px 16px !important;
+  border: 0 !important;
+  border-radius: 11px !important;
+  color: #fff !important;
+  background: #2857d9 !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .benefit { color: #334765 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .benefit strong { color: #182746 !important; }
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .bottom {
+  color: #fff !important;
+  background: #18356f !important;
+  box-shadow: 0 -8px 22px #18397420 !important;
+}
+html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .app:has(#accountArea) .nav.active {
+  color: #fff !important;
+  background: #2857d9 !important;
+}
+
+@media (max-width: 600px) {
+  html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .about-hero {
+    min-height: 390px !important;
+    margin: 12px !important;
+    padding: 20px !important;
+    background-position: 83% center !important;
+    background-size: auto 135% !important;
+  }
+  html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .values {
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+  }
+  html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .value {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    min-height: 48px !important;
+    text-align: left !important;
+  }
+  html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page .value-icon { flex: 0 0 34px !important; width: 34px !important; height: 34px !important; margin: 0 !important; }
+}
+@media (max-width: 380px) {
+  html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .page {
+    width: 100% !important;
+  }
+  html#secondary-theme[data-theme="silver"] body#secondary-reference.secondary-page:has(#checkin-button) .reward-card {
+    background-image: linear-gradient(90deg,#fffffff5 0%,#ffffffed 60%,#ffffff65 100%),url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  }
+}
+
+/* Withdrawal: an actual image element avoids the legacy scene's clipped masks and stacking. */
+html#finance-theme[data-platform-theme="silver"] body#finance-reference.andship-withdrawal .app .hero {
+  overflow: hidden !important;
+  color: #182746 !important;
+  background: #edf3ff !important;
+}
+html#finance-theme[data-platform-theme="silver"] body#finance-reference.andship-withdrawal .app .hero::before {
+  content: none !important;
+  display: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+html#finance-theme[data-platform-theme="silver"] body#finance-reference.andship-withdrawal .app .hero::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  inset: 0 !important;
+  background: linear-gradient(90deg,#f7f9fe 0%,#f7f9fef5 39%,#f7f9fe9e 62%,#f7f9fe18 100%) !important;
+}
+html#finance-theme[data-platform-theme="silver"] body#finance-reference.andship-withdrawal .finance-withdrawal-photo {
+  display: block !important;
+  position: absolute !important;
+  z-index: 2 !important;
+  top: 18px !important;
+  right: 0 !important;
+  width: min(58%,310px) !important;
+  height: calc(100% - 24px) !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+  object-position: right center !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+  clip-path: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  pointer-events: none !important;
+}
+html#finance-theme[data-platform-theme="silver"] body#finance-reference.andship-withdrawal .app .hero-scene { display: none !important; }
+html#finance-theme[data-platform-theme="silver"] body#finance-reference.andship-withdrawal .app .hero-in {
+  position: relative !important;
+  z-index: 3 !important;
+}
+@media (max-width: 380px) {
+  html#finance-theme[data-platform-theme="silver"] body#finance-reference.andship-withdrawal .finance-withdrawal-photo {
+    width: 55% !important;
+    right: -2px !important;
+    top: 24px !important;
+  }
+}
+html#finance-theme body#finance-reference.andship-withdrawal .app .hero {
+  overflow: hidden !important;
+  color: #182746 !important;
+  background: #edf3ff !important;
+}
+html#finance-theme body#finance-reference.andship-withdrawal .app .hero::before {
+  content: none !important;
+  display: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+html#finance-theme body#finance-reference.andship-withdrawal .app .hero::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  inset: 0 !important;
+  background: linear-gradient(90deg,#f7f9fe 0%,#f7f9fef5 39%,#f7f9fe9e 62%,#f7f9fe18 100%) !important;
+}
+html#finance-theme body#finance-reference.andship-withdrawal .finance-withdrawal-photo {
+  display: block !important;
+  position: absolute !important;
+  z-index: 2 !important;
+  top: 18px !important;
+  right: 0 !important;
+  width: min(58%,310px) !important;
+  height: calc(100% - 24px) !important;
+  object-fit: contain !important;
+  object-position: right center !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+  clip-path: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  pointer-events: none !important;
+}
+html#finance-theme body#finance-reference.andship-withdrawal .app .hero-scene { display: none !important; }
+html#finance-theme body#finance-reference.andship-withdrawal .app .hero-in { position: relative !important; z-index: 3 !important; }
+@media (max-width: 380px) {
+  html#finance-theme body#finance-reference.andship-withdrawal .finance-withdrawal-photo {
+    width: 55% !important;
+    right: -2px !important;
+    top: 24px !important;
+  }
+}

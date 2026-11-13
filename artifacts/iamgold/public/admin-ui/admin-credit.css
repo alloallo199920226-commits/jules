@@ -1,0 +1,50 @@
+.admin-section-description {
+  margin: -5px 0 12px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.admin-detail-grid .admin-referral-metric {
+  min-height: 68px;
+  padding: 10px 11px;
+  border-width: 2px;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, .22), inset 0 1px rgba(255, 255, 255, .06);
+}
+
+.admin-detail-grid .admin-referral-metric b {
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.admin-detail-grid .admin-referral-value {
+  margin-top: 7px;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.admin-detail-grid .admin-referral-count {
+  border-color: #ff3448;
+  background: linear-gradient(135deg, rgba(117, 8, 22, .6), rgba(38, 13, 17, .94));
+}
+
+.admin-detail-grid .admin-referral-count .admin-referral-value {
+  color: #ff6675;
+}
+
+.admin-detail-grid .admin-referral-money {
+  border-color: #13c878;
+  background: linear-gradient(135deg, rgba(4, 94, 55, .58), rgba(10, 39, 28, .94));
+}
+
+.admin-detail-grid .admin-referral-money .admin-referral-value {
+  color: #39e99b;
+}
+
+@media (max-width: 640px) {
+  .admin-runtime-nav {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

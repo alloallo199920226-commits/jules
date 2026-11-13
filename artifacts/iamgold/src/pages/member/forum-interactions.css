@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+.forum-review-status{margin-left:auto;border-radius:20px;padding:5px 9px;background:#f7e8cf;color:#765b2e;font-size:10px;font-weight:700}
+.forum-review-status.rejected{background:#f7e5df;color:#8f4937}
+.forum-review-status.approved{background:#e5eee8;color:#315a4c}
+.forum-bonus-total{margin:10px 16px 0;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;background:#f3ead2;border:1px solid #e5d3a4;border-radius:9px;color:#63502c;font-size:11px}
+.forum-bonus-total strong{font-size:13px;color:#765d2b;font-variant-numeric:tabular-nums}
+.member-post .forum-post-controls{display:flex;align-items:center;gap:4px;padding:1px 12px 12px}
+.forum-post-controls button{display:flex;align-items:center;gap:6px;min-height:35px;padding:6px 8px;border:0;border-radius:8px;background:transparent;color:#63746a;font-size:11px;cursor:pointer}
+.forum-post-controls button:hover:not(:disabled){background:#f1f0e9}
+.forum-post-controls button:disabled{opacity:.5;cursor:not-allowed}
+.forum-post-controls button.is-liked{color:#a17136}
+.forum-comments{margin:0 15px 13px;padding:10px 0 0;border-top:1px solid #e8e6dd}
+.forum-comment{padding:8px 4px;border-bottom:1px solid #f0eee7}
+.forum-comment b{font-size:11px;color:#315a4c}.forum-comment p{padding:3px 0 0!important;margin:0!important;color:#354b40;font-size:12px!important;line-height:1.5}
+.forum-comment time{display:block;color:#929990;font-size:9px;margin-top:5px}
+.forum-comment-loading,.forum-comment-error{font-size:11px;color:#7b867c;padding:8px 3px}.forum-comment-error{color:#9b4937}
+.forum-comment-form{display:flex;gap:7px;margin-top:9px}
+.forum-comment-form input{min-width:0;flex:1;padding:9px 11px;border:1px solid #deded5;border-radius:9px;background:#fff;font:inherit;font-size:12px}
+.forum-comment-form button{width:38px;height:37px;display:grid;place-items:center;border:0;border-radius:9px;background:#315a4c;color:#f8f3e8;cursor:pointer}
+.forum-comment-form button:disabled{opacity:.5;cursor:not-allowed}
+.member-post .forum-review-note{display:flex;flex-direction:column;gap:4px;margin:0 16px 12px;padding:10px;border-radius:8px;background:#f8ece6;color:#775246;font-size:11px}
+.forum-loading{display:grid;gap:14px;margin-top:14px}.forum-loading i{display:block;height:270px;border-radius:15px;background:linear-gradient(100deg,#eeeae0,#f4f1e8 48%,#eae8df);animation:forum-skeleton 1.4s ease-in-out infinite}.forum-loading i:nth-child(2){height:340px}@keyframes forum-skeleton{50%{opacity:.56}}
+@media(max-width:430px){.member-post .forum-post-controls{gap:0}.forum-post-controls button{padding-inline:5px;font-size:10px}}
+.forum-attachment{position:relative;margin:0 16px}
+.forum-image-open{display:block;width:100%;padding:0;border:1px solid #d6a52b99;border-radius:12px;background:#031326;overflow:hidden;cursor:zoom-in}
+.forum-image-open img{display:block;width:100%;max-height:420px;object-fit:contain}
+.forum-image-download{position:absolute;right:9px;bottom:9px;width:38px;height:38px;display:grid;place-items:center;border:1px solid #f5d77b;border-radius:9px;background:#031326dd;color:#f5d77b;cursor:pointer}
+.member-post .forum-attachment{margin-top:10px}
+.forum-comments{border-color:#d6a52b55}
+.forum-comment b{color:#f5d77b}
+.forum-comment-form input{background:#041b30;color:#f7f8fa;border-color:#d6a52b66}
+.forum-comment-form input::placeholder{color:#aebdc8}
+.forum-comment-form button{background:linear-gradient(145deg,#ffe58a,#c99325);color:#16243a}
+.forum-bonus-total{margin:10px 14px 0;padding:8px 9px 8px 12px;min-height:40px;background:linear-gradient(100deg,#f7e9bd,#d6a52b);border:1px solid #fff1ac;border-radius:10px;color:#273347;box-shadow:inset 0 1px #fff9,inset 0 -2px #a5741b}
+.forum-bonus-total strong{padding:5px 12px;border:1px solid #f4d36c;border-radius:7px;background:linear-gradient(145deg,#0b4160,#031326);color:#f7f8fa}
+.ayala-scroll:has(.member-forum-banner){padding-bottom:calc(156px + env(safe-area-inset-bottom,0px))!important;scroll-padding-bottom:calc(156px + env(safe-area-inset-bottom,0px))}
+.member-forum-identity{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:1px 5px;flex:1;min-width:0}
+.member-forum-identity>.member-gold-name{grid-column:1;max-width:100%}
+.member-forum-identity>.member-gold-badge{grid-column:2;grid-row:1}
+.member-forum-identity>small{grid-column:1/-1}
+.forum-author-identity{flex:1;min-width:0}
+.forum-author-name,.forum-comment-author{display:flex;align-items:center;gap:5px;min-width:0}
+.forum-author-name b,.forum-comment-author b{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.forum-comment-author{width:fit-content;max-width:100%}
+.ayala-frame:has(.member-forum-banner){--page:#031326;--blue:#0b4160;--gold:#d6a52b;background:#031326;color:#f7f8fa;font-family:"DM Sans",sans-serif}
+.ayala-frame:has(.member-forum-banner) .ayala-canvas,.ayala-frame:has(.member-forum-banner) .ayala-scroll{background:#031326}
+.member-forum-banner{min-height:196px;padding-bottom:16px;background:transparent;border-bottom:1px solid #d6a52b88}
+.member-forum-banner .ayala-header{height:112px;background:transparent;color:#f7f8fa;font-family:"Manrope",sans-serif}
+.member-forum-banner .ayala-head-btn,.member-forum-banner .ayala-head-help{background:linear-gradient(145deg,#0b4160,#041a2d);border:1px solid #f5d77b;color:#f5d77b}
+.member-forum-banner .member-row{color:#f7f8fa}
+.member-forum-banner .ayala-avatar{border-radius:50%;background:linear-gradient(145deg,#f5d77b,#9b6817);color:#102239;border:1px solid #fff0a8}
+.member-forum-banner .member-row>div:nth-child(2){font-weight:700}
+.member-forum-banner .member-row small{color:#d3dbe0}
+.member-forum-banner .ayala-soft-button{background:linear-gradient(145deg,#ffe58a,#c99325);color:#14233a;border:1px solid #fff0a8}
+.ayala-scroll:has(.member-forum-banner) .ayala-main{background:#031326}
+.member-forum-rules{border:1px solid #d6a52b;background:linear-gradient(145deg,#f5f1e3,#e4d6aa);color:#17283b;box-shadow:0 8px 20px #0004}
+.member-forum-rules>b{color:#8c651b}.member-forum-rules strong{color:#15283d}.member-forum-rules p{color:#4f5962}
+.member-post{background:linear-gradient(145deg,#fcfaf2,#f0ecdc);border:2px solid #e7c05e;border-radius:14px;box-shadow:inset 0 1px #fff,inset 0 0 0 3px #99701f35,0 0 0 2px #805815,0 10px 24px #0006}
+.member-post header b{color:#10283d}
+.member-post .ayala-avatar{border-radius:50%;background:linear-gradient(145deg,#0b4160,#031326);border:2px solid #d6a52b;color:#f5d77b;font-size:22px}
+.member-post header small{color:#65717a}
+.member-post>p{color:#13283c}
+.member-post footer{border-color:#d8c68d;color:#65717a}
+.member-forum-banner .ayala-header-title{color:#f7f8fa;text-shadow:0 2px 9px #000b}
+.forum-review-status{background:#f4e3b7;color:#765719}
+.forum-review-status.rejected{background:#f7e5df;color:#8f4937}
+@media(max-width:520px){.member-forum-banner{min-height:188px}.member-forum-banner .ayala-header{height:106px}}
+
+/* Forum reference composition: separate branded masthead, toolbar and member rail. */
+#root .ayala-frame:has(.community-page) {
+  --page: #031326;
+  --ink: #15283d;
+  --blue: #0b4160;
+  --gold: #d6a52b;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  overflow: hidden;
+  background: #031326;
+  color: #f7f8fa;
+  font-family: "DM Sans", sans-serif;
+}
+#root .ayala-frame:has(.community-page) .ayala-canvas,
+#root .ayala-frame:has(.community-page) .community-page {
+  background: #031326;
+}
+#root .ayala-frame:has(.community-page) .community-page {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 0 calc(160px + env(safe-area-inset-bottom, 0px));
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #c99532 transparent;
+}
+#root .ayala-frame:has(.community-page) .community-page > .royal-masthead {
+  box-sizing: border-box;
+  width: 100%;
+  height: 146px;
+  min-height: 146px;
+  padding: 0;
+  border-bottom: 2px solid #d6a52b;
+  background: #031326;
+}
+#root .ayala-frame:has(.community-page) .community-page > .royal-masthead .royal-masthead-panorama {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+}
+#root .ayala-frame:has(.community-page) .community-toolbar-wrap {
+  padding: 0 10px;
+  background: #031326;
+}
+#root .ayala-frame:has(.community-page) .community-toolbar-wrap > .ayala-header {
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+  min-height: 56px;
+  margin: 0;
+  border: 1px solid #f2d47d;
+  border-radius: 11px;
+  background: linear-gradient(180deg, #123d5b, #06243b);
+  box-shadow: inset 0 1px #fff5, inset 0 -2px #805817, 0 3px 8px #0006;
+  color: #fff8e6;
+  font: 700 20px/1.1 "Manrope", sans-serif;
+}
+#root .ayala-frame:has(.community-page) .community-toolbar-wrap .ayala-head-btn,
+#root .ayala-frame:has(.community-page) .community-toolbar-wrap .ayala-head-help {
+  top: 8px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #f5d77b;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #0b4160, #041a2d);
+  color: #f5d77b;
+}
+#root .ayala-frame:has(.community-page) .member-forum-banner {
+  box-sizing: border-box;
+  width: calc(100% - 20px);
+  min-height: 76px;
+  margin: 10px 10px 12px;
+  padding: 8px 12px;
+  border: 1px solid #d6a52b;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #0b3048, #041a2d);
+  box-shadow: inset 0 1px #fff5, inset 0 -2px #765218, 0 4px 12px #0006;
+}
+#root .ayala-frame:has(.community-page) .member-forum-banner .member-row {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  color: #f7f8fa;
+}
+#root .ayala-frame:has(.community-page) .member-forum-banner .ayala-avatar {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  place-items: center;
+  border: 2px solid #fff0a8;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffe58a, #a97719);
+  color: #102239;
+  font-size: 22px;
+}
+#root .ayala-frame:has(.community-page) .member-forum-identity {
+  display: grid;
+  min-width: 0;
+  flex: 1 1 auto;
+  grid-template-columns: minmax(0, max-content) auto;
+  align-items: center;
+  gap: 1px 5px;
+}
+#root .ayala-frame:has(.community-page) .member-forum-identity > .member-gold-name {
+  grid-column: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: #fff8e6;
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#root .ayala-frame:has(.community-page) .member-forum-identity > .member-gold-badge {
+  grid-column: 2;
+  grid-row: 1;
+}
+#root .ayala-frame:has(.community-page) .member-forum-identity > small {
+  grid-column: 1 / -1;
+  color: #c2d0da;
+  font-size: 10px;
+}
+#root .ayala-frame:has(.community-page) .member-forum-banner .ayala-soft-button {
+  min-height: 42px;
+  padding: 0 15px;
+  border: 1px solid #fff0a8;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #ffe58a, #c99325);
+  color: #14233a;
+  font-size: 12px;
+  font-weight: 800;
+}
+#root .ayala-frame:has(.community-page) .community-page > .ayala-main {
+  width: min(100%, 820px);
+  margin: 0 auto;
+  padding: 0 10px 18px;
+  background: #031326;
+}
+#root .ayala-frame:has(.community-page) .member-forum-rules {
+  display: grid;
+  width: 100%;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 15px 16px;
+  border: 2px solid #ead078;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #fffdf6, #eee6d0);
+  box-shadow: inset 0 1px #fff, inset 0 0 0 2px #a77d2a55, 0 4px 12px #0004;
+  color: #162c42;
+  text-align: left;
+}
+#root .ayala-frame:has(.community-page) .member-forum-rules > b {
+  color: #8a6419;
+  font-size: 13px;
+}
+#root .ayala-frame:has(.community-page) .member-forum-rules strong {
+  color: #172d42;
+  font-size: 15px;
+}
+#root .ayala-frame:has(.community-page) .member-forum-rules p {
+  margin: 0;
+  color: #586571;
+  font-size: 13px;
+  line-height: 1.5;
+}
+#root .ayala-frame:has(.community-page) .member-post {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 12px 0;
+  padding: 11px 11px 9px;
+  border: 2px solid #e4bf59;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #fffefa, #f1eee5);
+  box-shadow: inset 0 1px #fff, inset 0 0 0 2px #99701f2b, 0 4px 12px #0005;
+  color: #182c40;
+}
+#root .ayala-frame:has(.community-page) .member-post header {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  padding: 0 2px 10px;
+}
+#root .ayala-frame:has(.community-page) .member-post header .ayala-avatar {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border: 2px solid #d6a52b;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #0b4160, #031326);
+  color: #f5d77b;
+  font-size: 20px;
+}
+#root .ayala-frame:has(.community-page) .forum-author-identity {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+#root .ayala-frame:has(.community-page) .forum-author-name {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 5px;
+}
+#root .ayala-frame:has(.community-page) .forum-author-name b {
+  min-width: 0;
+  overflow: hidden;
+  color: #142b40;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#root .ayala-frame:has(.community-page) .member-post header small {
+  color: #687682;
+  font-size: 10px;
+}
+#root .ayala-frame:has(.community-page) .member-post > p {
+  margin: 10px 2px 9px;
+  color: #172c40;
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+#root .ayala-frame:has(.community-page) .forum-bonus-total {
+  min-height: 42px;
+  margin: 1px 0 8px;
+  padding: 7px 9px 7px 12px;
+  border: 1px solid #f4d36c;
+  border-radius: 9px;
+  background: linear-gradient(100deg, #f7e9bd, #d6a52b);
+  box-shadow: inset 0 1px #fff9, inset 0 -2px #a5741b;
+  color: #273347;
+  font-size: 12px;
+}
+#root .ayala-frame:has(.community-page) .forum-bonus-total strong {
+  padding: 5px 12px;
+  border: 1px solid #f4d36c;
+  border-radius: 7px;
+  background: linear-gradient(145deg, #0b4160, #031326);
+  color: #f7f8fa;
+  font-size: 14px;
+}
+#root .ayala-frame:has(.community-page) .member-post .forum-attachment {
+  width: 100%;
+  margin: 9px 0;
+}
+#root .ayala-frame:has(.community-page) .forum-image-open {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: clamp(150px, 39vw, 218px);
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #d6a52b;
+  border-radius: 11px;
+  background: #061a2d;
+  cursor: zoom-in;
+}
+#root .ayala-frame:has(.community-page) .forum-image-open img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+   object-fit: contain;
+   object-position: center;
+   background: #071a2b;
+}
+#root .ayala-frame:has(.community-page) .forum-image-download {
+  right: 8px;
+  bottom: 8px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #f5d77b;
+  border-radius: 8px;
+  background: #031326dd;
+  color: #f5d77b;
+}
+#root .ayala-frame:has(.community-page) .forum-post-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding: 2px 1px 8px;
+  border-bottom: 1px solid #d9cfb7;
+}
+#root .ayala-frame:has(.community-page) .forum-post-controls button {
+  min-height: 36px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: #334c60;
+  font-size: 11px;
+}
+#root .ayala-frame:has(.community-page) .forum-post-controls button.is-liked {
+  color: #946513;
+}
+#root .ayala-frame:has(.community-page) .forum-comments {
+  margin: 0;
+  padding: 8px 1px 2px;
+  border-top: 0;
+  border-color: #d9cfb7;
+}
+#root .ayala-frame:has(.community-page) .forum-comment {
+  padding: 9px 2px;
+  border-color: #e7e0d1;
+}
+#root .ayala-frame:has(.community-page) .forum-comment-author b {
+  color: #1c3449;
+  font-size: 12px;
+}
+#root .ayala-frame:has(.community-page) .forum-comment p {
+  color: #334657;
+  font-size: 13px !important;
+}
+#root .ayala-frame:has(.community-page) .forum-comment time {
+  color: #71808b;
+  font-size: 10px;
+}
+#root .ayala-frame:has(.community-page) .forum-comment-form {
+  gap: 8px;
+  margin-top: 10px;
+}
+#root .ayala-frame:has(.community-page) .forum-comment-form input {
+  min-height: 42px;
+  border: 1px solid #c8b77e;
+  border-radius: 10px;
+  background: #fffefa;
+  color: #172c40;
+  font-size: 16px;
+}
+#root .ayala-frame:has(.community-page) .forum-comment-form button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #fff0a8;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #ffe58a, #c99325);
+  color: #14233a;
+}
+#root .ayala-frame:has(.community-page) .member-post footer {
+  padding: 8px 2px 1px;
+  border-color: #d9cfb7;
+  color: #71808b;
+}
+#root .ayala-frame:has(.community-page) .ayala-canvas::after {
+  content: none;
+  display: none;
+}
+#root .ayala-frame:has(.community-page) .community-page {
+  padding-bottom: calc(132px + env(safe-area-inset-bottom, 0px)) !important;
+  scroll-padding-bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+}
+#root .ayala-frame:has(.community-page) .community-page > .ayala-support-inline {
+  position: relative !important;
+  inset: auto !important;
+  transform: none !important;
+  display: flex;
+  width: calc(100% - 24px);
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 16px 12px 8px;
+  padding: 9px 14px;
+  border: 1px solid #f5d77b;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #0b4160, #031326);
+  color: #f5d77b;
+}
+#root .ayala-frame:has(.community-page) .ayala-bottom {
+  z-index: 6;
+  height: 90px;
+  min-height: 90px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (min-width: 768px) {
+  #root .ayala-frame:has(.community-page) .community-page > .royal-masthead { height: 150px; min-height: 150px; }
+  #root .ayala-frame:has(.community-page) .community-page > .royal-masthead .royal-masthead-panorama { object-position: center 58%; }
+}

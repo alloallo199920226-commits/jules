@@ -1,0 +1,167 @@
+/* Legacy tokens and decorative pseudo-elements cannot overrule the new material palette. */
+html[data-platform-theme="silver"]:root {
+  --sprite-forest: #454e52;
+  --sprite-deep: #343c40;
+  --sprite-green: #667176;
+  --sprite-lime: #c8cdd0;
+  --sprite-citrus: #e5e7e8;
+  --sprite-paper: #f2f3f3;
+  --sprite-ink: #30373a;
+  --sprite-muted: #626d71;
+  --sprite-line: #d3d8da;
+  --sprite-shadow: 0 8px 24px #29323612;
+}
+html[data-platform-theme="silver"] body.andship-login :is(#login-title, #registration-title, .dial-code) {
+  color: #30373a !important;
+}
+html[data-platform-theme="silver"] body.andship-login :is(.brand-period,.mission-title span,.panel-overline i,.secure-note i) {
+  color: #687378 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body.andship-login :is(.mission-title,#login-title,#registration-title) {
+  font-family: Georgia, "Times New Roman", serif !important;
+}
+html[data-platform-theme="silver"] body.andship-login .login-stage {
+  padding-top: max(12px,env(safe-area-inset-top)) !important;
+}
+html[data-platform-theme="silver"] body.andship-login .brand-block {
+  margin-bottom: 10px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero-scene,.hero-atmosphere,.art) {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .app::before,
+html[data-platform-theme="silver"] body:not(.andship-home) .app::after {
+  display: none !important;
+  content: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .hero :is(h1,h1 span,.hero-logo) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .hero :is(.history,.back) {
+  color: #596367 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .hero .features :is(span,svg) {
+  color: #596367 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .hero h1::before,
+html[data-platform-theme="silver"] body:not(.andship-home) .hero h1::after,
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.trust-icon,.trust-item,.feature-icon,.field,.input,.confirm)::before,
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.trust-icon,.trust-item,.feature-icon,.field,.input,.confirm)::after {
+  display: none !important;
+  content: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .hero :is(.trust-icon,.trust-item,.history-link) {
+  color: #596367 !important;
+  background: #eceeee !important;
+  border-color: #d2d7d9 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .hero :is(.trust-icon,.trust-item) svg {
+  color: #596367 !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .app :is(.input,.field) > span {
+  color: #414b4f !important;
+  background: #eceeee !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .balance :is(strong,small,b) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.summary.red,.summary.light,.balance.red,.balance.light,.bal.red,.bal.light) {
+  color: #30373a !important;
+  background-color: #e3e5e5 !important;
+  background-image: linear-gradient(90deg,#f4f5f5 0%,#f2f3f3ec 37%,#f2f3f39c 64%,#eef0f018 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-size: cover, auto 180% !important;
+  background-position: center, 85% 69% !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 5px 16px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.summary,.balance,.bal) :is(strong,b,small) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .balance::before,
+html[data-platform-theme="silver"] body:not(.andship-home) .balance::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.discover,.promo a,.santa a,.scene h1) {
+  color: #30373a !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.info-badge,.info-badge svg,.upload-symbol,.intro-stamp,.community-heading .see-all) {
+  color: #596367 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.community-heading,.image-counter)::before,
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.community-heading,.image-counter)::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) :is(.calendar,.reward-card,.reward-label,.info)::before,
+html[data-platform-theme="silver"] body:has(#checkin-button) :is(.calendar,.reward-card,.reward-label,.info)::after {
+  display: none !important;
+  content: none !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) #checkin-button {
+  color: #fff !important;
+  background: #485256 !important;
+  border-radius: 24px !important;
+  box-shadow: 0 5px 14px #29323620 !important;
+}
+html[data-platform-theme="silver"] body:has(#checkin-button) :is(.scene h1,.scene h1 span,.reward-label,.reward-label-copy) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero h1,.hero h1 span,.hero h1 em,.hero-title,.hero p,.balance strong,.balance small,.summary strong) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero .logo,.hero-logo,.header .logo) {
+  filter: grayscale(1) !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.balance-icon,.summary-icon,.menu-icon,.gift,.round,.back,.history,.feature-icon) {
+  color: #596367 !important;
+  background: #eceeee !important;
+  border-color: #d2d7d9 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.amount-currency,.currency,.currency-box) {
+  color: #414b4f !important;
+  background: #e9ebeb !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .scene .info {
+  color: #414b4f !important;
+}
+@media (max-width: 640px) {
+  html[data-platform-theme="silver"] body:not(.andship-home) :is(input,select,textarea) {
+    min-width: 0;
+    max-width: 100%;
+    font-size: 16px !important;
+    scroll-margin-bottom: 120px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-platform-theme="silver"] *, html[data-platform-theme="silver"] *::before,
+  html[data-platform-theme="silver"] *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+.support-chat-page{height:100%;min-height:calc(100dvh - 70px);display:flex;flex-direction:column;background:#f5f3ed;color:#243d35}
+.support-chat-intro{display:flex;align-items:center;gap:12px;margin:12px 16px 0;padding:15px 17px;background:#e9eee8;border:1px solid #d5ded6;border-radius:14px}
+.support-chat-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#315a4c;color:#ead09c}
+.support-chat-intro strong,.support-chat-intro small{display:block}.support-chat-intro strong{font-size:14px}.support-chat-intro small{font-size:11px;color:#69766e;margin-top:3px}
+.support-chat-messages{flex:1;min-height:250px;overflow:auto;padding:20px 17px;display:flex;flex-direction:column;gap:15px;overscroll-behavior:contain}
+.support-chat-empty{margin:auto;max-width:250px;display:flex;align-items:center;flex-direction:column;text-align:center;gap:9px;color:#77827a}.support-chat-empty svg{color:#9a7c45}.support-chat-empty strong{color:#315a4c;font-size:15px}.support-chat-empty span{font-size:12px;line-height:1.5}
+.support-message{position:relative;max-width:min(82%,430px);align-self:flex-start}.support-message.is-own{align-self:flex-end}.support-agent-label{font-size:10px;color:#718076;padding-left:9px;display:block;margin-bottom:4px}
+.support-message-bubble{padding:11px 13px 8px;background:#fff;border:1px solid #e5e4da;border-radius:14px 14px 14px 4px;box-shadow:0 3px 12px #273c3010}.is-own .support-message-bubble{background:#315a4c;color:#f7f4e9;border-color:#315a4c;border-radius:14px 14px 4px 14px}
+.support-message-bubble p{font-size:13px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}.support-message-bubble footer{display:flex;justify-content:flex-end;gap:8px;margin-top:6px;font-size:9px;color:#9ca59c}.is-own .support-message-bubble footer{color:#d1d9d0}
+.support-message-image{display:block;max-width:100%;max-height:260px;object-fit:contain;border-radius:8px;margin:1px 0 5px}.support-like{display:flex;align-items:center;gap:4px;border:0;background:transparent;color:#8a938a;font-size:10px;padding:5px 7px;cursor:pointer}.is-own .support-like{margin-left:auto}.support-like.liked{color:#a77d36}
+.support-chat-composer{position:relative;margin:0 12px 12px;padding:10px;background:#fff;border:1px solid #dfdfd5;border-radius:15px;box-shadow:0 8px 24px #20372a0c}
+.support-chat-composer textarea{width:100%;min-height:54px;max-height:125px;resize:vertical;border:0;outline:0;background:transparent;color:#263e35;font:inherit;font-size:13px;padding:4px 5px}
+.support-chat-composer-actions{display:flex;align-items:center;gap:10px;border-top:1px solid #efeee8;padding-top:9px}.support-chat-composer-actions>span{flex:1;font-size:9px;color:#8b958d}.support-attach{cursor:pointer;display:grid;place-items:center;color:#687a70;padding:5px}.support-attach input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.support-chat-composer-actions>button{display:flex;align-items:center;gap:7px;border:0;border-radius:9px;background:#315a4c;color:#f8f3e8;padding:9px 14px;font-size:12px;font-weight:700;cursor:pointer}.support-chat-composer-actions>button:disabled{opacity:.48;cursor:not-allowed}
+.support-chat-preview{position:relative;width:68px;height:68px;margin:4px 0 10px}.support-chat-preview img{width:100%;height:100%;object-fit:cover;border-radius:8px}.support-chat-preview button{position:absolute;top:-6px;right:-6px;border:0;border-radius:50%;width:23px;height:23px;display:grid;place-items:center;background:#273d33;color:white;cursor:pointer}
+.support-chat-error{margin:0 14px 8px;padding:9px 12px;border-radius:9px;background:#f7e7e1;color:#8f3e2d;font-size:11px;display:flex;justify-content:space-between;gap:12px}.support-chat-error button{border:0;background:none;color:inherit;font-weight:700;cursor:pointer}
+.support-chat-skeleton{display:flex;flex-direction:column;gap:15px}.support-chat-skeleton i{height:58px;width:68%;border-radius:14px;background:linear-gradient(90deg,#e7e8e0,#f1f1ea,#e7e8e0);animation:chat-shimmer 1.4s ease-in-out infinite}.support-chat-skeleton i:nth-child(2){align-self:flex-end;width:54%}@keyframes chat-shimmer{50%{opacity:.55}}
+@media(max-width:520px){.support-chat-messages{padding:16px 12px}.support-chat-intro{margin:8px 12px 0}.support-chat-composer{margin:0 8px 8px}.support-chat-message{max-width:90%}}
+
+/* Reserve the actual fixed navigation area; the composer must remain reachable
+   even with an attachment preview or a shortened mobile visual viewport. */
+.ayala-frame:has(.support-chat-page){height:100dvh;min-height:0;overflow:hidden}
+.ayala-frame:has(.support-chat-page) .ayala-canvas{height:100%;min-height:0}
+.ayala-frame .support-chat-page{height:100%;min-height:0;box-sizing:border-box;padding-bottom:calc(145px + env(safe-area-inset-bottom,0px));overflow:hidden}
+.support-chat-page>.member-header,.support-chat-intro,.support-chat-composer,.support-chat-error{flex-shrink:0}
+.support-chat-page .support-chat-messages{min-height:0}
+.support-chat-page .support-chat-composer textarea{font-size:16px;resize:none}
+.support-chat-page .support-chat-composer-actions>button{min-height:44px}
+.support-chat-page .support-attach{min-width:44px;min-height:44px}
+.ayala-frame:has(.support-chat-page) .ayala-bottom{height:90px;min-height:90px;padding-bottom:env(safe-area-inset-bottom,0px)}
+.support-chat-page{background:radial-gradient(ellipse at 50% 0,#0b3550 0%,#041a2d 45%,#031326 100%);color:#f7f8fa}
+.ayala-frame:has(.support-chat-page){--page:#031326;--blue:#0b4160;--gold:#d6a52b;background:#031326;color:#f7f8fa;font-family:"DM Sans",sans-serif}
+.ayala-frame:has(.support-chat-page) .ayala-canvas{background:#031326}
+.support-chat-page::before{content:"";display:block;flex:none;height:148px;background:linear-gradient(180deg,#06182b08 40%,#031326c9),url("/iamgold-industrial-art/reference-crops/royal-panorama.webp") center 50%/cover no-repeat;border-bottom:1px solid #d6a52b}
+.support-chat-page>.ayala-header{height:64px;flex:none;margin:0 10px;background:linear-gradient(180deg,#0c3550,#041a2d);border:1px solid #f0cc65;border-radius:12px;color:#f7f8fa;font-family:"Manrope",sans-serif;font-size:20px;box-shadow:inset 0 1px #fff5,inset 0 -2px #9b6817,0 4px 14px #0005}
+.support-chat-page>.ayala-header .ayala-head-btn{background:linear-gradient(145deg,#f5d77b,#a97719);border:1px solid #fff0a8;color:#10243a;top:11px}
+.support-chat-intro{background:linear-gradient(110deg,#0d3a56,#06233a);border:1px solid #d6a52b77;color:#f7f8fa;border-radius:14px;box-shadow:inset 0 1px #fff2,0 8px 24px #0003}
+.support-chat-mark{background:linear-gradient(145deg,#ffe58a,#b8841d);color:#092138;border:1px solid #fff1ad}
+.support-chat-intro small{color:#bac9d3}
+.support-chat-empty{color:#b6c6d1}.support-chat-empty strong{color:#f5d77b}
+.support-message-bubble{background:linear-gradient(145deg,#f5d77b,#d3a63b);border:1px solid #fff0a8;color:#16253a;box-shadow:inset 0 1px #fff9,0 6px 15px #0004}
+.support-message-bubble p{color:#f7f8fa}
+.support-message.is-own .support-message-bubble{background:linear-gradient(145deg,#123e34,#082a24);border:1px solid #d6a52b;box-shadow:inset 0 1px #f5d77b55,0 6px 15px #0004;color:#f7f8fa}
+.support-message.is-own .support-message-bubble p{color:#f7f8fa}
+.support-message.is-agent .support-message-bubble p{color:#16253a}
+.support-message-bubble footer{color:#54626a}.is-own .support-message-bubble footer{color:#c3d6cf}
+.support-agent-label{color:#f5d77b}
+.support-like{color:#bdc9d1}.support-like.liked{color:#f5d77b}
+.support-chat-composer{background:linear-gradient(140deg,#0a314b,#041a2d);border:1px solid #d6a52b88;box-shadow:0 8px 25px #0005}
+.support-chat-composer textarea{color:#f7f8fa}
+.support-chat-composer textarea::placeholder{color:#aebdc8}
+.support-chat-composer-actions{border-color:#d6a52b44}
+.support-chat-composer-actions>span{color:#aebdc8}
+.support-attach{color:#f5d77b}
+.support-chat-composer-actions>button{background:linear-gradient(145deg,#ffe58a,#c99325);color:#16243a;box-shadow:inset 0 1px #fff9}
+.support-chat-preview img{object-fit:contain;background:#031326;border:1px solid #d6a52b77}
+.support-chat-error{background:#48252c;color:#ffe6e8;border:1px solid #d97e74}
+.support-chat-skeleton i{background:linear-gradient(90deg,#092b43,#16435b,#092b43)}
+.support-attachment{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;width:fit-content;max-width:100%}
+.support-image-open{display:block;width:fit-content;max-width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
+.support-image-download{position:static;justify-self:end;width:32px;height:28px;display:grid;place-items:center;border:1px solid #f5d77b88;border-radius:8px;background:#082b43;color:#f5d77b;cursor:pointer}
+.support-chat-page .support-message-image{border:1px solid #d6a52b66;max-height:280px}
+@media(max-width:520px){.support-chat-page .support-message{max-width:90%}.support-chat-page{padding-bottom:calc(150px + env(safe-area-inset-bottom,0px))}}
+@media(prefers-reduced-motion:reduce){.support-chat-skeleton i{animation:none}}
+.support-chat-composer{padding:7px 8px 6px;border-radius:13px}
+.support-chat-composer-row{display:flex;align-items:center;gap:7px;min-width:0}
+.support-chat-page .support-chat-composer textarea{flex:1;width:0;min-width:0;min-height:42px;max-height:96px;overflow-y:auto;resize:none;padding:10px 4px;font-size:16px;line-height:1.35}
+.support-chat-page .support-attach{flex:0 0 38px;width:38px;min-width:38px;min-height:42px;padding:5px;border-radius:9px}
+.support-chat-composer-row>button[type="submit"]{flex:0 0 auto;min-width:44px;min-height:42px;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 10px;border:1px solid #fff0a8;border-radius:10px;background:linear-gradient(145deg,#ffe58a,#c99325);color:#16243a;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:inset 0 1px #fff9,0 3px 8px #0004}
+.support-chat-limit{display:block;padding:4px 3px 0;color:#aebdc8;font-size:9px;line-height:1.3}
+.support-chat-preview{margin:2px 0 8px}
+.support-chat-preview img{width:auto;max-width:min(190px,60vw);height:auto;max-height:100px;object-fit:contain}
+.support-chat-page .support-chat-composer textarea,
+.support-chat-page .support-chat-composer textarea:focus,
+.support-chat-page .support-chat-composer textarea:focus-visible{border:0!important;outline:none!important;box-shadow:none!important}
+.support-chat-page .support-chat-composer:focus-within{outline:2px solid #f5d77b;outline-offset:2px}
+
+/* Keep the private thread and its one-row composer inside the app canvas. */
+body:has(#root .support-chat-page) {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+#root .ayala-frame:has(.support-chat-page) {
+  position: fixed;
+  inset: var(--visible-viewport-top, 0px) 0 auto;
+  z-index: 40;
+  margin: 0;
+  --page: #031326;
+  --ink: #f7f8fa;
+  --blue: #0b4160;
+  --gold: #d6a52b;
+  width: 100%;
+  max-width: none;
+  height: var(--visible-viewport-height, 100dvh);
+  min-height: 0;
+  overflow: hidden;
+  background: #031326;
+  color: #f7f8fa;
+}
+#root .ayala-frame:has(.support-chat-page) .ayala-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  background: #031326;
+}
+#root .ayala-frame:has(.support-chat-page) .ayala-canvas::after {
+  content: none;
+  display: none;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-page {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  padding: max(8px, env(safe-area-inset-top, 0px)) 0 0;
+  background: radial-gradient(ellipse at 50% 8%, #0b3550 0%, #041a2d 48%, #031326 100%);
+  color: #f7f8fa;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-page::before {
+  content: none;
+  display: none;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-page > .ayala-header {
+  box-sizing: border-box;
+  flex: 0 0 58px;
+  width: calc(100% - 20px);
+  height: 58px;
+  min-height: 58px;
+  margin: 0 10px;
+  border: 1px solid #f0cc65;
+  border-radius: 11px;
+  background: linear-gradient(180deg, #0c3550, #041a2d);
+  box-shadow: inset 0 1px #fff5, inset 0 -2px #9b6817, 0 4px 12px #0005;
+  color: #f7f8fa;
+  font: 700 19px/1.1 "Manrope", sans-serif;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-page > .ayala-header .ayala-head-btn {
+  top: 8px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff0a8;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #ffe58a, #a97719);
+  color: #10243a;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-intro {
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 9px 12px 0;
+  padding: 10px 12px;
+  border: 1px solid #d6a52b77;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #0d3a56, #06233a);
+  box-shadow: inset 0 1px #fff2, 0 4px 12px #0003;
+  color: #f7f8fa;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-intro strong {
+  color: #f7f8fa;
+  font-size: 13px;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-intro small {
+  color: #bac9d3;
+  font-size: 10px;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-mark {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border: 1px solid #fff1ad;
+  background: linear-gradient(145deg, #ffe58a, #b8841d);
+  color: #092138;
+}
+#root .ayala-frame:has(.support-chat-page) .support-presence-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 3px;
+  color: #bac9d3;
+  font-size: 10px;
+}
+#root .ayala-frame:has(.support-chat-page) .support-presence-status i {
+  display: block;
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #8797a1;
+}
+#root .ayala-frame:has(.support-chat-page) .support-presence-status.is-online {
+  color: #d4f4dd;
+}
+#root .ayala-frame:has(.support-chat-page) .support-presence-status.is-online i {
+  background: #45c879;
+}
+#root .ayala-frame:has(.support-chat-page) .support-presence-timestamps {
+  display: block;
+  margin-top: 2px;
+  color: #91a5b4;
+  font-size: 9px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-messages {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 12px 14px;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #c99532 transparent;
+}
+#root .ayala-frame:has(.support-chat-page) .support-message {
+  max-width: min(84%, 430px);
+  flex: 0 0 auto;
+}
+#root .ayala-frame:has(.support-chat-page) .support-message-bubble {
+  border-color: #d6a52b88;
+  border-radius: 13px 13px 13px 4px;
+  background: linear-gradient(145deg, #0d3049, #08253b);
+  color: #f7f8fa;
+  box-shadow: inset 0 1px #fff2, 0 3px 8px #0003;
+}
+#root .ayala-frame:has(.support-chat-page) .support-message.is-own .support-message-bubble {
+  border-color: #d6a52b;
+  border-radius: 13px 13px 4px 13px;
+  background: linear-gradient(145deg, #123e34, #082a24);
+  color: #f7f8fa;
+}
+#root .ayala-frame:has(.support-chat-page) .support-message-bubble p,
+#root .ayala-frame:has(.support-chat-page) .support-message.is-own .support-message-bubble p {
+  color: #f7f8fa;
+}
+#root .ayala-frame:has(.support-chat-page) .support-message.is-agent .support-message-bubble p {
+  color: #17283b;
+}
+#root .ayala-frame:has(.support-chat-page) .support-message.is-agent .support-message-bubble {
+  border-color: #fff0a8;
+  background: linear-gradient(145deg, #ffe9a1, #d3a63b);
+  color: #17283b;
+}
+#root .ayala-frame:has(.support-chat-page) .support-message.is-agent .support-message-bubble footer {
+  color: #6b5426;
+}
+#root .ayala-frame:has(.support-chat-page) .support-attachment {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 5px;
+  width: min(220px, 70vw);
+  max-width: 100%;
+}
+#root .ayala-frame:has(.support-chat-page) .support-image-open {
+  display: block;
+  width: 100%;
+  height: min(260px, 60vw);
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #d6a52b66;
+  border-radius: 8px;
+  background: #031326;
+}
+#root .ayala-frame:has(.support-chat-page) .support-message-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  object-fit: contain;
+  border-radius: 7px;
+}
+#root .ayala-frame:has(.support-chat-page) .support-image-download {
+  position: static;
+  justify-self: end;
+  width: 32px;
+  height: 28px;
+  border: 1px solid #f5d77b88;
+  border-radius: 8px;
+  background: #082b43;
+  color: #f5d77b;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-error {
+  z-index: 1;
+  flex: 0 0 auto;
+  margin: 0 10px 6px;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-composer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  margin: 0 10px max(8px, env(safe-area-inset-bottom, 0px));
+  padding: 6px 8px 5px;
+  border: 1px solid #d6a52b;
+  border-radius: 12px;
+  background: linear-gradient(140deg, #0a314b, #041a2d);
+  box-shadow: inset 0 1px #fff4, 0 4px 12px #0004;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-composer-row {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-composer textarea {
+  box-sizing: border-box;
+  width: 0;
+  min-width: 0;
+  min-height: 42px;
+  max-height: 96px;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 10px 5px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #f7f8fa;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px !important;
+  line-height: 1.35;
+  resize: none;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-composer textarea::placeholder {
+  color: #aebdc8;
+}
+#root .ayala-frame:has(.support-chat-page) .support-attach {
+  display: grid;
+  width: 38px;
+  min-width: 38px;
+  height: 42px;
+  min-height: 42px;
+  flex: 0 0 38px;
+  place-items: center;
+  padding: 5px;
+  border-radius: 9px;
+  color: #f5d77b;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-composer-row > button[type="submit"] {
+  display: flex;
+  min-width: 84px;
+  min-height: 42px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 9px;
+  border: 1px solid #fff0a8;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #ffe58a, #c99325);
+  box-shadow: inset 0 1px #fff9, 0 2px 6px #0004;
+  color: #16243a;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-limit {
+  display: block;
+  padding: 4px 3px 0;
+  color: #aebdc8;
+  font-size: 9px;
+  line-height: 1.3;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-preview {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin: 2px 0 7px;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-preview img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(190px, 60vw);
+  max-height: 100px;
+  object-fit: contain;
+}
+#root .ayala-frame:has(.support-chat-page) .support-chat-page > .ayala-bottom {
+  position: relative !important;
+  inset: auto !important;
+  transform: none !important;
+  box-sizing: border-box;
+  z-index: 5;
+  flex: 0 0 90px;
+  align-self: center;
+  width: calc(100% - 16px);
+  height: 90px;
+  min-height: 90px;
+  margin: 8px 8px max(10px, env(safe-area-inset-bottom, 0px));
+  padding-bottom: 0;
+}
+#root .ayala-frame[data-support-keyboard-open="true"] .support-chat-page::before,
+#root .ayala-frame[data-support-keyboard-open="true"] .support-chat-page > .ayala-bottom {
+  display: none !important;
+}
+#root .ayala-frame[data-support-keyboard-open="true"] .support-chat-composer {
+  margin-bottom: 8px;
+}
+@media (max-width: 520px) {
+  #root .ayala-frame:has(.support-chat-page) .support-chat-messages {
+    padding: 10px 11px;
+  }
+  #root .ayala-frame:has(.support-chat-page) .support-chat-intro {
+    margin: 8px 9px 0;
+    padding: 9px 10px;
+  }
+  #root .ayala-frame:has(.support-chat-page) .support-chat-composer {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+  #root .ayala-frame:has(.support-chat-page) .support-chat-composer-row > button[type="submit"] {
+    min-width: 78px;
+    padding-inline: 7px;
+  }
+  #root .ayala-frame:has(.support-chat-page) .support-message {
+    max-width: 88%;
+  }
+}

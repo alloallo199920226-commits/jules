@@ -1,0 +1,145 @@
+/* Layout adapter only. The supplied archive and its JavaScript stay unchanged. */
+#admin-root #dashboard-view {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Imported runtime rules give full-width blocks a sidebar-sized left margin.
+   Auto width subtracts that margin instead of extending beyond the viewport. */
+#admin-root #dashboard-view > :is(.admin-header, .admin-content) {
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin-left: 220px !important;
+  margin-right: 0 !important;
+}
+
+#admin-root #dashboard-view .admin-stats-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+#admin-root #dashboard-view :is(.admin-stat-card, .admin-panel, .admin-list-card,
+    .admin-detail-grid > *, form > *, .admin-setting-row > *, .admin-header > *) {
+  min-width: 0 !important;
+  overflow-wrap: anywhere;
+}
+
+#admin-root #dashboard-view :is(input, select, textarea) {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+#admin-root #dashboard-view .admin-setting-row,
+#admin-root #dashboard-view .admin-card-actions {
+  flex-wrap: wrap;
+}
+
+#admin-root #dashboard-view :is(.admin-table-wrap, .admin-table-scroll) {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+body:has(#admin-root) .admin-overlay .admin-user-panel {
+  width: min(100vw, 560px) !important;
+  min-width: 0 !important;
+  max-width: 100vw !important;
+}
+
+body:has(#admin-root) .admin-overlay :is(input, select, textarea, label) {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1050px) {
+  #admin-root #dashboard-view .admin-stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  #admin-root #dashboard-view > :is(.admin-header, .admin-content) {
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-inline: 12px !important;
+  }
+
+  #admin-root #dashboard-view .admin-header {
+    position: relative !important;
+    min-height: 66px;
+    height: auto !important;
+    gap: 10px;
+  }
+
+  #admin-root #dashboard-view .admin-header-actions {
+    flex-shrink: 0;
+  }
+
+  /* All fourteen sections remain reachable, with touch-sized controls.
+     A horizontal scroll strip avoids clipping a four-row fixed footer. */
+  #admin-root #dashboard-view .admin-runtime-nav {
+    position: sticky !important;
+    inset: 0 auto auto !important;
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 8px 12px !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    border-bottom: 1px solid #cbd1d3;
+  }
+
+  #admin-root #dashboard-view .admin-runtime-nav::before {
+    display: none !important;
+  }
+
+  #admin-root #dashboard-view .admin-runtime-nav button {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-height: 44px !important;
+    padding: 9px 12px !important;
+    margin: 0 !important;
+    font-size: 12px !important;
+    white-space: nowrap;
+  }
+
+  #admin-root #dashboard-view .admin-content {
+    padding-bottom: max(24px, env(safe-area-inset-bottom)) !important;
+  }
+
+  #admin-root #dashboard-view .admin-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #admin-root #dashboard-view :is(.admin-inline-form, .admin-settings-grid,
+      .admin-announcement-form, .admin-history-filters) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  #admin-root #dashboard-view .admin-setting-row {
+    align-items: flex-start;
+  }
+
+  #admin-root #dashboard-view .admin-card-actions {
+    width: 100%;
+    gap: 8px;
+  }
+
+  #admin-root #dashboard-view .admin-card-actions button {
+    min-height: 40px;
+    white-space: normal;
+  }
+
+  body:has(#admin-root) .admin-user-panel :is(.admin-balance-actions, .admin-grant-row) {
+    grid-template-columns: minmax(0, 1fr);
+    flex-wrap: wrap;
+  }
+}

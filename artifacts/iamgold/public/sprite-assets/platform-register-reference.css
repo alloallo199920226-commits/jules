@@ -1,0 +1,230 @@
+/* Registration-specific fit for the shared alpine-cloud sign-in design. */
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference {
+  overflow: visible !important;
+  min-height: 100dvh !important;
+  padding: max(10px, env(safe-area-inset-top)) 18px max(12px, env(safe-area-inset-bottom)) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .login-content {
+  width: min(100%, 440px) !important;
+  max-width: 440px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .brand-block {
+  margin-bottom: 7px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .mission-title {
+  margin-top: 6px !important;
+  font-size: clamp(22px, 5vw, 28px) !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .mission-subtitle {
+  margin-top: 3px !important;
+  font-size: 12px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .login-flight {
+  width: min(100vw, 540px) !important;
+  height: 66px !important;
+  margin: 0 0 4px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .register-panel {
+  padding: 13px 24px 11px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .panel-header {
+  margin-bottom: 9px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .panel-overline {
+  margin-bottom: 5px !important;
+  padding: 5px 9px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .panel-header h2 {
+  font-size: 22px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .register-intro {
+  margin: 3px 0 0 !important;
+  color: #64718a !important;
+  font: 500 12px/1.35 "Manrope", "Avenir Next", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #registration-form {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference :is(.country-group, .field-group) {
+  min-width: 0 !important;
+  margin: 0 0 6px !important;
+  animation: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .field-label {
+  margin: 0 0 3px 2px !important;
+  color: #25314a !important;
+  font: 700 12px/1.25 "Manrope", "Avenir Next", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .field {
+  min-height: 40px !important;
+  height: 40px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .field-icon {
+  flex-basis: 34px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .country-select-button {
+  gap: 8px !important;
+  padding-right: 10px !important;
+  font-size: 16px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .dial-code {
+  gap: 6px !important;
+  height: 23px !important;
+  padding-right: 8px !important;
+  font: 600 16px/1 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .dial-code .flag {
+  display: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .field input[type="tel"],
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .field input[type="password"],
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .field input[type="text"] {
+  min-width: 0 !important;
+  padding: 0 8px !important;
+  font: 500 16px/1.2 "Manrope", "Avenir Next", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .password-field input {
+  padding-right: 2px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference :is(.register-toggle, .referral-info) {
+  display: grid !important;
+  flex: 0 0 38px !important;
+  place-items: center !important;
+  width: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  height: 100% !important;
+  border: 0 !important;
+  color: #36435c !important;
+  background: transparent !important;
+  cursor: pointer !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference :is(.register-toggle, .referral-info) svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .optional {
+  margin-left: 4px !important;
+  color: #71809a !important;
+  font: 500 11px/1.25 "Manrope", sans-serif !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .country-error {
+  margin: 4px 2px 0 !important;
+  color: #b42336 !important;
+  font: 500 12px/1.35 "Manrope", sans-serif !important;
+  overflow-wrap: anywhere !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .password-error.show {
+  display: block !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .referral-help {
+  margin: 5px 2px 0 !important;
+  color: #53617a !important;
+  font: 500 12px/1.4 "Manrope", sans-serif !important;
+  overflow-wrap: anywhere !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .referral-help[hidden] {
+  display: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .submit.primary-button {
+  min-height: 44px !important;
+  margin-top: 2px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .signup-line {
+  margin-top: 5px !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .secure-note {
+  display: block !important;
+  width: 100% !important;
+  margin: 7px 0 0 !important;
+  color: #64718a !important;
+  background: transparent !important;
+  text-align: center !important;
+  font: 500 10px/1.4 "Manrope", sans-serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .secure-note > span {
+  display: none !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference .secure-note b {
+  color: #a4aec0 !important;
+  font-weight: 500 !important;
+}
+
+html[data-platform-theme='silver'] body.andship-register #login-financial-reference :is(button, a, input):focus-visible {
+  outline: 2px solid #153de5 !important;
+  outline-offset: 2px !important;
+}
+
+@media (min-width: 700px) {
+  html[data-platform-theme='silver'] body.andship-register #login-financial-reference {
+    padding-top: max(12px, env(safe-area-inset-top)) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  html[data-platform-theme='silver'] body.andship-register #login-financial-reference {
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+  }
+
+  html[data-platform-theme='silver'] body.andship-register #login-financial-reference .register-panel {
+    padding: 12px 15px 10px !important;
+  }
+
+  html[data-platform-theme='silver'] body.andship-register #login-financial-reference .field-icon {
+    flex-basis: 31px !important;
+  }
+
+  html[data-platform-theme='silver'] body.andship-register #login-financial-reference :is(.register-toggle, .referral-info) {
+    flex-basis: 36px !important;
+    width: 36px !important;
+    min-width: 36px !important;
+  }
+}
+
+@media (max-width: 350px), (max-height: 740px) {
+  html[data-platform-theme='silver'] body.andship-register #login-financial-reference .login-flight {
+    height: 48px !important;
+    margin-bottom: 2px !important;
+  }
+
+  html[data-platform-theme='silver'] body.andship-register #login-financial-reference .brand-block {
+    margin-bottom: 4px !important;
+  }
+}

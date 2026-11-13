@@ -1,0 +1,14 @@
+/* Shared, route-scoped IAMGOLD auth geometry/material tokens. */
+.ig-page {
+  --ig-auth-navy: #071a38;
+  --ig-auth-sapphire: #123e70;
+  --ig-auth-gold: #d5a43b;
+  --ig-auth-champagne: #e9c779;
+  --ig-auth-pearl: #f7f8fc;
+  --ig-auth-silver: #dce3ed;
+  --ig-auth-card-border-width: 4px;
+  --ig-auth-card-radius: 68px 55px 63px 82px / 71px 77px 48px 99px;
+  --ig-auth-heading-radius: 63px 46px 45px 0;
+  --ig-auth-heading-clip: polygon(0 0, 100% 0, 100% 68%, 87% 100%, 0 100%);
+  --ig-auth-heading-height: 103px;
+}

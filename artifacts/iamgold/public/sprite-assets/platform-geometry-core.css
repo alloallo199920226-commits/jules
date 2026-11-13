@@ -1,0 +1,152 @@
+/* Andship geometry system: precision-machined panels, inset rails, and calm spacing. */
+html[data-platform-theme="silver"] {
+  --ag-paper: #f1f2f1;
+  --ag-panel: #fafaf8;
+  --ag-metal: #e2e5e5;
+  --ag-edge: #c5cbcc;
+  --ag-rule: #d7dcdd;
+  --ag-ink: #30383b;
+  --ag-copy: #4c565a;
+  --ag-muted: #707a7e;
+  --ag-graphite: #424c50;
+  --ag-dark: #323b3f;
+  --ag-tint: #edf0f0;
+  --ag-serif: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --ag-sans: "Avenir Next", "Trebuchet MS", sans-serif;
+  --ag-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  color-scheme: light;
+}
+
+html[data-platform-theme="silver"] body:not(.andship-home) {
+  background: #e3e6e6 !important;
+  color: var(--ag-ink) !important;
+  font-family: var(--ag-sans) !important;
+  overflow-x: clip;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.app,.page,.profile-app,.social-app) {
+  width: min(100%, 1180px) !important;
+  max-width: 1180px !important;
+  min-height: 100dvh;
+  margin: 0 auto !important;
+  padding-bottom: calc(102px + env(safe-area-inset-bottom)) !important;
+  border: 1px solid #d0d5d6 !important;
+  border-top: 0 !important;
+  border-radius: 0 0 18px 18px !important;
+  background: var(--ag-paper) !important;
+  box-shadow: 0 16px 46px #28323614 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.content,.main,main) {
+  color: var(--ag-ink) !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.content,.main) {
+  padding-inline: clamp(15px, 3.2vw, 34px) !important;
+}
+
+/* Shared headers read like an instrument fascia rather than a floating capsule. */
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero,.promo,.brands,.santa) {
+  position: relative;
+  min-height: 190px !important;
+  border-bottom: 1px solid #c6cccd !important;
+  border-radius: 0 !important;
+  background-color: #e4e7e7 !important;
+  background-image:
+    linear-gradient(90deg,#f1f2f1f7 0%,#f1f2f1e6 42%,#f1f2f18c 74%,#eef0f020 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 50% !important;
+  background-size: cover !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero h1,.hero-title,.hero-copy h1,.heading h1,.section-title) {
+  font-family: var(--ag-serif) !important;
+  font-weight: 650 !important;
+  letter-spacing: -.035em !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.card,.panel,.group,.level,.bonus,.transaction,.product,.actions,.tabs,.list,
+  .summary.light,.balance.light,.bal.light,.gift-card,.reward-card,.filters,.filters-wrap,.journey-list,.feature-panel,
+  .instructions,.country-sheet,.country-option,.modal-content,.dialog) {
+  border: 1px solid var(--ag-rule) !important;
+  border-radius: 4px 15px 4px 15px !important;
+  box-shadow: 0 5px 14px #2832360c, inset 0 1px #ffffff9c !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.btn,.primary,.primary-button,.button-primary,.button-submit,.submit,.confirm,.buy:not(:disabled),
+  .checkin-button,.send,.cta,.add,.copy,.understand,.login-button,.register-button) {
+  min-height: 42px;
+  border-radius: 3px 11px 3px 11px !important;
+  letter-spacing: .015em;
+  transition: background-color .16s ease, border-color .16s ease, transform .16s ease !important;
+}
+/* Sold-out and aria-disabled purchase controls keep the same engineered silhouette. */
+html[data-platform-theme="silver"] body:not(.andship-home) .buy {
+  min-height: 40px;
+  border-radius: 3px 11px 3px 11px !important;
+  transition: background-color .16s ease, border-color .16s ease, transform .16s ease !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.btn,.primary,.primary-button,.button-primary,.button-submit,.submit,.confirm,.buy:not(:disabled),
+  .checkin-button,.send,.cta,.add,.copy,.understand,.login-button,.register-button):not(:disabled):not([aria-disabled="true"]):hover {
+  background-color: #354044 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea,.field,.input) {
+  border-radius: 3px 10px 3px 10px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(a,button,input,select,textarea,[tabindex]):focus-visible {
+  outline: 2px solid #4e5a5e !important;
+  outline-offset: 3px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.bottom,.bottom-nav,.app-nav) {
+  left: 50% !important;
+  width: min(calc(100% - 20px), 740px) !important;
+  min-height: 62px !important;
+  height: auto !important;
+  padding: 5px 7px calc(5px + env(safe-area-inset-bottom)) !important;
+  transform: translateX(-50%) !important;
+  border: 1px solid #bfc6c8 !important;
+  border-radius: 5px 15px 5px 15px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.bottom,.bottom-nav,.app-nav) .nav {
+  min-height: 48px !important;
+  border-radius: 3px 9px 3px 9px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.tab,.filter,.action,.nav-item,.amount) {
+  border-radius: 3px 9px 3px 9px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(table,.table-wrap,.table-container) {
+  max-width: 100%;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.table-wrap,.table-container) {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(dialog,.modal-content,.country-sheet,.sheet,.dialog) {
+  max-width: min(94vw, 720px);
+  max-height: min(88dvh, 900px);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+/* GOPAY's .modal is a sheet inside .overlay; never apply panel framing to the backdrop. */
+html[data-platform-theme="silver"] body:not(.andship-home):has(.overlay > .modal) .overlay > .modal {
+  border: 1px solid var(--ag-edge) !important;
+  border-radius: 4px 16px 4px 16px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.empty,.empty-state,.activity-empty) {
+  border-radius: 4px 14px 4px 14px !important;
+}
+@media (max-width: 767px) {
+  html[data-platform-theme="silver"] body:not(.andship-home) :is(.app,.page,.profile-app,.social-app) {
+    width: 100% !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-radius: 0 !important;
+  }
+  html[data-platform-theme="silver"] body:not(.andship-home) :is(.bottom,.bottom-nav,.app-nav) {
+    width: calc(100% - 16px) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-platform-theme="silver"] *,
+  html[data-platform-theme="silver"] *::before,
+  html[data-platform-theme="silver"] *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}

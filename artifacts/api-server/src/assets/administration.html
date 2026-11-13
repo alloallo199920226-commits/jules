@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr" data-platform-theme="narke">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <title>Administration sécurisée — NARKE</title>
+  <link rel="stylesheet" href="/admin-ui/styles.css">
+  <link rel="stylesheet" href="/admin-ui/runtime.css">
+  <link rel="stylesheet" href="/admin-ui/admin-credit.css">
+  <link rel="stylesheet" href="/admin-ui/history.css?v=156">
+  <link rel="stylesheet" href="/sprite-assets/sprite-admin.css?v=157">
+  <link rel="stylesheet" href="/sprite-assets/stripe-pay-brand.css?v=1">
+  <link rel="stylesheet" href="/sprite-assets/platform-product-theme.css?v=12">
+  <script src="/sprite-assets/stripe-pay-brand.js?v=1" defer></script>
+ <link rel="stylesheet" href="/admin-ui/transaction-trace.css?v=1"><link rel="stylesheet" href="/admin-ui/import-compat.css?v=1"><link rel="stylesheet" href="/admin-ui/customer-reset.css?v=2">
+ <link rel="stylesheet" href="/pages/narke-admin.css?v=drawer2">
+  <link rel="stylesheet" href="/pages/iamgold-admin-theme.css?v=3">
+  <link rel="stylesheet" href="/admin-ui/iamgold-extensions.css?v=10">
+  <script src="/pages/narke-brand.js?v=iamgold4" defer></script>
+ <script src="/pages/iamgold-admin-icons.js?v=1" defer></script>
+<meta name="theme-color" content="#00131e"><meta name="application-name" content="NARKE Industries"><meta name="apple-mobile-web-app-title" content="NARKE"><meta property="og:site_name" content="NARKE Industries"><meta property="og:type" content="website"></head>
+<body>
+  <main id="admin-root">
+    <section class="admin-login-page" id="login-view">
+      <div class="admin-login-atmosphere" aria-hidden="true">
+        <span class="admin-orbit admin-orbit-one"></span>
+        <span class="admin-orbit admin-orbit-two"></span>
+        <span class="admin-gridline"></span>
+      </div>
+      <form class="admin-login-card" id="admin-login">
+        <div class="admin-login-topline"><span class="admin-kicker">PORTAIL OPÉRATEUR</span><span class="admin-status-dot">Session protégée</span></div>
+        <div class="admin-login-brand">
+          <span class="admin-login-mark" aria-hidden="true"><span></span></span>
+          <span class="admin-brand-word">Sprite<span>®</span></span>
+        </div>
+        <div class="admin-login-heading">
+          <p class="admin-eyebrow">IAMGOLD · Portail opérateur</p>
+          <h1>Administration<br><em>NARKE.</em></h1>
+          <p>Accès strictement réservé aux opérateurs autorisés.</p>
+        </div>
+        <label for="admin-password">Mot de passe
+          <span class="admin-password-field">
+            <input id="admin-password" type="password" autocomplete="current-password" required minlength="8" aria-describedby="login-help">
+            <button class="admin-password-toggle" type="button" aria-label="Afficher le mot de passe" aria-pressed="false">Afficher</button>
+          </span>
+        </label>
+        <small class="admin-login-help" id="login-help">Vos identifiants restent confidentiels et ne sont jamais enregistrés dans cette interface.</small>
+        <div class="admin-error" id="login-error" role="alert" hidden></div>
+        <button class="admin-primary-button admin-login-submit" type="submit"><span>Ouvrir la console</span><span class="admin-button-arrow" aria-hidden="true">↗</span></button>
+        <div class="admin-login-footer"><span><i></i> Accès privé</span><span>Console opérateur</span></div>
+      </form>
+      <p class="admin-login-caption">Un espace de décision pour les flux qui comptent.</p>
+    </section>
+
+    <section class="admin-page" id="dashboard-view" hidden>
+      <div class="admin-masthead" role="region" aria-label="Bandeau IAMGOLD">
+        <span class="admin-masthead-badge"><strong>Administration NARKE</strong><small>Comptes et opérations financières</small></span>
+      </div>
+      <header class="admin-header" aria-label="Actions administratives">
+        <div class="admin-header-actions">
+          <button id="refresh" type="button" title="Actualiser" aria-label="Actualiser"><svg viewBox="0 0 24 24"><path d="M20 6v5h-5M4 18v-5h5M18 9a7 7 0 0 0-12-2l-2 4m2 4a7 7 0 0 0 12 2l2-4"/></svg></button>
+          <button id="logout" type="button" title="Déconnexion" aria-label="Déconnexion"><svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M14 4h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5"/></svg></button>
+        </div>
+      </header>
+      <nav class="admin-runtime-nav" id="general-admin-nav" aria-label="Sections administratives">
+        <button class="active" data-tab="overview">Synthèse</button>
+        <button data-tab="transactions">Transactions</button>
+        <button data-tab="normalWithdrawals">Retraits normaux</button>
+        <button data-tab="history">Historique complet</button>
+        <button data-tab="adminCredits">Admin crédit</button>
+        <button data-tab="users">Utilisateurs</button>
+        <button data-tab="products">Produits</button>
+        <button data-tab="codes">Codes cadeaux</button>
+        <button data-tab="channels">Canaux</button>
+        <button data-tab="announcements">Annonces</button>
+        <button data-tab="settings">Paramètres</button>
+         <button data-tab="cameroon">Cameroun</button>
+         <button data-tab="social">Forum</button>
+         <button data-tab="support">Service client</button>
+      </nav>
+      <div class="admin-content">
+        <div class="admin-notice" id="admin-notice" hidden></div>
+        <div class="admin-error" id="admin-error" hidden></div>
+        <section id="admin-content" aria-live="polite"></section>
+      </div>
+    </section>
+  </main>
+  <script src="/admin-ui/transaction-history.js?v=161"></script>
+  <script src="/admin-ui/user-maintenance.js?v=156"></script>
+  <script src="/admin-ui/user-search.js?v=159"></script>
+  <script src="/admin-ui/support-inbox.js?v=7"></script>
+  <script src="/admin-ui/general.js?v=164"></script>
+  <script src="/admin-ui/iamgold-extensions.js?v=1"></script>
+<script src="/admin-ui/transaction-trace.js?v=1" defer></script><script src="/admin-ui/today-withdrawals.js?v=1"></script><script src="/admin-ui/customer-reset.js?v=1" defer></script></body>

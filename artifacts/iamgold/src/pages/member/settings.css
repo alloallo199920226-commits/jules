@@ -1,0 +1,78 @@
+.settings-page{height:100%;position:relative;background:#fff;color:#34383e}
+.settings-page{display:flex;flex-direction:column}
+.settings-page>.ayala-header{flex-shrink:0}
+.settings-edit-page>.ayala-header{height:104px;padding-bottom:16px}
+.settings-edit-page .ayala-header-title{max-width:330px}
+.settings-edit-page .ayala-head-btn{top:17px}
+.settings-page>.settings-scroll{height:auto;flex:1;min-height:0}
+.settings-profile-top{width:100%;border:0;background:white;text-align:left;cursor:pointer}
+.settings-logout{display:block;margin:30px auto 10px;border:0;background:none;color:#3878b4;font:inherit;cursor:pointer}
+.settings-clearable{display:block;position:relative}
+.settings-clearable .settings-input{padding-right:45px}
+.settings-clearable button{position:absolute;right:14px;top:0;height:58px;border:0;background:none;color:#c6cad0;display:grid;place-items:center;cursor:pointer}
+.settings-header{height:104px}
+.settings-header .ayala-head-btn{top:17px}
+.settings-header .ayala-header-title{max-width:285px}
+.settings-scroll{height:calc(100% - 104px);overflow-y:auto;overflow-x:hidden;scrollbar-width:none;padding-bottom:28px}
+.settings-scroll::-webkit-scrollbar{display:none}
+.settings-profile-top{height:127px;display:flex;align-items:center;gap:17px;padding:0 18px}
+.settings-avatar-button{width:80px;height:80px;flex:none;border:0;border-radius:50%;padding:0;overflow:hidden;background:#b98c28;color:#fff;font-size:56px;font-weight:700;display:grid;place-items:center;cursor:pointer}
+.settings-avatar-button img{height:100%;width:100%;object-fit:cover}
+.settings-avatar-copy{font-size:16px;font-weight:600;line-height:1.55}
+.settings-avatar-copy small{display:block;color:#a2a5aa;font-weight:400;font-size:14px;line-height:1.5}
+.settings-file-input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.settings-form{padding:0 18px}
+.settings-field{display:block;margin:22px 0 0;color:#7c8087;font-size:16px}
+.settings-field>span{display:block;margin-bottom:11px}
+.settings-input{width:100%;height:58px;border:1px solid #e5e6e8;border-radius:11px;background:#fff;padding:0 18px;color:#40444a;font:400 16px Roboto,Arial,sans-serif;outline:none}
+.settings-input:focus{border-color:#7eb3e9}
+.settings-input:disabled{background:#fafbfc;color:#858990}
+.settings-input::placeholder{color:#a5a8ad}
+.settings-confirm{width:100%;height:57px;border:0;border-radius:32px;margin-top:35px;background:#0875f5;color:#fff;font-size:17px;font-weight:600;box-shadow:0 5px 13px #0875f533;cursor:pointer}
+.settings-mark{height:47px;border-bottom:1px solid #f3f3f3;padding:0 18px;color:#92969d;font-size:13px}
+.settings-security{padding:20px 18px}
+.settings-security h2{font-size:16px;margin:0 0 13px;font-weight:600;color:#363a40}
+.settings-security-row{width:100%;height:75px;border:0;border-radius:10px;background:#f7f8fa;margin:0 0 10px;padding:0 17px;display:flex;align-items:center;gap:14px;text-align:left;color:#454a51;font-size:16px;cursor:pointer}
+.settings-security-icon{width:43px;height:43px;border-radius:9px;background:#0875ed;color:#fff;display:grid;place-items:center;flex:none}
+.settings-security-icon.transaction{background:#f17d4d}
+.settings-security-row>svg:last-child{margin-left:auto;color:#a5a8ae}
+.settings-password-scroll{padding:0 18px}
+.settings-password-form{padding:0}
+.settings-password-form .settings-field{margin-top:24px}
+.settings-password-form .settings-field:first-child{margin-top:22px}
+.settings-password-wrap{position:relative}
+.settings-password-wrap .settings-input{padding-right:52px}
+.settings-eye{position:absolute;right:13px;top:0;width:40px;height:58px;border:0;background:transparent;color:#a3a7ad;display:grid;place-items:center;cursor:pointer}
+.settings-code-wrap{position:relative}
+.settings-code-wrap .settings-input{padding-right:105px}
+.settings-send-code{position:absolute;right:16px;top:0;height:58px;border:0;background:none;color:#236fba;font-size:16px;font-weight:500;cursor:pointer}
+.settings-password-form .settings-confirm{margin-top:35px}
+.help-background{background:#eff1ff;min-height:calc(100% - 76px)}
+.settings-page>.help-background{min-height:0;flex:1;overflow-y:auto}
+.help-banner{height:258px;background:#fff;display:flex;align-items:center;padding:25px 30px;overflow:hidden}
+.help-background .help-banner{padding:0}
+.help-banner img{width:100%;height:100%;object-fit:cover;object-position:center}
+.help-content{padding:24px 17px 36px}
+.help-card{min-height:110px;border-radius:15px;background:#fff;box-shadow:0 2px 5px #29385810;margin-bottom:17px;padding:18px 21px;display:flex;align-items:center;gap:17px;text-align:left;width:100%;color:#33383e}
+.help-card-action{border:0;cursor:pointer}
+.help-icon{height:64px;width:64px;border-radius:50%;background:#eff0ff;color:#4477dd;display:grid;place-items:center;flex:none}
+.help-copy{min-width:0}
+.help-copy strong{display:block;font-size:18px;line-height:1.4;font-weight:600}
+.help-copy small{display:block;font-size:15px;color:#898d95;margin-top:7px;line-height:1.5}
+.about-scroll{height:100%;overflow:auto;padding:0 0 26px;scrollbar-width:none;background:#f4f6fb}
+.about-scroll::-webkit-scrollbar{display:none}
+.about-banner{height:220px;background:#050505;display:grid;place-items:center;overflow:hidden}
+.about-banner img{width:100%;height:100%;object-fit:cover}
+.about-copy{background:#fff;border-radius:14px;margin:10px 17px 0;padding:12px 12px 18px}
+.about-copy h1{font-size:28px;line-height:1.2;margin:0 0 9px;font-weight:700;color:#30343a}
+.about-copy h2{font-size:21px;line-height:1.52;margin:0 0 8px;font-weight:700;color:#30343a}
+.about-copy p{font-size:16px;line-height:2.02;margin:0;color:#50545a}
+.vip-scroll{height:100%;overflow-y:auto;padding:16px 17px 30px;background:#f4f6fb;scrollbar-width:none}
+.settings-page>.vip-scroll{height:auto;flex:1;min-height:0}
+.vip-scroll::-webkit-scrollbar{display:none}
+.vip-level-card{height:118px;border-radius:16px;background:#fff;box-shadow:0 2px 5px #29385810;margin:0 0 14px;padding:14px 17px;display:flex;align-items:center;gap:16px}
+.vip-level-badge{width:58px;flex:none;display:flex;align-items:center;flex-direction:column;gap:3px;color:#272a30;font-size:18px;font-weight:700}
+.vip-level-badge img{width:58px;height:58px;object-fit:contain}
+.vip-level-copy{font-size:16px;line-height:1.55;color:#555a61;min-width:0}
+.vip-level-copy b{color:#1670cf;font-weight:700}
+@media(prefers-reduced-motion:reduce){.settings-page *,.help-background *,.vip-scroll *{scroll-behavior:auto!important;transition:none!important}}

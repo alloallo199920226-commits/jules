@@ -1,0 +1,51 @@
+/* Existing Stripe checkout and transaction confirmation panels; overlays remain separate. */
+html[data-platform-theme="silver"] body.sprite-checkout .checkout-shell {
+  max-width: 1200px !important;
+  margin-inline: auto !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout .checkout-header {
+  border-bottom-color: #cbd1d2 !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout .page-grid {
+  width: min(100%,1140px) !important;
+  max-width: 1140px !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.checkout-card,.assurance-card,.order-summary,.success-reference,
+  .notice,.real-test-warning,.privacy-note,.challenge-panel,.flow-message,.help-card,.support-line,.success-view) {
+  border-radius: 4px 15px 4px 15px !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.checkout-card,.assurance-card,.order-summary,.success-reference,
+  .challenge-panel,.flow-message,.help-card) {
+  border-color: #d3d8da !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.amount-field,.phone-field,.select-wrap,.text-field) {
+  border-radius: 3px 10px 3px 10px !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(input,select,textarea) {
+  min-width: 0;
+  max-width: 100%;
+  font-size: 16px !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.button,.text-button,.back-link,.success-copy-button) {
+  border-radius: 3px 11px 3px 11px !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout .step-index {
+  border-radius: 3px 9px 3px 9px !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.checkout-card,.assurance-card,.checkout-shell) {
+  min-width: 0;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(a,button,input,select,textarea,[tabindex]):focus-visible {
+  outline: 2px solid #4e5a5e !important;
+  outline-offset: 3px !important;
+}
+@media (max-width: 650px) {
+  html[data-platform-theme="silver"] body.sprite-checkout .page-grid {
+    width: 100% !important;
+  }
+}
+@media (max-width: 370px) {
+  html[data-platform-theme="silver"] body.sprite-checkout .checkout-shell {
+    padding-inline: 12px !important;
+  }
+}

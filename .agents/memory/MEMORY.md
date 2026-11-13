@@ -1,0 +1,7 @@
+- [Direction visuelle IAMGOLD / AYALA](visual-fidelity.md) — refonte premium globale désormais autorisée ; préserver les données réelles et les parcours.
+- [Livraison du code interne](internal-code-policy.md) — l’utilisateur a choisi un affichage dans le site, pas un SMS ; ne pas le traiter comme une preuve du numéro.
+- [Étape obligatoire après inscription](account-onboarding.md) — définir le mot de passe de transaction et valider le code avant tout accès au tableau de bord.
+- [Activation de l’équipe](team-activation.md) — configuration du compte et activation financière sont distinctes ; ne pas inventer les statuts d’activation.
+- [Port du serveur de prévisualisation](preview-workflow-ports.md) — un ancien serveur peut maintenir l’aperçu pendant que le workflow actif utilise un autre port.
+- [Administration et échanges membres](administration-policy.md) — thème industriel autorisé sur toute la console, fonctions préservées ; modération, bonus explicites et chat privé.
+- [Solde et revenus cumulés](wallet-income-policy.md) — les gains crédités alimentent le disponible ; le cumul historique n’est pas un deuxième solde retirable.

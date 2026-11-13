@@ -1,0 +1,8 @@
+.ig-media-viewer{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:24px;background:#020b14ed;backdrop-filter:blur(10px)}
+.ig-media-viewer>img{max-width:min(92vw,1100px);max-height:86dvh;object-fit:contain;transition:transform .18s ease;transform-origin:center}
+.ig-viewer-close,.ig-viewer-tools button{display:grid;place-items:center;width:42px;height:42px;border:1px solid #d6a52b88;border-radius:10px;background:linear-gradient(145deg,#12334a,#061728);color:#f5d77b;cursor:pointer}
+.ig-viewer-close{position:absolute;top:calc(18px + env(safe-area-inset-top));right:18px}
+.ig-viewer-tools{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:10px;color:#f7f8fa}
+.ig-viewer-tools span{min-width:48px;text-align:center;font:600 12px ui-monospace,monospace}
+.ig-viewer-tools button{font-size:20px}
+@media(prefers-reduced-motion:reduce){.ig-media-viewer>img{transition:none}}

@@ -1,0 +1,97 @@
+.team-scroll{background:#f3f4f8}
+.team-members-scroll{background:#faf5ec;padding-bottom:0}
+.team-main{padding:17px 19px 35px}
+.team-activity,.team-invitation-section,.team-overview-levels{padding:18px;margin-bottom:14px;border-radius:17px}
+.team-section-title{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.team-activity h2,.team-invitation-section>h2,.team-section-title h2,.team-card-heading h2{margin:0;color:#303238;font-size:22px;font-weight:700}
+.team-title-icon{width:39px;height:39px;display:grid;place-items:center;flex:0 0 39px}
+.team-gift-icon{color:#ef7655;background:#fff6ef;border-radius:50%}
+.team-star-icon{color:#efc526}
+.team-activity{display:block;min-height:0}
+.team-lottery-row{display:flex;align-items:center;gap:12px;padding:14px 12px;margin-top:13px;background:#fafafa;border-radius:13px}
+.team-lottery-row>strong{flex:1;font-size:14px;color:#3e4045}
+.team-lottery-copy{flex:1;min-width:0}
+.team-lottery-copy strong,.team-lottery-copy small{display:block}
+.team-lottery-copy strong{font-size:20px;color:#393b40}
+.team-lottery-copy small{font-size:16px;color:#929398;margin-top:4px}
+.team-activity-icon{display:grid;place-items:center;flex:0 0 45px}
+.team-lottery-row>button{height:46px;padding:0 20px;border:0;border-radius:25px;background:#ff7952;color:#fff;font-size:16px;font-weight:600;cursor:pointer;white-space:nowrap}
+.team-invitation-section{padding-bottom:10px}
+.team-invite-subtitle{padding:5px 0 17px;color:#99999e;font-size:16px}
+.team-code-list{margin:0}
+.team-code-list>.team-code-row{border-top:0}
+.team-code-row{display:flex;align-items:center;gap:12px;min-height:82px;padding:10px 12px;background:#fafafa;border-radius:15px}
+.team-code-row+.team-code-row{margin-top:10px}
+.team-link-only{padding:8px;margin:0 0 14px}
+.team-link-only .team-code-row{border-top:0}
+.team-code-symbol{width:38px;height:38px;flex:0 0 38px;border-radius:12px;background:#fff5ed;color:#eb8a65;display:grid;place-items:center}
+.team-link-symbol{background:#f7efff;color:#9863cb}
+.team-code-value{min-width:0;flex:1}
+.team-code-value small{display:block;color:#aaa8ad;font-size:16px;margin-bottom:3px}
+.team-code-value strong{display:block;color:#34363b;font-size:19px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.team-copy-button{height:46px;padding:0 24px;border:0;border-radius:25px;background:#ff7952;color:white;display:flex;align-items:center;gap:6px;font-family:inherit;font-weight:600;font-size:16px;cursor:pointer;flex-shrink:0}
+.team-copy-button span{font-size:16px}
+.team-card-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 2px 13px}
+.team-card-heading>button{display:flex;align-items:center;gap:3px;padding:0;border:0;background:transparent;color:#2e5d88;font-size:16px;font-weight:600;white-space:nowrap;cursor:pointer}
+.team-overview-levels{padding:16px 13px 13px}
+.team-level-list{display:flex;flex-direction:column;gap:10px}
+.team-level-card{width:100%;min-height:96px;padding:10px 10px;background:#fff9df;border:0;border-radius:21px;display:flex;align-items:center;text-align:left;gap:8px;cursor:pointer;color:#33363a}
+.team-level-2{background:#f0f1f3}
+.team-level-3{background:#fff0df}
+.team-medal{width:50px;height:52px;display:grid;place-items:center;position:relative;flex:0 0 50px}
+.team-medal svg{width:43px;height:49px;overflow:visible}
+.team-medal b{position:absolute;top:28px;font-size:9px;color:#a78326}
+.team-medal-2 b{color:#747980}.team-medal-3 b{color:#a85c2d}
+.team-level-rate-wrap{display:flex;flex-direction:column;align-items:flex-start;min-width:59px}
+.team-level-rate{font-size:23px;font-weight:700;color:#303238;line-height:1.05;text-align:left}
+.team-level-rate small{font-size:21px}
+.team-level-rebate{font-size:15px;color:#929196;white-space:nowrap;margin-top:4px}
+.team-level-count,.team-level-active{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:60px;gap:4px}
+.team-level-count b,.team-level-active b{font-size:21px;color:#36383d;line-height:1.05;font-weight:600}
+.team-level-count small,.team-level-active small{font-size:15px;color:#949398;white-space:nowrap}
+.team-chevron{color:#bdbab6;flex-shrink:0}
+.team-query-error{padding:20px;border-radius:14px;background:white;color:#817b74;font-size:14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.team-query-error button,.team-inline-error button{border:0;border-radius:20px;padding:9px 14px;background:#ee835b;color:white;font-weight:600;font-size:13px;cursor:pointer}
+.team-level-skeleton{display:grid;gap:10px}
+.team-level-skeleton i,.team-member-skeleton i{height:88px;border-radius:16px;background:linear-gradient(90deg,#fff 25%,#f2eee8 48%,#fff 70%);background-size:220% 100%;animation:team-shimmer 1.6s ease-in-out infinite}
+@keyframes team-shimmer{to{background-position-x:-220%}}
+.team-detail-main{padding-top:18px}
+.team-detail-list .team-level-card{min-height:88px}
+.team-members-main{padding:17px 19px 35px;background:#faf5ec;min-height:calc(100% - 76px)}
+.team-member-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 21px}
+.team-stat-card{min-height:132px;position:relative;background:#fff;border-radius:17px;padding:20px 14px;text-align:center;box-shadow:0 2px 7px #7a67410d;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.team-stat-card>span{display:block;color:#66676b;font-size:17px;margin-top:8px}
+.team-stat-card strong{display:block;font-size:38px;line-height:1.1;color:#1670cc;font-weight:700}
+.team-members-card{overflow:hidden;padding:0 0 10px;background:#fff;border-radius:17px}
+.team-members-title{display:flex;align-items:center;padding:19px 23px;border-bottom:1px solid #f0efed}
+.team-members-title h2{font-size:20px;color:#34363a;margin:0;font-weight:700}
+.team-member-list{display:flex;flex-direction:column}
+.team-member-row{min-height:91px;display:flex;align-items:center;gap:14px;padding:10px 22px;border-bottom:1px solid #f1f0ee}
+.team-member-avatar{width:58px;height:58px;border-radius:50%;object-fit:cover;flex:0 0 58px}
+.team-member-avatar-fallback{display:grid;place-items:center;background:#bd922d;color:#fff;font-size:39px;font-weight:700;line-height:1}
+.team-member-identity{flex:1;min-width:0}
+.team-member-name-row{display:flex;align-items:center;gap:6px;min-width:0}
+.team-member-name-row strong{flex:0 1 auto;min-width:0}
+.team-member-identity strong{display:block;color:#37383b;font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.team-member-identity small{display:block;color:#a5a5a8;font-size:14px;margin-top:5px}
+.team-status{padding:7px 11px;border-radius:18px;font-size:13px;white-space:nowrap;background:#fff4dd;color:#c89a37}
+.team-status-active{background:#e8f4e9;color:#6eaa7c}.team-status-inactive{background:#fff4dd;color:#c89a37}
+.team-status-unknown{background:#f1f0ed;color:#92908b}
+.team-empty-state{min-height:194px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px}
+.team-empty-state>span{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff4e1;color:#d39b38;margin-bottom:12px}
+.team-empty-state strong{font-size:14px;color:#68625c}.team-empty-state small{font-size:12px;color:#a8a19a;margin-top:5px}
+.team-pagination{display:flex;justify-content:space-between;align-items:center;padding:13px 18px 3px;color:#928b84;font-size:12px}
+.team-pagination button{border:0;border-radius:18px;padding:9px 13px;background:#fff3e3;color:#bb7c37;font-size:12px;font-weight:600;cursor:pointer}
+.team-pagination button:disabled{opacity:.45;cursor:not-allowed}
+.team-inline-error{padding:10px 18px;color:#a77c62;font-size:12px}
+.team-inline-error button{padding:7px 10px}
+.team-member-error{margin-top:14px}
+@media(max-width:360px){
+ .team-main,.team-members-main{padding-left:16px;padding-right:16px}
+ .team-level-card{gap:5px;padding-left:7px;padding-right:7px}
+ .team-medal{width:43px;flex-basis:43px}
+ .team-level-rate-wrap{min-width:52px}
+ .team-level-count,.team-level-active{min-width:52px}
+ .team-member-row{padding-left:15px;padding-right:15px;gap:10px}
+ .team-member-avatar{width:52px;height:52px;flex-basis:52px}
+}

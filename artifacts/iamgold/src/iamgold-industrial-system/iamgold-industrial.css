@@ -1,0 +1,285 @@
+@import './materials/materials.css';
+@import './animations/industrial.css';
+
+.ig-industrial-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+.ig-hex-action-art .ig-industrial-art {
+  aspect-ratio: 1;
+  clip-path: polygon(50% 0,100% 25%,100% 79%,50% 100%,0 79%,0 25%);
+}
+
+/* Shared, continuous machined navigation across member routes. */
+.ayala-frame .ayala-bottom {
+  left: 8px; right: 8px; bottom: 0; height: calc(113px + env(safe-area-inset-bottom));
+  padding: 7px 6px calc(8px + env(safe-area-inset-bottom)); gap: 2px;
+  border: 0; border-radius: 0; isolation: isolate; overflow: visible;
+  background: transparent; clip-path: none; box-shadow: none;
+}
+.ayala-frame .ayala-bottom::before {
+  display: none;
+}
+.ayala-frame .ayala-nav-item {
+  position: relative;
+  isolation: isolate;
+  width: 20%; height: 88px; min-height: 44px; gap: 3px; color: #dce3ea;
+  font-family: 'DM Sans',sans-serif; font-size: 11px; font-weight: 650;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 65%); transition: transform .18s ease;
+}
+.ayala-frame .ayala-nav-item::before {
+  display: none;
+}
+.ayala-frame .ayala-nav-item.active::before {
+  display: none;
+}
+.ayala-frame .ayala-nav-item.active { color: #fff8df; }
+.ig-nav-machine-frame { position: absolute; top: 0; left: 0; z-index: -1; width: 100%; height: calc(100% - env(safe-area-inset-bottom, 0px)); overflow: visible; pointer-events: none; filter: drop-shadow(0 5px 7px rgb(0 0 0 / 48%)); }
+.ig-nav-active-plaque { position: absolute; inset: -4px 0; z-index: -1; width: 100%; height: calc(100% + 8px); overflow: visible; pointer-events: none; filter: drop-shadow(0 4px 4px rgb(0 0 0 / 50%)); }
+.ayala-frame .ayala-nav-item.active { transform: translateY(-3px); }
+.ayala-frame .ayala-nav-icon { width: 32px; height: 29px; color: #e9c778; }
+.ayala-frame .ayala-nav-icon svg { width: 25px; height: 25px; filter: drop-shadow(0 2px 2px rgb(0 0 0 / 45%)); }
+.ayala-frame .ayala-nav-item.active .ayala-nav-icon { width: 36px; height: 32px; color: #102b4b; background: transparent; }
+.ayala-frame .ayala-nav-item.active .ayala-nav-icon svg { filter: drop-shadow(0 1px 0 rgb(255 255 255 / 48%)); }
+.ayala-frame .ayala-gift { position: static; width: auto; height: auto; border: 0; border-radius: 0; background: none; color: inherit; box-shadow: none; transform: none; }
+.ayala-frame .ayala-gift svg { width: 26px; height: 26px; }
+
+/* The home reference is a standalone composition; Account keeps its distinct profile layout. */
+.ayala-frame:has(.member-home-scroll) { --support-space: 0px; --bottom-stack: calc(113px + env(safe-area-inset-bottom, 0px)); width: min(100%,480px); max-width: 480px; height: 100dvh; min-height: 0; overflow: hidden; background: var(--ig-home-ground); color: #f7f8fa; font-family: 'DM Sans',sans-serif; }
+.ayala-frame:has(.member-home-scroll) .ayala-canvas { position: absolute; inset: 0; width: 100%; height: 100%; transform: none; background: var(--ig-home-ground); }
+.ayala-frame:has(.member-home-scroll) .ayala-scroll.member-home-scroll { max-height: none; height: calc(100% - var(--bottom-stack)); padding: 0 0 12px; }
+.ayala-frame:has(.member-home-scroll) .ayala-canvas::after { display: none; }
+.member-home-scroll { overflow-y: auto; overflow-x: hidden; background: radial-gradient(ellipse at 50% 0%,#173b5b 0%,#0b1d33 45%,#07172e 100%); scrollbar-width: none; }
+.member-home-scroll::-webkit-scrollbar { display: none; }
+.member-home-header { width: 100%; aspect-ratio: 473 / 175; max-height: 175px; min-height: 132px; overflow: hidden; background: #08172b; box-shadow: inset 0 -2px 0 #d5a33b,0 4px 10px rgb(0 0 0 / 34%); }
+.member-home-header img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.member-home-main { display: grid; gap: 10px; padding: 0 10px; }
+.member-home-main .member-brand-banner { position: relative; height: auto; aspect-ratio: 453 / 133; min-height: 106px; margin: 0 0 -8px; overflow: visible; border-radius: 0; background: none; display: block; }
+.member-home-banner-panel { width: 100%; height: 100%; }
+.member-home-banner-panel .ig-metal-panel-content { position: relative; display: block; padding: 0; }
+.member-banner-ore, .member-banner-bullion { position: absolute; z-index: 1; bottom: 2%; display: grid; place-items: center; color: #f0cf72; filter: drop-shadow(0 4px 3px rgb(0 0 0 / 65%)); }
+.member-banner-ore { left: 6%; width: 31%; height: 44%; }
+.member-banner-bullion { right: 6%; width: 27%; height: 44%; }
+.member-banner-ore svg { width: clamp(52px,14vw,68px); height: clamp(52px,14vw,68px); }
+.member-banner-bullion svg { width: clamp(52px,14vw,68px); height: clamp(52px,14vw,68px); }
+.member-home-banner-wordmark { position: absolute; top: 17%; left: 10%; z-index: 2; display: grid; width: 80%; height: 36%; place-items: center; min-width: 0; }
+.member-home-banner-wordmark img { display: block; width: 100%; max-height: 100%; margin: 0 auto; object-fit: contain; }
+.member-home-main .member-home-shortcuts { min-height: 146px; margin: 0; padding: 0; }
+.member-home-action-tray { height: 145px; }
+.member-home-action-grid { display: grid; height: 100%; grid-template-columns: repeat(4,minmax(0,1fr)); align-items: start; gap: 2px; padding: 11px 13px 7px; }
+.ig-hex-action { position: relative; display: flex; min-width: 0; min-height: 44px; align-items: center; flex-direction: column; gap: 3px; padding: 0 1px; border: 0; background: transparent; color: #14283d; font: 800 clamp(10px,2.9vw,13px)/1.15 'DM Sans',sans-serif; cursor: pointer; }
+.ig-hex-action-frame { display: block; width: clamp(57px,16vw,76px); height: clamp(57px,16vw,76px); flex: 0 0 auto; overflow: visible; filter: drop-shadow(0 5px 4px rgb(0 0 0 / 50%)); transition: transform .16s ease; }
+.ig-hex-action-art { position: absolute; top: 3%; left: 50%; display: grid; width: 69%; aspect-ratio: 1; place-items: center; transform: translateX(-50%); color: #f6d77b; pointer-events: none; }
+.ig-hex-action-art svg { width: 100%; height: 100%; filter: drop-shadow(0 3px 2px rgb(0 0 0 / 58%)); }
+.ig-hex-action-label { display: block; max-width: 100%; white-space: nowrap; }
+.ig-hex-action:active .ig-hex-action-frame { transform: translateY(1px); }
+.ig-hex-action:focus-visible { outline: 2px solid #d5a33b; outline-offset: 2px; }
+.member-home-main .member-home-section { position: relative; margin: 0; padding: 12px 14px; overflow: hidden; border: 0; border-radius: 0; background: transparent; color: #f7f8fa; box-shadow: none; }
+.member-home-invitation { min-height: 145px; }
+.member-home-invitation > .ig-metal-panel, .member-home-activities > .ig-metal-panel { position: absolute; inset: 0; }
+.member-home-invitation .ig-metal-panel-content { padding: 12px 19px 10px; }
+.member-invite-ore { position: absolute; top: 8px; right: 24px; z-index: 0; width: 70px; height: 47px; color: #efcf76; opacity: .82; filter: drop-shadow(0 3px 3px rgb(0 0 0 / 55%)); pointer-events: none; }
+.member-invite-ore svg { width: clamp(34px,10vw,48px); height: clamp(34px,10vw,48px); }
+.member-home-invitation .member-home-section-heading, .member-home-invitation .member-muted, .member-home-invitation .member-invite-row { position: relative; z-index: 1; }
+.member-home-section-heading { display: flex; align-items: center; gap: 9px; color: #f7f8fa; }
+.member-home-section-heading > svg { flex: 0 0 auto; color: #f2d47b; filter: drop-shadow(0 2px 2px #0009); }
+.member-home-main .member-home-section>b, .member-home-section-heading b { color: #f8f7f2; font: 800 clamp(14px,3.8vw,18px)/1.15 'Manrope',sans-serif; }
+.member-home-main .member-muted { margin: 3px 0 9px 34px; color: #dce3ea; font-size: clamp(10px,2.7vw,12px); line-height: 1.25; }
+.member-home-main .member-invite-row { display: grid; grid-template-columns: 35px minmax(0,1fr) auto; gap: 8px; min-height: 58px; margin: 0; padding: 6px 7px 6px 10px; border: 1px solid #d6b75e; background: linear-gradient(155deg,#173d5e,#0b2441 58%,#07172e); color: #f0cf72; box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%),inset 0 -3px 6px rgb(0 0 0 / 28%); }
+.member-invite-row > svg { width: 28px; height: 28px; justify-self: center; }
+.member-home-main .member-invite-row > div { min-width: 0; color: #f3f5f6; font-size: 11px; line-height: 1.3; }
+.member-home-main .member-invite-row > div > span { display: block; max-width: 100%; margin-top: 2px; overflow: hidden; color: #dbe4eb; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.member-home-main .member-invite-row button, .member-home-main .member-activity button { min-height: 40px; padding: 0 12px; border: 1px solid #f4d881; clip-path: polygon(10% 0,90% 0,100% 28%,100% 72%,90% 100%,10% 100%,0 72%,0 28%); background: linear-gradient(145deg,#fbe8a1,#d2a33d 42%,#95651d); color: #1a2e43; font-size: 12px; font-weight: 800; box-shadow: inset 0 1px 0 #fff7d9,0 3px 7px #0007; cursor: pointer; }
+.member-home-activities { min-height: 191px; }
+.member-home-activities .ig-metal-panel-content { padding: 10px 11px 9px; }
+.member-home-activities .member-home-section-heading { margin: 0 7px 8px; }
+.member-home-activity-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; }
+.member-home-main .member-activity { position: relative; display: grid; grid-template-columns: 65px minmax(0,1fr); grid-template-rows: minmax(0,1fr) 40px; align-items: center; gap: 2px 5px; min-width: 0; min-height: 128px; padding: 6px 8px; border: 0; background: transparent; }
+.member-home-activity-panel { height: 128px; min-height: 128px; }
+.member-home-activity-panel .ig-metal-panel-content { padding: 6px 8px; }
+.member-home-main .member-activity-icon { grid-row: 1; width: 63px; height: 66px; border: 0; border-radius: 0; background: none; color: #f5d879; box-shadow: none; }
+.member-home-main .member-activity-icon svg { width: 60px; height: 60px; filter: drop-shadow(0 4px 3px #0009); }
+.member-home-main .member-activity > div { min-width: 0; align-self: center; color: #f7f8fa; }
+.member-home-main .member-activity > div b { display: block; font: 750 clamp(10px,2.8vw,13px)/1.2 'Manrope',sans-serif; }
+.member-home-main .member-activity small { display: block; margin-top: 4px; color: #dce3ea; font-size: 10px; line-height: 1.25; }
+.member-home-main .member-activity button { grid-column: 2; justify-self: start; min-width: 88px; min-height: 38px; padding-inline: 11px; font-size: 10px; }
+.member-home-support-row { display: grid; grid-template-columns: minmax(0,1fr) minmax(170px,45%); align-items: center; gap: 10px; min-height: 55px; margin: 10px 10px 8px; }
+.member-home-support-prompt { display: flex; align-items: center; gap: 9px; color: #f0f3f5; font-size: 12px; font-weight: 650; }
+.member-home-support-prompt svg { width: 27px; height: 27px; color: #f4d57b; }
+.ayala-frame .ayala-support.ayala-support-inline { position: relative; inset: auto; z-index: 1; display: flex; width: 100%; min-width: 0; min-height: 50px; align-items: center; justify-content: center; gap: 10px; padding: 0 12px; border: 1px solid #e4c46a; border-radius: 0; clip-path: polygon(8% 0,92% 0,100% 19%,100% 81%,92% 100%,8% 100%,0 81%,0 19%); background: linear-gradient(145deg,#214d70,#0e2a49 58%,#07172e); color: #f5db8b; box-shadow: inset 0 1px 0 rgb(255 255 255 / 30%),0 5px 10px rgb(0 0 0 / 44%); font: 700 13px 'Manrope',sans-serif; cursor: pointer; }
+.ayala-frame .ayala-support-inline svg { flex: 0 0 auto; }
+.ayala-frame .ayala-support-inline .member-support-status { position: absolute; top: 6px; right: 8px; width: 7px; height: 7px; border: 1px solid #f1d987; border-radius: 50%; background: #6d8190; }
+.member-home-scroll button { touch-action: manipulation; }
+.member-home-scroll .member-home-shortcuts button, .member-home-scroll .member-invite-row button, .member-home-scroll .member-activity button, .member-home-scroll .ayala-support-inline { min-height: 44px; }
+@media (min-width: 600px) {
+  .member-home-main { gap: 12px; padding-inline: 12px; }
+  .member-home-action-tray { height: 150px; }
+  .member-home-activities { min-height: 200px; }
+  .member-home-main .member-activity { min-height: 132px; }
+}
+@media (max-width: 370px) {
+  .member-home-main { gap: 8px; padding-inline: 7px; }
+  .member-home-banner-wordmark { top: 13%; left: 9%; width: 82%; height: 45%; }
+  .member-home-action-tray { height: 136px; }
+  .member-home-main .member-activity { grid-template-columns: 51px minmax(0,1fr); padding-inline: 3px; }
+  .member-home-main .member-activity-icon, .member-home-main .member-activity-icon svg { width: 48px; height: 53px; }
+  .member-home-main .member-activity button { min-width: 78px; padding-inline: 7px; }
+  .member-home-support-row { grid-template-columns: minmax(0,1fr) minmax(150px,48%); margin-inline: 8px; }
+}
+
+/* Home selectors deliberately outrank the earlier cross-route material rules. */
+.ayala-frame:has(.member-home-scroll) .member-home-main {
+  padding: 0 10px;
+  background: transparent;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-shortcuts {
+  display: block;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-section {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #f7f8fa;
+  box-shadow: none;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-section > b,
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-section-heading b {
+  color: #f8f7f2;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-shortcuts button,
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-activity button {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  text-shadow: none;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-shortcuts button {
+  color: #14283d;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-shortcuts button > span {
+  border: 0;
+  background: transparent;
+  color: #f6d77b;
+  box-shadow: none;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-shortcuts .ig-hex-action > .ig-hex-action-art {
+  width: 69%;
+  height: auto;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: translateX(-50%);
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-shortcuts .ig-hex-action > .ig-hex-action-label {
+  width: auto;
+  height: auto;
+  border: 0;
+  background: transparent;
+  color: #14283d;
+  box-shadow: none;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-section .member-invite-row {
+  border: 1px solid #d6b75e;
+  background: linear-gradient(155deg,#173d5e,#0b2441 58%,#07172e);
+  color: #f0cf72;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-section .member-invite-row > div {
+  color: #f3f5f6;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-section .member-invite-row > div > span {
+  color: #dbe4eb;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-section .member-invite-row button,
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-activity button {
+  border: 1px solid #f4d881;
+  background: linear-gradient(145deg,#fbe8a1,#d2a33d 42%,#95651d);
+  color: #1a2e43;
+  box-shadow: inset 0 1px 0 #fff7d9,0 3px 7px #0007;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-activity-icon {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #f5d879;
+  box-shadow: none;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-activity small {
+  color: #dce3ea;
+}
+
+/* Leave the reference's lower clearance outside the plate, including iOS safe areas. */
+.ayala-frame:has(.ayala-bottom) {
+  --ig-nav-clearance: max(26px, env(safe-area-inset-bottom, 0px));
+  --bottom-stack: calc(113px + var(--ig-nav-clearance));
+}
+.ayala-frame:has(.ayala-bottom) .ayala-bottom {
+  bottom: var(--ig-nav-clearance);
+  height: 113px;
+  padding: 7px 6px 8px;
+}
+.ayala-frame:has(.member-home-scroll) .member-brand-banner {
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+.ayala-frame .ayala-support-inline::after { content: none; }
+.member-home-main .ig-hex-action .ig-hex-action-label {
+  font: 750 clamp(11px, 3vw, 14px)/1.2 'DM Sans', sans-serif;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-activity {
+  grid-template-columns: minmax(58px, 43%) minmax(0, 1fr);
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-activity-icon {
+  width: 100%;
+  height: 106px;
+  grid-row: 1 / 3;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-activity small {
+  display: none;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-activity button {
+  position: relative;
+  z-index: 0;
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 5px;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 11px;
+}
+.member-home-main .member-activity button::before {
+  position: absolute;
+  z-index: -1;
+  inset: 7px 0;
+  border: 1px solid #f4d881;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fff0b7, #d2a33d 42%, #a06d1e);
+  box-shadow: inset 0 1px 0 #fff7d9, 0 3px 7px #0007;
+  content: '';
+}
+.member-welcome-dialog .ayala-modal .member-telegram-feedback {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border: 1px solid #cfaa5b;
+  border-radius: 8px;
+  background: #fff6df;
+  color: #5c3d0a;
+  font-size: 13px;
+  line-height: 1.45;
+}

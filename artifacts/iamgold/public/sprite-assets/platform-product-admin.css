@@ -1,0 +1,263 @@
+/* Operations portal: bright paper canvas, graphite controls, semantic state color. */
+html[data-platform-theme="silver"] body:has(#admin-root) {
+  min-height: 100dvh !important;
+  color: #30373a !important;
+  background: #e5e7e8 !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-login-page,.admin-page) {
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(180deg,#f0f1f1b9,#e7e9e9d4),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,70% 50% !important;
+  background-size: cover !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-login-page::before,
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-page::before,
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-login-atmosphere,.admin-orbit,.admin-gridline) {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-login-card {
+  width: min(100%,430px) !important;
+  color: #30373a !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 18px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 10px 32px #29323620 !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-login-card::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(
+  .admin-login-card,.admin-login-card h1,.admin-login-card p,.admin-login-card label,
+  .admin-login-heading,.admin-eyebrow,.admin-kicker,.admin-login-topline,
+  .admin-login-footer,.admin-login-caption,.admin-login-help,.admin-brand-word,
+  .admin-section-description,.admin-panel h2,.admin-panel h3,.admin-list-card strong,
+  .admin-list-card p,.admin-list-card small,.admin-transaction-card strong,
+  .admin-product-card strong,.admin-product-card span,.admin-announcement-card strong,
+  .admin-announcement-card p,.admin-announcement-card small,.admin-detail-grid b,
+  .admin-detail-grid span,.admin-summary-grid span,.admin-summary-grid strong,
+  .admin-setting-row strong,.admin-setting-row small,.admin-settings-grid label,
+  .admin-history-filters label,.admin-purge-dialog label,.admin-search,
+  .admin-mini-row strong,.admin-mini-row small,.admin-product-details small,
+  .admin-product-details b,.admin-product-details span,.admin-empty,
+  .admin-alert-grid span,.admin-transaction-details
+) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-login-card h1 em {
+  color: #485256 !important;
+  font-style: normal !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-login-mark {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-status-dot,.admin-login-footer i) {
+  color: #596367 !important;
+  border-color: #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-login-card :is(input,button) {
+  font-size: 16px !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-login-card input,.admin-runtime-search,.admin-content input,.admin-content select,.admin-content textarea,.admin-user-panel input,.admin-user-panel select,.admin-user-panel textarea,.admin-inline-form input,.admin-inline-form select,.admin-inline-form textarea,.admin-settings-grid input,.admin-history-filters input,.admin-history-filters select,.admin-purge-dialog input,.admin-balance-actions input,.admin-grant-row select) {
+  min-width: 0 !important;
+  color: #30373a !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 9px !important;
+  background: #fff !important;
+  box-shadow: inset 0 1px 2px #2932360b !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-password-toggle,.admin-user-panel header button,.admin-tabs button,.admin-country-tabs button,.admin-history-pages button,.admin-list-card>button,.admin-card-actions button,.admin-inline-form button,.admin-balance-actions button,.admin-user-actions button,.admin-grant-row button,.admin-mini-row button,.admin-secondary-button) {
+  min-height: 36px !important;
+  color: #414b4f !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 9px !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-password-toggle {
+  position: absolute !important;
+  right: 6px !important;
+  top: 5px !important;
+  min-height: 36px !important;
+  padding: 0 10px !important;
+  color: #596367 !important;
+  background: #f3f4f4 !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-login-submit,.admin-primary-button) {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 48px !important;
+  padding: 10px 15px !important;
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  border-radius: 11px !important;
+  background: #485256 !important;
+  box-shadow: 0 4px 12px #2932361c !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  clip-path: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-login-submit span:first-child {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  color: #fff !important;
+  text-align: center !important;
+  white-space: normal !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-login-submit .admin-button-arrow {
+  flex: 0 0 auto !important;
+  color: #fff !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-runtime-nav {
+  color: #414b4f !important;
+  border-right: 1px solid #cbd1d3 !important;
+  background: #f2f3f3 !important;
+  box-shadow: 4px 0 18px #29323610 !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-runtime-nav button {
+  color: #596367 !important;
+  border: 1px solid transparent !important;
+  border-radius: 9px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-runtime-nav button.active {
+  color: #fff !important;
+  border-color: #596367 !important;
+  background: #485256 !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-header,.admin-header-actions,.admin-back-link) {
+  color: #414b4f !important;
+  border-color: #d3d8da !important;
+  background: #f5f6f6 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(
+  .admin-stat-card,.admin-list-card,.admin-transaction-card,.admin-product-card,
+  .admin-announcement-card,.admin-user-panel,.admin-panel,.admin-setting-row,
+  .admin-selected-country-summary,.admin-detail-grid>small,.admin-summary-grid>span,
+  .admin-inline-form,.admin-announcement-form,.admin-settings-grid,.admin-history-filters,
+  .admin-purge-dialog,.admin-grant-row,.admin-channel-field,.admin-referral-metric,
+  .admin-panel-intro,.admin-panel-loading,.admin-mini-row,.admin-product-details,
+  .admin-transaction-details,.admin-alert-grid article,.admin-product-main,.admin-product-form
+) {
+  color: #30373a !important;
+  border-color: #d3d8da !important;
+  background-color: #fbfbfa !important;
+  background-image: none !important;
+  box-shadow: 0 5px 16px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-stat-card {
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f3f4f4f6 0%,#f1f2f2e8 46%,#f1f2f2a0 77%,#eef0f020),
+    url("/sprite-assets/andship-silver-camera-reference.webp") !important;
+  background-position: center,84% 48% !important;
+  background-size: cover,auto 190% !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-stat-card>span {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 9px !important;
+  background: #f7f8f7 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-stat-card :is(strong,small,span) {
+  color: #30373a !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-user-panel>header {
+  color: #414b4f !important;
+  border-bottom: 1px solid #d3d8da !important;
+  background: #f5f6f6 !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-tabs button.active,.admin-country-tabs button.active,.admin-history-pages button.active) {
+  color: #fff !important;
+  border-color: #596367 !important;
+  background: #485256 !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-transaction-kind-tabs,.admin-transaction-filters) button {
+  color: #414b4f !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 9px !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-transaction-kind-tabs,.admin-transaction-filters) button.active {
+  color: #fff !important;
+  border-color: #596367 !important;
+  background: #485256 !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-assisted-badge {
+  color: #4c585c !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 8px !important;
+  background: #eceeee !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-selected-country-summary strong,.admin-selected-country-summary span) {
+  color: #414b4f !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-green-text,.admin-referral-value,.admin-referral-money) {
+  color: #34724d !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-red-text {
+  color: #9b302b !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-card-actions .approve,.admin-icon-success) {
+  color: #fff !important;
+  border-color: #26724b !important;
+  background: #347b55 !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-card-actions .reject,.admin-icon-danger,.admin-balance-actions button.danger,.admin-danger-button) {
+  color: #fff !important;
+  border-color: #a83b35 !important;
+  background: #b4433c !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-status.completed,.admin-status.approved,.admin-status.published) {
+  color: #17623d !important;
+  border-color: #c3ddca !important;
+  background: #e7f2ea !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-status.pending,.admin-status.pending_review) {
+  color: #805a17 !important;
+  border-color: #e8d9b5 !important;
+  background: #f7f0df !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-status.rejected,.admin-badges span) {
+  color: #9b302b !important;
+  border-color: #e9c7c3 !important;
+  background: #f8e9e7 !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-status.draft {
+  color: #596367 !important;
+  border-color: #d3d8da !important;
+  background: #eceeee !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-error {
+  color: #9b302b !important;
+  border-color: #e9c7c3 !important;
+  background: #f8e9e7 !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-notice {
+  color: #17623d !important;
+  border-color: #c3ddca !important;
+  background: #e7f2ea !important;
+}
+@media(max-width:760px) {
+  html[data-platform-theme="silver"] body:has(#admin-root) .admin-runtime-nav {
+    background: #f2f3f3 !important;
+  }
+}

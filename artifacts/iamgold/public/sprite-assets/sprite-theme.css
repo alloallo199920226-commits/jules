@@ -1,0 +1,197 @@
+@import url("./secondary-customer-reference.css");
+
+/* Sprite — citron vert, profondeur forêt et lumière de studio */
+:root {
+  color-scheme: light;
+  --sprite-forest: #063e2c;
+  --sprite-deep: #082f24;
+  --sprite-green: #008b47;
+  --sprite-lime: #b8df28;
+  --sprite-citrus: #e4f38c;
+  --sprite-paper: #f4f8ed;
+  --sprite-ink: #16362b;
+  --sprite-muted: #64776c;
+  --sprite-line: #dce8d9;
+  --sprite-shadow: 0 14px 34px #173e2818;
+  --app-red: var(--sprite-green);
+  --app-gold: var(--sprite-lime);
+}
+html { background: #e9f0e5; }
+body { color: var(--sprite-ink) !important; background: #e9f0e5 !important; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible {
+  outline: none !important;
+  filter: brightness(1.12) saturate(1.08);
+}
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: none !important;
+  border-color: var(--sprite-green) !important;
+}
+
+/* Surfaces mobiles : frais, tactiles, contrastés et lisibles */
+.app, .profile-app, .page {
+  color: var(--sprite-ink) !important;
+  background: linear-gradient(180deg,#f8fbf1,#eff5e7 74%,#f9fbf5) !important;
+  box-shadow: 0 22px 64px #173e2820 !important;
+}
+.page {
+  color:var(--sprite-ink) !important;
+  background:linear-gradient(160deg,#f8fbf2,#eff5e5 65%,#f8fbf2) !important;
+}
+.page .header { color:var(--sprite-forest) !important; background:#fbfdf7 !important; }
+.page:after { background:linear-gradient(180deg,#063e2c16,#063e2ca8) !important; }
+.page .header h1 { color:var(--sprite-forest) !important; }
+.page .submit, .page .checkin-button, .page .send, .page .confirm {
+  color:#fff !important; background:linear-gradient(135deg,#0a9851,#05613a) !important;
+  box-shadow:0 10px 24px #08713d35 !important;
+}
+.page .reward, .page .label svg, .page .back { color:var(--sprite-green) !important; }
+.page .gift-card, .page .reward-card, .page .card { color:var(--sprite-ink) !important; background:#fbfdf7ed !important; border-color:#dce8d9 !important; }
+.page .hint, .page .info, .page .rules-link { background:#edf5df !important; color:#355c43 !important; }
+.hero {
+  background-color: var(--sprite-forest) !important;
+  background-image:
+    radial-gradient(ellipse at 80% 10%,#16885770 0,transparent 43%),
+    linear-gradient(110deg,#063e2cf5 0%,#075b39b8 48%,#087a4633 88%),
+    url("/sprite-assets/sprite-bottle_2.png") !important;
+  background-size:cover,cover,auto 92% !important;
+  background-position:center,center,right 5% center !important;
+  background-repeat:no-repeat !important;
+  background-blend-mode:normal,normal,multiply !important;
+  box-shadow: 0 14px 34px #0753322a !important;
+}
+.hero:after {
+  background: linear-gradient(90deg,#063e2cf0 0%,#075b39ca 47%,#087a4670 72%,transparent 100%) !important;
+}
+.hero:before { opacity:.34; }
+.hero:has(.sprite-stage-bottle) {
+  background-image:radial-gradient(ellipse at 80% 10%,#16885770 0,transparent 43%),linear-gradient(110deg,#063e2cf5 0%,#075b39b8 48%,#087a4633 88%) !important;
+  background-blend-mode:normal,normal !important;
+}
+.app:has(#missions) > .top {
+  background-color:var(--sprite-forest) !important;
+  background-image:linear-gradient(110deg,#063e2cf5 0%,#075b39a8 52%,#087a4630 90%),url("/sprite-assets/sprite-bottle_2.png") !important;
+  background-size:cover,auto 96% !important;
+  background-position:center,right 5% center !important;
+  background-repeat:no-repeat !important;
+  background-blend-mode:normal,multiply !important;
+}
+.logo, .hero-logo {
+  content: url("/sprite-assets/sprite-logo.svg");
+  max-height:58px;
+  object-fit:contain;
+  filter: brightness(0) invert(1) drop-shadow(0 3px 7px #00271975) !important;
+}
+img[src*="coca"], img[src*="account-logo"], img[alt*="Coca"] {
+  content:url("/sprite-assets/sprite-logo.svg");
+  object-fit:contain;
+}
+.bonus:after { content:"Sprite" !important; color:#008b4717 !important; }
+.sprite-stage-bottle {
+  position:absolute; z-index:2; right:18px; bottom:-12px; height:190px; width:auto;
+  object-fit:contain; mix-blend-mode:multiply;
+  filter:drop-shadow(0 16px 13px #00231865);
+  pointer-events:none;
+}
+.hero p, .hero-title p, .hero-copy p { color: #e8f5cf !important; }
+.slogan, .magic, .right-tag { color: #f4ffd8 !important; }
+.line { background: var(--sprite-lime) !important; }
+.main, .content { color: var(--sprite-ink); }
+.group, .level, .bonus, .menu-item, .transaction, .product, .summary.light,
+.balance.light, .bal.light, .actions, .tabs, .tabs button, .card, .panel {
+  border-color: var(--sprite-line) !important;
+  box-shadow: var(--sprite-shadow) !important;
+}
+.group, .bonus, .level, .menu-item, .transaction, .product, .actions, .tabs, .card, .panel {
+  background-color: #fff !important;
+}
+.heading-copy, .bonus h2 { border-color: var(--sprite-green) !important; }
+.heading h1, .group h2, .group h3, .product-body h2, .menu-text strong { color:var(--sprite-forest); }
+.group p, .desc, .details, .menu-text span, .columns span, .summary small { color: var(--sprite-muted) !important; }
+.summary.red, .bal.red, .stat, .invite, .copy:not(.copied), .level-name,
+.action.active, .act, .balance.red, .tab.active, .buy:not(:disabled), .primary, .button-primary,
+.button-submit, .cta, .add, .api-claim, .empty a, .delete, .btn:not(.secondary),
+.nav.active:not(.product), .nav-item.active {
+  color:#fff !important;
+  background:linear-gradient(135deg,#0a9b54,#05623b 76%) !important;
+  box-shadow:0 10px 22px #08713d30 !important;
+}
+.summary-icon, .balance-icon, .menu-icon, .gift, .round, .invite-icon {
+  color:var(--sprite-green) !important; background:#e8f4cf !important;
+}
+.balance.light, .bal.light, .summary.light { background:linear-gradient(140deg,#fff,#f0f7e4) !important; }
+.money, .details b, .gold, .transaction .money { color:var(--sprite-green) !important; }
+.progress { background:#e5eedb !important; }
+.progress i { background:linear-gradient(90deg,#b8df28,#008b47) !important; }
+.plan, .badge { color:var(--sprite-forest) !important; background:#f0f7dc !important; border-color:#d9e8b5 !important; }
+.bottom, .bottom-nav {
+  background:linear-gradient(155deg,#0b4933,#062b21 80%) !important;
+  border-color:#a1ca3155 !important; box-shadow:0 -12px 32px #073b2b35 !important;
+}
+.nav, .nav-item { color:#d8edc1 !important; }
+.nav.active:not(.product), .nav-item.active { color:#fff !important; }
+.nav.active:after { background:#c2e746 !important; box-shadow:0 0 0 3px #b8df2830 !important; }
+.nav.product .bottle {
+  width:72px !important; height:116px !important; bottom:25px !important;
+  object-fit:contain !important; clip-path:none !important;
+  content:url("/sprite-assets/sprite-bottle_2.png");
+  filter:drop-shadow(0 12px 12px #001c12a8) !important;
+}
+.nav.product::before {
+  content:""; position:absolute; z-index:0; bottom:25px; left:50%; transform:translateX(-50%);
+  width:66px; height:108px; background:url("/sprite-assets/sprite-bottle_2.png") center/contain no-repeat;
+  mix-blend-mode:multiply; filter:drop-shadow(0 11px 10px #001e1380); pointer-events:none;
+}
+.nav.product .bottle:before, .nav.product .bottle:after { display:none !important; }
+.promo, .santa, .brands {
+  background-color:var(--sprite-forest) !important;
+  background-image:linear-gradient(90deg,#063e2cf0,#087744ba 56%,#0b684335),url("/sprite-assets/sprite-bottle_2.png") !important;
+  background-size:cover,auto 96% !important; background-position:center,right 3% center !important;
+  background-repeat:no-repeat !important;
+  background-blend-mode:normal,multiply !important;
+  box-shadow:0 14px 30px #07533225 !important;
+}
+.promo:before, .santa:before, .brands:before {
+  background:linear-gradient(90deg,#063e2cf0 0%,#087744c2 50%,#0b68432b 100%) !important;
+}
+.cta { color:#194629 !important; background:#e6f5ad !important; }
+.ticker { color:var(--sprite-ink); border-color:#dce8d9 !important; }
+.ticker b { color:var(--sprite-green) !important; }
+.campaign-popup { border-color:#c9e47f !important; background:linear-gradient(180deg,#087849 0 27%,#f7faef 27% 100%) !important; box-shadow:0 24px 70px #052e20a8 !important; }
+.campaign-photo { background:#075a39 !important; }
+.campaign-photo-source { content:url("/sprite-assets/sprite-bottle_2.png"); height:165px !important; width:auto !important; left:auto !important; right:18px !important; top:-9px !important; }
+.campaign-panel { background:#fbfdf6f2 !important; border-color:#e1ebd4 !important; }
+.notice-title b, .campaign-list b { color:var(--sprite-green) !important; }
+.understand { background:linear-gradient(100deg,#0a9851,#05613a) !important; box-shadow:0 9px 20px #08713d35 !important; }
+.campaign-close { color:#fff !important; }
+.products-state.error { color:#8a342d !important; background:#fff8ef !important; }
+.product-image { background:#f1f6e8 !important; }
+.product-image img { object-fit:contain !important; }
+.product-image img[src*="vip-premium"] { content:url("/sprite-assets/sprite-bottle_2.png"); object-fit:contain !important; }
+#productImage { content:url("/sprite-assets/sprite-bottle_2.png") !important; object-fit:contain !important; }
+.photo { content:url("/sprite-assets/sprite-bottle_2.png"); object-fit:contain !important; background:#f1f6e8 !important; mix-blend-mode:multiply; }
+/* Product names can contain "Coca"; they must never turn their photographs into branding. */
+.product-image img, #productImage, .product img.photo {
+  content:normal !important;
+  object-fit:contain !important;
+  mix-blend-mode:normal !important;
+}
+.page img.logo { display:block; width:min(190px,70%); height:auto; max-height:64px; padding:0; margin:14px auto; object-fit:contain; }
+.page img.brand { display:block; width:min(130px,30vw); height:38px; object-fit:contain; }
+.hero .tag, .tag { color:#eff8d6 !important; }
+.tab { color:#426453 !important; }
+.empty-icon { color:var(--sprite-green) !important; }
+.empty-icon:before { background:radial-gradient(circle,#e8f4cf,transparent 68%) !important; }
+.footer-ad { background-image:linear-gradient(180deg,transparent,#f3f8e8 52%),url("/sprite-assets/sprite-bottle_2.png") !important; background-position:center,right bottom !important; background-size:cover,auto 92% !important; }
+.footer-ad p { color:var(--sprite-forest) !important; }
+.toast { background:linear-gradient(135deg,#0a9851,#06472f) !important; border-color:#c4df75 !important; }
+.logout-trigger { color:#755b27 !important; background:#fffdf7 !important; }
+.logout-trigger .menu-icon { color:white !important; background:#526a38 !important; }
+@media (max-width:480px) {
+  .sprite-stage-bottle { height:160px; right:8px; }
+  .nav.product .bottle { width:62px !important; height:102px !important; }
+  .campaign-photo-source { height:145px !important; right:5px !important; }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}

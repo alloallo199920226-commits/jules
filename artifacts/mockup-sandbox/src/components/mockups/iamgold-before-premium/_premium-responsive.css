@@ -1,0 +1,83 @@
+/* Wider layouts are composed as a purposeful workspace, not a centered phone. */
+@media (min-width: 768px) {
+  .ayala-frame { --header-space: 78px; }
+  .ig-page { min-height: 100dvh; padding-top: 18px; padding-bottom: 40px; }
+  .ig-head { min-height: 185px; }
+  .ayala-header { min-height: 78px; height: 78px; }
+  .ayala-head-btn, .ayala-head-help { top: 17px; }
+  .member-account-main { padding-top: 22px; }
+  .ayala-profile-banner { padding: 26px max(26px,calc((100% - 1080px)/2)) 22px; }
+  .member-promo-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .team-main, .team-members-main { padding-right: 30px; padding-left: 30px; }
+  .team-main:not(.team-detail-main) { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); align-items: start; gap: 16px; }
+  .team-main:not(.team-detail-main) > section { margin: 0; }
+  .team-main:not(.team-detail-main) > .team-overview-levels { grid-column: 1/-1; }
+  .finance-scroll { width: min(100%,900px); margin: 0 auto; }
+  .finance-fixed-action { display: flex; justify-content: center; }
+  .finance-primary { max-width: 856px; }
+  .settings-form, .settings-password-scroll { width: min(100%,760px); margin-right: auto; margin-left: auto; }
+  .settings-profile-top { padding-right: max(24px,calc((100% - 760px)/2)); padding-left: max(24px,calc((100% - 760px)/2)); }
+  .settings-security { width: min(100%,760px); margin: 0 auto; }
+  .member-missions { width: min(calc(100% - 40px),900px); margin-right: auto; margin-left: auto; }
+  .member-mission-link { width: min(calc(100% - 40px),900px); margin-right: auto; margin-left: auto; }
+  .member-invest-layout { height: calc(100% - 156px); }
+  .member-invest-layout > aside { width: 190px; flex-basis: 190px; }
+  .member-invest-list { grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); }
+}
+@media (max-width: 767px) {
+  .ayala-frame { width: 100%; box-shadow: none; }
+  .ig-page input,
+  .ayala-frame input:not([type="checkbox"]):not([type="radio"]),
+  .ayala-frame textarea,
+  .ayala-frame select { font-size: 16px; }
+  .ayala-main { padding: 16px 16px 24px; }
+  .member-account-main { padding: 16px 16px 24px; }
+  .ayala-profile-banner { padding: 19px 17px 17px; }
+  .ayala-scroll { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+  .team-main, .team-members-main { padding: 16px 16px 30px; }
+  .team-activity, .team-invitation-section, .team-overview-levels { padding: 16px; }
+  .team-level-card { gap: 8px; padding: 10px; }
+  .team-medal { width: 40px; flex-basis: 40px; }
+  .team-level-rate-wrap { min-width: 59px; }
+  .team-level-count, .team-level-active { min-width: 50px; }
+  .team-level-count small, .team-level-active small { font-size: 10px; }
+  .team-level-count b, .team-level-active b { font-size: 17px; }
+  .finance-scroll { padding: 16px 16px 28px; }
+  .finance-fixed-action { padding-right: 16px; padding-left: 16px; }
+  .help-content { grid-template-columns: 1fr; padding: 16px; }
+  .about-copy { margin-right: 16px; margin-left: 16px; }
+  .vip-scroll { padding: 16px; }
+  .financial-history-records { padding-right: 16px; padding-left: 16px; }
+  .product-dialog.ayala-modal-scrim { padding: 12px; }
+  .product-dialog .ayala-modal { max-height: calc(100% - 12px); }
+}
+@media (max-width: 420px) {
+  .ig-page { padding-right: 15px; padding-left: 15px; }
+  .ig-head { margin-right: -15px; margin-left: -15px; }
+  .ig-topbar { margin-right: -15px; margin-left: -15px; }
+  .ig-form { padding-right: 16px; padding-left: 16px; border-radius: 20px; }
+  .team-section-title h2 { font-size: 17px; }
+  .team-code-row { gap: 8px; padding-right: 9px; padding-left: 9px; }
+  .team-code-symbol { width: 36px; height: 36px; flex-basis: 36px; }
+  .team-copy-button { min-width: 63px; padding: 0 10px; }
+  .team-level-card { gap: 5px; }
+  .team-level-rate-wrap { min-width: 52px; }
+  .team-level-count, .team-level-active { min-width: 42px; }
+  .team-level-rebate { font-size: 10px; }
+  .team-level-count small, .team-level-active small { white-space: normal; }
+  .team-member-row { padding-right: 13px; padding-left: 13px; gap: 10px; }
+  .team-member-avatar { width: 44px; height: 44px; flex-basis: 44px; }
+  .team-status { padding: 5px 7px; font-size: 10px; }
+  .finance-amount-grid { gap: 6px; }
+  .finance-amount-chip { font-size: 11px; }
+  .member-invest-layout > aside { width: 85px; flex-basis: 85px; }
+  .member-invest-layout > aside button { min-height: 76px; font-size: 11px; }
+  .member-invest-list { grid-template-columns: minmax(0,1fr); padding: 13px; }
+  .member-invest-image { height: 150px; }
+  .member-welcome-dialog, .member-publish-dialog { padding: 10px; }
+  .member-welcome-dialog .ayala-modal, .member-publish-dialog .ayala-modal { padding: 32px 20px 21px; }
+  .about-copy { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

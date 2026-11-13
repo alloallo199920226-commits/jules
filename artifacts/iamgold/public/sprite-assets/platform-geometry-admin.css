@@ -1,0 +1,73 @@
+/* Admin workspace: aligned operations console, with compact structural controls. */
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-login-page,.admin-page) {
+  min-height: 100dvh !important;
+  padding: clamp(14px,2.6vw,30px) !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-login-card {
+  border-radius: 4px 18px 4px 18px !important;
+  border-top: 3px solid #7d888c !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-runtime-nav {
+  border-radius: 4px 13px 4px 13px !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-runtime-nav button,.admin-tabs button,.admin-country-tabs button,
+  .admin-history-pages button,.admin-transaction-kind-tabs button,.admin-transaction-filters button) {
+  border-radius: 3px 9px 3px 9px !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-stat-card,.admin-list-card,.admin-transaction-card,.admin-product-card,
+  .admin-announcement-card,.admin-user-panel,.admin-panel,.admin-setting-row,.admin-selected-country-summary,
+  .admin-detail-grid>small,.admin-summary-grid>span,.admin-inline-form,.admin-announcement-form,.admin-settings-grid,
+  .admin-history-filters,.admin-purge-dialog,.admin-grant-row,.admin-channel-field,.admin-referral-metric,
+  .admin-panel-intro,.admin-panel-loading,.admin-mini-row,.admin-product-details,.admin-transaction-details,
+  .admin-alert-grid article,.admin-product-main,.admin-product-form) {
+  border-radius: 4px 14px 4px 14px !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-content input,.admin-content select,.admin-content textarea,
+  .admin-user-panel input,.admin-user-panel select,.admin-user-panel textarea,.admin-inline-form input,.admin-inline-form select,
+  .admin-inline-form textarea,.admin-settings-grid input,.admin-history-filters input,.admin-history-filters select,
+  .admin-purge-dialog input,.admin-balance-actions input,.admin-grant-row select) {
+  min-height: 40px;
+  max-width: 100%;
+  font-size: 16px !important;
+  border-radius: 3px 9px 3px 9px !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-password-toggle,.admin-user-panel header button,
+  .admin-tabs button,.admin-country-tabs button,.admin-history-pages button,.admin-list-card>button,.admin-card-actions button,
+  .admin-inline-form button,.admin-balance-actions button,.admin-user-actions button,.admin-grant-row button,.admin-mini-row button,
+  .admin-secondary-button) {
+  border-radius: 3px 9px 3px 9px !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-login-submit,.admin-primary-button) {
+  border-radius: 3px 12px 3px 12px !important;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-table-wrap,.admin-table-scroll,.admin-content table) {
+  max-width: 100%;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-table-wrap,.admin-table-scroll) {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+/* The purge dialog is the inner native dialog panel; admin-overlay remains a viewport veil,
+   and the user-panel role=dialog remains a full-height side drawer. */
+html[data-platform-theme="silver"] body:has(#admin-root) .admin-purge-dialog {
+  max-width: min(94vw, 800px);
+  max-height: min(88dvh, 900px);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+html[data-platform-theme="silver"] body:has(#admin-root) :is(button,input,select,textarea,[tabindex]):focus-visible {
+  outline: 2px solid #4e5a5e !important;
+  outline-offset: 3px !important;
+}
+@media (min-width: 900px) {
+  html[data-platform-theme="silver"] body:has(#admin-root) .admin-page {
+    width: min(100%, 1540px) !important;
+    margin-inline: auto !important;
+  }
+}
+@media (max-width: 760px) {
+  html[data-platform-theme="silver"] body:has(#admin-root) :is(.admin-content,.admin-header) {
+    min-width: 0;
+    padding-inline: 12px !important;
+  }
+}

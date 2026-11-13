@@ -1,0 +1,71 @@
+/* Supporting entry points use the same precision-panel language, without excess headroom. */
+html[data-platform-theme="silver"] body.andship-login .login-stage {
+  min-height: 100dvh !important;
+  padding: max(12px,env(safe-area-inset-top)) 18px max(18px,env(safe-area-inset-bottom)) !important;
+}
+html[data-platform-theme="silver"] body.andship-login .login-content {
+  width: min(100%, 500px) !important;
+}
+html[data-platform-theme="silver"] body.andship-login .login-panel {
+  border-radius: 4px 20px 4px 20px !important;
+  border-top: 3px solid #838d91 !important;
+  box-shadow: 0 18px 48px #29323620, inset 0 1px #fff !important;
+}
+html[data-platform-theme="silver"] body.andship-login :is(.brand-block,.panel-header) {
+  margin-bottom: 20px !important;
+}
+html[data-platform-theme="silver"] body.andship-login :is(.mission-title,#login-title,#registration-title) {
+  letter-spacing: -.035em !important;
+}
+html[data-platform-theme="silver"] body.andship-login :is(input,select,textarea,.field) {
+  min-height: 50px !important;
+  font-size: 16px !important;
+  border-radius: 3px 10px 3px 10px !important;
+}
+html[data-platform-theme="silver"] body.andship-login :is(.primary-button,.country-close) {
+  min-height: 48px !important;
+  border-radius: 3px 12px 3px 12px !important;
+}
+html[data-platform-theme="silver"] body.andship-login :is(.country-sheet,.country-option) {
+  border-radius: 4px 18px 4px 18px !important;
+}
+/* Country selection is the fixed, centered veil; only its sheet receives panel geometry. */
+html[data-platform-theme="silver"] body.andship-login .country-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  overflow-y: auto !important;
+  box-shadow: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+html[data-platform-theme="silver"] body.andship-login .country-option {
+  border-radius: 3px 10px 3px 10px !important;
+}
+html[data-platform-theme="silver"] body.andship-login :is(.remember,.signup-line,.secure-note,.field-label) {
+  line-height: 1.5 !important;
+}
+html[data-platform-theme="silver"] body.andship-login :is(.login-panel,.country-sheet) {
+  max-width: 100% !important;
+}
+html[data-platform-theme="silver"] body.andship-login :is(input,select,textarea) {
+  scroll-margin-bottom: 35vh;
+}
+html[data-platform-theme="silver"] body.andship-login :is(button,a):focus-visible {
+  outline: 2px solid #4e5a5e !important;
+  outline-offset: 3px !important;
+}
+@media (max-width: 380px) {
+  html[data-platform-theme="silver"] body.andship-login .login-stage {
+    padding-inline: 12px !important;
+  }
+  html[data-platform-theme="silver"] body.andship-login .login-panel {
+    padding: 20px !important;
+  }
+}

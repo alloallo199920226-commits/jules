@@ -1,0 +1,172 @@
+html[data-platform-theme="silver"] {
+  color-scheme: light;
+  --pt-paper: #f2f3f3;
+  --pt-surface: #fbfbfa;
+  --pt-silver: #e5e7e8;
+  --pt-line: #cbd1d3;
+  --pt-ink: #30373a;
+  --pt-muted: #626d71;
+  --pt-graphite: #485256;
+  --pt-shadow: 0 8px 24px #29323614;
+  background: #e5e7e8 !important;
+}
+
+html[data-platform-theme="silver"] body:not(.andship-home) {
+  min-height: 100dvh;
+  margin: 0 !important;
+  color: var(--pt-ink) !important;
+  background: #e5e7e8 !important;
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+html[data-platform-theme="silver"] body:not(.andship-home) :is(p, label, small, dt, dd, li, figcaption) {
+  color: #414b4f;
+}
+
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.app,.page,.profile-app,.social-app) {
+  min-height: 100dvh;
+  margin-inline: auto !important;
+  color: var(--pt-ink) !important;
+  background: var(--pt-paper) !important;
+  box-shadow: 0 0 42px #29323612 !important;
+}
+
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.app,.page,.profile-app) {
+  width: min(100%, 610px) !important;
+  padding-bottom: calc(96px + env(safe-area-inset-bottom)) !important;
+  border-radius: 0 !important;
+}
+
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.main,.content,main) {
+  color: #30373a;
+}
+
+/* The small campaign/section headers use the approved silver drone photograph. */
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero,.promo,.brands,.santa) {
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2 0%,#f2f3f3d9 44%,#f2f3f384 76%,#eef0f025 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 50% !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero,.promo,.brands,.santa) :is(h1,h2,p,.hero-title,.hero-copy,.slogan,.tag,.right-tag) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero,.promo,.brands,.santa)::before,
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero,.promo,.brands,.santa)::after {
+  display: none !important;
+  content: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero-bottle,.sprite-stage-bottle,.nav-bottle,.bottles,.campaign-photo-source,.hero-art,.hero-halo) {
+  display: none !important;
+}
+
+/* Shared mobile navigation: keep the real icons, replace the liquid bar. */
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.bottom,.bottom-nav,.app-nav) {
+  color: #485256 !important;
+  border: 1px solid #cbd1d3 !important;
+  background: #f6f7f6f2 !important;
+  box-shadow: 0 4px 18px #29323618 !important;
+  backdrop-filter: blur(14px);
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.bottom,.bottom-nav,.app-nav) .nav {
+  color: #596367 !important;
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.bottom,.bottom-nav,.app-nav) .nav.active {
+  color: #30373a !important;
+  border-color: #cbd1d3 !important;
+  background: #e5e7e8 !important;
+  box-shadow: inset 0 1px #fff !important;
+}
+
+/* Reusable panels are named on the pages rather than inferred from visual shapes. */
+html[data-platform-theme="silver"] body:not(.andship-home) :is(
+  .card,.panel,.group,.level,.bonus,.transaction,.product,.actions,.tabs,.list,
+  .summary.light,.balance.light,.bal.light,.gift-card,.reward-card,.filters,
+  .filters-wrap,.journey-list,.feature-panel,.instructions,.country-sheet,
+  .country-option,.modal-content,.dialog,.modal
+) {
+  color: #30373a !important;
+  border-color: #d3d8da !important;
+  background-color: #fbfbfa !important;
+  background-image: none !important;
+  box-shadow: 0 5px 16px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.heading h1,.group h2,.group h3,.card h2,.panel h2,.section-title,.title) {
+  color: #30373a !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.desc,.details,.muted,.subtext,.hint,.summary small,.menu-text span) {
+  color: #626d71 !important;
+}
+
+html[data-platform-theme="silver"] body:not(.andship-home) :is(
+  input:not([type="checkbox"]):not([type="radio"]),select,textarea,.field,.input
+) {
+  color: #30373a !important;
+  border-color: #cbd1d3 !important;
+  border-radius: 10px !important;
+  background-color: #fff !important;
+  box-shadow: inset 0 1px 2px #2932360b !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(input,select,textarea):focus,
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.field,.input):focus-within {
+  outline: 2px solid #798488 !important;
+  outline-offset: 2px !important;
+  border-color: #596367 !important;
+  box-shadow: 0 0 0 3px #59636720 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(input,textarea)::placeholder {
+  color: #7b8589 !important;
+  opacity: 1;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) input[type="checkbox"],
+html[data-platform-theme="silver"] body:not(.andship-home) input[type="radio"] {
+  accent-color: #485256 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(
+  .btn:not(.secondary),.primary,.primary-button,.button-primary,.button-submit,
+  .submit,.confirm,.buy:not(:disabled),.checkin-button,.send,.cta,.add
+) {
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  border-radius: 12px !important;
+  background: #485256 !important;
+  box-shadow: 0 4px 12px #2932361c !important;
+  text-shadow: none !important;
+  clip-path: none !important;
+  mask-image: none !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.btn,.primary,.primary-button,.submit,.confirm,.buy,.checkin-button,.send,.cta):disabled {
+  color: #687276 !important;
+  border-color: #d3d8da !important;
+  background: #e7e9e9 !important;
+  box-shadow: none !important;
+  opacity: .8;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(a,button):focus-visible {
+  outline: 2px solid #596367 !important;
+  outline-offset: 3px !important;
+}
+
+/* Do not recolor or filter member uploads, VIP product photography or payment marks. */
+html[data-platform-theme="silver"] :is(
+  .community-photo,.post-photo,.proof-image,.post-image,.preview-item img,
+  .product-image img,#productImage,.product img.photo,.vip-product img,[data-user-image],
+  .stripe-pay-logo,.language img
+) {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  content: normal !important;
+}

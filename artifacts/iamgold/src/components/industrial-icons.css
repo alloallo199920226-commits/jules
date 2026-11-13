@@ -1,0 +1,10 @@
+.iamgold-icon .ig-icon-gold-fill { fill: var(--iamgold-metal); stroke: #8f6018; stroke-width: 1; }
+.iamgold-icon .ig-icon-metal-side { fill: var(--iamgold-metal-shadow); stroke: #8a5b12; stroke-width: .75; }
+.iamgold-icon .ig-icon-metal-highlight { fill: var(--iamgold-metal-light); stroke: #fff2c2; stroke-width: .55; }
+.iamgold-icon .ig-icon-metal-edge { fill: none; stroke: var(--iamgold-metal-light); stroke-width: 1.55; }
+.iamgold-icon .ig-icon-wheel { fill: #172434; stroke: #d9b45c; stroke-width: 1.25; }
+.iamgold-icon .ig-icon-wheel-hub { fill: var(--iamgold-metal-light); stroke: #79500f; stroke-width: .55; }
+.iamgold-icon .ig-icon-diamond-face { fill: #f4f7fa; stroke: #c4d0dc; stroke-width: .75; }
+.iamgold-icon .ig-icon-diamond-mid { fill: #c6d0d9; stroke: #f8fbff; stroke-width: .75; }
+.iamgold-icon .ig-icon-diamond-shadow { fill: #8092a4; stroke: #dce5ed; stroke-width: .75; }
+.iamgold-icon .ig-icon-diamond-glint { fill: #fff; stroke: #dbe5ed; stroke-width: .65; }

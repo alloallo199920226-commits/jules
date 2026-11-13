@@ -1,0 +1,428 @@
+/*
+ * Final fidelity pass: shared brand rails plus the lottery composition.
+ * Kept isolated from behavior and form-specific stylesheets.
+ */
+
+.ayala-frame:has(.royal-page) .royal-masthead {
+  min-height: 137px;
+  padding: max(9px,env(safe-area-inset-top)) 10px 12px;
+  border-bottom: 0;
+  background:
+    linear-gradient(180deg,#071a30 0%,#071a30 70%,#0a2037 100%);
+}
+.ayala-frame:has(.royal-page) .royal-masthead::after {
+  z-index: 1;
+  height: 16px;
+  border-top: 1px solid #f7d975;
+  background:
+    linear-gradient(90deg,transparent,#b57819 7%,#ffe9a0 18%,#6b4b18 28%,transparent 37%,transparent 63%,#6b4b18 72%,#ffe9a0 82%,#b57819 93%,transparent),
+    linear-gradient(180deg,#b97812,#f9d970 42%,#68430e);
+  clip-path: polygon(0 30%,8% 30%,12% 0,88% 0,92% 30%,100% 30%,100% 100%,0 100%);
+}
+.ayala-frame:has(.royal-page) .royal-masthead::before {
+  z-index: 0;
+  top: auto;
+  right: 14%;
+  bottom: 19px;
+  left: 14%;
+  width: auto;
+  height: 1px;
+  background: linear-gradient(90deg,transparent,#b98025,#ffe7a1,#b98025,transparent);
+  content: "";
+}
+.ayala-frame:has(.royal-page) .royal-masthead-scene {
+  z-index: -1;
+  width: 50%;
+  opacity: .98;
+  filter: saturate(1.04) contrast(1.07);
+}
+.ayala-frame:has(.royal-page) .royal-masthead-mine {
+  object-position: 24% 45%;
+  clip-path: polygon(0 0,100% 0,83% 76%,0 100%);
+}
+.ayala-frame:has(.royal-page) .royal-masthead-refinery {
+  object-position: 73% 48%;
+  clip-path: polygon(18% 0,100% 0,100% 100%,0 76%);
+}
+.ayala-frame:has(.royal-page) .royal-masthead-shade {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 14px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,#06172f00 0%,#06172f55 24%,#06172fe8 44%,#06172fe8 56%,#06172f55 77%,#06172f00),
+    linear-gradient(0deg,#06172f 0%,transparent 40%);
+}
+.ayala-frame:has(.royal-page) .royal-masthead-wordmark {
+  width: min(46%,174px);
+  height: 56px;
+  margin-top: 1px;
+  filter: drop-shadow(0 2px 5px #000c);
+}
+.ayala-frame:has(.royal-page) .royal-brand-platform {
+  margin-top: -4px;
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+.ayala-frame:has(.royal-page) .royal-brand-signature {
+  margin-top: 4px;
+  min-width: 188px;
+  padding: 4px 12px;
+  border: 1px solid #f5cc57;
+  color: #151d25;
+  background: linear-gradient(180deg,#fff5b9 0%,#efbd34 48%,#a4650e 100%);
+  box-shadow: inset 0 1px 0 #fff9d6,0 2px 5px #0009;
+  font: 800 10px/1.15 'DM Sans',sans-serif;
+  text-shadow: 0 1px #fff5;
+}
+.ayala-frame:has(.royal-page) .royal-brand-stars {
+  position: relative;
+  z-index: 1;
+  margin-top: 1px;
+  color: #ffdf59;
+  font: 700 15px/.8 Georgia,serif;
+  letter-spacing: .2em;
+  text-shadow: 0 1px 3px #000,0 0 4px #e18e17;
+}
+.ayala-frame .royal-page .royal-toolbar {
+  min-height: 57px;
+  margin: 0 8px;
+  padding: 4px 11px;
+  border: 0;
+  background: linear-gradient(90deg,#945710,#ffe99c 4%,#a97013 8%,#071a30 13%,#0b2440 50%,#071a30 87%,#a97013 92%,#ffe99c 96%,#945710);
+  box-shadow: inset 0 1px 0 #fff8d6,inset 0 -2px 0 #8c570e,0 4px 8px #0009;
+  clip-path: polygon(0 50%,5% 0,95% 0,100% 50%,95% 100%,5% 100%);
+}
+.ayala-frame .royal-page .royal-toolbar::after {
+  position: absolute;
+  inset: 4px 6%;
+  pointer-events: none;
+  border-top: 1px solid #fff1bc8a;
+  border-bottom: 1px solid #e5bb5480;
+  content: "";
+}
+.ayala-frame .royal-page .royal-toolbar-button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #ffe9a5;
+  background: linear-gradient(145deg,#17456b,#07182a 58%,#254a63);
+  box-shadow: inset 0 1px 0 #fff8d0,0 3px 5px #000a;
+}
+
+/* Lottery: the maquette is an open stage, not an inset rectangular instrument. */
+.ayala-frame .royal-page .lottery-scroll {
+  padding: 5px 11px calc(24px + env(safe-area-inset-bottom));
+  background:
+    radial-gradient(ellipse at 50% 15%,#163e60 0,transparent 51%),
+    linear-gradient(180deg,#06172f,#041326 65%,#071a30);
+}
+.ayala-frame .royal-page .lottery-main-card,
+.ayala-frame .royal-page .lottery-records-card {
+  margin: 0 0 9px;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  clip-path: none;
+}
+.ayala-frame .royal-page .lottery-main-card::before,
+.ayala-frame .royal-page .lottery-records-card::before { display: none; }
+.ayala-frame .royal-page .lottery-stage {
+  position: relative;
+  display: flex;
+  min-height: 319px;
+  align-items: center;
+  justify-content: center;
+  margin: -1px -3px 0;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 55%,#925f1e50 0%,#102b4655 48%,transparent 73%),
+    linear-gradient(130deg,transparent 15%,#21507455 16%,transparent 17% 83%,#21507455 84%,transparent 85%);
+}
+.ayala-frame .royal-page .lottery-stage::after {
+  position: absolute;
+  z-index: -1;
+  right: 4%;
+  bottom: 9px;
+  left: 4%;
+  height: 17px;
+  border: 2px solid #ffe5a0;
+  background: linear-gradient(180deg,#f8da72,#9e5e10 44%,#17324a 48%,#041326);
+  box-shadow: 0 5px 9px #000c,inset 0 1px #fff5c3;
+  clip-path: polygon(5% 0,95% 0,100% 60%,93% 100%,7% 100%,0 60%);
+  content: "";
+}
+.ayala-frame .royal-page .lottery-wheel-wrap {
+  width: min(78vw,318px);
+  margin: 0 auto 7px;
+  filter: drop-shadow(0 13px 11px #000c);
+}
+.ayala-frame .royal-page .lottery-wheel-wrap::before { display: none; }
+.ayala-frame .royal-page .lottery-wheel-svg { filter: none; }
+.ayala-frame .royal-page .lottery-wheel-label text {
+  paint-order: stroke;
+  stroke: #061527a6;
+  stroke-width: 1.4px;
+  stroke-linejoin: round;
+}
+.ayala-frame .royal-page .lottery-wheel-crown {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  width: 68px;
+  height: 68px;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  border: 2px solid #fff2ad;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 25%,#41637b 0,#102e49 38%,#06172e 74%);
+  box-shadow: inset 0 2px 5px #fff7,inset 0 -5px 9px #000d,0 0 0 5px #a96e15,0 0 0 8px #ffe8a0,0 5px 9px #000c;
+  clip-path: none;
+}
+.ayala-frame .royal-page .lottery-wheel-crown span {
+  position: absolute;
+  bottom: 45px;
+  width: 13px;
+  height: 17px;
+  background: linear-gradient(135deg,#fffbd0,#f1b82a 54%,#935410);
+  clip-path: polygon(50% 0,100% 100%,0 100%);
+  filter: drop-shadow(0 1px 1px #000);
+}
+.ayala-frame .royal-page .lottery-wheel-crown span:nth-child(1) { left: 13px; transform: rotate(-22deg); }
+.ayala-frame .royal-page .lottery-wheel-crown span:nth-child(2) { left: 27px; bottom: 49px; }
+.ayala-frame .royal-page .lottery-wheel-crown span:nth-child(3) { right: 13px; transform: rotate(22deg); }
+.ayala-frame .royal-page .lottery-spin {
+  z-index: 6;
+  width: 68px;
+  height: 68px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #fff4c3;
+}
+.ayala-frame .royal-page .lottery-spin strong {
+  font: 900 20px/.98 'Barlow Condensed',sans-serif;
+  text-shadow: 0 2px 3px #000,0 0 6px #e7a720;
+}
+.ayala-frame .royal-page .lottery-spin span {
+  margin-top: 4px;
+  color: #fff;
+  font: 700 9px/1 'DM Sans',sans-serif;
+  text-shadow: 0 1px 2px #000;
+}
+.ayala-frame .royal-page .lottery-pointer {
+  top: -5px;
+  width: 34px;
+  height: 43px;
+  border: 2px solid #fff5c9;
+  background: linear-gradient(90deg,#6f320b,#ffefaa 25%,#efb830 54%,#ffe8a3 77%,#714008);
+  clip-path: polygon(0 0,100% 0,88% 57%,50% 100%,12% 57%);
+  filter: drop-shadow(0 4px 5px #000d);
+}
+.ayala-frame .royal-page .lottery-pointer i {
+  top: 3px;
+  left: 11px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #fff5c8;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%,#ff9583,#da1826 55%,#72101d);
+  box-shadow: 0 1px 4px #000;
+  transform: none;
+}
+.ayala-frame .royal-page .lottery-stage-prop {
+  position: absolute;
+  z-index: 2;
+  bottom: 22px;
+  display: grid;
+  width: 53px;
+  height: 48px;
+  place-items: center;
+  color: #ffe29a;
+  filter: drop-shadow(0 5px 4px #000b);
+}
+.ayala-frame .royal-page .lottery-stage-gift { left: 1%; }
+.ayala-frame .royal-page .lottery-stage-ore { right: 1%; }
+.ayala-frame .royal-page .lottery-stage-prop .iamgold-icon {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 1px 0 #fff2);
+}
+.ayala-frame .royal-page .lottery-reference-caption {
+  max-width: 470px;
+  margin: 0 auto 8px;
+  padding: 5px 8px;
+  border-top: 1px solid #c99a3e73;
+  color: #d5dfe5;
+  text-align: center;
+  font-size: 9px;
+  line-height: 1.35;
+}
+.ayala-frame .royal-page .lottery-unavailable {
+  margin: 6px 0;
+  padding: 7px 9px;
+  border-left-color: #f0c947;
+  background: linear-gradient(90deg,#183752,#0d2238);
+  font-size: 11px;
+}
+.ayala-frame .royal-page .lottery-invite {
+  min-height: 49px;
+  margin: 7px 0 0;
+  color: #151d27;
+  background: linear-gradient(180deg,#fff1aa 0%,#f4c43d 38%,#b97312 78%,#ffdf76 100%);
+  box-shadow: inset 0 1px 0 #fff9d5,inset 0 -2px 3px #784511,0 4px 7px #0009;
+  clip-path: polygon(5% 0,95% 0,100% 50%,95% 100%,5% 100%,0 50%);
+  font-size: 13px;
+}
+.ayala-frame .royal-page .lottery-rules {
+  margin-top: 9px;
+  padding: 8px 10px 2px;
+  border: 1px solid #d4a744;
+  background: linear-gradient(125deg,#173956,#07182b 60%,#102c47);
+  box-shadow: inset 0 1px 0 #fff2a5,0 4px 9px #0007;
+  clip-path: polygon(4% 0,96% 0,100% 13%,100% 87%,96% 100%,4% 100%,0 87%,0 13%);
+}
+.ayala-frame .royal-page .lottery-rules h2 {
+  gap: 7px;
+  margin-bottom: 5px;
+  color: #f9df91;
+  font-size: 15px;
+}
+.ayala-frame .royal-page .lottery-rules p {
+  grid-template-columns: 29px minmax(0,1fr);
+  align-items: start;
+  gap: 7px;
+  margin-bottom: 5px;
+  color: #edf0eb;
+  font-size: 10px;
+  line-height: 1.35;
+}
+.ayala-frame .royal-page .lottery-rules p b {
+  width: 27px;
+  height: 25px;
+  color: #17273a;
+  background: linear-gradient(145deg,#fff3b1,#d79c22 60%,#88570f);
+  box-shadow: inset 0 1px #fff9d9;
+}
+.ayala-frame .royal-page .lottery-records-card {
+  margin-top: 8px;
+  padding: 0 7px 7px;
+  border: 1px solid #dbb557;
+  background: linear-gradient(145deg,#143a59,#07182a 58%,#123451);
+  box-shadow: inset 0 0 0 3px #96701f,inset 0 0 0 5px #f0d17a,0 5px 11px #0009;
+  clip-path: polygon(4% 0,94% 0,100% 8%,100% 91%,96% 100%,5% 100%,0 92%,0 9%);
+}
+.ayala-frame .royal-page .lottery-records-card::before { display: none; }
+.ayala-frame .royal-page .lottery-tabs { min-height: 48px; }
+.ayala-frame .royal-page .lottery-tabs button {
+  min-height: 47px;
+  font-size: 10px;
+}
+.ayala-frame .royal-page .lottery-records-content { min-height: 89px; padding: 8px 4px; }
+.ayala-frame .royal-page .lottery-empty-art { height: 38px; }
+.ayala-frame .royal-page .lottery-empty { margin-top: 2px; }
+
+/* Consistent reference mastheads: spacious scene, central wordmark, signature band. */
+.ayala-frame:has(.industrial-notice) .industrial-masthead,
+.ayala-frame:has(.industrial-help) .industrial-masthead,
+.ayala-frame:has(.industrial-about) .industrial-masthead {
+  min-height: 150px;
+  padding-top: max(8px,env(safe-area-inset-top));
+}
+.ayala-frame:has(.industrial-notice) .industrial-masthead-scenes img,
+.ayala-frame:has(.industrial-help) .industrial-masthead-scenes img,
+.ayala-frame:has(.industrial-about) .industrial-masthead-scenes img {
+  top: 0;
+  width: 45%;
+  height: 127px;
+  opacity: .94;
+  filter: saturate(1) contrast(1.07);
+}
+.ayala-frame:has(.industrial-notice) .industrial-masthead::before,
+.ayala-frame:has(.industrial-help) .industrial-masthead::before,
+.ayala-frame:has(.industrial-about) .industrial-masthead::before {
+  background: linear-gradient(90deg,#06172f00,#06172f45 25%,#06172fcf 42%,#06172fd9 58%,#06172f38 78%,#06172f00);
+}
+.ayala-frame:has(.industrial-notice) .industrial-brandline .industrial-editorial-logo,
+.ayala-frame:has(.industrial-help) .industrial-brandline .industrial-editorial-logo,
+.ayala-frame:has(.industrial-about) .industrial-brandline .industrial-editorial-logo {
+  width: 164px;
+  height: 66px;
+}
+.ayala-frame:has(.industrial-notice) .industrial-brandline > .industrial-brand-signature,
+.ayala-frame:has(.industrial-help) .industrial-brandline > .industrial-brand-signature,
+.ayala-frame:has(.industrial-about) .industrial-brandline > .industrial-brand-signature {
+  padding: 4px 12px;
+  border: 1px solid #edc853;
+  background: linear-gradient(#fff2b3,#e4ae25 55%,#96600f);
+  color: #172235;
+  font-size: 9px;
+  text-shadow: 0 1px #fff5;
+}
+
+.ayala-frame:has(.finance-industrial) .finance-masthead {
+  flex-basis: 131px;
+  padding-top: max(6px,env(safe-area-inset-top));
+  background-position: center 45%;
+}
+.ayala-frame:has(.finance-industrial) .finance-brand-mark { width: 48px; height: 25px; }
+.ayala-frame:has(.finance-industrial) .finance-brand-name { font-size: 25px; }
+.ayala-frame:has(.finance-industrial) .finance-brand-tagline {
+  margin-top: 3px;
+  padding: 3px 14px;
+  border: 1px solid #efc340;
+  background: linear-gradient(#fff3b7,#e9b32e 55%,#98620f);
+  color: #13243a;
+  font-weight: 800;
+  text-shadow: 0 1px #fff5;
+}
+.ayala-frame:has(.finance-industrial) .finance-toolbar {
+  flex-basis: 57px;
+  background: linear-gradient(90deg,#071a30,#0d2c48 50%,#071a30);
+}
+
+.ayala-frame:has(.supreme-masthead) .supreme-masthead {
+  min-height: 142px;
+  padding-top: max(6px,env(safe-area-inset-top));
+}
+.ayala-frame:has(.supreme-masthead) .supreme-scene {
+  opacity: .98;
+  filter: saturate(1.03) contrast(1.06);
+}
+.ayala-frame:has(.supreme-masthead) .supreme-wordmark {
+  height: 57px;
+  width: min(47%,174px);
+}
+.ayala-frame:has(.supreme-masthead) .supreme-signature {
+  border: 1px solid #f0cb51;
+  background: linear-gradient(#fff1ae,#e7b331 55%,#99620f);
+  color: #152238;
+  text-shadow: 0 1px #fff5;
+}
+
+@media (max-width: 390px) {
+  .ayala-frame .royal-page .lottery-scroll { padding-right: 8px; padding-left: 8px; }
+  .ayala-frame .royal-page .lottery-stage { min-height: 287px; }
+  .ayala-frame .royal-page .lottery-wheel-wrap { width: min(78vw,292px); }
+  .ayala-frame .royal-page .lottery-stage-prop { width: 43px; height: 42px; }
+  .ayala-frame .royal-page .lottery-stage-prop .iamgold-icon { width: 40px; height: 40px; }
+  .ayala-frame:has(.industrial-notice) .industrial-masthead,
+  .ayala-frame:has(.industrial-help) .industrial-masthead,
+  .ayala-frame:has(.industrial-about) .industrial-masthead { min-height: 140px; }
+  .ayala-frame:has(.supreme-masthead) .supreme-masthead { min-height: 133px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ayala-frame:has(.royal-page) *,
+  .ayala-frame:has(.industrial-notice) *,
+  .ayala-frame:has(.industrial-help) *,
+  .ayala-frame:has(.industrial-about) *,
+  .ayala-frame:has(.finance-industrial) *,
+  .ayala-frame:has(.supreme-masthead) * {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

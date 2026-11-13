@@ -1,0 +1,257 @@
+/* NARKE account reset extension — deliberately isolated from imported admin styles. */
+#narke-customer-reset-trigger {
+  min-height: 38px;
+  padding: 8px 13px;
+  border: 1px solid #a64740 !important;
+  border-radius: 7px;
+  background: #522d32 !important;
+  color: #fff5ed !important;
+  font: 700 12px/1.2 "DM Sans", sans-serif;
+  letter-spacing: .01em;
+  cursor: pointer;
+  transition: background-color .16s ease, border-color .16s ease, transform .16s ease;
+}
+#narke-customer-reset-trigger:hover { background: #713a3c !important; border-color: #ef8879 !important; }
+#narke-customer-reset-trigger:active { transform: translateY(1px); }
+#admin-root #dashboard-view .admin-header-actions #narke-customer-reset-trigger {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  min-width: 0;
+  flex: 0 1 auto;
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
+  line-height: 1.35;
+}
+@media (max-width: 760px) {
+  #admin-root #dashboard-view .admin-header {
+    flex-wrap: wrap !important;
+    padding-block: 12px !important;
+  }
+  #admin-root #dashboard-view .admin-header-actions {
+    display: flex !important;
+    width: 100%;
+    gap: 8px;
+    align-items: stretch;
+    flex-wrap: nowrap;
+  }
+  #admin-root #dashboard-view .admin-header-actions #narke-customer-reset-trigger {
+    flex: 1 1 auto;
+    max-width: none;
+    min-height: 40px;
+    padding: 9px 12px;
+  }
+  #admin-root #dashboard-view .admin-header-actions button:not(#narke-customer-reset-trigger) {
+    flex: 0 0 40px;
+    min-width: 40px;
+  }
+}
+#narke-customer-reset-trigger:focus-visible,
+#narke-customer-reset-dialog :focus-visible {
+  outline: 3px solid #00e8f5;
+  outline-offset: 3px;
+}
+#narke-customer-reset-dialog {
+  width: min(680px, calc(100vw - 28px));
+  max-width: 680px;
+  max-height: min(92dvh, 900px);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid #3c8290;
+  border-radius: 14px;
+  background: #062a38;
+  color: #f5fbff;
+  box-shadow: 0 28px 90px #000b, 0 0 0 1px #00e8f51a;
+  font-family: "DM Sans", sans-serif;
+}
+#narke-customer-reset-dialog::backdrop { background: #00111bd9; backdrop-filter: blur(4px); }
+.narke-reset-shell { padding: clamp(19px, 4vw, 32px); }
+.narke-reset-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid #67bdca3b;
+}
+.narke-reset-eyebrow {
+  margin: 0 0 7px;
+  color: #44d6df !important;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+#narke-customer-reset-dialog h2 {
+  margin: 0;
+  color: #f8fcff !important;
+  font-size: clamp(21px, 4vw, 28px);
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+.narke-reset-close {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #55929b;
+  border-radius: 50%;
+  background: #0d3b4a;
+  color: #f5fbff;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+}
+.narke-reset-intro { margin: 15px 0 18px; color: #c9e0e6 !important; font-size: 14px; line-height: 1.55; }
+.narke-reset-warning {
+  margin: 0 0 17px;
+  padding: 14px 15px;
+  border: 1px solid #dc796c;
+  border-left: 4px solid #ef8879;
+  border-radius: 8px;
+  background: #502f34;
+}
+.narke-reset-warning strong { display: block; margin-bottom: 5px; color: #ffe2d6 !important; font-size: 13px; }
+.narke-reset-warning p { margin: 0; color: #f8d9d1 !important; font-size: 12px; line-height: 1.5; }
+.narke-reset-preserve {
+  margin: 0 0 19px;
+  padding: 11px 13px;
+  border: 1px solid #3a8790;
+  border-radius: 8px;
+  background: #073847;
+  color: #d2eef0 !important;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.narke-reset-preserve strong { color: #74e4df !important; }
+.narke-reset-counts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin: 0 0 18px;
+}
+.narke-reset-count {
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #3c7b89;
+  border-radius: 8px;
+  background: #073443;
+}
+.narke-reset-count dt { color: #b6d3dc; font-size: 11px; line-height: 1.35; }
+.narke-reset-count dd {
+  margin: 6px 0 0;
+  color: #66e0e4;
+  font: 700 23px/1 "DM Sans", sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+.narke-reset-status {
+  margin: 0 0 15px;
+  padding: 11px 13px;
+  border: 1px solid #44838e;
+  border-radius: 7px;
+  background: #093946;
+  color: #d9f6f3 !important;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.narke-reset-status[data-kind="error"] { border-color: #dc796c; background: #4b2c32; color: #ffe0d6 !important; }
+.narke-reset-status[data-kind="success"] { border-color: #4bb79f; background: #123e3b; color: #d9fff1 !important; }
+.narke-reset-status[hidden] { display: none; }
+.narke-reset-preview {
+  display: block;
+  margin: -7px 0 15px;
+  padding: 7px 10px;
+  border: 1px solid #55b5bb;
+  border-radius: 6px;
+  background: #0a4652;
+  color: #e2ffff;
+  font: 700 11px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+.narke-reset-preview[hidden] { display: none; }
+.narke-reset-preview:disabled { opacity: .5; cursor: wait; }
+.narke-reset-field { display: block; margin: 0 0 15px; }
+.narke-reset-field strong { color: #6ee3e0; letter-spacing: .02em; }
+.narke-reset-field > span { display: block; margin: 0 0 7px; color: #e9f5f8; font-size: 12px; font-weight: 700; }
+#narke-customer-reset-dialog input[type="password"],
+#narke-customer-reset-dialog input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 45px;
+  padding: 10px 12px;
+  border: 1px solid #5695a0;
+  border-radius: 7px;
+  background: #032431 !important;
+  color: #fff !important;
+  font: 16px "DM Sans", sans-serif;
+}
+/* Match the shared important layer so focused fields remain readable on iOS. */
+@layer form-controls {
+  #narke-customer-reset-dialog input:is([type="password"], [type="text"]),
+  #narke-customer-reset-dialog input:is([type="password"], [type="text"]):focus,
+  #narke-customer-reset-dialog input:is([type="password"], [type="text"]):focus-visible {
+    background-color: #032431 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #4ce6eb !important;
+    font-size: 16px !important;
+    opacity: 1 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+}
+#narke-customer-reset-dialog input::placeholder { color: #aac9d2 !important; }
+.narke-reset-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 18px;
+  color: #e0edf0;
+  font-size: 12px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+#narke-customer-reset-dialog input[type="checkbox"] {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: #20c9cb;
+}
+.narke-reset-actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+.narke-reset-actions > div { display: flex; flex-wrap: wrap; gap: 9px; }
+.narke-reset-actions button {
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid #538b96;
+  border-radius: 7px;
+  background: #0c3b49;
+  color: #edf9fb;
+  font: 700 12px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+.narke-reset-actions button:hover:not(:disabled) { background: #155163; }
+.narke-reset-actions button:disabled { opacity: .42; cursor: not-allowed; }
+.narke-reset-actions .narke-reset-submit {
+  border-color: #bd685e;
+  background: #923f3b;
+  color: #fff7f0;
+}
+.narke-reset-actions .narke-reset-submit:hover:not(:disabled) { background: #a84a42; }
+.narke-reset-actions .narke-reset-refresh { border-color: #25bfc6; background: #00a9b5; color: #00232e; }
+.narke-reset-footnote { margin: 14px 0 0; color: #a8c8d1 !important; font-size: 11px; line-height: 1.45; }
+@media (max-width: 560px) {
+  #narke-customer-reset-trigger { max-width: 190px; min-height: 40px; padding: 7px 9px; font-size: 11px; }
+  #narke-customer-reset-dialog { width: calc(100vw - 18px); max-height: 94dvh; border-radius: 11px; }
+  .narke-reset-shell { padding: 17px 15px 19px; }
+  .narke-reset-counts { gap: 7px; }
+  .narke-reset-count { padding: 10px; }
+  .narke-reset-count dd { font-size: 20px; }
+  .narke-reset-actions { display: grid; grid-template-columns: 1fr; }
+  .narke-reset-actions > div { display: grid; grid-template-columns: 1fr; }
+  .narke-reset-actions button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #narke-customer-reset-trigger { transition: none; }
+}

@@ -1,0 +1,29 @@
+/* Shared payment wordmark: preserve the supplied artwork and its transparency. */
+.stripe-pay-inline-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  max-width: 100%;
+  margin-inline: .12em;
+  line-height: 1;
+}
+.stripe-pay-inline-brand > img {
+  display: block;
+  width: 5em;
+  max-width: 92px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+.stripe-pay-accessible-label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

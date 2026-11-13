@@ -1,0 +1,19 @@
+/* Replace the former propeller emblem without changing its layout or JS hooks. */
+.brand-mark svg,
+.brand-symbol svg,
+svg.brand-mark,
+svg.brand-symbol {
+  background: url("/sprite-assets/aeronova-mark.svg?v=1") center / contain no-repeat !important;
+}
+.brand-mark svg > *,
+.brand-symbol svg > *,
+svg.brand-mark > *,
+svg.brand-symbol > * {
+  opacity: 0 !important;
+}
+#campaignPopup#campaignPopup .andship-emblem {
+  background: url("/sprite-assets/aeronova-wordmark.svg?v=1") left center / contain no-repeat !important;
+}
+#campaignPopup#campaignPopup .andship-emblem > * {
+  opacity: 0 !important;
+}

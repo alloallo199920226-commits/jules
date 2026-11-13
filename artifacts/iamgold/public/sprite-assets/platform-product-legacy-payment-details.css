@@ -1,0 +1,296 @@
+/* Deposit and withdrawal screens: preserve numeric controls and genuine payment instructions. */
+html[data-platform-theme="silver"] body:has(.instructions) .app {
+  --deposit-lime: #899397 !important;
+  --deposit-glass: #f3f4f4 !important;
+  --deposit-deep: #343c40 !important;
+  --deposit-copy: #414b4f !important;
+  --glow-strength: 0 !important;
+  color: #30373a !important;
+  background: #f2f3f3 !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .app::before,
+html[data-platform-theme="silver"] body:has(.instructions) .app::after,
+html[data-platform-theme="silver"] body:has(.instructions) .hero::before,
+html[data-platform-theme="silver"] body:has(.instructions) .hero::after,
+html[data-platform-theme="silver"] body:has(.instructions) .amount-card::before,
+html[data-platform-theme="silver"] body:has(.instructions) .instructions::before,
+html[data-platform-theme="silver"] body:has(.instructions) .instructions::after,
+html[data-platform-theme="silver"] body:has(.instructions) .confirm::before,
+html[data-platform-theme="silver"] body:has(.instructions) .toast:empty::after,
+html[data-platform-theme="silver"] body:has(.instructions) .sign::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .bottles,
+html[data-platform-theme="silver"] body:has(.instructions) .slogan {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .hero {
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2 0%,#f2f3f3dc 48%,#f2f3f38a 78%,#eef0f020 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 50% !important;
+  background-size: cover !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .hero :is(h1,h1::before,h1::after,p,.trust) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .trust-icon {
+  color: #596367 !important;
+  border-color: #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .amount-card {
+  color: #30373a !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 16px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 4px 14px #29323610 !important;
+  animation: none !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) :is(.amount-card,.instructions) .title {
+  color: #414b4f !important;
+  border-color: #899397 !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) :is(.amount,.input,.clear) {
+  color: #414b4f !important;
+  border-color: #cbd1d3 !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .amount.active {
+  color: #fff !important;
+  border-color: #596367 !important;
+  background: #596367 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .input :is(span,input) {
+  color: #414b4f !important;
+  background: transparent !important;
+  text-shadow: none !important;
+  caret-color: #596367 !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .confirm {
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  border-radius: 11px !important;
+  background: #485256 !important;
+  box-shadow: 0 4px 12px #29323618 !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .confirm::after {
+  color: #fff !important;
+  border: 1px solid #ffffff55 !important;
+  background: #667176 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .confirm:disabled {
+  color: #697378 !important;
+  border-color: #d3d8da !important;
+  background: #e5e7e8 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: .78 !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .instructions {
+  color: #414b4f !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 16px !important;
+  background: #e5e7e8 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) :is(.notice,.steps,.step,.sign) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .notice {
+  border-color: #d3d8da !important;
+  background: #fbfbfa !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .notice-icon,
+html[data-platform-theme="silver"] body:has(.instructions) .num {
+  color: #596367 !important;
+  border-color: #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .bottom {
+  border-color: #d3d8da !important;
+  background: #e5e7e8 !important;
+  box-shadow: 0 -4px 16px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) .nav.active {
+  color: #fff !important;
+  background: #596367 !important;
+  box-shadow: none !important;
+}
+
+html[data-platform-theme="silver"] body:has(.withdraw) .app {
+  --withdraw-lime: #899397 !important;
+  --withdraw-deep: #343c40 !important;
+  --withdraw-green: #667176 !important;
+  --withdraw-glass: #f3f4f4 !important;
+  --withdraw-ink: #414b4f !important;
+  --glow-strength: 0 !important;
+  color: #30373a !important;
+  background: #f2f3f3 !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .app::before,
+html[data-platform-theme="silver"] body:has(.withdraw) .app::after,
+html[data-platform-theme="silver"] body:has(.withdraw) .hero::before,
+html[data-platform-theme="silver"] body:has(.withdraw) .hero::after,
+html[data-platform-theme="silver"] body:has(.withdraw) .balance::before,
+html[data-platform-theme="silver"] body:has(.withdraw) .balance::after,
+html[data-platform-theme="silver"] body:has(.withdraw) .wallet::before,
+html[data-platform-theme="silver"] body:has(.withdraw) .withdraw::before,
+html[data-platform-theme="silver"] body:has(.withdraw) .confirm::before,
+html[data-platform-theme="silver"] body:has(.withdraw) .status:empty::after,
+html[data-platform-theme="silver"] body:has(.withdraw) .advice::before,
+html[data-platform-theme="silver"] body:has(.withdraw) .advice::after,
+html[data-platform-theme="silver"] body:has(.withdraw) .sign::after,
+html[data-platform-theme="silver"] body:has(.withdraw) .nav.active::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) :is(.art,.hero-scene,.slogan) {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .hero {
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2 0%,#f2f3f3dc 48%,#f2f3f38a 78%,#eef0f020 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 50% !important;
+  background-size: cover !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .hero :is(h1,h1 span,p,.trust) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) :is(.balance,.wallet,.withdraw,.advice) {
+  color: #30373a !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 14px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 4px 14px #29323610 !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .balance {
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2 0%,#f2f3f3dc 48%,#f2f3f38a 78%,#eef0f020 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,80% 50% !important;
+  background-size: cover !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) :is(.balance,.wallet,.withdraw,.advice) :is(strong,small,.title,.calculation,.calculation b) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .wallet .chev {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .amount-field {
+  color: #414b4f !important;
+  border-color: #cbd1d3 !important;
+  background: #f3f4f4 !important;
+  box-shadow: inset 0 1px 2px #2932360a !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .amount-field:focus-within {
+  border-color: #899397 !important;
+  box-shadow: 0 0 0 2px #89939726 !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .amount-field :is(b,input) {
+  color: #414b4f !important;
+  background: transparent !important;
+  text-shadow: none !important;
+  caret-color: #596367 !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .confirm {
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  border-radius: 11px !important;
+  background: #485256 !important;
+  box-shadow: 0 4px 12px #29323618 !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .confirm::after {
+  color: #fff !important;
+  border: 1px solid #ffffff55 !important;
+  background: #667176 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .confirm[data-state="loading"]::after {
+  color: transparent !important;
+  border-color: #aeb8bb !important;
+  border-top-color: #fff !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .confirm[data-state="success"] {
+  color: #17623d !important;
+  border-color: #c3ddca !important;
+  background: #e7f2ea !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .confirm[data-state="error"] {
+  color: #9b302b !important;
+  border-color: #e9c7c3 !important;
+  background: #f8e9e7 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .confirm:disabled {
+  color: #697378 !important;
+  border-color: #d3d8da !important;
+  background: #e5e7e8 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: .95 !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .advice {
+  background: #e5e7e8 !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) :is(.steps,.step,.status,.read,.notice,.sign) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .notice {
+  border-color: #d3d8da !important;
+  background: #fbfbfa !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .num {
+  color: #596367 !important;
+  border-color: #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .bottom {
+  border-color: #d3d8da !important;
+  background: #e5e7e8 !important;
+  box-shadow: 0 -4px 16px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .nav.active {
+  color: #fff !important;
+  background: #596367 !important;
+  box-shadow: none !important;
+}

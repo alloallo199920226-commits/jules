@@ -1,0 +1,13 @@
+.ig-metal-panel, .ig-metal-panel-content { position: relative; }
+.ig-metal-panel { isolation: isolate; }
+.ig-panel-machining { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 3px 3px rgb(0 0 0 / 38%)); }
+.ig-metal-panel-content { z-index: 1; width: 100%; height: 100%; }
+.ig-metal-panel { animation: ig-plate-arrive .42s cubic-bezier(.2,.75,.22,1) both; }
+.ig-metal-panel:nth-of-type(2) { animation-delay: .045s; }
+.ig-metal-panel:nth-of-type(3) { animation-delay: .09s; }
+@keyframes ig-plate-arrive { from { opacity: .3; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.ig-metal-panel button { transition: transform .16s ease; }
+.ig-metal-panel button:active { transform: translateY(1px) scale(.985); }
+@media (prefers-reduced-motion: reduce) {
+  .ig-metal-panel, .ig-metal-panel button { animation: none; transition: none; }
+}

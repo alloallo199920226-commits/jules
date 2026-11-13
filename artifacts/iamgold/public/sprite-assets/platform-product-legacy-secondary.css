@@ -1,0 +1,416 @@
+/* Team history has its own local liquid layer, including photo-cutout pseudo-art. */
+html[data-platform-theme="silver"] body:has(.history-card) .app {
+  --th-forest: #454e52 !important;
+  --th-deep: #343c40 !important;
+  --th-green: #667176 !important;
+  --th-neon: #c8cdd0 !important;
+  --th-lime: #e5e7e8 !important;
+  --th-glass: #f2f3f3 !important;
+  --th-ink: #30373a !important;
+  --th-muted: #626d71 !important;
+  background: #f2f3f3 !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .app::before,
+html[data-platform-theme="silver"] body:has(.history-card) .app::after,
+html[data-platform-theme="silver"] body:has(.history-card) .panel::before,
+html[data-platform-theme="silver"] body:has(.history-card) .tabs::before,
+html[data-platform-theme="silver"] body:has(.history-card) .tabs::after,
+html[data-platform-theme="silver"] body:has(.history-card) .stat::before,
+html[data-platform-theme="silver"] body:has(.history-card) .stat::after,
+html[data-platform-theme="silver"] body:has(.history-card) .history-card::before,
+html[data-platform-theme="silver"] body:has(.history-card) .history-card::after,
+html[data-platform-theme="silver"] body:has(.history-card) .stat-icon::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .hero {
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2 0%,#f2f3f3dc 48%,#f2f3f38a 78%,#eef0f020 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 50% !important;
+  background-size: cover !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .hero-copy :is(h1,em,p) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .panel {
+  background: #f2f3f3 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .tabs {
+  filter: none !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 12px !important;
+  background: #e5e7e8 !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .tab {
+  color: #596367 !important;
+  border-color: transparent !important;
+  border-radius: 9px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .tab.active {
+  color: #fff !important;
+  border-color: #596367 !important;
+  background: #596367 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .stats {
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .stat {
+  color: #30373a !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 13px !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2,#f2f3f3da 48%,#f2f3f385 78%,#eef0f020),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,78% 50% !important;
+  background-size: cover !important;
+  box-shadow: 0 4px 12px #29323610 !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .stat :is(span,strong,small,svg) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .stat-icon {
+  color: #596367 !important;
+  border-color: #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .history-card {
+  color: #30373a !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 16px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 4px 14px #29323610 !important;
+  filter: none !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .history-head :is(h2,p,.clock,.date-button,.date-chevron) {
+  color: #596367 !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .date-button {
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 9px !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .date-input {
+  color: #414b4f !important;
+  accent-color: #667176 !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .member {
+  color: #414b4f !important;
+  border-color: #dfe3e4 !important;
+  background: #fbfbfa !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .member :is(p,small,.member-account,.member-date,.chev,.money) {
+  color: #596367 !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) :is(.activity-empty,.empty) {
+  color: #596367 !important;
+  border-color: #d3d8da !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .empty-icon svg {
+  color: #667176 !important;
+  filter: none !important;
+}
+
+/* Platform rules: remove their locally authored bottle scene, glass edges and green SVG cards. */
+html[data-platform-theme="silver"] body:has(.rules-card) .app {
+  --rules-deep: #343c40 !important;
+  --rules-green: #667176 !important;
+  --rules-citrus: #c8cdd0 !important;
+  color: #30373a !important;
+  background: #f2f3f3 !important;
+  box-shadow: 0 8px 26px #29323616 !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .app::before,
+html[data-platform-theme="silver"] body:has(.rules-card) .header h1::before,
+html[data-platform-theme="silver"] body:has(.rules-card) .hero h2 span::after,
+html[data-platform-theme="silver"] body:has(.rules-card) .hero .slogan::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .header {
+  color: #30373a !important;
+  background: #f2f3f3 !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .header h1 {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .header .back {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 10px !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .hero {
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2 0%,#f2f3f3dc 48%,#f2f3f38a 78%,#eef0f020 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 50% !important;
+  background-size: cover !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .hero :is(.eyebrow,h2,h2 span,p,.slogan) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .hero .slogan {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .rules-card {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .rule {
+  color: #414b4f !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 12px !important;
+  background: #fbfbfa !important;
+  background-image: none !important;
+  box-shadow: 0 3px 10px #2932360d !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .rule::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .rule :is(h3,p) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .num {
+  color: #414b4f !important;
+  border: 1px solid #cbd1d3 !important;
+  background: #e5e7e8 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .icon {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .icon svg,
+html[data-platform-theme="silver"] body:has(.rules-card) .chevron {
+  color: #596367 !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .app .chevron {
+  background: #eceeee !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .app .history-head .clock {
+  color: #596367 !important;
+  background: #eceeee !important;
+  border-color: #cbd1d3 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .members::before,
+html[data-platform-theme="silver"] body:has(.history-card) .members::after {
+  display: none !important;
+  content: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .important {
+  color: #414b4f !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 12px !important;
+  background: #e5e7e8 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .alert {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .important :is(h3,p) {
+  color: #414b4f !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .banner {
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.rules-card) .space {
+  background: none !important;
+}
+
+/* Missions: retain reward amounts, dynamic controls, progress and status copy; neutralize only art. */
+html[data-platform-theme="silver"] body:has(#missions) .app {
+  --forest: #454e52 !important;
+  --deep: #343c40 !important;
+  --fresh: #667176 !important;
+  --lime: #c8cdd0 !important;
+  --ink: #30373a !important;
+  --muted: #626d71 !important;
+  --mission-glow: #c8cdd0 !important;
+  --mission-border: #d3d8da !important;
+  color: #30373a !important;
+  background: #f2f3f3 !important;
+  box-shadow: 0 8px 26px #29323616 !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .app::before,
+html[data-platform-theme="silver"] body:has(#missions) .app::after,
+html[data-platform-theme="silver"] body:has(#missions) .top::before,
+html[data-platform-theme="silver"] body:has(#missions) .top::after,
+html[data-platform-theme="silver"] body:has(#missions) .reward::before,
+html[data-platform-theme="silver"] body:has(#missions) .reward::after,
+html[data-platform-theme="silver"] body:has(#missions) .mission::before,
+html[data-platform-theme="silver"] body:has(#missions) .mission::after,
+html[data-platform-theme="silver"] body:has(#missions) .mission-head::after,
+html[data-platform-theme="silver"] body:has(#missions) .badge::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .top {
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2 0%,#f2f3f3dc 48%,#f2f3f38a 78%,#eef0f020 100%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 50% !important;
+  background-size: cover !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .top :is(.title,.title em) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) :is(.back,.refresh) {
+  color: #596367 !important;
+  border: 1px solid #cbd1d3 !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .reward {
+  color: #30373a !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 14px !important;
+  background: #e5e7e8 !important;
+  box-shadow: 0 4px 14px #29323612 !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .reward :is(.reward-label,.reward-amount) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) :is(.reward-coins,.reward-gift) {
+  filter: grayscale(.82) saturate(.24) drop-shadow(0 2px 3px #29323618) !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .mission {
+  color: #30373a !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 13px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 4px 14px #29323610 !important;
+  filter: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .mission :is(.badge,.mission-copy,.mission-copy b,.numbers strong,.numbers span,.progress,.progress span) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .badge {
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 9px !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .mission-people {
+  color: #596367 !important;
+  border-color: #cbd1d3 !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .progress {
+  border: 1px solid #d3d8da !important;
+  border-radius: 9px !important;
+  background: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .progress i {
+  background: #899397 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .api-claim {
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  border-radius: 10px !important;
+  background: #485256 !important;
+  box-shadow: 0 3px 10px #29323618 !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .api-claim:disabled {
+  color: #697378 !important;
+  border-color: #d3d8da !important;
+  background: #e5e7e8 !important;
+  box-shadow: none !important;
+  opacity: .72 !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .empty {
+  color: #596367 !important;
+  border: 1px solid #d3d8da !important;
+  background: #fbfbfa !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .bottom {
+  border-color: #d3d8da !important;
+  background: #e5e7e8 !important;
+  box-shadow: 0 -4px 16px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .nav-link {
+  color: #596367 !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(#missions) .nav-link.active {
+  color: #fff !important;
+  background: #596367 !important;
+  box-shadow: none !important;
+}
+

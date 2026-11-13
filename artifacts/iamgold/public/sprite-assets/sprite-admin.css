@@ -1,0 +1,310 @@
+:root {
+  --sprite-forest:#063e2c;
+  --sprite-green:#008b47;
+  --sprite-lime:#b8df28;
+  --sprite-paper:#f4f8ed;
+  --red:#008b47;
+  --red2:#159d53;
+  --deep:#06432f;
+  --bg:#edf4e8;
+  --panel:#fbfdf7;
+  --line:#d9e8d2;
+  --text:#193a2b;
+  --muted:#5c7465;
+  --green:#4c9a24;
+}
+body { color:#153c2d !important; background:#edf4e8 !important; }
+.admin-login-page {
+  background:
+    radial-gradient(ellipse at 12% 18%,#c6e86655,transparent 34%),
+    radial-gradient(ellipse at 88% 78%,#008b4730,transparent 42%),
+    linear-gradient(135deg,#e9f2e2,#f7f9f1) !important;
+}
+.admin-login-card {
+  border-color:#35644a !important;
+  background:#102219 !important;
+  color:#f3fff5;
+  box-shadow:0 24px 70px #153b294a !important;
+}
+.admin-page {
+  --panel:#12251b;
+  --line:#315641;
+  --text:#f3fff5;
+  --muted:#b9cdbf;
+  border-color:#315641 !important;
+  color:var(--text) !important;
+  background:#081810 !important;
+}
+.admin-content {
+  border-color:transparent !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+.admin-panel,.admin-list-card,.admin-stat-card {
+  color:#f3fff5;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+.admin-login-card,.admin-header,.admin-runtime-nav,.admin-overlay,.admin-user-panel {
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+.admin-login-heading p:not(.admin-eyebrow) { color:#c4d9cb !important; }
+.admin-page .admin-stat-card small,
+.admin-page .admin-list-card small,
+.admin-page .admin-detail-grid b,
+.admin-page .admin-product-details b,
+.admin-page .admin-empty,
+.admin-page .admin-user-panel header small {
+  color:#c1d5c6 !important;
+  font-size:11px;
+}
+.admin-page .admin-detail-grid span { color:#f3fff5; font-size:11px; }
+.admin-page input::placeholder,.admin-page textarea::placeholder { color:#bbcfc1; opacity:1; }
+.admin-page .admin-setting-row button {
+  min-height:38px;
+  border:1px solid #50bb7e;
+  border-radius:9px;
+  color:#fff;
+  background:#087447;
+  font-weight:700;
+}
+.admin-login-page:before,.admin-page:before {
+  background-image:linear-gradient(90deg,#a6d94a18,transparent 38%,transparent 74%,#008b4714),
+    url("/sprite-assets/sprite-bottle_2.png") !important;
+  background-position:center,right center !important;
+  background-size:cover,auto 112% !important;
+  mix-blend-mode:multiply !important;
+  opacity:.16 !important;
+}
+.admin-runtime-nav:before {
+  content:"Sprite" !important;
+  height:52px !important;
+  background:url("/sprite-assets/sprite-logo.svg") left center/132px auto no-repeat !important;
+  color:transparent !important;
+}
+.admin-login-mark {
+  background:#fff url("/sprite-assets/sprite-logo.svg") center/contain no-repeat !important;
+  width:154px !important; height:57px !important; border-radius:12px !important;
+}
+.admin-login-mark span { display:none !important; }
+.admin-brand-word { display:none !important; }
+.admin-login-brand:after { display:none !important; }
+.admin-kicker,.admin-eyebrow { color:#9af2b9 !important; }
+.admin-status-dot { color:#dcffdf !important; background:#24523a !important; }
+.admin-login-card label { color:#e4f3e9 !important; }
+.admin-login-card .admin-login-help,.admin-login-card .admin-login-footer { color:#bacfc0 !important; }
+.admin-primary-button,.admin-runtime-nav button.active {
+  color:#fff !important; background:linear-gradient(135deg,#0a9851,#064d34) !important;
+  border-color:#0a9851 !important; box-shadow:0 9px 24px #08713d2b !important;
+}
+.admin-header { background:#073e2d !important; color:#f4ffdf !important; }
+.admin-header small { color:#d6edbf !important; }
+.admin-runtime-nav { background:#fff !important; border-color:#dbe8d7 !important; }
+.admin-runtime-nav button { color:#345d48 !important; }
+.admin-runtime-nav button.active { color:#fff !important; }
+input,select,textarea { border-color:#d6e3d0 !important; }
+button:focus-visible,a:focus-visible { outline:none !important; filter:brightness(1.12); }
+input:focus-visible,select:focus-visible,textarea:focus-visible {
+  outline:none !important; border-color:#078748 !important;
+}
+@media(max-width:640px) {
+  .admin-runtime-nav button { font-size:10px; font-weight:600; }
+}
+/* Safari iOS zooms focused controls when their computed font is below 16px.
+   Keep manual page zoom available; protect login and dynamically added fields. */
+@media (max-width: 719px), (pointer: coarse) {
+  :root body :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+    font-size:16px !important;
+    min-width:0;
+    max-width:100%;
+    scroll-margin-bottom:42dvh;
+  }
+}
+@layer mobile-form-safety {
+  @media (max-width: 719px), (pointer: coarse) {
+    :root body :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+      font-size:16px !important;
+    }
+  }
+}
+
+/* Fast, predictable feedback for the administration console. */
+.admin-login-card,
+.admin-panel,
+.admin-list-card,
+.admin-stat-card,
+.social-post-card {
+  animation:none !important;
+}
+
+.admin-runtime-nav button,
+.admin-header-actions button,
+.admin-user-panel header button,
+.admin-list-card button,
+.admin-card-actions button,
+.admin-inline-form button,
+.admin-user-actions button,
+.admin-grant-row button,
+.admin-balance-actions button,
+.admin-transaction-kind-tabs button,
+.admin-transaction-filters button,
+.admin-setting-row button,
+.admin-primary-button,
+.admin-login-submit,
+.social-status-filters button,
+.social-pagination button,
+.social-review-actions button {
+  transition:transform .14s ease, border-color .14s ease, color .14s ease !important;
+}
+
+.admin-setting-row:has([data-withdraw-mode]),
+.admin-setting-row:has([data-withdraw-mode]) > .admin-card-actions {
+  flex-wrap:wrap;
+}
+
+.admin-runtime-nav button:hover,
+.admin-header-actions button:hover,
+.admin-user-panel header button:hover,
+.admin-list-card button:hover,
+.admin-card-actions button:hover,
+.admin-inline-form button:hover,
+.admin-user-actions button:hover,
+.admin-grant-row button:hover,
+.admin-balance-actions button:hover,
+.admin-transaction-kind-tabs button:hover,
+.admin-transaction-filters button:hover,
+.admin-setting-row button:hover,
+.admin-primary-button:hover,
+.admin-login-submit:hover,
+.social-status-filters button:hover,
+.social-pagination button:not(:disabled):hover,
+.social-review-actions button:hover {
+  transform:translateY(-1px);
+}
+
+.admin-panel,
+.admin-list-card,
+.admin-stat-card,
+.social-post-card {
+  transition:transform .14s ease, border-color .14s ease;
+}
+
+.admin-list-card:hover,
+.admin-stat-card:hover,
+.social-post-card:hover {
+  border-color:#4b765c;
+}
+
+.admin-runtime-search,
+.admin-login-card input,
+.admin-inline-form input,
+.admin-inline-form select,
+.admin-inline-form textarea,
+.admin-settings-grid input,
+.admin-announcement-form input,
+.admin-announcement-form textarea,
+.admin-announcement-form select,
+.admin-balance-actions input,
+.admin-grant-row select,
+.social-review-actions input,
+.social-review-actions textarea {
+  transition:border-color .14s ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.social-admin-panel button:focus-visible,
+.social-admin-panel input:focus-visible,
+.social-admin-panel textarea:focus-visible {
+  outline:2px solid #9af2b9 !important;
+  outline-offset:2px;
+  filter:none !important;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  border-color:#65d991 !important;
+  box-shadow:0 0 0 3px #65d9912b !important;
+}
+
+.admin-page.admin-refreshing {
+  --admin-refresh-accent:#72dfa0;
+}
+
+.admin-page.admin-refreshing::after {
+  content:"";
+  position:fixed;
+  z-index:100;
+  top:0;
+  left:0;
+  width:34%;
+  height:2px;
+  pointer-events:none;
+  background:var(--admin-refresh-accent);
+  transform:translateX(-110%);
+  animation:admin-refresh-progress 1.15s ease-in-out infinite;
+}
+
+.admin-page.admin-refreshing #refresh,
+.admin-page[aria-busy="true"] #refresh {
+  border-color:#65d991;
+  color:#c7f8d9;
+}
+
+.admin-page.admin-refreshing #refresh svg {
+  animation:admin-refresh-turn .9s linear infinite;
+  transform-origin:center;
+}
+
+.admin-page.admin-refreshing #refresh:disabled,
+.admin-page[aria-busy="true"] #refresh:disabled,
+.admin-login-submit:disabled {
+  cursor:wait;
+  opacity:.78;
+}
+
+.admin-login-submit:disabled {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.admin-login-submit:disabled::after {
+  content:"";
+  width:12px;
+  height:12px;
+  margin-left:10px;
+  border:2px solid #ffffff65;
+  border-top-color:#fff;
+  border-radius:50%;
+  animation:admin-refresh-turn .8s linear infinite;
+}
+
+@keyframes admin-refresh-progress {
+  0% { transform:translateX(-110%); }
+  100% { transform:translateX(410%); }
+}
+
+@keyframes admin-refresh-turn {
+  to { transform:rotate(360deg); }
+}
+
+/* Off-screen records in long lists defer layout/paint without hiding content. */
+.admin-list > .admin-list-card {
+  content-visibility:auto;
+  contain-intrinsic-size:auto 110px;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .admin-page.admin-refreshing::after,
+  .admin-page.admin-refreshing #refresh svg,
+  .admin-login-submit:disabled::after {
+    animation:none !important;
+    transform:none !important;
+  }
+}

@@ -1,0 +1,122 @@
+/* Presentation-only layer: the imported console's JavaScript remains untouched. */
+body:has(#admin-root), body:has([data-admin-deposit-form]) {
+  color-scheme: dark;
+  background: #00131e;
+  color: #f5fbff;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+#admin-root :is(.admin-login-page, .admin-state-page, .admin-page) {
+  --panel: #002b3d;
+  --line: #d6a52b66;
+  --text: #f5fbff;
+  --muted: #d2e7ef;
+  --red: #f5d77b;
+  --red2: #d6a52b;
+  background: radial-gradient(ellipse at 70% 0, #0b416070, transparent 65%), #031326 !important;
+  color: #f5fbff !important;
+}
+#admin-root :is(.admin-login-page,.admin-page)::before {
+  background-image: linear-gradient(90deg,#00131edd,#00131e88),
+    url("/pages/assets/narke-scene-account.webp") !important;
+  background-position: center !important;
+  background-size: cover !important;
+  opacity: .2 !important;
+  mix-blend-mode: normal !important;
+}
+#admin-root :is(.admin-login-card,.admin-panel,.admin-stat-card,.admin-list-card,.admin-header,
+  .admin-runtime-nav,.admin-detail-grid > div,.admin-card,.admin-modal,.admin-modal-card) {
+  background: linear-gradient(140deg, #07394b, #001725 80%) !important;
+  color: #f5fbff !important;
+  border-color: #d6a52b66 !important;
+  box-shadow: 0 12px 32px #0005 !important;
+}
+#admin-root :is(h1,h2,h3,h4,label,strong,.admin-stat-value,.admin-detail-value) { color: #f5fbff !important; }
+#admin-root :is(p,small,.admin-muted,.admin-detail-label,.admin-stat-label,.admin-login-help) { color: #d2e7ef !important; }
+#admin-root :is(.admin-kicker,.admin-eyebrow,.admin-login-heading em) { color: #f5d77b !important; }
+#admin-root .admin-login-brand img { display: block; width: 180px; max-width: 100%; height: auto; }
+#admin-root :is(.admin-primary-button,.admin-runtime-nav button.active,.admin-runtime-nav a.active) {
+  background: linear-gradient(135deg, #ffe58a, #d6a52b) !important;
+  border-color: #f5d77b !important;
+  color: #172235 !important;
+}
+#admin-root .admin-runtime-nav button:not(.active) { color: #e1f1f7 !important; }
+#admin-root .admin-stat-card > span { background: #0b4160 !important; color: #f5d77b !important; }
+#admin-root :is(.admin-setting-row button,.admin-header-actions button,
+  .admin-list-card button:not(.admin-danger-button),.admin-card-actions button:not(.admin-danger-button)) {
+  background: #0b3550 !important;
+  color: #f5fbff !important;
+  border-color: #d6a52b66 !important;
+}
+#admin-root :is(input,select,textarea) {
+  background: #002838 !important;
+  color: #f5fbff !important;
+  font-size: 16px !important;
+}
+#admin-root :is(input,textarea)::placeholder { color: #c4dce6 !important; opacity: 1; }
+/* User drawers are appended to body, outside #admin-root by the imported JS. */
+body:has(#admin-root) .admin-overlay {
+  color: #f5fbff;
+  --line: #d6a52b66;
+}
+body:has(#admin-root) .admin-user-panel {
+  background: linear-gradient(150deg, #07394b, #001725 75%) !important;
+  color: #f5fbff !important;
+}
+body:has(#admin-root) .admin-user-panel > header {
+  background: #062b43 !important;
+  color: #f5fbff !important;
+}
+body:has(#admin-root) .admin-user-panel :is(h3, strong) {
+  color: #f5fbff !important;
+}
+body:has(#admin-root) .admin-user-panel :is(small, .admin-empty, .admin-summary-grid span) {
+  color: #c4dce6 !important;
+}
+body:has(#admin-root) .admin-user-panel .admin-balance {
+  background: linear-gradient(135deg, #0b4160, #062b43) !important;
+  color: #f5fbff !important;
+}
+body:has(#admin-root) .admin-user-panel :is(input, select) {
+  box-sizing: border-box;
+  background: #002838 !important;
+  color: #f5fbff !important;
+  -webkit-text-fill-color: #f5fbff !important;
+  caret-color: #f5d77b;
+  opacity: 1 !important;
+  border: 1px solid #d6a52b99 !important;
+  min-height: 44px;
+  font-size: 16px !important;
+}
+body:has(#admin-root) .admin-user-panel input::placeholder {
+  color: #c4dce6 !important;
+  -webkit-text-fill-color: #c4dce6 !important;
+  opacity: 1 !important;
+}
+body:has(#admin-root) .admin-user-panel :is(input, select):focus-visible {
+  outline: 2px solid #f5d77b;
+  outline-offset: 2px;
+}
+body:has(#admin-root) .admin-user-panel button {
+  min-height: 40px;
+  background: #0b3550 !important;
+  color: #f5fbff !important;
+  border: 1px solid #d6a52b66;
+}
+body:has(#admin-root) .admin-user-panel [data-balance="credit"] {
+  background: linear-gradient(135deg, #ffe58a, #d6a52b) !important;
+  color: #172235 !important;
+}
+body:has(#admin-root) .admin-user-panel :is(.danger, .reject) {
+  background: #762d3d !important;
+}
+#admin-root :is(th,td) { border-color: #d6a52b44 !important; color: #f5fbff !important; }
+#admin-root :is(thead,thead tr,th) { background: #0b3550 !important; }
+#admin-root :is(tbody,tr,td) { background-color: #041b2c !important; }
+body:has([data-admin-deposit-form]) .page {
+  background: linear-gradient(145deg, #003346, #00131e 60%);
+  color: #f5fbff;
+  min-height: 100dvh;
+}
+body:has([data-admin-deposit-form]) :is(.page-header,.page-content) { background: transparent; color: #f5fbff; }
+body:has([data-admin-deposit-form]) :is(p,label,h1) { color: #f5fbff; }
+body:has([data-admin-deposit-form]) .button-red { background: linear-gradient(135deg,#ffe58a,#d6a52b); color: #172235; }

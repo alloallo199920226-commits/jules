@@ -1,0 +1,528 @@
+/* Page-specific adjustments made after checking the supplied non-lottery references. */
+
+/* Auth maquettes use comfortable pill fields; preserve native form and OTP behavior. */
+.ig-page.ig-register-page .ig-register-form .ig-field,
+.ig-page.ig-register-page .ig-register-form .ig-country-field,
+.ig-page.ig-register-page .ig-register-form .ig-country-field > button {
+  min-height: 44px;
+  height: 44px;
+}
+.ig-page.ig-register-page .ig-register-form .ig-country-wrap { margin-bottom: 8px; }
+.ig-page.ig-register-page .ig-register-form > .ig-field { margin-bottom: 8px; }
+.ig-page.ig-register-page .ig-register-form .ig-send {
+  min-height: 44px;
+  margin-block: 2px;
+}
+.ig-page.ig-login-page .ig-login-form .ig-login-submit { min-height: 58px; }
+.ig-page.ig-login-page .ig-login-form .ig-login-register { min-height: 48px; }
+
+/* The non-lottery Royal rails retain the same angular bezel with a real 44px hitbox. */
+.ayala-frame .royal-page:not(.lottery-page) .royal-toolbar-button {
+  width: 44px;
+  height: 44px;
+}
+.ayala-frame .royal-page:not(.lottery-page) .royal-toolbar {
+  grid-template-columns: 49px minmax(0,1fr) 49px;
+}
+
+/* Editorial mastheads echo the reference's ribbon and five-star center signature. */
+.ayala-frame:has(.industrial-notice) .industrial-brandline,
+.ayala-frame:has(.industrial-help) .industrial-brandline,
+.ayala-frame:has(.industrial-about) .industrial-brandline {
+  gap: 1px;
+}
+.ayala-frame:has(.industrial-notice) .industrial-brand-stars,
+.ayala-frame:has(.industrial-help) .industrial-brand-stars,
+.ayala-frame:has(.industrial-about) .industrial-brand-stars {
+  display: block;
+  margin-top: 2px;
+  color: #ffdf57;
+  font: 700 14px/.8 Georgia,serif;
+  letter-spacing: .18em;
+  text-shadow: 0 1px 3px #000,0 0 4px #e18e17;
+}
+.ayala-frame:has(.industrial-about) .industrial-about-content { padding-top: 12px; }
+.ayala-frame:has(.industrial-about) .industrial-mine-figure { height: 130px; }
+.ayala-frame:has(.industrial-notice) .industrial-notice-list {
+  gap: 8px;
+  padding-top: 8px;
+}
+.ayala-frame:has(.industrial-notice) .industrial-reference-note {
+  align-items: center;
+  gap: 7px;
+  padding: 5px 8px;
+  font-size: 9px;
+  line-height: 1.25;
+}
+.ayala-frame:has(.industrial-notice) .industrial-reference-note strong { font-size: 10px; }
+.ayala-frame:has(.industrial-notice) .industrial-notice-card {
+  min-height: 107px;
+  grid-template-columns: minmax(98px,31%) minmax(0,1fr) 42px;
+  gap: 8px;
+}
+.ayala-frame:has(.industrial-notice) .industrial-notice-art { height: 79px; }
+.ayala-frame:has(.industrial-notice) .industrial-notice-heading { font-size: 14px; }
+
+/* Help keeps its evidence note, but the illustrated advisor remains the visual lead. */
+.ayala-frame:has(.industrial-help) .industrial-availability-note {
+  align-items: center;
+  gap: 7px;
+  margin: 8px 4px 10px;
+  padding: 5px 8px;
+  font-size: 9px;
+  line-height: 1.3;
+}
+.ayala-frame:has(.industrial-help) .industrial-availability-note > svg { width: 15px; height: 15px; margin: 0; }
+.ayala-frame:has(.industrial-help) .industrial-service-list { gap: 9px; }
+.ayala-frame:has(.industrial-help) .industrial-service {
+  min-height: 108px;
+  grid-template-columns: 75px minmax(0,1fr) 40px;
+}
+.ayala-frame:has(.industrial-help) .industrial-reference-caption { font-size: 8px; }
+.ayala-frame:has(.industrial-help) .industrial-help::after {
+  display: block;
+  height: 112px;
+  margin-top: 9px;
+  background:
+    linear-gradient(180deg,#06172f00 0%,#06172f1c 60%,#06172f4d 100%),
+    url('/iamgold-industrial-art/help-mine.webp') left center / 59% 100% no-repeat,
+    url('/iamgold-industrial-art/help-refinery.webp') right center / 59% 100% no-repeat;
+  box-shadow: inset 0 2px 0 #d6ad4d55;
+  content: '';
+}
+.ayala-frame:has(.industrial-about) .industrial-about::after {
+  height: 92px;
+  background:
+    linear-gradient(180deg,#06172f00 0%,#06172f55 100%),
+    url('/iamgold-industrial-art/about-mine.webp') left center / 58% 100% no-repeat,
+    url('/iamgold-industrial-art/about-refinery.webp') right center / 58% 100% no-repeat;
+}
+
+/* Finance: the compact brand signature and title rail preserve the supplied dense form rhythm. */
+.ayala-frame:has(.finance-industrial) .finance-brand-stars {
+  display: block;
+  margin-top: 2px;
+  color: #ffdf57;
+  font: 700 14px/.8 Georgia,serif;
+  letter-spacing: .18em;
+  text-shadow: 0 1px 3px #000,0 0 4px #e18e17;
+}
+.ayala-frame:has(.finance-industrial) .finance-toolbar .finance-tool-button {
+  min-width: 44px;
+  min-height: 44px;
+}
+.ayala-frame:has(.finance-industrial) .finance-toolbar::before { inset-inline: 59px; }
+
+/* Account / profile imagery: use cropped, decorative bullion art, never baked UI. */
+.ayala-frame:has(.supreme-settings) .supreme-profile-portrait {
+  min-height: 112px;
+  padding-right: 54px;
+}
+.ayala-frame:has(.supreme-settings) .supreme-profile-portrait::after {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  bottom: 4px;
+  width: 56px;
+  height: 51px;
+  background: url('/iamgold-industrial-art/bullion.webp') center / contain no-repeat;
+  filter: drop-shadow(0 3px 4px #0009);
+  content: '';
+  pointer-events: none;
+}
+.ayala-frame:has(.supreme-settings) .supreme-avatar-copy { position: relative; z-index: 1; padding-right: 3px; }
+.ayala-frame:has(.supreme-account) .supreme-brand-stars {
+  position: relative;
+  z-index: 1;
+  margin-top: 1px;
+  color: #ffdf57;
+  font: 700 14px/.8 Georgia,serif;
+  letter-spacing: .18em;
+  text-shadow: 0 1px 3px #000,0 0 4px #e18e17;
+}
+.ayala-frame:has(.supreme-settings) .supreme-clear-photo { position: relative; z-index: 2; }
+
+/* At handset widths the account illustration belongs alongside the form, as in the reference. */
+@media (min-width: 370px) and (max-width: 469px) {
+  .ayala-frame .supreme-money-panel {
+    grid-template-columns: 76px minmax(0,1fr);
+    align-items: stretch;
+    column-gap: 7px;
+  }
+  .ayala-frame .supreme-money-art-column {
+    grid-column: 1;
+    grid-row: 1;
+    height: 100%;
+    min-height: 440px;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: visible;
+    border-right: 1px solid #d9a52e42;
+    border-bottom: 0;
+    background: radial-gradient(ellipse at 55% 55%,#c7922f2d,transparent 70%);
+  }
+  .ayala-frame .supreme-money-art-column img {
+    position: sticky;
+    top: 8px;
+    width: 103px;
+    height: 144px;
+    margin: 8px 0 0 -15px;
+  }
+  .ayala-frame .supreme-money-content { grid-column: 2; grid-row: 1; }
+  .ayala-frame .supreme-money-form { gap: 1px; }
+  .ayala-frame .supreme-money-form .supreme-label { gap: 5px; font-size: 12px; }
+  .ayala-frame .supreme-money-form .supreme-input { font-size: 15px; }
+  .ayala-frame .supreme-money-form .supreme-submit { width: 100%; min-height: 52px; padding-inline: 7px; font-size: 18px; }
+}
+
+/* Investments remain a strict vertical product stack at every viewport width. */
+.ayala-frame:has(.investment-shell) .investment-card-stack { grid-template-columns: minmax(0,1fr); }
+.ayala-frame:has(.investment-shell) .investment-card-scene { height: clamp(130px,33vw,220px); }
+.ayala-frame:has(.investment-shell) .investment-card-action { min-height: 54px; }
+
+@media (max-width: 390px) {
+  .ayala-frame:has(.industrial-notice) .industrial-notice-list { padding-inline: 8px; }
+  .ayala-frame:has(.industrial-notice) .industrial-notice-card {
+    min-height: 98px;
+    grid-template-columns: 82px minmax(0,1fr) 36px;
+    gap: 7px;
+  }
+  .ayala-frame:has(.industrial-notice) .industrial-notice-art { height: 71px; }
+  .ayala-frame:has(.industrial-help) .industrial-service { grid-template-columns: 62px minmax(0,1fr) 34px; gap: 7px; }
+  .ayala-frame:has(.industrial-help) .industrial-service-art { width: 59px; }
+  .ayala-frame:has(.industrial-about) .industrial-mine-figure { height: 105px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ayala-frame:has(.industrial-notice) *,
+  .ayala-frame:has(.industrial-help) *,
+  .ayala-frame:has(.industrial-about) *,
+  .ayala-frame:has(.investment-shell) *,
+  .ig-register-page *,
+  .ig-login-page * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Correct the reference-specific blank volume and retain scroll room above pinned nav. */
+.ayala-frame:has(.member-home-scroll) .ayala-scroll.member-home-scroll {
+  height: calc(100% - 113px - env(safe-area-inset-bottom, 0px));
+  padding-bottom: 22px;
+  scroll-padding-bottom: 22px;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-main .member-home-shortcuts {
+  min-height: 0;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-action-tray {
+  height: 98px;
+  min-height: 98px;
+}
+.ayala-frame:has(.member-home-scroll) .member-home-action-grid {
+  padding: 7px 10px 4px;
+}
+.ayala-frame:has(.member-home-scroll) .ig-hex-action-frame {
+  width: clamp(52px,14.5vw,61px);
+  height: clamp(52px,14.5vw,61px);
+}
+.ayala-frame:has(.member-home-scroll) .member-home-support-row { margin-bottom: 18px; }
+.ayala-frame:has(.member-account-scroll) .member-account-scroll {
+  padding-bottom: calc(205px + env(safe-area-inset-bottom, 0px));
+  scroll-padding-bottom: calc(205px + env(safe-area-inset-bottom, 0px));
+}
+
+/* The comparison mastheads use a single continuous panorama, never a logo tile over clipped scenes. */
+.ayala-frame:has(.royal-page) .royal-masthead {
+  height: 77px;
+  min-height: 77px;
+  padding: 0;
+  border: 0;
+  background: #06172f;
+}
+.ayala-frame:has(.royal-page) .royal-masthead::before,
+.ayala-frame:has(.royal-page) .royal-masthead::after { content: none; }
+.ayala-frame:has(.royal-page) .royal-masthead-panorama {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.ayala-frame .royal-page .royal-toolbar {
+  min-height: 50px;
+  height: 50px;
+  grid-template-columns: 49px minmax(0,1fr) 49px;
+  padding: 2px 9px;
+}
+.ayala-frame .royal-page .royal-toolbar-button {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+}
+.ayala-frame .royal-page .royal-toolbar h1 {
+  color: #fff;
+  font: italic 700 clamp(16px,4.5vw,20px)/1.1 'DM Sans',sans-serif;
+  letter-spacing: 0;
+  text-shadow: 0 1px 3px #000c;
+}
+
+/* Live SVG wheel stays foregrounded; the reference's real gift, bullion cart and pedestal sit behind it. */
+.ayala-frame .royal-page .lottery-scroll {
+  padding: 3px 10px calc(18px + env(safe-area-inset-bottom, 0px));
+}
+.ayala-frame .royal-page .lottery-main-card { margin-bottom: 4px; }
+.ayala-frame .royal-page .lottery-stage {
+  min-height: 0;
+  height: clamp(248px,67vw,278px);
+  margin: 0 -2px;
+  overflow: visible;
+  background:
+    radial-gradient(ellipse at 50% 58%,#9a6a253d 0%,#102b4638 50%,transparent 73%),
+    linear-gradient(130deg,transparent 15%,#21507438 16%,transparent 17% 83%,#21507438 84%,transparent 85%);
+}
+.ayala-frame .royal-page .lottery-stage::after { display: none; }
+.ayala-frame .royal-page .lottery-stage-art {
+  position: absolute;
+  z-index: 0;
+  bottom: 2px;
+  display: block;
+  width: clamp(91px,30vw,132px);
+  height: clamp(107px,36vw,158px);
+  object-fit: contain;
+  filter: drop-shadow(0 5px 5px #000a);
+  pointer-events: none;
+}
+.ayala-frame .royal-page .lottery-stage-gift { left: 0; }
+.ayala-frame .royal-page .lottery-stage-ore { right: 0; }
+.ayala-frame .royal-page .lottery-stage-pedestal {
+  position: absolute;
+  z-index: 0;
+  bottom: -3px;
+  left: 50%;
+  display: block;
+  width: 100%;
+  height: 55px;
+  transform: translateX(-50%);
+  object-fit: fill;
+  opacity: .96;
+  pointer-events: none;
+}
+.ayala-frame .royal-page .lottery-wheel-wrap {
+  z-index: 2;
+  width: min(64vw,252px);
+  margin: 0 auto;
+}
+.ayala-frame .royal-page .lottery-reference-caption {
+  position: relative;
+  z-index: 3;
+  margin: 0 auto 5px;
+  padding: 3px 7px;
+  font-size: 8px;
+  line-height: 1.25;
+}
+.ayala-frame .royal-page .lottery-invite {
+  min-height: 44px;
+  margin-top: 4px;
+}
+.ayala-frame .royal-page .lottery-rules {
+  margin-top: 6px;
+  padding: 6px 9px 2px;
+}
+.ayala-frame .royal-page .lottery-rules h2 {
+  margin-bottom: 3px;
+  font-size: 13px;
+  line-height: 1.15;
+}
+.ayala-frame .royal-page .lottery-rules h2 .iamgold-icon { width: 20px; height: 20px; }
+.ayala-frame .royal-page .lottery-rules p {
+  grid-template-columns: 25px minmax(0,1fr);
+  gap: 5px;
+  margin-bottom: 3px;
+  font-size: 9px;
+  line-height: 1.22;
+}
+.ayala-frame .royal-page .lottery-rules p b {
+  width: 24px;
+  height: 22px;
+}
+.ayala-frame .royal-page .lottery-records-card {
+  min-height: 0;
+  height: auto;
+  margin: 6px 0 3px;
+  padding: 0 7px 5px;
+  flex: 0 0 auto;
+}
+.ayala-frame .royal-page .lottery-tabs {
+  min-height: 44px;
+  height: 44px;
+}
+.ayala-frame .royal-page .lottery-tabs button {
+  min-height: 44px;
+  padding: 3px 6px;
+  font-size: 9px;
+}
+.ayala-frame .royal-page .lottery-records-content {
+  min-height: 0;
+  height: auto;
+  padding: 4px 3px;
+}
+.ayala-frame .royal-page .lottery-empty-art { display: none; }
+.ayala-frame .royal-page .lottery-empty {
+  display: flex;
+  min-height: 25px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #e8dfc5;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+}
+.ayala-frame .royal-page .lottery-record { min-height: 44px; }
+.ayala-frame .royal-page .ayala-support.ayala-support-inline {
+  min-height: 44px;
+  margin-top: 6px;
+  margin-bottom: 7px;
+}
+
+/* Full-bleed single-image header on editorial, profile and finance routes. */
+.ayala-frame .industrial-masthead-panorama,
+.ayala-frame .supreme-brand-panorama,
+.ayala-frame .finance-brand-panorama {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.ayala-frame .industrial-masthead {
+  min-height: 150px;
+  padding: 86px 0 7px;
+  background: #071a30;
+}
+.ayala-frame .industrial-masthead-panorama { height: 86px; }
+.ayala-frame .industrial-title-rail { margin-top: 0; }
+.ayala-frame .industrial-masthead::before {
+  inset: 0;
+  background: linear-gradient(0deg,#06172f7a 0%,transparent 50%);
+}
+.ayala-frame:has(.supreme-masthead) .supreme-masthead {
+  height: 90px;
+  min-height: 90px;
+  flex-basis: 90px;
+  padding: 0;
+  background: #071a30;
+}
+.ayala-frame:has(.finance-industrial) .finance-masthead {
+  height: 90px;
+  min-height: 90px;
+  flex-basis: 90px;
+  padding: 0;
+  background: #071a30;
+}
+.ayala-frame:has(.finance-industrial) .finance-masthead::before {
+  background: linear-gradient(0deg,#03152b45,transparent 60%);
+}
+.ayala-frame .ayala-head-btn,
+.ayala-frame .ayala-head-help,
+.ayala-frame .finance-tool-button,
+.ayala-frame .supreme-back,
+.ayala-frame .supreme-publish-help,
+.ayala-frame .industrial-back,
+.ayala-frame .royal-toolbar-button {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Mobile Money reference: wide dark controls and prominent, real transparent phone/plinth art. */
+.ayala-frame:has(.supreme-money-panel) .supreme-money-panel {
+  grid-template-columns: minmax(0,1fr);
+  column-gap: 0;
+}
+.ayala-frame:has(.supreme-money-panel) .supreme-money-art-column {
+  grid-column: 1;
+  grid-row: 1;
+  height: 224px;
+  min-height: 224px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-right: 0;
+  border-bottom: 1px solid #d9a52e65;
+  background: radial-gradient(ellipse at 50% 76%,#d29b3633,transparent 68%);
+}
+.ayala-frame:has(.supreme-money-panel) .supreme-money-art-column img {
+  position: relative;
+  top: 0;
+  width: 194px;
+  height: 235px;
+  margin: 0;
+  object-fit: contain;
+}
+.ayala-frame:has(.supreme-money-panel) .supreme-money-content { grid-column: 1; grid-row: 2; }
+.ayala-frame:has(.supreme-money-panel) .supreme-money-form .supreme-label {
+  margin-top: 10px;
+  font-size: 13px;
+}
+.ayala-frame:has(.supreme-money-panel) .supreme-input-wrap,
+.ayala-frame:has(.supreme-money-panel) .supreme-input {
+  min-height: 46px;
+  border: 1px solid #c49a43;
+  border-radius: 10px;
+  color: #f7f4e8;
+  background: linear-gradient(180deg,#123653,#081c31);
+  box-shadow: inset 0 1px 4px #0007,0 0 0 1px #d7b55820;
+}
+.ayala-frame:has(.supreme-money-panel) .supreme-input-wrap {
+  padding: 0 11px;
+}
+.ayala-frame:has(.supreme-money-panel) .supreme-input-wrap > svg { color: #e5c36b; }
+.ayala-frame:has(.supreme-money-panel) .supreme-input-wrap .supreme-input {
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #fff;
+  background: transparent;
+  font: 500 16px/1.2 'DM Sans',sans-serif;
+}
+.ayala-frame:has(.supreme-money-panel) .supreme-eye {
+  flex: 0 0 44px;
+  width: 44px;
+  min-height: 44px;
+  color: #f5df9a;
+}
+.ayala-frame:has(.supreme-money-panel) .supreme-input::placeholder {
+  color: #c2ced9;
+  opacity: 1;
+}
+.ayala-frame:has(.supreme-money-panel) .supreme-dropdown-trigger {
+  min-height: 48px;
+  color: #f8f5e9;
+  background: linear-gradient(180deg,#123653,#081c31);
+}
+.ayala-frame:has(.supreme-money-panel) .supreme-money-form .supreme-submit { width: 100%; }
+
+@media (max-width: 390px) {
+  .ayala-frame:has(.member-home-scroll) .member-home-action-tray { height: 94px; min-height: 94px; }
+  .ayala-frame:has(.supreme-money-panel) .supreme-money-art-column { height: 224px; min-height: 224px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ayala-frame .royal-page *,
+  .ayala-frame:has(.member-home-scroll) *,
+  .ayala-frame:has(.member-account-scroll) * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

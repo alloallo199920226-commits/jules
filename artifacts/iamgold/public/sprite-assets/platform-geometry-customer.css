@@ -1,0 +1,287 @@
+/* Customer instrument console: broad desktop frame, compact mobile field notes. */
+html[data-platform-theme="silver"] body.andship-home .app {
+  width: min(100%, 1180px) !important;
+  max-width: 1180px !important;
+  padding: 0 clamp(16px,3.2vw,38px) calc(110px + env(safe-area-inset-bottom)) !important;
+  border: 1px solid #cbd1d2 !important;
+  border-top: 0 !important;
+  border-radius: 0 0 18px 18px !important;
+  box-shadow: 0 16px 46px #28323615 !important;
+}
+html[data-platform-theme="silver"] body.andship-home .hero {
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 calc(-1 * clamp(16px,3.2vw,38px)) !important;
+  padding-inline: clamp(16px,3.2vw,38px) !important;
+  padding-bottom: 30px !important;
+  overflow: visible !important;
+  border-bottom: 1px solid #c1c8c9 !important;
+  background-image:
+    linear-gradient(90deg,#f1f2f1f4 0%,#f1f2f1e0 36%,#f1f2f18a 63%,#eef0f019 100%),
+    linear-gradient(0deg,#f1f2f1 0%,#f1f2f100 40%),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,center,68% 51% !important;
+}
+html[data-platform-theme="silver"] body.andship-home .home-topbar {
+  width: 100% !important;
+  max-width: 1100px !important;
+  height: 72px !important;
+  border-bottom: 1px solid #c9cecf8c;
+}
+html[data-platform-theme="silver"] body.andship-home .brand-mark,
+html[data-platform-theme="silver"] body.andship-home :is(.notice-trigger,.profile-shortcut) {
+  border-radius: 4px 12px 4px 12px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .hero-in {
+  width: min(100%,1100px) !important;
+  max-width: 1100px !important;
+  margin-top: 35px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .hero h1 {
+  width: min(520px,76%) !important;
+  font-size: clamp(34px,5.2vw,55px) !important;
+}
+html[data-platform-theme="silver"] body.andship-home .hero p {
+  width: min(390px,72%) !important;
+  font-size: 13px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .cta {
+  min-height: 44px !important;
+  border-radius: 3px 12px 3px 12px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .main {
+  max-width: 1100px !important;
+  margin: 18px auto 0 !important;
+}
+html[data-platform-theme="silver"] body.andship-home .balances {
+  grid-template-columns: repeat(4,minmax(0,1fr)) !important;
+  gap: 12px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .bal {
+  min-height: 112px !important;
+  padding: 14px !important;
+  grid-template-columns: 34px minmax(0,1fr) 10px !important;
+  border-radius: 3px 15px 3px 15px !important;
+  box-shadow: 0 5px 15px #28323612 !important;
+}
+html[data-platform-theme="silver"] body.andship-home .bal .round,
+html[data-platform-theme="silver"] body.andship-home .journey-icon {
+  border-radius: 3px 10px 3px 10px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .bal strong { font-size: 15px !important; }
+html[data-platform-theme="silver"] body.andship-home .ticker {
+  height: auto !important;
+  min-height: 38px;
+  padding-block: 8px !important;
+  border-radius: 3px 10px 3px 10px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .activity-heading {
+  margin-top: 24px !important;
+  padding-top: 15px;
+  border-top: 1px solid #d4d9da;
+}
+html[data-platform-theme="silver"] body.andship-home .activity-heading h2,
+html[data-platform-theme="silver"] body.andship-home .recent-heading h2,
+html[data-platform-theme="silver"] body.andship-home .feature-copy h2 {
+  font-family: var(--ag-serif) !important;
+}
+html[data-platform-theme="silver"] body.andship-home .feature-panel {
+  min-height: 200px !important;
+  grid-template-columns: minmax(220px,32%) 1fr !important;
+  border-radius: 4px 16px 4px 16px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .feature-image { min-height: 198px !important; }
+html[data-platform-theme="silver"] body.andship-home .feature-copy { padding: clamp(16px,3vw,30px) !important; }
+html[data-platform-theme="silver"] body.andship-home .feature-copy h2 { font-size: clamp(21px,3vw,29px) !important; }
+html[data-platform-theme="silver"] body.andship-home .actions {
+  max-width: 820px;
+  margin: 4px 0 20px auto !important;
+}
+html[data-platform-theme="silver"] body.andship-home .act {
+  min-height: 60px !important;
+  border-radius: 3px 12px 3px 12px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .journey-list {
+  border-radius: 4px 14px 4px 14px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .journey { min-height: 62px !important; }
+html[data-platform-theme="silver"] body.andship-home .sprite-global-nav {
+  width: min(calc(100vw - 24px),740px) !important;
+  border-radius: 5px 15px 5px 15px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .sprite-global-nav__item {
+  border-radius: 3px 9px 3px 9px !important;
+}
+html[data-platform-theme="silver"] body.andship-home .sprite-global-nav__item.is-active {
+  border-color: #d1d7d8 !important;
+  background: #e4e8e8 !important;
+}
+
+/* Server-injected customer navigation is shared across every customer template. */
+html[data-platform-theme="silver"] body:not(.andship-home) .sprite-global-nav {
+  width: min(calc(100vw - 24px), 740px) !important;
+  max-width: 740px !important;
+  border-radius: 5px 15px 5px 15px !important;
+  border-color: #bfc6c8 !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .sprite-global-nav .sprite-global-nav__item {
+  border-radius: 3px 9px 3px 9px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) .sprite-global-nav .sprite-global-nav__item.is-active {
+  color: #343c40 !important;
+  border-color: #d1d7d8 !important;
+  background: #e4e8e8 !important;
+  box-shadow: inset 0 1px #ffffffb0 !important;
+}
+html[data-platform-theme="silver"] body.andship-home #campaignPopup .campaign-popup {
+  border-radius: 4px 18px 4px 18px !important;
+}
+html[data-platform-theme="silver"] body.andship-home #campaignPopup :is(.campaign-panel,.campaign-list li,.campaign-banner,.community-button) {
+  border-radius: 3px 11px 3px 11px !important;
+}
+html[data-platform-theme="silver"] body.andship-home #campaignPopup .campaign-close {
+  border-radius: 3px 10px 3px 10px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.invite,.history-card,.product,.reward-card,.post-card,.transaction,.menu-item,
+  .tx,.summary,.balance,.withdrawal,.amount-card,.instructions,.rules-card,.calendar,.week-card,.status-card,.feature-panel,.privacy-note,.detail-card) {
+  border-radius: 4px 15px 4px 15px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.tabs,.actions,.filters,.filters-wrap) {
+  padding: 5px !important;
+  border-radius: 4px 12px 4px 12px !important;
+}
+html[data-platform-theme="silver"] body:not(.andship-home) :is(.tab,.filter,.action,.date-button,.amount) {
+  border-radius: 3px 9px 3px 9px !important;
+}
+html[data-platform-theme="silver"] body:has(.invite) .invite {
+  border-radius: 4px 16px 4px 16px !important;
+  display: grid !important;
+  height: auto !important;
+  min-height: 124px !important;
+  grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr) !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 14px !important;
+  overflow: visible !important;
+}
+html[data-platform-theme="silver"] body:has(.invite) .invite-intro {
+  min-width: 0 !important;
+  grid-template-columns: 34px minmax(0,1fr) !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+html[data-platform-theme="silver"] body:has(.invite) .invite-intro > :last-child {
+  min-width: 0 !important;
+}
+html[data-platform-theme="silver"] body:has(.invite) .invite h2 {
+  margin: 0 0 5px !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  line-height: 1.15 !important;
+}
+html[data-platform-theme="silver"] body:has(.invite) .invite p {
+  margin: 0 !important;
+  font-size: clamp(10px,2.7vw,11px) !important;
+  line-height: 1.35 !important;
+  overflow-wrap: anywhere;
+}
+html[data-platform-theme="silver"] body:has(.invite) .copy-list {
+  min-width: 0 !important;
+  gap: 7px !important;
+}
+html[data-platform-theme="silver"] body:has(.invite) .copy-row {
+  min-width: 0 !important;
+  min-height: 43px !important;
+  height: auto !important;
+  grid-template-columns: minmax(0,1fr) 56px !important;
+  gap: 5px !important;
+  border-radius: 3px 10px 3px 10px !important;
+}
+html[data-platform-theme="silver"] body:has(.invite) .copy-row > div {
+  min-width: 0 !important;
+  overflow: hidden;
+}
+html[data-platform-theme="silver"] body:has(.invite) .copy-row :is(small,strong) {
+  overflow-wrap: anywhere;
+}
+html[data-platform-theme="silver"] body:has(.invite) .copy-row .copy {
+  min-width: 0 !important;
+  min-height: 32px !important;
+  border-radius: 3px 8px 3px 8px !important;
+}
+html[data-platform-theme="silver"] body:has(.invite) .stats .stat {
+  border-radius: 3px 13px 3px 13px !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .panel {
+  border-radius: 4px 18px 4px 18px !important;
+}
+html[data-platform-theme="silver"] body:has(.history-card) .history-card {
+  border-radius: 3px 14px 3px 14px !important;
+}
+html[data-platform-theme="silver"] body:has(.instructions) :is(.amount-card,.instructions),
+html[data-platform-theme="silver"] body:has(.withdraw) :is(.withdraw,.wallet,.advice) {
+  border-radius: 4px 15px 4px 15px !important;
+}
+@media (min-width: 768px) {
+  html[data-platform-theme="silver"] body:not(.andship-home) :is(.hero,.promo,.brands,.santa) {
+    min-height: 230px !important;
+  }
+}
+@media (max-width: 767px) {
+  html[data-platform-theme="silver"] body.andship-home .app {
+    padding-inline: 14px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+  html[data-platform-theme="silver"] body.andship-home .hero {
+    height: auto !important;
+    min-height: 0 !important;
+    margin-inline: -14px !important;
+    padding-inline: 14px !important;
+    padding-bottom: 24px !important;
+  }
+  html[data-platform-theme="silver"] body.andship-home .hero-in { margin-top: 24px !important; }
+  html[data-platform-theme="silver"] body.andship-home .balances {
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+    gap: 9px !important;
+  }
+  html[data-platform-theme="silver"] body.andship-home .bal {
+    min-height: 88px !important;
+    padding: 10px !important;
+    grid-template-columns: 29px minmax(0,1fr) 8px !important;
+  }
+  html[data-platform-theme="silver"] body.andship-home .bal .round { width: 29px !important; height: 29px !important; }
+  html[data-platform-theme="silver"] body.andship-home .feature-panel {
+    grid-template-columns: 34% minmax(0,1fr) !important;
+    min-height: 154px !important;
+  }
+  html[data-platform-theme="silver"] body.andship-home .feature-image { min-height: 152px !important; }
+  html[data-platform-theme="silver"] body.andship-home .actions { margin-inline: 0 !important; }
+}
+@media (max-width: 380px) {
+  html[data-platform-theme="silver"] body.andship-home .app { padding-inline: 11px !important; }
+  html[data-platform-theme="silver"] body.andship-home .hero {
+    height: auto !important;
+    margin-inline: -11px !important;
+    padding-inline: 12px !important;
+    padding-bottom: 22px !important;
+  }
+  html[data-platform-theme="silver"] body.andship-home .bal {
+    grid-template-columns: 26px minmax(0,1fr) 7px !important;
+    gap: 6px !important;
+    padding: 8px 7px !important;
+  }
+  html[data-platform-theme="silver"] body.andship-home .bal .round { width: 26px !important; height: 26px !important; }
+  html[data-platform-theme="silver"] body.andship-home .act { min-height: 49px !important; }
+  html[data-platform-theme="silver"] body:has(.invite) .invite {
+    grid-template-columns: minmax(0,1fr) !important;
+    gap: 10px !important;
+    padding: 13px !important;
+  }
+  html[data-platform-theme="silver"] body:has(.invite) .invite-intro {
+    grid-template-columns: 34px minmax(0,1fr) !important;
+  }
+  html[data-platform-theme="silver"] body:has(.invite) .copy-row {
+    grid-template-columns: minmax(0,1fr) 52px !important;
+  }
+}

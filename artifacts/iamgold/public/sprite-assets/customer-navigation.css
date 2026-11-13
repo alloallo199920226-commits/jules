@@ -1,0 +1,312 @@
+/* A photographic modern drone, not the old catalogue grid. */
+.sprite-global-nav .sprite-global-nav__item .sprite-global-nav__drone {
+  display: block !important;
+  width: 32px !important;
+  height: 26px !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+  content: normal !important;
+  filter: none !important;
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+/* Sprite customer navigation — sculpted liquid-glass silhouette */
+:root {
+  --sprite-nav-height: clamp(76px, 18.3vw, 180px);
+  --sprite-nav-width: min(calc(100vw - 18px), 980px);
+  --sprite-nav-dock: clamp(46px, 10.8vw, 106px);
+  --sprite-nav-bottle: clamp(100px, 23.5vw, 230px);
+  --sprite-nav-bottle-floor: clamp(25px, 6vw, 59px);
+  --sprite-nav-safe: env(safe-area-inset-bottom, 0px);
+}
+
+.sprite-global-nav,
+.sprite-global-nav * {
+  box-sizing: border-box;
+}
+
+body .sprite-global-nav {
+  position: fixed !important;
+  z-index: 999 !important;
+  left: 50% !important;
+  bottom: var(--sprite-nav-safe) !important;
+  transform: translateX(-50%);
+  isolation: isolate;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .82fr) minmax(0, 1fr) minmax(0, 1fr) !important;
+  grid-template-rows: minmax(0, 1fr) !important;
+  grid-template-areas: "home products dock team profile" !important;
+  grid-auto-flow: row !important;
+  grid-auto-rows: 0 !important;
+  align-items: stretch !important;
+  width: var(--sprite-nav-width) !important;
+  height: var(--sprite-nav-height) !important;
+  margin: 0 !important;
+  padding: 0 2.4% 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #f2fff1;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  animation: sprite-nav-arrive 720ms cubic-bezier(.2,.8,.2,1) both;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body .sprite-global-nav__silhouette {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 7px 11px #001d13b8) drop-shadow(0 0 8px #36ee7952);
+  pointer-events: none;
+}
+
+body .sprite-global-nav__glass {
+  fill: url(#sprite-nav-glass);
+  fill-opacity: .86;
+  stroke: #9bffc18c;
+  stroke-width: 1.1;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 2px 2px #a7ffcf35);
+}
+
+/* Blur only the sculpted glass, never fill the open space around the bottle. */
+body .sprite-global-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background: #004b3326;
+  -webkit-backdrop-filter: blur(18px) saturate(1.35);
+  backdrop-filter: blur(18px) saturate(1.35);
+  -webkit-mask: url("/sprite-assets/customer-nav-glass-mask.svg") center / 100% 100% no-repeat;
+  mask: url("/sprite-assets/customer-nav-glass-mask.svg") center / 100% 100% no-repeat;
+}
+
+body .sprite-global-nav__rim {
+  fill: none;
+  stroke: url(#sprite-nav-edge);
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+  opacity: .76;
+  filter: drop-shadow(0 0 3px #6dff9e73);
+}
+
+body .sprite-global-nav__well {
+  fill: url(#sprite-nav-well);
+  stroke: none;
+  vector-effect: non-scaling-stroke;
+  filter: none;
+  opacity: .9;
+}
+
+body .sprite-global-nav__reflection {
+  position: absolute;
+  z-index: -1;
+  top: 2%;
+  left: 2.5%;
+  width: 95%;
+  height: 43%;
+  border-radius: 50% 50% 40% 40% / 65% 65% 25% 25%;
+  background:
+    radial-gradient(ellipse at 50% 5%, #e4ffe73b, transparent 57%),
+    linear-gradient(180deg, #d8ffe92b 0%, #83ffb410 23%, transparent 78%);
+  opacity: .82;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+body .sprite-global-nav__dock {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: var(--sprite-nav-bottle-floor);
+  width: var(--sprite-nav-dock);
+  height: var(--sprite-nav-dock);
+  transform: translateX(-50%);
+  border: 1px solid #adffb9a8;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 48% 13%, #c0ffca57, transparent 37%),
+    radial-gradient(ellipse at 50% 45%, #43ff7960, #073d2bd9 67%, #001f19 100%);
+  box-shadow:
+    0 0 18px #46ff837d,
+    0 7px 13px #001d15b8,
+    inset 0 3px 5px #d0ffd25c,
+    inset 0 -8px 12px #001e19d9;
+  pointer-events: none;
+}
+
+body .sprite-global-nav__bottle {
+  position: absolute !important;
+  z-index: 2;
+  left: 50% !important;
+  bottom: var(--sprite-nav-bottle-floor) !important;
+  width: auto !important;
+  height: var(--sprite-nav-bottle) !important;
+  max-width: 22% !important;
+  object-fit: contain !important;
+  transform: translateX(-50%);
+  transform-origin: 50% 90%;
+  filter: drop-shadow(0 7px 8px #001b13d9) drop-shadow(0 0 8px #87ff856b) !important;
+  pointer-events: none;
+  animation: sprite-bottle-settle 850ms 140ms cubic-bezier(.2,.75,.25,1) both, sprite-bottle-breathe 7s 1s ease-in-out infinite;
+}
+
+body .sprite-global-nav__item {
+  position: relative !important;
+  z-index: 3;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-self: stretch;
+  align-self: end !important;
+  grid-row: 1 / 2 !important;
+  min-width: 0 !important;
+  min-height: 44px !important;
+  height: clamp(52px, 12vw, 118px) !important;
+  gap: clamp(2px, .65vw, 7px) !important;
+  margin: 0 !important;
+  padding: clamp(3px, .8vw, 8px) 2px clamp(5px, 1.1vw, 11px) !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  color: #f2fff1 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font: 700 clamp(12px, 1.55vw, 16px)/1.1 "Trebuchet MS", "Avenir Next", sans-serif !important;
+  letter-spacing: -.025em;
+  text-align: center !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: transform 180ms ease, background-color 180ms ease, filter 180ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body .sprite-global-nav__item:is([data-nav-key="home"], [href="/accueil_produits_coca_cola/code.html"]) {
+  grid-area: home !important;
+}
+body .sprite-global-nav__item:is([data-nav-key="products"], [href="/produits_vip_investissement/code.html"]) {
+  grid-area: products !important;
+}
+body .sprite-global-nav__item:is([data-nav-key="team"], [href="/quipe_profil_utilisateur/code.html"]) {
+  grid-area: team !important;
+}
+body .sprite-global-nav__item:is([data-nav-key="profile"], [href="/profil_utilisateur_le_mien/code.html"]) {
+  grid-area: profile !important;
+}
+
+body .sprite-global-nav__item svg {
+  display: block;
+  position: relative;
+  width: clamp(24px, 3.5vw, 38px) !important;
+  height: clamp(24px, 3.5vw, 38px) !important;
+  flex: none;
+  color: #f4fff2;
+  filter: drop-shadow(0 2px 3px #001d13ad);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+body .sprite-global-nav__item span {
+  position: relative;
+  z-index: 1;
+  color: inherit !important;
+  font: inherit !important;
+}
+
+body .sprite-global-nav__item:is([data-nav-key="team"], [href="/quipe_profil_utilisateur/code.html"]) svg {
+  color: #ffd34d;
+}
+
+body .sprite-global-nav__item:is([data-nav-key="profile"], [href="/profil_utilisateur_le_mien/code.html"]) svg {
+  color: #d69aff;
+}
+
+body .sprite-global-nav__item.is-active {
+  border-color: #a4ff9875 !important;
+  background: radial-gradient(ellipse at 50% 14%, #45ff8666, transparent 73%), linear-gradient(145deg, #0cbd68e8, #05864fd9 72%, #04543ee8) !important;
+  box-shadow: 0 3px 15px #24ed765c, inset 0 2px 2px #e0ffd178, inset 0 -3px 8px #00472e85 !important;
+  filter: saturate(1.12);
+}
+
+body .sprite-global-nav__item.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: clamp(3px, .65vw, 7px);
+  left: 35%;
+  width: 30%;
+  height: 3px;
+  border-radius: 4px;
+  background: #eaff8b;
+  box-shadow: 0 0 8px #dfff7cba;
+}
+
+body .sprite-global-nav__item:hover svg,
+body .sprite-global-nav__item.is-active svg {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 2px 5px #b2ffae6e);
+}
+
+body .sprite-global-nav__item:active {
+  transform: scale(.96);
+}
+
+body .sprite-global-nav__item:focus-visible {
+  z-index: 4;
+  outline: 2px solid #f0ff9a !important;
+  outline-offset: -3px !important;
+}
+
+/* Keep page content, forms and final controls clear of the glass edge. */
+body {
+  padding-bottom: calc(var(--sprite-nav-height) + var(--sprite-nav-bottle) - var(--sprite-nav-bottle-floor) + 18px + var(--sprite-nav-safe)) !important;
+}
+
+.app,
+.profile-app,
+.page {
+  padding-bottom: calc(var(--sprite-nav-height) + var(--sprite-nav-bottle) - var(--sprite-nav-bottle-floor) + 18px + var(--sprite-nav-safe)) !important;
+}
+
+@keyframes sprite-nav-arrive {
+  from { opacity: 0; transform: translate(-50%, 16px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes sprite-bottle-settle {
+  from { opacity: 0; transform: translate(-50%, 9px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes sprite-bottle-breathe {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -2px); }
+}
+
+@media (max-width: 380px) {
+  body .sprite-global-nav {
+    width: calc(100vw - 10px) !important;
+    padding-right: 1.5% !important;
+    padding-left: 1.5% !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .sprite-global-nav,
+  body .sprite-global-nav__bottle {
+    animation: none !important;
+  }
+
+  body .sprite-global-nav__item,
+  body .sprite-global-nav__item svg {
+    transition: none !important;
+  }
+}

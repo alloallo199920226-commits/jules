@@ -1,0 +1,683 @@
+/* IAMGOLD material and geometry tokens — shared by the live member routes. */
+:root {
+  --ig-midnight: #07172e;
+  --ig-industrial: #102b4b;
+  --ig-sapphire: #17436b;
+  --ig-champagne: #eacb78;
+  --ig-metal-gold: #c99532;
+  --ig-bright-gold: #ffd978;
+  --ig-platinum: #f7f8fa;
+  --ig-silver: #dce3ea;
+  --ig-metal-sheen: linear-gradient(112deg,#fff3c4 0%,#e8c76e 20%,#c38d2d 43%,#8c5f1d 58%,#f8df9a 77%,#b98324 100%);
+  --ig-blue-enamel: linear-gradient(145deg,#17436b 0%,#102b4b 52%,#07172e 100%);
+  --ig-pearl: linear-gradient(145deg,#fff 0%,#edf0f3 55%,#dce3ea 100%);
+  --ig-metal-line: linear-gradient(100deg,#7b531c,#fff1ad 19%,#bd8527 46%,#ffe8a0 70%,#7e561d);
+  --ig-material-shadow: 0 10px 24px rgb(7 23 46 / 20%), inset 0 1px 0 rgb(255 255 255 / 22%);
+}
+
+html, body { background: #e9edf1; }
+.ayala-frame {
+  --blue: var(--ig-industrial);
+  --action: var(--ig-metal-gold);
+  --ink: #10243b;
+  --muted: #69798a;
+  --page: #edf0f3;
+  --gold: var(--ig-metal-gold);
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+}
+.ayala-canvas { background: var(--page); }
+.ayala-card {
+  border-color: #d7dfe7;
+  background: var(--ig-platinum);
+  box-shadow: 0 7px 20px rgb(7 23 46 / 8%), inset 0 1px 0 #fff;
+}
+.ayala-header {
+  background: var(--ig-midnight);
+  box-shadow: inset 0 -1px 0 rgb(234 203 120 / 35%);
+  color: var(--ig-platinum);
+  font-family: 'Manrope', sans-serif;
+}
+.ayala-bottom {
+  right: 7px;
+  bottom: calc(4px + env(safe-area-inset-bottom));
+  left: 7px;
+  height: 68px;
+  padding: 0 4px;
+  border: 1px solid #b38835;
+  border-radius: 38px;
+  background: linear-gradient(180deg,#173756 0%,#0b1f37 52%,#07172e 100%);
+  box-shadow: 0 7px 21px rgb(0 0 0 / 28%),inset 0 1px 0 rgb(255 239 187 / 32%),inset 0 -2px 0 rgb(0 0 0 / 35%);
+}
+.ayala-nav-item {
+  position: relative;
+  z-index: 0;
+  height: 60px;
+  gap: 3px;
+  color: #c4cfda;
+  font-size: 11px;
+  font-weight: 600;
+  transition: color .2s ease, transform .2s ease;
+}
+.ayala-nav-item::before {
+  position: absolute;
+  z-index: -1;
+  inset: 5px 7px 3px;
+  border: 1px solid transparent;
+  border-radius: 15px 15px 19px 19px;
+  background: transparent;
+  content: "";
+  transition: background-color .22s ease, border-color .22s ease, transform .22s ease;
+}
+.ayala-nav-item.active { color: #fff8e3; }
+.ayala-nav-item.active::before {
+  border-color: #f4d780;
+  background: linear-gradient(150deg,#ffe9a0 0%,#d6a944 28%,#956620 54%,#e9c56a 77%,#8b611e 100%);
+  box-shadow: inset 0 1px 0 #fff4c8, inset 0 -4px 7px rgb(70 42 7 / 38%), 0 4px 13px rgb(0 0 0 / 26%);
+  transform: translateY(-2px);
+}
+.ayala-nav-item.active .ayala-nav-icon { color: #102b4b; }
+.ayala-nav-item.active .ayala-nav-icon svg { filter: drop-shadow(0 1px 0 rgb(255 255 255 / 48%)); }
+.ayala-nav-icon { height: 27px; }
+.ayala-nav-item.active .ayala-nav-icon { width: 38px; height: 32px; background: transparent; }
+.ayala-gift {
+  width: 36px;
+  height: 30px;
+  border-color: rgb(234 203 120 / 50%);
+  background: linear-gradient(145deg,#234969,#102b4b);
+  color: var(--ig-bright-gold);
+}
+.ayala-support {
+  border: 1px solid #e6c96e;
+  background: linear-gradient(145deg,#244a69,#102b4b 60%,#07172e);
+  color: #fff2c4;
+  box-shadow: 0 8px 20px rgb(7 23 46 / 27%), inset 0 1px 0 rgb(255 255 255 / 20%);
+}
+.ayala-canvas:has(.ayala-support)::after {
+  border-top-color: rgb(201 149 50 / 38%);
+  background: linear-gradient(100deg,#edf0f3,#f8f9fa 55%,#e6eaee);
+  color: #65778a;
+}
+.ayala-modal-scrim { background: rgb(7 23 46 / 68%); }
+.ayala-modal {
+  border-color: rgb(234 203 120 / 40%);
+  background: #f7f8fa;
+  box-shadow: 0 24px 72px rgb(7 23 46 / 38%);
+}
+.ayala-modal-close { color: var(--ig-industrial); }
+.ayala-soft-button {
+  border-color: var(--ig-industrial);
+  background: linear-gradient(145deg,#17436b,#102b4b 65%,#07172e);
+  color: #fff5d5;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%),0 5px 14px rgb(7 23 46 / 16%);
+}
+.ayala-soft-button:hover { background: #07172e; }
+.ayala-frame button:focus-visible, .ayala-frame a:focus-visible {
+  outline-color: #d3a642;
+}
+
+/* The account screen follows the supplied mobile composition, with live data. */
+.ayala-frame:has(.member-account-scroll) {
+  --support-space: 0px;
+  width: min(100%, 480px);
+  border-inline: 1px solid rgb(201 149 50 / 22%);
+  box-shadow: 0 0 60px rgb(7 23 46 / 14%);
+}
+.member-account-scroll {
+  background:
+    radial-gradient(ellipse at 50% 27%,rgb(23 67 107 / 28%),transparent 47%),
+    linear-gradient(180deg,#112e4e 0%,#0c2340 63%,#102b4b 100%);
+  padding-bottom: 18px;
+  scrollbar-width: none;
+}
+.member-account-scroll::-webkit-scrollbar { display: none; }
+.account-industrial-hero {
+  position: relative;
+  height: auto;
+  aspect-ratio: 852 / 292;
+  overflow: hidden;
+  background: #07172e;
+  box-shadow: inset 0 -18px 28px rgb(7 23 46 / 45%);
+}
+.account-industrial-hero::after {
+  position: absolute;
+  inset: 0;
+  border-bottom: 1px solid rgb(234 203 120 / 55%);
+  background: linear-gradient(180deg,rgb(7 23 46 / 2%) 48%,rgb(7 23 46 / 35%) 100%);
+  content: "";
+  pointer-events: none;
+}
+.account-industrial-hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.member-account-scroll .ayala-profile-banner {
+  position: relative;
+  min-width: 0;
+  z-index: 1;
+  height: auto;
+  min-height: 96px;
+  margin: 0;
+  padding: 13px 13px 10px;
+  border: 0;
+  border-radius: 22px 22px 13px 13px;
+  background:
+    radial-gradient(ellipse at 4% 0%,rgb(61 105 140 / 50%),transparent 50%),
+    linear-gradient(145deg,#173b5d 0%,#102b4b 58%,#07172e 100%);
+  color: #f7f8fa;
+  box-shadow: inset 0 1px 0 rgb(255 245 202 / 37%), inset 0 -8px 16px rgb(0 0 0 / 20%);
+}
+.account-identity-shell {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  gap: 3px;
+  margin: -1px 9px 9px;
+  padding: 1px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg,#f7df91,#96691f 20%,#ffe8a2 43%,#a87924 70%,#f4d980) border-box,
+    linear-gradient(145deg,#173b5d,#07172e) padding-box;
+  box-shadow: 0 8px 21px rgb(0 0 0 / 27%),0 0 13px rgb(232 191 84 / 18%),inset 0 1px 0 rgb(255 255 255 / 20%);
+}
+.member-account-scroll .ayala-profile-banner::before,
+.member-income::before,
+.member-promo::before {
+  position: absolute;
+  inset: 1px;
+  border: 1px solid rgb(255 236 176 / 18%);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+}
+.member-account-scroll .ayala-profile-row {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) 42px 42px;
+  gap: 10px;
+  min-width: 0;
+  min-height: 57px;
+}
+.member-account-scroll .ayala-avatar {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  border: 1px solid #f5d979;
+  border-radius: 13px;
+  background: linear-gradient(145deg,#1c4a69,#0a1d34);
+  color: #f7dc90;
+  font: 700 27px/1 'Manrope',sans-serif;
+  box-shadow: inset 0 1px 5px rgb(255 255 255 / 14%),0 4px 10px rgb(0 0 0 / 27%);
+}
+.member-account-scroll .ayala-avatar img { display:block; width:100%; height:100%; object-fit:cover; }
+.member-profile-identity { min-width: 0; flex: 1; }
+.member-account-scroll .ayala-member { overflow: hidden; color: #fff; font: 700 17px/1.2 'Manrope',sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+.member-account-scroll .ayala-subline { margin-top: 3px; color: #d1d9e0; font-size: 12px; line-height: 1.45; font-variant-numeric: tabular-nums; }
+.member-account-scroll .member-account-id { color: #bcc9d5; font-size: 10px; letter-spacing: .015em; }
+.member-account-scroll .ayala-profile-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border: 1px solid #d3ad5b;
+  border-radius: 13px;
+  background: linear-gradient(145deg,#1c4261,#0b1f37);
+  color: #f4d778;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 23%),0 3px 8px rgb(0 0 0 / 26%);
+  cursor: pointer;
+}
+.member-account-scroll .member-locked {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 7px 0 0 63px;
+  color: #c1ccd6;
+  font-size: 11px;
+  letter-spacing: .015em;
+}
+.account-status-mark { width: 7px; height: 7px; border: 1px solid #e5ca75; border-radius: 50%; background: #203b53; }
+.account-vip-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 67px minmax(0, 1fr) 54px;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100px;
+  margin: 0;
+  padding: 11px 11px 12px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 13px 13px 22px 22px;
+  background:
+    radial-gradient(ellipse at 83% 52%,rgb(29 82 125 / 68%),transparent 42%),
+    linear-gradient(145deg,#16446c,#0c2848 56%,#07172e);
+  color: #f7f8fa;
+  text-align: left;
+  box-shadow: inset 0 1px 0 rgb(255 248 211 / 25%),inset 0 -9px 18px rgb(0 0 0 / 22%);
+  cursor: pointer;
+}
+.account-vip-card::after {
+  position: absolute;
+  top: -42px;
+  right: 66px;
+  width: 128px;
+  height: 178px;
+  border: 1px solid rgb(230 195 103 / 16%);
+  transform: rotate(37deg);
+  content: "";
+  pointer-events: none;
+}
+.account-vip-copy { position: relative; z-index: 1; display: flex; min-width: 0; flex: 1 1 auto; flex-direction: column; gap: 4px; }
+.account-vip-kicker { color: #e3c36c; font-size: 9px; font-weight: 700; letter-spacing: .18em; }
+.account-vip-title { font: 700 16px/1.2 'Manrope',sans-serif; }
+.account-vip-title b { color: #f0d68a; font-weight: 700; }
+.account-vip-caption { max-width: 252px; color: #c5d0da; font-size: 9px; line-height: 1.35; }
+.account-vip-art { position: relative; display: flex; align-items: center; justify-content: center; color: #e8c766; }
+.account-diamond-left { width: 67px; height: 74px; flex: 0 0 67px; }
+.account-gift-right { width: 54px; height: 70px; flex: 0 0 54px; }
+.account-vip-art .iamgold-icon { filter: drop-shadow(0 4px 3px rgb(0 0 0 / 54%)); }
+.account-diamond-art { position: absolute; left: 5px; top: 17px; width: 58px; height: 54px; color: #e6edf2; }
+.account-gift-art { position:relative; width:48px; height:48px; color:#f2d37c; filter:drop-shadow(0 4px 3px rgb(0 0 0 / 50%)); }
+.account-crown { position: absolute; top: 0; left: 26px; color: #ffd978; filter: drop-shadow(0 2px 3px rgb(0 0 0 / 42%)); }
+.account-vip-track { display:block; width:min(100%,190px); height:7px; margin-top:2px; overflow:hidden; border:1px solid rgb(212 225 238 / 35%); border-radius:8px; background:linear-gradient(180deg,#223e59,#182f47); box-shadow:inset 0 1px 3px rgb(0 0 0 / 35%); }
+.account-vip-track i { display:block; width:100%; height:100%; border-radius:inherit; background:linear-gradient(180deg,#46627b,#354e66); }
+.account-vip-edge { display:none; }
+.member-account-main { padding: 12px 9px calc(20px + env(safe-area-inset-bottom)); }
+.member-account-main .ayala-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 2px;
+  min-height: 139px;
+  margin: 0;
+  padding: 16px 7px 12px;
+  border: 1px solid #f7f8fa;
+  border-radius: 24px;
+  background: var(--ig-pearl);
+  text-align: center;
+  box-shadow: 0 9px 19px rgb(0 0 0 / 22%),inset 0 1px 0 #fff,inset 0 -2px 0 #d8dfe5;
+}
+.member-account-main .member-shortcut {
+  display: flex;
+  min-width: 0;
+  min-height: 105px;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+  padding: 2px 1px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: #11243a;
+  cursor: pointer;
+}
+.account-action-plate {
+  position: relative;
+  display: grid;
+  width: clamp(55px,14vw,72px);
+  height: clamp(55px,14vw,72px);
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #d9b95e;
+  border-radius: 17px;
+  background:
+    linear-gradient(135deg,transparent 0 42%,rgb(255 239 186 / 9%) 42% 46%,transparent 46%),
+    linear-gradient(145deg,#244e70 0%,#102b4b 55%,#07172e 100%);
+  color: #f7d779;
+  box-shadow: 0 5px 8px rgb(7 23 46 / 29%),inset 0 1px 0 rgb(255 255 255 / 34%),inset 0 -4px 7px rgb(0 0 0 / 34%);
+  transition: transform .2s ease,filter .2s ease;
+}
+.account-action-plate::before { position:absolute; inset:4px; border:1px solid rgb(255 231 157 / 27%); border-radius:12px; content:""; pointer-events:none; }
+.account-action-plate .iamgold-icon { width:40px; height:40px; filter:drop-shadow(0 2px 2px rgb(0 0 0 / 45%)); }
+.member-shortcut:hover .account-action-plate { transform: translateY(-2px); filter: brightness(1.08); }
+.member-account-main .ayala-shortcut-label {
+  display: block;
+  max-width: 100%;
+  color: #12263c;
+  font-size: clamp(10px,2.8vw,12px);
+  font-weight: 700;
+  line-height: 1.18;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.member-account-main .member-income {
+  position: relative;
+  min-height: 118px;
+  margin: 10px 0 0;
+  padding: 12px 17px 13px;
+  overflow: hidden;
+  border: 1px solid #e2c264;
+  border-radius: 23px;
+  background:
+    radial-gradient(ellipse at 84% 0%,rgb(212 157 51 / 27%),transparent 43%),
+    linear-gradient(145deg,#143959,#0e2846 55%,#07172e);
+  color: #f8f8f6;
+  box-shadow: 0 8px 17px rgb(0 0 0 / 22%),inset 0 1px 0 rgb(255 243 196 / 34%),inset 0 -5px 14px rgb(0 0 0 / 28%);
+}
+.account-income-heading { position: relative; display: flex; align-items: center; justify-content: space-between; min-height: 34px; }
+.member-account-main .member-income > .account-income-heading strong { color: #f8f8f6; font: 700 19px/1.15 'Manrope',sans-serif; }
+.account-income-art { position:absolute; top:-13px; right:12%; color:#e6c361; filter:drop-shadow(0 4px 4px rgb(0 0 0 / 52%)); opacity:.88; }
+.account-income-art .ig-icon-gold-fill { stroke:#795516; }
+.member-account-main .member-income-links {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  margin-top: 6px;
+}
+.member-account-main .member-income-links button {
+  min-width: 0;
+  min-height: 52px;
+  padding: 3px 10px 0 0;
+  color: #f1f4f6;
+  text-align: left;
+}
+.member-account-main .member-income-links button + button { padding-left: 15px; border-left: 1px solid rgb(216 227 237 / 35%); }
+.member-account-main .member-income-links span { color:#d6dfe7; font-size:10px; line-height:1.3; }
+.member-account-main .member-income-links b { margin-top:0; color:#f5d983; font:700 20px/1.1 'Manrope',sans-serif; }
+.member-account-main .member-income-links small { display:block; margin-top:2px; color:#afbdca; font-size:9px; line-height:1.25; }
+.member-promo-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:10px; }
+.member-promo-grid .member-promo {
+  position:relative;
+  min-width:0;
+  min-height:116px;
+  padding:13px 68px 12px 13px;
+  overflow:hidden;
+  border:1px solid #d9b759;
+  border-radius:20px;
+  background:linear-gradient(145deg,#17436b 0%,#102b4b 58%,#07172e 100%);
+  color:#f5f7f9;
+  box-shadow:0 7px 14px rgb(0 0 0 / 24%),inset 0 1px 0 rgb(255 243 193 / 31%),inset 0 -5px 12px rgb(0 0 0 / 24%);
+}
+.member-promo-grid .member-promo::after {
+  position:absolute;
+  right:-20px;
+  bottom:-37px;
+  width:116px;
+  height:92px;
+  border:1px solid rgb(234 203 120 / 26%);
+  border-radius:50%;
+  content:"";
+  pointer-events:none;
+}
+.member-promo-grid .member-promo b { position:relative; z-index:1; display:block; max-width:140px; font:700 15px/1.18 'Manrope',sans-serif; }
+.member-promo-grid .member-promo small { position:relative; z-index:1; display:block; margin-top:7px; color:#d3dce4; font-size:10px; line-height:1.35; }
+.member-promo-grid .member-promo > .account-promo-art {
+  position:absolute;
+  z-index:1;
+  top:50%;
+  right:5px;
+  display:grid;
+  width:61px;
+  height:67px;
+  place-items:center;
+  transform:translateY(-50%);
+  border:1px solid rgb(243 209 119 / 60%);
+  border-radius:18px;
+  background:linear-gradient(145deg,#204c6b,#102a48 65%,#091b31);
+  color:#f1cf71;
+  filter:drop-shadow(0 5px 4px rgb(0 0 0 / 30%));
+  box-shadow:inset 0 1px 0 rgb(255 255 255 / 22%);
+}
+.account-promo-art .iamgold-icon { filter:drop-shadow(0 2px 2px rgb(0 0 0 / 52%)); }
+.member-promo-grid .promo-1 > .account-promo-art { width:68px; height:74px; border:0; background:transparent; }
+.member-promo-grid .promo-1 > .account-promo-art .iamgold-icon { width:68px; height:68px; }
+.account-promo-orbit { display:none; }
+.member-account-main .member-services {
+  min-height:0;
+  margin:10px 0 0;
+  padding:13px 12px 11px;
+  overflow:hidden;
+  border:1px solid #ddbd64;
+  border-radius:22px;
+  background:linear-gradient(145deg,#17436b,#102b4b 59%,#07172e);
+  color:#f8f8f6;
+  box-shadow:0 8px 16px rgb(0 0 0 / 24%),inset 0 1px 0 rgb(255 245 204 / 34%);
+}
+.member-account-main .member-services h2 {
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:0 2px 10px;
+  padding:0;
+  border:0;
+  color:#f4d783;
+  font:700 15px/1.25 'Manrope',sans-serif;
+}
+.account-service-mark { display:grid; width:28px; height:28px; place-items:center; color:#f2d177; }
+.member-account-main .member-service-links {
+  gap:0;
+  overflow:hidden;
+  border:1px solid #ced6df;
+  border-radius:14px;
+  background:var(--ig-pearl);
+  box-shadow:inset 0 1px 0 #fff;
+}
+.member-account-main .member-service-links button {
+  display:flex;
+  min-height:42px;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:0 12px;
+  color:#102b4b;
+  font-size:12px;
+  font-weight:650;
+}
+.member-account-main .member-service-links button + button { border-top:1px solid #d6dce2; }
+.member-account-main .member-service-links button > span { display:flex; align-items:center; gap:10px; }
+.member-account-main .member-service-links button > span svg { color:#b08429; }
+.member-account-main .member-service-links button > svg { flex:0 0 auto; color:#66788b; }
+.ayala-canvas:has(.member-account-scroll)::after { display:none; }
+.ayala-canvas:has(.member-account-scroll) { background: var(--ig-midnight); }
+.account-support-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 12px 12px;
+}
+.ayala-frame:has(.member-account-scroll) .ayala-support {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  flex: 0 0 auto;
+  margin: 0;
+  min-height: 44px;
+}
+.member-account-scroll button { touch-action: manipulation; }
+
+/* Cross-route color/material harmony, leaving transaction-history status colors intact. */
+.ayala-frame:not(:has(.financial-history-page)) .ayala-scroll,
+.ayala-frame:not(:has(.financial-history-page)) .finance-scroll,
+.ayala-frame:not(:has(.financial-history-page)) .settings-scroll,
+.ayala-frame:not(:has(.financial-history-page)) .vip-scroll,
+.ayala-frame:not(:has(.financial-history-page)) .about-scroll {
+  scrollbar-color: #c5a04d transparent;
+}
+.ayala-frame:not(:has(.financial-history-page)) .ayala-main,
+.ayala-frame:not(:has(.financial-history-page)) .finance-screen,
+.ayala-frame:not(:has(.financial-history-page)) .settings-page,
+.ayala-frame:not(:has(.financial-history-page)) .about-scroll,
+.ayala-frame:not(:has(.financial-history-page)) .vip-scroll {
+  background-color: var(--ig-paper);
+}
+.ayala-frame:not(:has(.financial-history-page)) .ayala-head-btn,
+.ayala-frame:not(:has(.financial-history-page)) .ayala-head-help,
+.ayala-frame:not(:has(.financial-history-page)) .finance-head-action {
+  border-color: rgb(234 203 120 / 35%);
+  background: linear-gradient(145deg,#244767,#102b4b);
+  color: #f6df9d;
+}
+.ayala-frame:not(:has(.financial-history-page)):not(:has(.member-account-scroll)) .ayala-card {
+  border-color: #d5dde5;
+  box-shadow: 0 7px 22px rgb(7 23 46 / 7%),inset 0 1px 0 #fff;
+}
+.ayala-frame:has(.member-account-scroll) .ayala-canvas::after {
+  background: linear-gradient(100deg, #102b4b, #07172e);
+  color: #dce3ea;
+}
+.ayala-frame:not(:has(.financial-history-page)) .finance-card,
+.ayala-frame:not(:has(.financial-history-page)) .team-stat-card,
+.ayala-frame:not(:has(.financial-history-page)) .team-members-card {
+  border-color: #d5dde5;
+  box-shadow: 0 7px 22px rgb(7 23 46 / 7%);
+}
+.ayala-frame:not(:has(.financial-history-page)) .finance-primary,
+.ayala-frame:not(:has(.financial-history-page)) .settings-confirm,
+.ayala-frame:not(:has(.financial-history-page)) .team-copy-button,
+.ayala-frame:not(:has(.financial-history-page)) .team-level-card {
+  background: linear-gradient(145deg,#17436b,#102b4b 58%,#07172e);
+  color: #fff5d7;
+}
+.ayala-frame:not(:has(.financial-history-page)) .team-status-active { background:#e4e9ee; color:#33485b; }
+.ayala-frame:not(:has(.financial-history-page)) .team-status-inactive { background:#f1ead9; color:#785f31; }
+.ayala-frame:not(:has(.financial-history-page)) .team-status-unknown { background:#e8edf1; color:#54677a; }
+.ayala-frame:not(:has(.financial-history-page)) .finance-amount-chip.selected { border-color:#c99532; background:#f3e8c9; color:#173b5b; }
+.ayala-frame:not(:has(.financial-history-page)) .finance-tabbar button.active { color:#102b4b; }
+.ayala-frame:not(:has(.financial-history-page)) .finance-tabbar button.active::after { background:#c99532; }
+.ayala-frame:not(:has(.financial-history-page)) .help-background { background:#e9edf1; }
+.ayala-frame:not(:has(.financial-history-page)) .help-icon,
+.ayala-frame:not(:has(.financial-history-page)) .settings-security-icon {
+  background:linear-gradient(145deg,#17436b,#102b4b);
+  color:#f3d47e;
+}
+.ayala-frame:not(:has(.financial-history-page)) .settings-password-wrap .finance-input:focus,
+.ayala-frame:not(:has(.financial-history-page)) .finance-input:focus,
+.ayala-frame:not(:has(.financial-history-page)) .settings-input:focus { border-color:#c99532; }
+.ayala-frame:not(:has(.financial-history-page)) .team-query-error,
+.ayala-frame:not(:has(.financial-history-page)) .team-inline-error { border-color:#d9c797; background:#faf8f1; }
+
+/* Replace legacy bright-blue/purple member skin with the shared enamel palette. */
+.ayala-frame:not(:has(.financial-history-page)) .member-home-shortcuts,
+.ayala-frame:not(:has(.financial-history-page)) .member-home-section,
+.ayala-frame:not(:has(.financial-history-page)) .member-missions,
+.ayala-frame:not(:has(.financial-history-page)) .member-post,
+.ayala-frame:not(:has(.financial-history-page)) .member-publish,
+.ayala-frame:not(:has(.financial-history-page)) .team-activity,
+.ayala-frame:not(:has(.financial-history-page)) .team-invitation-section,
+.ayala-frame:not(:has(.financial-history-page)) .team-overview-levels,
+.ayala-frame:not(:has(.financial-history-page)) .team-members-card {
+  border-color:#d5dde5;
+  background:linear-gradient(145deg,#fbfcfd,#edf1f4);
+  box-shadow:0 7px 22px rgb(7 23 46 / 7%),inset 0 1px 0 #fff;
+}
+.ayala-frame:not(:has(.financial-history-page)) .member-home-shortcuts button,
+.ayala-frame:not(:has(.financial-history-page)) .member-home-section,
+.ayala-frame:not(:has(.financial-history-page)) .member-missions,
+.ayala-frame:not(:has(.financial-history-page)) .team-activity,
+.ayala-frame:not(:has(.financial-history-page)) .team-invitation-section,
+.ayala-frame:not(:has(.financial-history-page)) .team-overview-levels {
+  color:#102b4b;
+}
+.ayala-frame:not(:has(.financial-history-page)) .member-home-shortcuts span,
+.ayala-frame:not(:has(.financial-history-page)) .member-activity-icon,
+.ayala-frame:not(:has(.financial-history-page)) .team-title-icon,
+.ayala-frame:not(:has(.financial-history-page)) .team-code-symbol,
+.ayala-frame:not(:has(.financial-history-page)) .team-empty-state > span {
+  border:1px solid #d5b65f;
+  background:linear-gradient(145deg,#244b69,#102b4b 64%,#07172e);
+  color:#f2d47b;
+  box-shadow:inset 0 1px 0 rgb(255 255 255 / 20%),0 4px 9px rgb(7 23 46 / 17%);
+}
+.ayala-frame:not(:has(.financial-history-page)) .member-invite-row {
+  border:1px solid #d6e0e8;
+  background:#e8edf2;
+  color:#9a7429;
+}
+.ayala-frame:not(:has(.financial-history-page)) .member-invite-row > div,
+.ayala-frame:not(:has(.financial-history-page)) .member-activity small { color:#62758a; }
+.ayala-frame:not(:has(.financial-history-page)) .member-invite-row button,
+.ayala-frame:not(:has(.financial-history-page)) .member-activity button {
+  border:1px solid #e0c66f;
+  background:linear-gradient(145deg,#17436b,#102b4b 60%,#07172e);
+  color:#fff1c2;
+  box-shadow:inset 0 1px 0 rgb(255 255 255 / 18%),0 4px 9px rgb(7 23 46 / 15%);
+}
+.ayala-frame:not(:has(.financial-history-page)) .member-mission-banner,
+.ayala-frame:not(:has(.financial-history-page)) .member-forum-banner {
+  background:radial-gradient(ellipse at 90% 0%,rgb(37 82 119 / 75%),transparent 45%),linear-gradient(145deg,#17436b,#102b4b 54%,#07172e);
+  color:#f7f8fa;
+  box-shadow:inset 0 -1px 0 rgb(234 203 120 / 45%);
+}
+.ayala-frame:not(:has(.financial-history-page)) .member-mission-banner > p { color:#d8e1e9; }
+.ayala-frame:not(:has(.financial-history-page)) .member-mission-banner > svg { color:#f0d173; }
+.ayala-frame:not(:has(.financial-history-page)) .member-mission-row > svg { border-color:#d9c16d; color:#b88a2f; }
+.ayala-frame:not(:has(.financial-history-page)) .member-mission-row article {
+  border:1px solid #d5dde5;
+  background:#f8fafb;
+  box-shadow:0 3px 10px rgb(7 23 46 / 6%);
+}
+.ayala-frame:not(:has(.financial-history-page)) .member-mission-row article > div > span:last-child { color:#65778a; }
+.ayala-frame:not(:has(.financial-history-page)) .member-forum-rules {
+  border-color:#d7bd70;
+  background:linear-gradient(145deg,#fbfaf6,#f1ead7);
+}
+.ayala-frame:not(:has(.financial-history-page)) .member-forum-rules > b,
+.ayala-frame:not(:has(.financial-history-page)) .member-forum-rules strong { color:#8f6b25; }
+.ayala-frame:not(:has(.financial-history-page)) .member-forum-rules p { color:#65778a; }
+.ayala-frame:not(:has(.financial-history-page)) .member-publish textarea,
+.ayala-frame:not(:has(.financial-history-page)) .member-image-picker {
+  border-color:#d5dde5;
+  background:#f4f7f9;
+  color:#788a9b;
+}
+.ayala-frame:not(:has(.financial-history-page)) .team-level-card {
+  border-color:#bd9a4a;
+  background:linear-gradient(145deg,#17436b,#102b4b 58%,#07172e);
+  color:#f7f8fa;
+}
+.ayala-frame:not(:has(.financial-history-page)) .team-level-2,
+.ayala-frame:not(:has(.financial-history-page)) .team-level-3 { background:linear-gradient(145deg,#1a486d,#102b4b 60%,#07172e); }
+.ayala-frame:not(:has(.financial-history-page)) .team-level-rate,
+.ayala-frame:not(:has(.financial-history-page)) .team-level-count b,
+.ayala-frame:not(:has(.financial-history-page)) .team-level-active b { color:#fff4d2; }
+.ayala-frame:not(:has(.financial-history-page)) .team-level-rebate,
+.ayala-frame:not(:has(.financial-history-page)) .team-level-count small,
+.ayala-frame:not(:has(.financial-history-page)) .team-level-active small { color:#d0dbe4; }
+.ayala-frame:not(:has(.financial-history-page)) .team-chevron { color:#f0d278; }
+.ayala-frame:not(:has(.financial-history-page)) .team-members-title { border-color:#d5dde5; }
+.ayala-frame:not(:has(.financial-history-page)) .team-members-title h2 { color:#102b4b; }
+.ayala-frame:not(:has(.financial-history-page)) .team-member-row { border-color:#dfe5ea; }
+.ayala-frame:not(:has(.financial-history-page)) .team-member-identity strong { color:#102b4b; }
+.ayala-frame:not(:has(.financial-history-page)) .team-member-identity small { color:#69798a; }
+.ayala-frame:not(:has(.financial-history-page)) .team-member-avatar-fallback { background:#e4ebf1; color:#102b4b; }
+.ayala-frame:not(:has(.financial-history-page)) .team-status-active { background:#e7edf2; color:#3c5368; }
+.ayala-frame:not(:has(.financial-history-page)) .team-status-inactive { background:#f3ead6; color:#7a5d25; }
+.ayala-frame:not(:has(.financial-history-page)) .team-status-unknown { background:#e8edf1; color:#54677a; }
+.ayala-frame:not(:has(.financial-history-page)) .team-pagination { color:#5e7184; }
+.ayala-frame:not(:has(.financial-history-page)) .team-pagination button { border-color:#d7bd70; background:#f3eee1; color:#173d5b; }
+.ayala-frame:not(:has(.financial-history-page)) .team-level-card .team-medal b { color:#4e421f; }
+.iamgold-not-found { background:#e9edf1!important; color:#102b4b!important; }
+.iamgold-not-found > div { border:1px solid #d5dde5; background:#f7f8fa; box-shadow:0 12px 30px rgb(7 23 46 / 10%); }
+.iamgold-not-found svg { color:#a47c2c!important; }
+.iamgold-not-found h1 { color:#102b4b!important; }
+.iamgold-not-found p { color:#61758a!important; }
+
+@media (min-width: 620px) {
+  .member-account-main { padding-right: 12px; padding-left: 12px; }
+}
+@media (max-width: 359px) {
+  .member-account-scroll .ayala-profile-row { gap:7px; }
+  .member-account-scroll .ayala-profile-icon { width:38px; height:38px; flex-basis:38px; }
+  .member-account-main .member-shortcut { gap:6px; }
+  .account-action-plate { border-radius:14px; }
+  .member-account-main .member-promo { padding-right:61px; }
+  .member-account-main .member-promo > .account-promo-art { right:2px; width:55px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ayala-frame *,
+  .ayala-frame *::before,
+  .ayala-frame *::after {
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}

@@ -1,0 +1,65 @@
+/* The same four real destinations as the approved home, without bottle ornaments. */
+html[data-platform-theme="silver"] .sprite-global-nav {
+  --sprite-nav-height: 66px;
+  --sprite-nav-dock: 0px;
+  --sprite-nav-bottle: 0px;
+  --sprite-nav-bottle-floor: 0px;
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: space-around !important;
+  left: 50% !important;
+  bottom: max(6px, env(safe-area-inset-bottom)) !important;
+  width: min(calc(100vw - 20px), 560px) !important;
+  height: 64px !important;
+  gap: 2px !important;
+  padding: 5px 7px !important;
+  overflow: hidden !important;
+  border: 1px solid #c7ccce !important;
+  border-radius: 19px !important;
+  background: #f8f9f8f2 !important;
+  color: #697378 !important;
+  box-shadow: 0 6px 24px #313a3f25 !important;
+  backdrop-filter: blur(12px) !important;
+  animation: none !important;
+}
+html[data-platform-theme="silver"] .sprite-global-nav::before,
+html[data-platform-theme="silver"] .sprite-global-nav :is(
+  .sprite-global-nav__silhouette, .sprite-global-nav__reflection,
+  .sprite-global-nav__dock, .sprite-global-nav__bottle
+) { display: none !important; }
+html[data-platform-theme="silver"] .sprite-global-nav .sprite-global-nav__item {
+  display: flex !important;
+  flex: 1 1 0 !important;
+  align-self: stretch !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 3px 2px !important;
+  gap: 3px !important;
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  color: #697378 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  font: 600 9px/1 "Trebuchet MS", sans-serif !important;
+}
+html[data-platform-theme="silver"] .sprite-global-nav .sprite-global-nav__item svg {
+  width: 18px !important;
+  height: 18px !important;
+  color: inherit !important;
+  filter: none !important;
+}
+html[data-platform-theme="silver"] .sprite-global-nav .sprite-global-nav__item.is-active {
+  color: #343c40 !important;
+  border-color: #d8dcdd !important;
+  background: #e9ebeb !important;
+}
+html[data-platform-theme="silver"] .sprite-global-nav .sprite-global-nav__item.is-active::after {
+  background: #707a7e !important;
+  box-shadow: none !important;
+}
+@media (max-width: 380px) {
+  html[data-platform-theme="silver"] .sprite-global-nav { width: calc(100vw - 12px) !important; }
+}

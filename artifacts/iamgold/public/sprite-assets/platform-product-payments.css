@@ -1,0 +1,349 @@
+/* Recharge and withdrawal forms. Photo remains on header/summary, not in inputs. */
+html[data-platform-theme="silver"] body:has(.amount-card) .app,
+html[data-platform-theme="silver"] body:has(.withdraw) .app {
+  color: #30373a !important;
+  background: #f2f3f3 !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .hero,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .hero {
+  min-height: 220px !important;
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f3 0%,#f2f3f3df 46%,#f2f3f386 78%,#eef0f020),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 49% !important;
+  background-size: cover !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .hero::before,
+html[data-platform-theme="silver"] body:has(.amount-card) .app .hero::after,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .hero::before,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .hero::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app :is(.hero-in,.hero h1,.hero p,.trust,.slogan),
+html[data-platform-theme="silver"] body:has(.withdraw) .app :is(.hero-in,.hero h1,.hero p,.trust,.slogan) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .slogan,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .slogan {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app :is(.card,.amount-card,.instructions),
+html[data-platform-theme="silver"] body:has(.withdraw) .app :is(.card,.withdraw,.advice) {
+  color: #30373a !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 14px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 5px 16px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app :is(.card,.amount-card,.instructions)::before,
+html[data-platform-theme="silver"] body:has(.amount-card) .app .instructions::after,
+html[data-platform-theme="silver"] body:has(.withdraw) .app :is(.card,.withdraw,.advice)::before,
+html[data-platform-theme="silver"] body:has(.withdraw) .app :is(.advice,.withdraw)::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app :is(.title,.title small,.notice,.step,.sign),
+html[data-platform-theme="silver"] body:has(.withdraw) .app :is(.title,.title small,.notice,.step,.sign,.calculation,.read) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .title,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .title {
+  border-color: #cbd1d3 !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .amounts .amount {
+  color: #485256 !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 9px !important;
+  background: #f0f1f1 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .amounts .amount.active {
+  color: #fff !important;
+  border-color: #596367 !important;
+  background: #485256 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app :is(.input,.amount-field,.phone) {
+  color: #30373a !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app :is(.input input,.amount-field input,.phone input) {
+  color: #30373a !important;
+  background: transparent !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .confirm,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .confirm {
+  min-height: 48px !important;
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  border-radius: 12px !important;
+  background: #485256 !important;
+  box-shadow: 0 4px 12px #2932361c !important;
+  clip-path: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .confirm:disabled,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .confirm:disabled,
+html[data-platform-theme="silver"] body.operator-selection .submit:disabled {
+  color: #687276 !important;
+  border-color: #d3d8da !important;
+  background: #e5e7e8 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .bottles,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .bottles {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .bottom,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .bottom {
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 16px 16px 0 0 !important;
+  background: #f6f7f6f2 !important;
+  box-shadow: 0 -3px 18px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .bottom .nav,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .bottom .nav {
+  color: #596367 !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.amount-card) .app .bottom .nav.active,
+html[data-platform-theme="silver"] body:has(.withdraw) .app .bottom .nav.active {
+  color: #30373a !important;
+  background: #e5e7e8 !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .app .balance {
+  min-height: 76px !important;
+  height: auto !important;
+  color: #30373a !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 14px !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f3f4f4f4,#f1f2f2df 52%,#f1f2f28e 78%,#eef0f020),
+    url("/sprite-assets/andship-silver-camera-reference.webp") !important;
+  background-position: center,84% 48% !important;
+  background-size: cover,auto 190% !important;
+  box-shadow: 0 4px 14px #29323612 !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .app .balance::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .app .wallet {
+  color: #414b4f !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 12px !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .app .wallet :is(strong,small,.chev) {
+  color: #414b4f !important;
+}
+html[data-platform-theme="silver"] body:has(.withdraw) .app :is(.notice,.advice .notice) {
+  color: #414b4f !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 10px !important;
+  background: #f3f4f4 !important;
+}
+
+/* GOPAY channel picker and instruction states. */
+html[data-platform-theme="silver"] body.operator-selection,
+html[data-platform-theme="silver"] body.payment-instructions {
+  min-height: 100dvh !important;
+  color: #30373a !important;
+  background: #e5e7e8 !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) .transaction-banner {
+  color: #30373a !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2 0%,#f2f3f3db 47%,#f2f3f384 76%,#eef0f020),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 49% !important;
+  background-size: cover !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) .transaction-banner::before,
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) .transaction-banner::after {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) .banner-timer {
+  color: #414b4f !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) :is(.expiry-label,.countdown b) {
+  color: #414b4f !important;
+  border-color: #cbd1d3 !important;
+  border-radius: 5px !important;
+  background: #f8f9f8ed !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) .box {
+  color: #30373a !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 16px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 8px 24px #29323618 !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body.operator-selection :is(.intro,.amount,.amount b,.label,.phone span,.channel strong) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body.operator-selection .channel {
+  color: #414b4f !important;
+  border: 1px solid #cbd1d3 !important;
+  border-radius: 11px !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body.operator-selection .channel.selected {
+  border: 2px solid #596367 !important;
+  background: #eef0f0 !important;
+  box-shadow: 0 0 0 2px #cbd1d3 !important;
+}
+html[data-platform-theme="silver"] body.operator-selection :is(.phone,.phone input) {
+  color: #30373a !important;
+  border-color: #cbd1d3 !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body.operator-selection .submit,
+html[data-platform-theme="silver"] body.payment-instructions .pay-link {
+  color: #fff !important;
+  border: 1px solid #596367 !important;
+  border-radius: 12px !important;
+  background: #485256 !important;
+  box-shadow: 0 4px 12px #2932361c !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) :is(.merchant-card,.paid-card) {
+  color: #414b4f !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 11px !important;
+  background: #f3f4f4 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) :is(.merchant-card label,.merchant-card b,.account b,.ussd,.manual-pay-message) {
+  color: #414b4f !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) .manual-pay-message {
+  border-color: #d3d8da !important;
+  background: #f3f4f4 !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) .language {
+  filter: none !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) :is(.status-badge[data-status="success"],.paid-row b.reported) {
+  color: #17623d !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) .status-badge[data-status="pending"] {
+  color: #805a17 !important;
+}
+html[data-platform-theme="silver"] body:is(.operator-selection,.payment-instructions) :is(.warning,.error,.details .error) {
+  color: #9b302b !important;
+  border-color: #e9c7c3 !important;
+  background: #f8e9e7 !important;
+}
+
+/* Checkout provider. Stripe and language images are explicitly excluded from styling. */
+html[data-platform-theme="silver"] body.sprite-checkout {
+  color: #30373a !important;
+  background: #e5e7e8 !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout::before,
+html[data-platform-theme="silver"] body.sprite-checkout::after,
+html[data-platform-theme="silver"] body.sprite-checkout .reference-edge-art {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout .checkout-shell {
+  color: #30373a !important;
+  background: transparent !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout .checkout-header {
+  color: #414b4f !important;
+  border-color: #cbd1d3 !important;
+  background: #f2f3f3 !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout .checkout-header :is(.brand-label,.secure-label) {
+  color: #414b4f !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout .intro {
+  color: #30373a !important;
+  border-radius: 16px !important;
+  background-color: #e5e7e8 !important;
+  background-image:
+    linear-gradient(90deg,#f2f3f3f2,#f2f3f3db 50%,#f2f3f381 78%,#eef0f020),
+    url("/sprite-assets/andship-silver-drone-studio.webp") !important;
+  background-position: center,68% 49% !important;
+  background-size: cover !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.hero-art,.hero-halo,.security-art) {
+  display: none !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout .intro :is(.eyebrow,.eyebrow i,h1,h1 span,p) {
+  color: #30373a !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.checkout-card,.order-summary,.assurance-card,.help-card) {
+  color: #30373a !important;
+  border: 1px solid #d3d8da !important;
+  border-radius: 16px !important;
+  background: #fbfbfa !important;
+  box-shadow: 0 5px 18px #29323612 !important;
+  backdrop-filter: none !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.order-summary,.assurance-card) :is(span,strong,p,small) {
+  color: #414b4f !important;
+  text-shadow: none !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.assurance-top,.assurance-symbol,.assurance-point,.assurance-brand) {
+  color: #596367 !important;
+  border-color: #d3d8da !important;
+  background-color: #eceeee !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.text-field,.phone-field,.amount-field) {
+  color: #30373a !important;
+  border-color: #cbd1d3 !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.field-label,.field-help) {
+  color: #596367 !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout .notice-error,
+html[data-platform-theme="silver"] body.sprite-checkout .flow-message[data-tone="error"],
+html[data-platform-theme="silver"] body.sprite-checkout .challenge-error {
+  color: #9b302b !important;
+  border-color: #e9c7c3 !important;
+  background: #f8e9e7 !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.notice-blocked,.real-test-warning,.slow-warning,.flow-message[data-tone="warning"]) {
+  color: #805a17 !important;
+  border-color: #e8d9b5 !important;
+  background: #f7f0df !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout :is(.success-mark,.success-view .eyebrow) {
+  color: #17623d !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout:has(#payment-view:not([hidden]) #success-view:not([hidden])) {
+  color: #30373a !important;
+  background: #e5e7e8 !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout:has(#payment-view:not([hidden]) #success-view:not([hidden])) .intro {
+  min-height: 80px !important;
+  height: 80px !important;
+}
+html[data-platform-theme="silver"] body.sprite-checkout:has(#payment-view:not([hidden]) #success-view:not([hidden])) .intro::before,
+html[data-platform-theme="silver"] body.sprite-checkout:has(#payment-view:not([hidden]) #success-view:not([hidden])) .intro::after {
+  display: none !important;
+}

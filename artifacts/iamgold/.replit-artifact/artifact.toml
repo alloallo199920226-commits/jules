@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Inscription IAMGOLD"
+description = "Reproduction fidèle de la page d’inscription mobile fournie en référence, avec formulaire et notification."
+version = "1.0.0"
+id = "artifacts/iamgold"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18714
+
+[services.development]
+run = "pnpm --filter @workspace/iamgold run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/iamgold", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/iamgold/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18714"
+BASE_PATH = "/"

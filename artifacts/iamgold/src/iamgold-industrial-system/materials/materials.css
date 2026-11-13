@@ -1,0 +1,15 @@
+:root {
+  --ig-midnight: #07172e;
+  --ig-industrial-navy: #0b2443;
+  --ig-deep-sapphire: #123b65;
+  --ig-champagne: #e9c778;
+  --ig-metallic-gold: #d5a33b;
+  --ig-bright-gold: #ffd978;
+  --ig-platinum: #f7f8fa;
+  --ig-silver-metal: #dce3ea;
+  --ig-home-ground: #0a1b31;
+  --ig-home-blue-sheen: linear-gradient(142deg,#204c70 0%,#123352 45%,#07172e 100%);
+  --ig-home-gold-sheen: linear-gradient(118deg,#fff1b5 0%,#d6ad4e 22%,#875d19 43%,#f6d982 64%,#a87520 82%,#fff0ae 100%);
+  --ig-home-platinum: linear-gradient(155deg,#fbfcfd 0%,#e1e6eb 48%,#c9d1d9 100%);
+  --ig-home-shadow: 0 7px 16px rgb(0 0 0 / 38%), inset 0 1px 0 rgb(255 255 255 / 24%);
+}

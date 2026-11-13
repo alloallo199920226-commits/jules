@@ -1,0 +1,60 @@
+.admin-trace-dialog {
+  box-sizing: border-box; width: min(980px, 96vw); max-height: 92dvh; overflow: auto;
+  margin: auto; padding: 22px; background: #032432; color: #f1fbff;
+  border: 1px solid #39bacb; border-radius: 20px; box-shadow: 0 20px 90px #0009;
+  font: 15px/1.5 system-ui, sans-serif;
+}
+.admin-trace-dialog::backdrop {background: #00101de8}
+.admin-trace-dialog header {display:flex; justify-content:space-between; gap:12px; align-items:start}
+.admin-trace-dialog h2 {margin: 3px 0 12px; font-size: 23px}
+.admin-trace-dialog small,.admin-trace-dialog dt {color:#a9d6df}
+.admin-trace-dialog p {color:#d2e6ee}
+.admin-trace-dialog button,[data-user-trace] {
+  padding: 11px 16px; border:1px solid #389aad; border-radius:10px;
+  color:#f5fbff; background:#074355; cursor:pointer; font:inherit;
+}
+.admin-trace-dialog button:disabled {opacity:.45;cursor:default}
+.admin-trace-dialog button:focus-visible,.admin-trace-dialog input:focus-visible,.admin-trace-dialog select:focus-visible {outline:2px solid #13eced;outline-offset:2px}
+.trace-filters {display:grid;grid-template-columns:1fr 1fr 1.5fr auto;gap:12px;align-items:end;margin:20px 0}
+.trace-filters label {display:grid;gap:6px;min-width:0}
+.admin-trace-dialog .trace-filters input,.admin-trace-dialog .trace-filters select {
+  box-sizing:border-box;width:100%;min-width:0;padding:12px;border:1px solid #548794;
+  border-radius:9px;background:#001c29!important;color:#fff!important;
+  -webkit-text-fill-color:#fff!important;font:inherit;opacity:1;
+}
+.admin-trace-dialog input::placeholder {color:#b1cbd5!important;-webkit-text-fill-color:#b1cbd5!important}
+.trace-card {border:1px solid #397888;border-radius:14px;padding:18px;margin:14px 0;background:#062b3b}
+.trace-card h3 {display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0;font-size:17px}
+.trace-card h3 strong {color:#35f0df}
+.trace-card dl {display:grid;grid-template-columns:1fr 1fr;gap:0 24px;margin-bottom:0}
+.trace-card dl>div {padding:9px 0;border-top:1px solid #245064;min-width:0}
+.trace-card dt {font-size:12px}
+.trace-card dd {margin:2px 0 0;overflow-wrap:anywhere;color:#fff}
+.trace-card .trace-note {font-size:12px;border-top:1px solid #245064;padding-top:10px}
+.admin-trace-dialog footer {display:flex;justify-content:space-between;gap:12px}
+[data-user-trace] {display:block;width:100%;margin-bottom:18px}
+.admin-user-ledger {min-width:0;color:#f1fbff}
+.admin-user-ledger>p,.admin-user-ledger .trace-card p {color:#d2e6ee;overflow-wrap:anywhere;line-height:1.5}
+.admin-user-ledger .trace-inline-card {padding:15px}
+.trace-inline-card h4 {display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin:0;font-size:16px;color:#fff}
+.trace-inline-card h4 strong {color:#35f0df;white-space:nowrap}
+.admin-user-ledger .trace-entry-date {font-size:12px;color:#a9d6df}
+.admin-user-ledger .trace-origin,.admin-user-ledger .trace-calculation {font-size:14px}
+.admin-user-ledger details {margin-top:12px;border-top:1px solid #397888;padding-top:10px}
+.admin-user-ledger summary {color:#53f1ed;cursor:pointer;line-height:1.5}
+.admin-user-ledger summary:focus-visible {outline:2px solid #13eced;outline-offset:3px}
+.admin-user-ledger details>.trace-card {padding:0;border:0;background:transparent;margin-bottom:0}
+.admin-user-ledger dt {color:#a9d6df}
+.admin-user-ledger dd {color:#fff}
+.admin-user-ledger .trace-card dl {grid-template-columns:1fr}
+.trace-inline-pagination {display:flex;gap:10px;margin:16px 0;flex-wrap:wrap}
+.trace-inline-pagination button {
+  padding:10px 14px;border:1px solid #389aad;border-radius:10px;color:#f5fbff;background:#074355;cursor:pointer;font:inherit;
+}
+.trace-inline-pagination button:disabled {opacity:.45;cursor:default}
+@media(max-width:600px) {
+  .admin-trace-dialog {padding:16px}
+  .trace-filters {grid-template-columns:1fr 1fr}
+  .trace-card dl {grid-template-columns:1fr}
+  .trace-card {padding:14px}
+}
