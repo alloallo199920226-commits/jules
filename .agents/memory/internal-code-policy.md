@@ -15,8 +15,14 @@ Les retours de génération du code doivent rester de petits toasts noirs tempor
 
 **How to apply:** conserver le remplissage automatique du champ OTP et son toast de génération temporaire ; les formulaires industriels peuvent garder leurs erreurs de validation visibles sans exposer le code dans un encart séparé.
 
-Le toast de génération doit désormais décrire la livraison réelle dans le site, sans annoncer un SMS qui n’est pas envoyé.
+Ne pas modifier le système de code SMS en place. L’utilisateur précise : « c’est envoyé automatiquement depuis le serveur du site même ».
 
-**Why:** l’utilisateur avait demandé le libellé « SMS envoyé », mais son protocole de reconstruction de la page de sécurité exige de ne pas simuler de service SMS ni de confirmation. Aucun fournisseur SMS n’est connecté dans le projet examiné.
+**Why:** l’utilisateur a expressément demandé de ne rien toucher à ce système après la reconstruction visuelle.
 
-**How to apply:** conserver la livraison interne et la validation serveur, avec un message explicite de génération du code dans le formulaire. Un envoi SMS réel nécessite une intégration distincte ; ne pas l’inventer.
+**How to apply:** préserver le fonctionnement et les libellés existants lors des prochaines modifications visuelles. Ne pas remplacer ce système ni lancer une intégration SMS supplémentaire sans demande explicite.
+
+Le message de génération de la page du mot de passe de transaction doit être exactement « sms envoyés », avec remplissage automatique du code renvoyé par le serveur du site, comme auparavant.
+
+**Why:** l’utilisateur a demandé expressément de rétablir ce libellé et ce fonctionnement après le changement de message effectué pendant la refonte.
+
+**How to apply:** conserver la réponse et le remplissage automatiques existants ; ne pas remplacer le message par une explication technique.

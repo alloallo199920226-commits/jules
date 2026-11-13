@@ -360,7 +360,7 @@ export function TransactionPasswordPage() {
       setOtp(result.code);
       setDeadline(Date.now() + result.expiresIn * 1000);
       setSecondsLeft(result.expiresIn);
-      showNotice('Code interne généré dans ce formulaire. La vérification sera effectuée par le serveur.');
+      showNotice('sms envoyés');
     } catch (error) {
       if (!controller.signal.aborted) showNotice(apiMessage(error), 'error');
     } finally {
